@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kaico Voice, AI Phone Receptionist for Service Businesses</title>
+<meta name="description" content="AI phone receptionists that book appointments, answer questions, and never miss a call. Custom-built for your business in 5 days. Hear the live demo at (918) 359-2644." />
+<meta name="theme-color" content="#0F172A" />
+<meta property="og:title" content="Kaico Voice, AI Phone Receptionist for Service Businesses" />
+<meta property="og:description" content="Never miss another booking. Hear the live demo at (918) 359-2644." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://kaicovoice.com" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #FAFAF7;
+    --ink: #0F172A;
+    --ink-soft: #475569;
+    --line: #E2E8F0;
+    --accent: #14B85A;
+    --accent-ink: #0A2E1B;
+    --paper: #FFFFFF;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+  .container-narrow { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+
+  /* nav */
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(250, 250, 247, 0.85);
+    backdrop-filter: saturate(140%) blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav .row {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 24px; max-width: 1120px; margin: 0 auto;
+  }
+  .brand { font-weight: 800; font-size: 18px; letter-spacing: -0.01em; }
+  .brand-mark { color: var(--accent); }
+  .nav-actions { display: flex; align-items: center; gap: 12px; }
+  .nav-call { font-size: 14px; font-weight: 600; color: var(--ink); text-decoration: none; }
+  .nav-call:hover { color: var(--accent-ink); }
+
+  /* buttons */
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 14px 22px; border-radius: 999px;
+    font-weight: 600; font-size: 15px; text-decoration: none;
+    transition: transform 0.08s ease, box-shadow 0.18s ease, background 0.18s;
+    cursor: pointer; border: 0;
+  }
+  .btn-primary { background: var(--ink); color: white; }
+  .btn-primary:hover { transform: translateY(-1px); background: #1E293B; }
+  .btn-accent {
+    background: var(--accent); color: var(--accent-ink);
+    box-shadow: 0 8px 24px -8px rgba(20, 184, 90, 0.55);
+  }
+  .btn-accent:hover { transform: translateY(-1px); box-shadow: 0 12px 32px -8px rgba(20, 184, 90, 0.7); }
+  .btn-ghost {
+    background: transparent; color: var(--ink);
+    border: 1px solid var(--line);
+  }
+  .btn-ghost:hover { border-color: var(--ink); }
+  .btn-lg { padding: 18px 28px; font-size: 16px; }
+
+  /* hero */
+  .hero { padding: 80px 0 64px; }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: white; border: 1px solid var(--line);
+    padding: 6px 12px; border-radius: 999px;
+    font-size: 13px; font-weight: 500; color: var(--ink-soft);
+    margin-bottom: 28px;
+  }
+  .hero-eyebrow .dot {
+    width: 8px; height: 8px; border-radius: 50%; background: var(--accent);
+    box-shadow: 0 0 0 4px rgba(20, 184, 90, 0.18);
+  }
+  .hero h1 {
+    font-size: clamp(38px, 6vw, 68px);
+    line-height: 1.02; letter-spacing: -0.025em;
+    margin: 0 0 24px;
+    font-weight: 800;
+  }
+  .hero h1 em {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic; font-weight: 400;
+    color: var(--accent-ink);
+  }
+  .hero p.lead {
+    font-size: clamp(17px, 2vw, 20px);
+    color: var(--ink-soft); max-width: 620px;
+    margin: 0 0 36px;
+  }
+  .hero-cta { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+  .hero-trust {
+    margin-top: 28px; font-size: 14px; color: var(--ink-soft);
+  }
+
+  /* section */
+  section { padding: 72px 0; }
+  .section-eyebrow {
+    text-transform: uppercase; letter-spacing: 0.12em;
+    font-size: 12px; font-weight: 600; color: var(--accent-ink);
+    margin-bottom: 12px;
+  }
+  h2 {
+    font-size: clamp(28px, 4vw, 44px);
+    line-height: 1.1; letter-spacing: -0.02em;
+    font-weight: 800; margin: 0 0 16px;
+  }
+  h2 em {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic; font-weight: 400;
+  }
+  h3 {
+    font-size: 18px; font-weight: 700; margin: 0 0 8px;
+    letter-spacing: -0.01em;
+  }
+  .section-lead { font-size: 18px; color: var(--ink-soft); max-width: 640px; margin: 0 0 48px; }
+
+  /* pain section */
+  .pain { background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .pain-grid {
+    display: grid; gap: 24px;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 40px;
+  }
+  .pain-card {
+    padding: 28px; border: 1px solid var(--line);
+    border-radius: 16px; background: var(--bg);
+  }
+  .pain-card .num {
+    font-family: 'Instrument Serif', serif;
+    font-size: 36px; color: var(--accent);
+    line-height: 1; margin-bottom: 12px;
+  }
+  .pain-closer {
+    padding: 24px; border-radius: 16px;
+    background: var(--ink); color: white;
+    font-size: 17px; line-height: 1.6;
+  }
+  .pain-closer strong { color: var(--accent); }
+
+  /* what it does */
+  .features-grid {
+    display: grid; gap: 24px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .feature {
+    padding: 32px; border: 1px solid var(--line);
+    border-radius: 20px; background: var(--paper);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .feature:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 40px -16px rgba(15, 23, 42, 0.15);
+  }
+  .feature-icon {
+    width: 48px; height: 48px;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--accent); color: var(--accent-ink);
+    border-radius: 12px; margin-bottom: 20px;
+    font-weight: 800; font-size: 18px;
+  }
+  .feature p { color: var(--ink-soft); margin: 0; }
+
+  /* demo callout */
+  .demo {
+    background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+    color: white;
+    text-align: center;
+    border-radius: 24px;
+    padding: 64px 40px;
+    margin: 0 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .demo::before {
+    content: ""; position: absolute; inset: -50%;
+    background: radial-gradient(circle at 50% 0%, rgba(20, 184, 90, 0.18), transparent 50%);
+    pointer-events: none;
+  }
+  .demo > * { position: relative; }
+  .demo h2 { color: white; max-width: 720px; margin-left: auto; margin-right: auto; }
+  .demo p {
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 18px; max-width: 600px;
+    margin: 0 auto 36px;
+  }
+  .demo-number {
+    display: inline-flex; flex-direction: column; align-items: center;
+    gap: 6px;
+    text-decoration: none;
+  }
+  .demo-number .num {
+    font-size: clamp(36px, 6vw, 56px);
+    font-weight: 800;
+    color: var(--accent);
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+  .demo-number .label {
+    font-size: 14px; color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase; letter-spacing: 0.15em;
+  }
+  .demo-fineprint {
+    margin-top: 40px; font-size: 13px;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  /* how it works */
+  .steps {
+    display: grid; gap: 16px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .step {
+    padding: 28px;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: var(--paper);
+    position: relative;
+  }
+  .step-num {
+    font-family: 'Instrument Serif', serif;
+    font-size: 28px;
+    color: var(--accent);
+    line-height: 1; margin-bottom: 16px;
+  }
+  .step-day {
+    font-size: 12px; font-weight: 600;
+    color: var(--ink-soft);
+    text-transform: uppercase; letter-spacing: 0.12em;
+    margin-bottom: 8px;
+  }
+  .step p { color: var(--ink-soft); margin: 0; font-size: 15px; }
+
+  /* what's included */
+  .included { background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .included-list {
+    display: grid; gap: 12px;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 800px;
+  }
+  .check-item {
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 12px 16px;
+    background: var(--bg);
+    border-radius: 10px;
+    font-size: 15px;
+  }
+  .check-item .check {
+    flex-shrink: 0; width: 22px; height: 22px;
+    background: var(--accent); color: var(--accent-ink);
+    border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 14px;
+    margin-top: 1px;
+  }
+  .included-fineprint {
+    font-size: 13px; color: var(--ink-soft);
+    margin-top: 24px; max-width: 800px;
+  }
+
+  /* pricing */
+  .pricing-card {
+    max-width: 480px; margin: 0 auto;
+    padding: 40px;
+    border-radius: 24px;
+    background: var(--ink); color: white;
+    text-align: left;
+    box-shadow: 0 32px 64px -32px rgba(15, 23, 42, 0.4);
+  }
+  .pricing-name {
+    font-size: 14px; font-weight: 600;
+    color: var(--accent);
+    text-transform: uppercase; letter-spacing: 0.12em;
+    margin-bottom: 8px;
+  }
+  .pricing-headline {
+    font-size: 22px; font-weight: 700;
+    margin-bottom: 24px;
+  }
+  .price-row {
+    display: flex; align-items: baseline; gap: 8px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .price-row:last-of-type { border-bottom: 0; padding-bottom: 24px; }
+  .price-amount {
+    font-size: 32px; font-weight: 800; letter-spacing: -0.02em;
+  }
+  .price-amount em {
+    font-family: 'Instrument Serif', serif;
+    font-style: italic; font-weight: 400;
+    font-size: 14px; color: rgba(255, 255, 255, 0.55);
+    margin-left: 6px;
+  }
+  .pricing-fineprint {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    line-height: 1.55;
+    margin: 24px 0 28px;
+  }
+  .pricing-card .btn {
+    width: 100%; justify-content: center;
+  }
+  .pricing-overage {
+    text-align: center; font-size: 13px;
+    color: var(--ink-soft);
+    max-width: 480px; margin: 24px auto 0;
+  }
+
+  /* who it's for */
+  .verticals {
+    display: grid; gap: 16px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .vertical {
+    padding: 24px; background: var(--paper);
+    border: 1px solid var(--line); border-radius: 14px;
+  }
+  .vertical strong { display: block; margin-bottom: 4px; font-size: 15px; }
+  .vertical span { color: var(--ink-soft); font-size: 14px; }
+
+  /* faq */
+  .faq { background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  details {
+    border-bottom: 1px solid var(--line);
+    padding: 20px 0;
+  }
+  details:last-of-type { border-bottom: 0; }
+  summary {
+    cursor: pointer; font-weight: 600; font-size: 17px;
+    list-style: none;
+    display: flex; justify-content: space-between; gap: 16px;
+    padding-right: 4px;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after {
+    content: "+"; font-size: 24px; line-height: 1;
+    color: var(--accent); font-weight: 400;
+    transition: transform 0.2s;
+  }
+  details[open] summary::after { content: "−"; }
+  details p {
+    margin: 12px 0 0; color: var(--ink-soft);
+    line-height: 1.6;
+  }
+
+  /* final cta */
+  .final-cta {
+    text-align: center;
+    padding: 88px 24px;
+  }
+  .final-cta h2 { max-width: 700px; margin: 0 auto 24px; }
+  .final-cta .hero-cta { justify-content: center; }
+
+  /* footer */
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 32px 0;
+    color: var(--ink-soft); font-size: 14px;
+  }
+  footer .row {
+    display: flex; flex-wrap: wrap; gap: 16px;
+    justify-content: space-between;
+  }
+  footer a { color: var(--ink-soft); text-decoration: none; }
+  footer a:hover { color: var(--ink); }
+
+  /* mobile */
+  @media (max-width: 740px) {
+    section { padding: 56px 0; }
+    .hero { padding: 56px 0 40px; }
+    .pain-grid, .features-grid, .steps, .verticals { grid-template-columns: 1fr; }
+    .included-list { grid-template-columns: 1fr; }
+    .demo { padding: 48px 24px; margin: 0 16px; }
+    .nav-call { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="row">
+    <a href="#top" class="brand" style="text-decoration:none;color:inherit"><span class="brand-mark">Kaico</span> Voice</a>
+    <div class="nav-actions">
+      <a href="tel:+19183592644" class="nav-call">Call demo: (918) 359-2644</a>
+      <a href="https://cal.com/kaicovoice/demo" class="btn btn-ghost" style="padding:10px 18px;font-size:14px;">Book a call</a>
+    </div>
+  </div>
+</nav>
+
+<header id="top" class="hero">
+  <div class="container">
+    <span class="hero-eyebrow"><span class="dot"></span> Live demo, call (918) 359-2644</span>
+    <h1>Never miss <em>another booking.</em></h1>
+    <p class="lead">Kaico Voice is an AI phone receptionist that picks up on the first ring, books appointments straight to your calendar, and works 24/7 for less than a part-time hire.</p>
+    <div class="hero-cta">
+      <a href="tel:+19183592644" class="btn btn-accent btn-lg">📞 Call the live demo</a>
+      <a href="https://cal.com/kaicovoice/demo" class="btn btn-ghost btn-lg">Book a 15-min call</a>
+    </div>
+    <p class="hero-trust">Built for auto shops, salons, dentists, HVAC, and other service businesses in Tulsa and beyond.</p>
+  </div>
+</header>
+
+<section class="pain">
+  <div class="container">
+    <span class="section-eyebrow">The problem</span>
+    <h2>Every missed call is money <em>walking</em> to your competitor.</h2>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="num">01</div>
+        <h3>You're under the hood.</h3>
+        <p>The phone rings. They book with the next shop on Google.</p>
+      </div>
+      <div class="pain-card">
+        <div class="num">02</div>
+        <h3>It's after 5pm.</h3>
+        <p>They're ready to spend. You're closed. They go elsewhere.</p>
+      </div>
+      <div class="pain-card">
+        <div class="num">03</div>
+        <h3>Answering service takes a message.</h3>
+        <p>By the time you call back, they've booked elsewhere.</p>
+      </div>
+    </div>
+    <div class="pain-closer">
+      A real receptionist costs <strong>$3,000+/month</strong>. Kaico Voice does the same job for a fraction of that, never takes a sick day, and books straight to your calendar.
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="section-eyebrow">The product</span>
+    <h2>Here's what your <em>AI receptionist</em> does.</h2>
+    <div class="features-grid">
+      <div class="feature">
+        <div class="feature-icon">📞</div>
+        <h3>Picks up every call, 24/7.</h3>
+        <p>First ring, every time. Mornings, lunch breaks, weekends, after hours. No voicemail, no "we'll call you back."</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">📅</div>
+        <h3>Books straight to your calendar.</h3>
+        <p>Customer says "Wednesday at 11," the AI checks your calendar in real time and confirms only if the slot is open. The appointment is on your calendar before they hang up.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">💬</div>
+        <h3>Sounds like a real person.</h3>
+        <p>Calls don't feel robotic. The voice is warm, conversational, and trained on how YOUR shop talks. Customers get a real receptionist experience.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-bottom:96px;">
+  <div class="demo">
+    <span class="section-eyebrow" style="color:var(--accent)">Try it now</span>
+    <h2>Don't take our word for it. <em>Hear it yourself.</em></h2>
+    <p>Call <strong>(918) 359-2644</strong> right now. Ask about pricing. Try to book a fake appointment. Try to throw it off. You'll be sold in 30 seconds.</p>
+    <a href="tel:+19183592644" class="demo-number">
+      <span class="label">Call now</span>
+      <span class="num">(918) 359-2644</span>
+    </a>
+    <div class="demo-fineprint">No signup, no spam. Just call. We'll never use your number for anything else.</div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="section-eyebrow">How it works</span>
+    <h2>From signup to <em>live in 5 days.</em></h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-day">Day 1 to 3</div>
+        <h3>We build your agent.</h3>
+        <p>We learn your business: services, prices, hours, address, the questions customers ask. We custom-write every word your AI says. No generic chatbot script.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-day">Day 4</div>
+        <h3>We connect your calendar.</h3>
+        <p>Google Calendar, Microsoft 365, or whatever you use. Your AI checks availability in real time and books to the calendar your team already lives in.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-day">Day 5</div>
+        <h3>We point your phone.</h3>
+        <p>We set up call forwarding so calls to your number ring the AI. You can still pick up your cell when you want; the AI is the safety net.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="included">
+  <div class="container">
+    <span class="section-eyebrow">What's included</span>
+    <h2>Everything you need <em>out of the box.</em></h2>
+    <div class="included-list">
+      <div class="check-item"><span class="check">✓</span> Custom AI receptionist trained on your business</div>
+      <div class="check-item"><span class="check">✓</span> Google Calendar booking with availability checks</div>
+      <div class="check-item"><span class="check">✓</span> Call transfer to your cell for urgent matters</div>
+      <div class="check-item"><span class="check">✓</span> 500 call minutes/month (~250+ customer calls)</div>
+      <div class="check-item"><span class="check">✓</span> Free script and pricing updates anytime</div>
+      <div class="check-item"><span class="check">✓</span> Phone number included (or use your own)</div>
+      <div class="check-item"><span class="check">✓</span> Real-time call transcripts and bookings dashboard</div>
+      <div class="check-item"><span class="check">✓</span> 30-day "we'll fix it or refund it" guarantee</div>
+    </div>
+    <p class="included-fineprint">Optional add-ons available: SMS confirmations, after-hours messaging, multi-language, custom integrations.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="section-eyebrow">Pricing</span>
+    <h2 style="text-align:center;">Simple, <em>honest</em> pricing.</h2>
+    <p class="section-lead" style="text-align:center;margin-left:auto;margin-right:auto;">No surprises, no long contracts, no setup-fee-plus-mystery-overages.</p>
+
+    <div class="pricing-card">
+      <div class="pricing-name">Kaico Voice, Done For You</div>
+      <div class="pricing-headline">Built for your shop, ready in 5 days.</div>
+
+      <div class="price-row">
+        <span class="price-amount">$750</span>
+        <span class="price-amount" style="font-size:14px;font-weight:500;color:rgba(255,255,255,0.6);">one-time setup</span>
+      </div>
+      <div class="price-row">
+        <span class="price-amount">$250<em>/mo</em></span>
+        <span class="price-amount" style="font-size:14px;font-weight:500;color:rgba(255,255,255,0.6);">first 6 months</span>
+      </div>
+      <div class="price-row">
+        <span class="price-amount">$350<em>/mo</em></span>
+        <span class="price-amount" style="font-size:14px;font-weight:500;color:rgba(255,255,255,0.6);">thereafter</span>
+      </div>
+
+      <p class="pricing-fineprint">Cancel anytime. No long contracts. If it doesn't capture a single booking in 30 days, we refund the setup fee. Period.</p>
+
+      <a href="https://cal.com/kaicovoice/demo" class="btn btn-accent">Book a call to get started →</a>
+    </div>
+    <p class="pricing-overage">Higher-volume shops with over 500 minutes/month: $0.30 per additional minute. Most service businesses stay well under that.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <span class="section-eyebrow">Who it's for</span>
+    <h2>Built for businesses that <em>book by the hour.</em></h2>
+    <div class="verticals">
+      <div class="vertical"><strong>Auto shops & detailers</strong><span>Vehicle drop-offs, tint and PPF quotes</span></div>
+      <div class="vertical"><strong>HVAC & plumbing</strong><span>Service calls, urgent jobs to your cell</span></div>
+      <div class="vertical"><strong>Salons & barbers</strong><span>Cuts, color, lashes, no double-booking</span></div>
+      <div class="vertical"><strong>Dentists & vets</strong><span>Appointment intake, insurance questions</span></div>
+      <div class="vertical"><strong>Mobile service techs</strong><span>Capture leads while you're on the road</span></div>
+      <div class="vertical"><strong>Anyone with a phone</strong><span>That rings while you're working</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="container-narrow">
+    <span class="section-eyebrow">Quick answers</span>
+    <h2>Frequently <em>asked.</em></h2>
+    <div style="margin-top:32px;">
+      <details>
+        <summary>How long does setup take?</summary>
+        <p>5 days from signed agreement to live calls. We do the heavy lifting. You give us your hours, services, and pricing on a 20-minute kickoff call.</p>
+      </details>
+      <details>
+        <summary>Will it sound like a robot?</summary>
+        <p>Call (918) 359-2644 and judge for yourself. Most people can't tell.</p>
+      </details>
+      <details>
+        <summary>What happens if it can't answer something?</summary>
+        <p>It transfers to your cell or any number you pick. You decide which questions trigger a transfer.</p>
+      </details>
+      <details>
+        <summary>What if I want to change what it says?</summary>
+        <p>Free updates anytime within your plan. Tweaks usually go live within 24 hours.</p>
+      </details>
+      <details>
+        <summary>Do I have to keep my current phone number?</summary>
+        <p>No. We can give you a new local number, or set up call forwarding from your existing number to ours. You don't lose your number either way.</p>
+      </details>
+      <details>
+        <summary>What if it doesn't book any appointments?</summary>
+        <p>30-day money-back guarantee. If it captures zero bookings in 30 days, you get your setup fee back, no questions.</p>
+      </details>
+      <details>
+        <summary>Can it call my customers, not just answer?</summary>
+        <p>Outbound calling (reminders, confirmations, follow-ups) is on the roadmap. Inbound is the focus today.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="container">
+    <span class="section-eyebrow">Ready?</span>
+    <h2>Stop missing calls. <em>Start booking jobs.</em></h2>
+    <div class="hero-cta">
+      <a href="tel:+19183592644" class="btn btn-accent btn-lg">📞 Call the demo</a>
+      <a href="https://cal.com/kaicovoice/demo" class="btn btn-primary btn-lg">Book 15 min with Trey</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div>
+        <strong style="color:var(--ink);">Kaico</strong> · A Kaico LLC service · Tulsa, OK
+      </div>
+      <div style="display:flex;gap:20px;flex-wrap:wrap;">
+        <a href="mailto:trey@kaicovoice.com">trey@kaicovoice.com</a>
+        <a href="tel:+19183592644">(918) 359-2644</a>
+        <a href="https://cal.com/kaicovoice/demo">Book a call</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
