@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Privacy Policy — Kaico Voice</title>
+<meta name="description" content="How Kaico Voice handles your information when you call a business using our AI receptionist." />
+<meta name="theme-color" content="#0F172A" />
+<meta property="og:title" content="Privacy Policy — Kaico Voice" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://kaicovoice.com/privacy" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #FAFAF7;
+    --ink: #0F172A;
+    --ink-soft: #475569;
+    --line: #E2E8F0;
+    --accent: #14B85A;
+    --accent-ink: #0A2E1B;
+    --paper: #FFFFFF;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+  .container-narrow { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+
+  /* nav */
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(250, 250, 247, 0.85);
+    backdrop-filter: saturate(140%) blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav .row {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 24px; max-width: 1120px; margin: 0 auto;
+  }
+  .brand { font-weight: 800; font-size: 18px; letter-spacing: -0.01em; text-decoration: none; color: inherit; }
+  .brand-mark { color: var(--accent); }
+  .nav-actions { display: flex; align-items: center; gap: 12px; }
+  .nav-call { font-size: 14px; font-weight: 600; color: var(--ink); text-decoration: none; }
+  .nav-call:hover { color: var(--accent-ink); }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 14px 22px; border-radius: 999px;
+    font-weight: 600; font-size: 15px; text-decoration: none;
+    cursor: pointer; border: 0;
+    transition: transform 0.08s ease, box-shadow 0.18s ease, background 0.18s;
+  }
+  .btn-ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+  .btn-ghost:hover { border-color: var(--ink); }
+
+  /* legal page */
+  main.legal { padding: 64px 0 96px; }
+  .legal-eyebrow {
+    display: inline-block;
+    color: var(--accent-ink); background: rgba(20, 184, 90, 0.10);
+    padding: 6px 12px; border-radius: 999px;
+    font-size: 12px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .legal h1 {
+    font-size: clamp(36px, 5vw, 56px);
+    line-height: 1.05; letter-spacing: -0.02em;
+    margin: 0 0 8px;
+    font-weight: 800;
+  }
+  .legal h1 em {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400; font-style: italic;
+    color: var(--accent-ink);
+  }
+  .legal-meta {
+    color: var(--ink-soft); font-size: 14px;
+    margin: 0 0 32px;
+  }
+  .legal-intro {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin: 24px 0 40px;
+  }
+  .legal-intro p { margin: 0; color: var(--ink); font-size: 16px; }
+  .legal h2 {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin: 40px 0 12px;
+    color: var(--ink);
+  }
+  .legal h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 24px 0 8px;
+    color: var(--ink);
+  }
+  .legal p, .legal li {
+    color: var(--ink-soft);
+    font-size: 15px;
+    margin: 0 0 12px;
+  }
+  .legal ul { padding-left: 22px; margin: 0 0 16px; }
+  .legal a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; }
+  .legal a:hover { text-decoration-color: var(--accent); }
+  .legal-callout {
+    border-left: 3px solid var(--accent);
+    background: rgba(20, 184, 90, 0.05);
+    padding: 16px 20px;
+    margin: 24px 0;
+    border-radius: 0 8px 8px 0;
+  }
+  .legal-callout p { color: var(--ink); margin: 0; font-weight: 500; }
+
+  /* footer */
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 32px 0 48px;
+    background: var(--paper);
+  }
+  footer .row {
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 16px;
+    font-size: 14px; color: var(--ink-soft);
+  }
+  footer a { color: var(--ink-soft); text-decoration: none; }
+  footer a:hover { color: var(--ink); }
+  footer .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="row">
+    <a href="/" class="brand"><span class="brand-mark">Kaico</span> Voice</a>
+    <div class="nav-actions">
+      <a href="tel:+19183592644" class="nav-call">Call demo: (918) 359-2644</a>
+      <a href="https://cal.com/kaicovoice/demo" class="btn btn-ghost" style="padding:10px 18px;font-size:14px;">Book a call</a>
+    </div>
+  </div>
+</nav>
+
+<main class="legal">
+  <div class="container-narrow">
+    <span class="legal-eyebrow">Legal</span>
+    <h1>Privacy <em>policy</em></h1>
+    <p class="legal-meta">Last updated: May 21, 2026</p>
+
+    <div class="legal-intro">
+      <p><strong>Plain English:</strong> Kaico Voice answers phones for service businesses. When you call one of those businesses, our AI takes your booking details and (with your permission) texts you a confirmation. We don't sell your info. We don't send marketing. The full policy is below if you want the details.</p>
+    </div>
+
+    <h2>Who we are</h2>
+    <p>Kaico Voice is a service of <strong>Kaico LLC</strong>, based in Tulsa, Oklahoma. We provide AI phone receptionists to small service businesses (auto shops, trucking companies, salons, etc.). This Privacy Policy explains how we handle your information when you interact with one of those businesses through our AI receptionist.</p>
+
+    <h2>What we collect</h2>
+    <p>When you call a business that uses Kaico Voice, our AI receptionist may collect:</p>
+    <ul>
+      <li>Your name</li>
+      <li>Your phone number</li>
+      <li>Your email address (if you provide it)</li>
+      <li>Details about your booking or inquiry — for example, your vehicle and the service you're requesting, or your delivery address and the material you need hauled</li>
+      <li>Audio of your call, for quality and service-improvement purposes</li>
+    </ul>
+    <p>We collect this information only to provide the service you requested (such as booking your appointment) and to send you confirmations related to that booking.</p>
+
+    <h2>When we'll text you</h2>
+    <p>When you give your phone number to our AI receptionist during a booking, you consent to receive a confirmation text message. We send SMS messages only for transactional purposes:</p>
+    <ul>
+      <li>Appointment confirmations</li>
+      <li>Booking-detail summaries</li>
+      <li>Status updates related to your appointment</li>
+    </ul>
+    <p>We do <strong>not</strong> send marketing messages through the Kaico Voice receptionist system. Message frequency is up to 5 messages per booking. Message and data rates may apply, depending on your carrier and plan. You can reply <strong>STOP</strong> to any message at any time to opt out of all future messages, or reply <strong>HELP</strong> to get support information.</p>
+
+    <h2>Who we share your info with</h2>
+    <div class="legal-callout">
+      <p>We do not share, sell, rent, or lease your phone number or SMS opt-in data to any third parties for marketing or promotional purposes.</p>
+    </div>
+    <p>The only parties who see your information are:</p>
+    <ul>
+      <li><strong>The business you called.</strong> If you called Tri-Tech Auto Tinting through Kaico Voice, your booking ends up on Tri-Tech's calendar. We don't share your info with any other Kaico Voice customers.</li>
+      <li><strong>Infrastructure providers we use to deliver the service.</strong> These include RetellAI (voice processing), Twilio (SMS delivery), Google (calendar storage), and Cal.com (scheduling for Kaico Voice's own sales calls). Each is contractually bound to use the data only to perform their service.</li>
+    </ul>
+
+    <h2>How long we keep your info</h2>
+    <p>Booking details are stored on the relevant business's Google Calendar according to that business's own retention. SMS records are retained by Twilio per their standard retention period. Call audio is retained by RetellAI per their retention policy. We don't maintain a separate customer database of our own.</p>
+
+    <h2>Your choices</h2>
+    <ul>
+      <li><strong>SMS opt-out:</strong> Reply STOP to any message.</li>
+      <li><strong>Booking changes:</strong> Contact the business you booked with directly.</li>
+      <li><strong>Privacy questions or requests:</strong> Email <a href="mailto:trey@kaicovoice.com">trey@kaicovoice.com</a>.</li>
+    </ul>
+
+    <h2>Changes to this policy</h2>
+    <p>If we update this policy, we'll change the "Last updated" date at the top. Material changes will be noted on the home page.</p>
+
+    <h2>Contact us</h2>
+    <p>
+      Kaico LLC<br />
+      Tulsa, OK<br />
+      <a href="mailto:trey@kaicovoice.com">trey@kaicovoice.com</a><br />
+      <a href="tel:+19183592644">(918) 359-2644</a>
+    </p>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div>
+        <strong style="color:var(--ink);">Kaico</strong> · A Kaico LLC service · Tulsa, OK
+      </div>
+      <div class="footer-links">
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="mailto:trey@kaicovoice.com">trey@kaicovoice.com</a>
+        <a href="tel:+19183592644">(918) 359-2644</a>
+        <a href="https://cal.com/kaicovoice/demo">Book a call</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
