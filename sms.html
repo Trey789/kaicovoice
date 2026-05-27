@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SMS Program Details — Kaico Voice</title>
+<meta name="description" content="How the Kaico Voice SMS program works: what messages you receive, how to opt in, how to opt out, and your privacy." />
+<meta name="theme-color" content="#0F172A" />
+<meta property="og:title" content="SMS Program Details — Kaico Voice" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://kaicovoice.com/sms" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #FAFAF7;
+    --ink: #0F172A;
+    --ink-soft: #475569;
+    --line: #E2E8F0;
+    --accent: #14B85A;
+    --accent-ink: #0A2E1B;
+    --paper: #FFFFFF;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+  .container-narrow { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+
+  /* nav */
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(250, 250, 247, 0.85);
+    backdrop-filter: saturate(140%) blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav .row {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 24px; max-width: 1120px; margin: 0 auto;
+  }
+  .brand { font-weight: 800; font-size: 18px; letter-spacing: -0.01em; text-decoration: none; color: inherit; }
+  .brand-mark { color: var(--accent); }
+  .nav-actions { display: flex; align-items: center; gap: 12px; }
+  .nav-call { font-size: 14px; font-weight: 600; color: var(--ink); text-decoration: none; }
+  .nav-call:hover { color: var(--accent-ink); }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 14px 22px; border-radius: 999px;
+    font-weight: 600; font-size: 15px; text-decoration: none;
+    cursor: pointer; border: 0;
+    transition: transform 0.08s ease, box-shadow 0.18s ease, background 0.18s;
+  }
+  .btn-ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+  .btn-ghost:hover { border-color: var(--ink); }
+
+  /* legal page */
+  main.legal { padding: 64px 0 96px; }
+  .legal-eyebrow {
+    display: inline-block;
+    color: var(--accent-ink); background: rgba(20, 184, 90, 0.10);
+    padding: 6px 12px; border-radius: 999px;
+    font-size: 12px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .legal h1 {
+    font-size: clamp(36px, 5vw, 56px);
+    line-height: 1.05; letter-spacing: -0.02em;
+    margin: 0 0 8px;
+    font-weight: 800;
+  }
+  .legal h1 em {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400; font-style: italic;
+    color: var(--accent-ink);
+  }
+  .legal-meta {
+    color: var(--ink-soft); font-size: 14px;
+    margin: 0 0 32px;
+  }
+  .legal-intro {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin: 24px 0 40px;
+  }
+  .legal-intro p { margin: 0; color: var(--ink); font-size: 16px; }
+  .legal h2 {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin: 40px 0 12px;
+    color: var(--ink);
+  }
+  .legal h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 24px 0 8px;
+    color: var(--ink);
+  }
+  .legal p, .legal li {
+    color: var(--ink-soft);
+    font-size: 15px;
+    margin: 0 0 12px;
+  }
+  .legal ul, .legal ol { padding-left: 22px; margin: 0 0 16px; }
+  .legal a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; }
+  .legal a:hover { text-decoration-color: var(--accent); }
+  .legal-callout {
+    border-left: 3px solid var(--accent);
+    background: rgba(20, 184, 90, 0.05);
+    padding: 16px 20px;
+    margin: 24px 0;
+    border-radius: 0 8px 8px 0;
+  }
+  .legal-callout p { color: var(--ink); margin: 0; font-weight: 500; }
+  .legal-table {
+    width: 100%; border-collapse: collapse;
+    margin: 16px 0 24px;
+    font-size: 15px;
+  }
+  .legal-table th, .legal-table td {
+    text-align: left; padding: 12px 16px;
+    border: 1px solid var(--line);
+    vertical-align: top;
+  }
+  .legal-table th {
+    background: var(--paper); color: var(--ink); font-weight: 600;
+    width: 32%;
+  }
+  .legal-table td { color: var(--ink-soft); }
+
+  /* transcript block */
+  .transcript {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 16px 0 24px;
+  }
+  .transcript .turn { margin: 0 0 14px; }
+  .transcript .turn:last-child { margin-bottom: 0; }
+  .transcript .speaker {
+    font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--accent-ink);
+    margin-bottom: 4px;
+  }
+  .transcript .speaker.caller { color: var(--ink-soft); }
+  .transcript .line { color: var(--ink); font-size: 15px; line-height: 1.55; margin: 0; }
+  .transcript .annotation {
+    color: var(--ink-soft); font-style: italic; font-size: 13px; margin-top: 4px;
+  }
+
+  /* sample message bubble */
+  .sms-sample {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 14px 18px;
+    margin: 12px 0;
+    max-width: 480px;
+    font-size: 15px;
+    color: var(--ink);
+    line-height: 1.5;
+  }
+  .sms-sample .sms-meta {
+    font-size: 12px;
+    color: var(--ink-soft);
+    margin-top: 6px;
+  }
+
+  /* CTA panel */
+  .cta-panel {
+    background: var(--accent-ink);
+    color: #E9F8EE;
+    border-radius: 16px;
+    padding: 28px;
+    margin: 32px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .cta-panel h3 { color: #FFFFFF; margin: 0 0 6px; font-size: 18px; font-weight: 700; }
+  .cta-panel p { color: #C7E5D1; margin: 0; font-size: 14px; }
+  .cta-panel .cta-num {
+    font-size: 22px; font-weight: 800; color: #FFFFFF;
+    text-decoration: none; letter-spacing: -0.01em;
+  }
+  .cta-panel .cta-num:hover { color: var(--accent); }
+
+  /* footer */
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 32px 0 48px;
+    background: var(--paper);
+  }
+  footer .row {
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 16px;
+    font-size: 14px; color: var(--ink-soft);
+  }
+  footer a { color: var(--ink-soft); text-decoration: none; }
+  footer a:hover { color: var(--ink); }
+  footer .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="row">
+    <a href="/" class="brand"><span class="brand-mark">Kaico</span> Voice</a>
+    <div class="nav-actions">
+      <a href="tel:+19183592644" class="nav-call">Call demo: (918) 359-2644</a>
+      <a href="https://cal.com/kaicovoice/demo" class="btn btn-ghost" style="padding:10px 18px;font-size:14px;">Book a call</a>
+    </div>
+  </div>
+</nav>
+
+<main class="legal">
+  <div class="container-narrow">
+    <span class="legal-eyebrow">SMS Program</span>
+    <h1>SMS program <em>details</em></h1>
+    <p class="legal-meta">Last updated: May 26, 2026 &middot; Operated by Kaico LLC, Tulsa, Oklahoma</p>
+
+    <div class="legal-intro">
+      <p><strong>Plain English:</strong> If you call a business that uses Kaico Voice and give our AI receptionist your phone number for a booking, you may receive a text message confirming the appointment. You can reply STOP at any time to stop receiving messages. This page explains exactly how the program works.</p>
+    </div>
+
+    <h2>Brand and program</h2>
+    <table class="legal-table">
+      <tr>
+        <th>Brand</th>
+        <td>Kaico LLC, doing business as Kaico Voice</td>
+      </tr>
+      <tr>
+        <th>Program name</th>
+        <td>Kaico Voice Booking Confirmations</td>
+      </tr>
+      <tr>
+        <th>Use case</th>
+        <td>Transactional account notifications (appointment confirmations and reminders) for customers of small service businesses that use Kaico Voice as their AI phone receptionist.</td>
+      </tr>
+      <tr>
+        <th>Message frequency</th>
+        <td>Typically 1 to 3 messages per booking. Variable depending on whether you confirm, reschedule, or cancel.</td>
+      </tr>
+      <tr>
+        <th>Cost</th>
+        <td>Message and data rates may apply, depending on your wireless carrier and plan. Kaico Voice does not charge you for SMS messages.</td>
+      </tr>
+      <tr>
+        <th>Supported carriers</th>
+        <td>All major US carriers (AT&amp;T, T-Mobile, Verizon, US Cellular) plus most regional carriers. T-Mobile is not liable for delayed or undelivered messages.</td>
+      </tr>
+    </table>
+
+    <h2 id="how-to-opt-in">How you opt in</h2>
+    <p>Consent is captured <strong>verbally during your phone call</strong> with our AI receptionist. There is no online form or web checkbox. The exact flow is:</p>
+
+    <ol>
+      <li>You call a business that uses Kaico Voice (for example, a window tint shop or a hauling company).</li>
+      <li>Our AI receptionist answers and helps you book or get information.</li>
+      <li>When you confirm a booking, the receptionist tells you that a confirmation text will be sent to the number you provided, and that you may reply STOP at any time to opt out.</li>
+      <li>Continuing the call and confirming the booking after that disclosure constitutes your opt-in.</li>
+    </ol>
+
+    <h3>Example of the verbal opt-in (sample transcript)</h3>
+    <div class="transcript">
+      <div class="turn">
+        <div class="speaker">Receptionist (AI)</div>
+        <p class="line">Got it. Confirming three loads of base rock to 5301 South Yale on Tuesday morning at 8 AM. Best callback number?</p>
+      </div>
+      <div class="turn">
+        <div class="speaker caller">Caller</div>
+        <p class="line">It's 918-555-0123.</p>
+      </div>
+      <div class="turn">
+        <div class="speaker">Receptionist (AI)</div>
+        <p class="line">Perfect. I'll text a confirmation to 918-555-0123 in a minute. You can reply STOP anytime to opt out, or HELP for help. You're all set for Tuesday.</p>
+        <p class="annotation">This is the disclosure moment. Continuing past this point is the opt-in.</p>
+      </div>
+      <div class="turn">
+        <div class="speaker caller">Caller</div>
+        <p class="line">Sounds good, thanks.</p>
+      </div>
+    </div>
+
+    <div class="cta-panel">
+      <div>
+        <h3>Verify the opt-in flow yourself</h3>
+        <p>Call our public demo line and book a sample appointment. You will hear the verbal disclosure live.</p>
+      </div>
+      <a class="cta-num" href="tel:+19183592644">(918) 359-2644</a>
+    </div>
+
+    <h2>What messages look like</h2>
+    <p>These are the exact kinds of messages you may receive after opting in. All messages are transactional. No marketing. Every message includes opt-out language.</p>
+
+    <h3>Booking confirmation</h3>
+    <div class="sms-sample">
+      Tri-Tech Auto Tinting: Hi Mike, confirming your ceramic full-vehicle tint on Tue May 27 at 10 AM. Address: 5842 S 129th East Ave, Tulsa. Reply STOP to opt out, HELP for help.
+      <div class="sms-meta">Sent from Kaico Voice on behalf of Tri-Tech Auto Tinting</div>
+    </div>
+
+    <h3>Booking confirmation (different business)</h3>
+    <div class="sms-sample">
+      Blue Sands Trucking: Hi Mike, confirming 3 loads of base rock to 5301 S Yale on Tue May 27 at 8 AM. Reply STOP to opt out, HELP for help.
+      <div class="sms-meta">Sent from Kaico Voice on behalf of Blue Sands Trucking</div>
+    </div>
+
+    <h3>Day-before reminder</h3>
+    <div class="sms-sample">
+      Tri-Tech Auto Tinting: Reminder, your tint is tomorrow Tue May 27 at 10 AM. Reply STOP to opt out, HELP for help.
+      <div class="sms-meta">Sent from Kaico Voice on behalf of Tri-Tech Auto Tinting</div>
+    </div>
+
+    <h2 id="how-to-opt-out">How you opt out</h2>
+    <ul>
+      <li>Reply <strong>STOP</strong> to any message you receive from us. You will get a single confirmation that you have been unsubscribed, and you will not receive any further messages from that program.</li>
+      <li>Reply <strong>HELP</strong> for support information, or email <a href="mailto:trey@kaicovoice.com">trey@kaicovoice.com</a>.</li>
+    </ul>
+
+    <div class="legal-callout">
+      <p>We never send marketing messages, promotional offers, or third-party advertising through this program. SMS is used only to confirm and coordinate the booking you made.</p>
+    </div>
+
+    <h2>Privacy</h2>
+    <p>Your phone number and any related booking information are handled according to our <a href="/privacy">Privacy Policy</a>. We do not sell or share your phone number with third parties for marketing.</p>
+
+    <h2>Changes to this program</h2>
+    <p>If we materially change how the program works, we will update the "Last updated" date at the top of this page and post a notice on the home page.</p>
+
+    <h2>Contact</h2>
+    <p>
+      Kaico LLC<br />
+      Tulsa, OK<br />
+      <a href="mailto:trey@kaicovoice.com">trey@kaicovoice.com</a><br />
+      <a href="tel:+19183592644">(918) 359-2644</a>
+    </p>
+
+    <p style="margin-top: 32px; font-size: 13px; color: var(--ink-soft);">
+      Related: <a href="/terms">Terms of Service</a> &middot; <a href="/privacy">Privacy Policy</a>
+    </p>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div>
+        <strong style="color:var(--ink);">Kaico</strong> &middot; A Kaico LLC service &middot; Tulsa, OK
+      </div>
+      <div class="footer-links">
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="/sms">SMS</a>
+        <a href="mailto:trey@kaicovoice.com">trey@kaicovoice.com</a>
+        <a href="tel:+19183592644">(918) 359-2644</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
