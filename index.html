@@ -239,6 +239,15 @@
   footer a:hover { color: var(--ink); }
   footer .links { display: flex; gap: 20px; flex-wrap: wrap; }
 
+  .scroll-prog { position: fixed; top: 0; left: 0; height: 3px; width: 0; background: var(--signal); box-shadow: 0 0 10px rgba(200,255,61,.6); z-index: 200; }
+  .timeline { position: relative; }
+  .tl-track { position: relative; height: 2px; background: var(--line); margin: 0 0 30px; border-radius: 2px; }
+  .tl-fill { position: absolute; inset: 0 auto 0 0; width: 0; background: var(--signal); box-shadow: 0 0 8px rgba(200,255,61,.6); border-radius: 2px; transition: width 1.5s cubic-bezier(.22,1,.36,1); }
+  .tl-node { position: absolute; top: 50%; width: 12px; height: 12px; border-radius: 50%; background: var(--surface-2); border: 2px solid var(--line); transform: translate(-50%,-50%); transition: .5s; }
+  .tl-node:nth-child(2){left:16.66%}.tl-node:nth-child(3){left:50%}.tl-node:nth-child(4){left:83.33%}
+  .timeline.lit .tl-fill { width: 100%; }
+  .timeline.lit .tl-node { background: var(--signal); border-color: var(--signal); box-shadow: 0 0 12px rgba(200,255,61,.5); }
+  @media (max-width: 740px) { .tl-track { display: none; } }
   .js-reveal .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s cubic-bezier(.22,1,.36,1), transform .6s cubic-bezier(.22,1,.36,1); }
   .js-reveal .reveal.is-visible { opacity: 1; transform: none; }
 
@@ -263,6 +272,7 @@
 <body>
 <div class="glow" aria-hidden="true"></div>
 <a href="#main" class="skip-link">Skip to content</a>
+<div class="scroll-prog" aria-hidden="true"></div>
 
 <nav>
   <div class="row">
@@ -349,11 +359,13 @@
   <div class="container">
     <h2>From signup to <span class="em">live in 5 days.</span></h2>
     <p class="lead" style="margin-bottom:40px;">We build and configure the whole thing for you, end to end, in under a week.</p>
+    <div class="timeline" id="timeline">
+    <div class="tl-track" aria-hidden="true"><div class="tl-fill"></div><span class="tl-node"></span><span class="tl-node"></span><span class="tl-node"></span></div>
     <div class="steps">
       <div class="step reveal"><div class="step-day">Day 1 to 3</div><h3>We build your agent.</h3><p>We learn your business: services, prices, hours, address, the questions customers ask. We custom-write every word your AI says. No generic chatbot script.</p></div>
       <div class="step reveal"><div class="step-day">Day 4</div><h3>We connect your calendar.</h3><p>Google Calendar, Microsoft 365, or whatever you use. Your AI checks availability in real time and books to the calendar your team already lives in.</p></div>
       <div class="step reveal"><div class="step-day">Day 5</div><h3>We point your phone.</h3><p>We set up call forwarding so calls to your number ring the AI. You can still pick up your cell when you want; the AI is the safety net.</p></div>
-    </div>
+    </div></div>
   </div>
 </section>
 
@@ -487,6 +499,12 @@
   trades.forEach(function(tr,idx){ var c=document.createElement('button'); c.className='chip'; c.type='button'; c.textContent=tr.k; c.setAttribute('aria-pressed', idx===0?'true':'false'); c.onclick=function(){ chips.querySelectorAll('.chip').forEach(function(x){x.setAttribute('aria-pressed','false');}); c.setAttribute('aria-pressed','true'); render(tr); }; chips.appendChild(c); });
   render(trades[0]);
 
+  // scroll-progress signal bar
+  var prog=document.querySelector(".scroll-prog");
+  function onScroll(){ if(!prog)return; var h=document.documentElement; var p=h.scrollTop/((h.scrollHeight-h.clientHeight)||1); prog.style.width=(Math.max(0,Math.min(1,p))*100).toFixed(1)+"%"; }
+  window.addEventListener("scroll",onScroll,{passive:true}); onScroll();
+  var tl=document.getElementById("timeline");
+  if(tl){ if(reduce||!("IntersectionObserver" in window)){ tl.classList.add("lit"); } else { var tio=new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersecting){ tl.classList.add("lit"); tio.disconnect(); } });},{threshold:.35}); tio.observe(tl); } }
   // scroll reveal
   if (!reduce && 'IntersectionObserver' in window) {
     document.documentElement.classList.add('js-reveal');
