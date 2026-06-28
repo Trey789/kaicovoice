@@ -248,8 +248,8 @@
   .timeline.lit .tl-fill { width: 100%; }
   .timeline.lit .tl-node { background: var(--signal); border-color: var(--signal); box-shadow: 0 0 12px rgba(200,255,61,.5); }
   @media (max-width: 740px) { .tl-track { display: none; } }
-  .js-reveal .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s cubic-bezier(.22,1,.36,1), transform .6s cubic-bezier(.22,1,.36,1); }
-  .js-reveal .reveal.is-visible { opacity: 1; transform: none; }
+  .js-reveal .reveal { transform: translateY(18px); transition: transform .6s cubic-bezier(.22,1,.36,1); }
+  .js-reveal .reveal.is-visible { transform: none; }
 
   @media (max-width: 860px) {
     .cfg-wrap { grid-template-columns: 1fr; }
