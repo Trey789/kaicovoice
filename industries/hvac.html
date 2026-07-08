@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>HVAC Answering Service | Kaico Voice</title>
+<meta name="description" content="An answering service built for HVAC companies. Kaico Voice answers no-cool and no-heat calls 24/7, books jobs onto your calendar, and transfers real emergencies." />
+<meta name="theme-color" content="#0a0b0d" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon-180.png" />
+<meta property="og:title" content="HVAC Answering Service | Kaico Voice" />
+<meta property="og:description" content="An AI receptionist that answers HVAC calls 24/7, books service calls onto your calendar, and transfers real emergencies to a human. $250 per month, month to month." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.kaicovoice.com/industries/hvac" />
+<meta property="og:image" content="https://www.kaicovoice.com/assets/og-card.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="HVAC Answering Service | Kaico Voice" />
+<meta name="twitter:description" content="Answers no-cool and no-heat calls 24/7, books jobs onto your calendar, and transfers real emergencies to a human. $250 per month." />
+<meta name="twitter:image" content="https://www.kaicovoice.com/assets/og-card.png" />
+<link rel="canonical" href="https://www.kaicovoice.com/industries/hvac" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Will callers know they are talking to an AI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It sounds natural, and it never pretends to be a human if someone asks directly. Most callers just want their problem handled: a clear answer, an appointment, a callback. The fastest way to judge it is to call (918) 359-2644 yourself. That number is the agent, answering live."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens with real emergencies?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The agent does not handle real emergencies on its own. Calls like a gas smell, a suspected carbon monoxide problem, or no heat in dangerous cold with an infant or an elderly person in the home get transferred to a human immediately. You decide who that human is and how the escalation works."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it work with my scheduling software?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The agent books appointments directly onto your business calendar, such as Google Calendar. If your schedule lives inside field service software, tell us on the setup call and we will map out the cleanest handoff for your dispatcher before the agent takes a single live call."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if it cannot answer a question?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It does not guess, and it does not invent prices. If a caller asks something outside what you have approved, the agent takes a message and texts the caller back so the lead stays warm. You get a transcript of every call, so you can see exactly what was asked and follow up yourself."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does setup take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "About a week. We learn your services, service area, hours, and the questions your customers actually ask, then test the agent with you before it ever answers a live call."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a contract?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Kaico Voice is $250 per month, month to month. You can cancel any time. There is no long-term contract to sign."
+      }
+    }
+  ]
+}
+</script>
+<style>
+  :root {
+    --bg: #0a0b0d;
+    --ink: #eef1f4;
+    --ink-soft: #9aa4af;
+    --muted: #9aa4af;
+    --line: #23282f;
+    --accent: #c8ff3d;
+    --accent-ink: #c8ff3d;
+    --signal: #c8ff3d;
+    --signal-dim: #93c91f;
+    --ink-on-signal: #0a0b0d;
+    --paper: #161a20;
+    --surface: #111418;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: 'Hanken Grotesk', system-ui, -apple-system, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+  .container-narrow { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+
+  :focus-visible { outline: 3px solid var(--signal); outline-offset: 3px; border-radius: 4px; }
+  .skip-link { position: absolute; left: -9999px; top: 8px; z-index: 100; background: var(--signal); color: var(--ink-on-signal); padding: 10px 18px; border-radius: 8px; font-weight: 700; text-decoration: none; }
+  .skip-link:focus { left: 16px; }
+
+  /* nav */
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(10, 11, 13, 0.72);
+    backdrop-filter: saturate(140%) blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav .row {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 24px; max-width: 1120px; margin: 0 auto;
+  }
+  .brand { font-weight: 800; font-size: 18px; letter-spacing: -0.01em; text-decoration: none; color: inherit; }
+  .brand-mark { color: var(--accent); }
+  .nav-actions { display: flex; align-items: center; gap: 12px; }
+  .nav-call { font-size: 14px; font-weight: 600; color: var(--ink); text-decoration: none; }
+  .nav-call:hover { color: var(--accent-ink); }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 14px 22px; border-radius: 999px;
+    font-weight: 600; font-size: 15px; text-decoration: none;
+    cursor: pointer; border: 0;
+    transition: transform 0.08s ease, box-shadow 0.18s ease, background 0.18s;
+  }
+  .btn-signal { background: var(--signal); color: var(--ink-on-signal); font-weight: 700; }
+  .btn-signal:hover { transform: translateY(-1px); box-shadow: 0 12px 30px -10px rgba(200,255,61,.5); }
+  .btn-ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+  .btn-ghost:hover { border-color: var(--ink); }
+  .btn-lg { padding: 17px 28px; font-size: 16px; }
+
+  /* typography */
+  h1, h2, h3 { font-family: 'Bricolage Grotesque', sans-serif; }
+  h2 { font-size: clamp(28px, 4.4vw, 44px); font-weight: 800; line-height: 1.04; letter-spacing: -0.03em; margin: 0 0 16px; text-wrap: balance; }
+  h2 .em { color: var(--signal); }
+  h3 { font-size: 18px; font-weight: 700; margin: 0 0 8px; letter-spacing: -0.01em; }
+  .lead { color: var(--muted); font-size: 18px; line-height: 1.55; max-width: 60ch; text-wrap: pretty; }
+  section { padding: 80px 0; }
+  section p { color: var(--muted); font-size: 16px; margin: 0 0 16px; }
+  section p strong { color: var(--ink); }
+  section a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; }
+  section a:hover { text-decoration-color: var(--accent); }
+  section a.btn { text-decoration: none; }
+
+  /* hero */
+  .hero { padding: 72px 0 56px; }
+  .pill { display: inline-flex; align-items: center; gap: 9px; border: 1px solid var(--line); background: var(--surface); padding: 7px 14px; border-radius: 999px; font-size: 13px; font-weight: 600; color: var(--muted); margin-bottom: 28px; }
+  .pill i { width: 8px; height: 8px; border-radius: 50%; background: var(--signal); animation: pulse 1.8s infinite; }
+  @keyframes pulse { 0%{box-shadow:0 0 0 0 rgba(200,255,61,.55)} 70%{box-shadow:0 0 0 9px rgba(200,255,61,0)} 100%{box-shadow:0 0 0 0 rgba(200,255,61,0)} }
+  .hero h1 { font-size: clamp(38px, 6vw, 66px); font-weight: 800; line-height: .98; letter-spacing: -0.035em; margin: 0 0 22px; max-width: 17ch; text-wrap: balance; }
+  .hero h1 .em { color: var(--signal); }
+  .hero .lead { margin: 0 0 34px; }
+  .hero-cta { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+  .hero-sub { margin: 18px 0 0; font-size: 14px; color: var(--muted); }
+
+  /* cards */
+  .grid-3 { display: grid; gap: 18px; grid-template-columns: repeat(3, 1fr); margin-top: 36px; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 28px; }
+  .card p { color: var(--muted); margin: 0; font-size: 15px; }
+
+  /* call flow panel */
+  .flow-panel { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 28px 30px; margin-top: 28px; }
+  .flow-label { display: inline-block; color: var(--accent-ink); background: rgba(200,255,61,0.08); border: 1px solid rgba(200,255,61,0.25); padding: 5px 12px; border-radius: 999px; font-size: 12px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 18px; }
+  .flow-panel p:last-child { margin-bottom: 0; }
+
+  /* proof callout */
+  .proof-callout {
+    border: 1px solid rgba(200,255,61,0.25);
+    background: rgba(200,255,61,0.06);
+    padding: 20px 24px;
+    margin: 24px 0;
+    border-radius: 12px;
+  }
+  .proof-callout p { color: var(--ink); margin: 0; font-weight: 500; }
+
+  /* pricing */
+  .price-figure { font-family: 'Bricolage Grotesque', sans-serif; font-size: clamp(40px, 6vw, 64px); font-weight: 800; letter-spacing: -0.03em; line-height: 1; color: var(--ink); margin: 8px 0 4px; }
+  .price-figure span { font-size: 20px; color: var(--muted); font-weight: 600; letter-spacing: 0; }
+  .price-note { color: var(--muted); font-size: 15px; margin: 0 0 20px; }
+
+  /* faq */
+  details { border-bottom: 1px solid var(--line); padding: 20px 0; }
+  details:last-of-type { border-bottom: 0; }
+  summary { cursor: pointer; font-weight: 700; font-size: 17px; list-style: none; display: flex; justify-content: space-between; gap: 16px; font-family: 'Bricolage Grotesque', sans-serif; color: var(--ink); }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; font-size: 24px; color: var(--signal); line-height: 1; }
+  details[open] summary::after { content: "−"; }
+  details p { margin: 12px 0 0; color: var(--muted); line-height: 1.6; }
+
+  /* final CTA */
+  .final-cta { text-align: center; padding: 96px 24px; border-top: 1px solid var(--line); }
+  .final-cta h2 { max-width: 20ch; margin: 0 auto 16px; }
+  .final-cta .lead { margin: 0 auto 30px; }
+  .final-cta .hero-cta { justify-content: center; }
+
+  /* footer */
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 32px 0 48px;
+    background: var(--paper);
+  }
+  footer .row {
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 16px;
+    font-size: 14px; color: var(--ink-soft);
+  }
+  footer a { color: var(--ink-soft); text-decoration: none; }
+  footer a:hover { color: var(--ink); }
+  footer .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+
+  @media (max-width: 860px) {
+    .grid-3 { grid-template-columns: 1fr; }
+    section { padding: 60px 0; }
+    .hero { padding: 56px 0 44px; }
+    .nav-call { display: none; }
+    .final-cta { padding-left: 0; padding-right: 0; }
+  }
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation-duration:.001ms!important;transition-duration:.001ms!important}.pill i{animation:none!important}}
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<nav>
+  <div class="row">
+    <a href="/" class="brand"><span class="brand-mark">Kaico</span> Voice</a>
+    <div class="nav-actions">
+      <a href="tel:+19183592644" class="nav-call">Call demo: (918) 359-2644</a>
+      <a href="https://cal.com/kaicovoice/demo" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" style="padding:10px 18px;font-size:14px;">Book a call</a>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+
+<header class="hero">
+  <div class="container">
+    <span class="pill"><i></i> HVAC · Answering now: (918) 359-2644</span>
+    <h1>An answering service <span class="em">built for HVAC</span> companies.</h1>
+    <p class="lead">Kaico Voice is an AI receptionist that answers your phones 24 hours a day, books service calls straight onto your calendar, and hands real emergencies to a human. We built it in Tulsa, Oklahoma, where we know exactly what a 100-degree July afternoon does to a phone line. It works the same anywhere weather breaks equipment.</p>
+    <div class="hero-cta">
+      <a href="tel:+19183592644" class="btn btn-signal btn-lg">Call (918) 359-2644, hear it live</a>
+      <a href="https://cal.com/kaicovoice/demo" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-lg">Book a 15-minute demo</a>
+    </div>
+    <p class="hero-sub">That phone number is the AI agent itself. Ask it whatever a customer would ask you.</p>
+  </div>
+</header>
+
+<section>
+  <div class="container-narrow">
+    <h2>The calls you lose are the ones <span class="em">you never hear ring.</span></h2>
+    <p>HVAC demand is weather, and weather doesn't keep office hours. The system that limped through the afternoon dies at 9 pm. The furnace that short cycled all week finally quits on the coldest night of January. Your heaviest call windows are exactly the hours when nobody is sitting near the phone: evenings, weekends, and the middle of a heat wave when every tech you have is already committed.</p>
+    <p>Even during business hours, your people physically cannot answer. Nobody picks up a phone from the top of an attic ladder, or halfway through a condenser swap, or while brazing a line set. If the owner is the one answering, the owner is the one not billing. The phone rings when you are least able to reach it. That is not a staffing failure, it is just the shape of the trade.</p>
+    <p>Meanwhile, the homeowner with a dead AC in July isn't leaving a voicemail and waiting patiently. They are working down a list. They call you, hit voicemail, hang up, and dial the next company. Whoever answers first usually gets the job, along with the repair, the replacement quote if the unit is done, and the maintenance relationship that follows. Voicemail does not lose you a phone call. It loses you the customer.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>What it <span class="em">actually does.</span></h2>
+    <p class="lead">Six behaviors, no mystery. This is the whole product.</p>
+    <div class="grid-3">
+      <div class="card"><h3>Answers every call, 24/7.</h3><p>Nights, weekends, holidays, heat waves. Every call gets picked up, whether it comes in at 2 pm on a Tuesday or 2 am on Christmas Eve. No hold music, no voicemail.</p></div>
+      <div class="card"><h3>Books straight onto your calendar.</h3><p>It checks real availability and puts the job on the calendar your dispatcher already uses, with the caller's name, address, callback number, and a plain description of the problem.</p></div>
+      <div class="card"><h3>Texts back callers it could not help.</h3><p>If someone hangs up early or asks for something the agent could not resolve, they get a text follow-up so the lead does not go cold while you are in an attic.</p></div>
+      <div class="card"><h3>Screens spam and robocalls.</h3><p>Robodialers, solicitors, and junk calls get filtered out before they reach you. The calls that make it through are actual customers with actual problems.</p></div>
+      <div class="card"><h3>Transfers real emergencies to a human.</h3><p>A gas smell, or no heat with an infant in the house, is not something we let software handle alone. Those calls get transferred to a person on your team immediately.</p></div>
+      <div class="card"><h3>Sends a transcript of every call.</h3><p>Every conversation shows up in writing. You can read at 7 am exactly what happened overnight, word for word, and catch anything that needs a human follow-up.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container-narrow">
+    <h2>What an after-hours call <span class="em">sounds like.</span></h2>
+    <div class="flow-panel">
+      <span class="flow-label">An illustration of the flow, not a transcript</span>
+      <p>It is 9:40 on a Tuesday night in July, and a homeowner's AC has quit. She calls your number. Instead of voicemail, the line picks up on the first ring with your company name. The agent asks what is going on, and she explains: the unit is running but blowing warm air, and the house is at 84 degrees and climbing.</p>
+      <p>The agent collects her name, address, and callback number, then asks the clarifying questions you told it to ask, like whether a breaker has tripped or the thermostat batteries are fresh. It checks your schedule and offers the first real opening: a technician can be out tomorrow between 8 and 10 am. She takes the slot. The appointment lands on your calendar with the full details, and the transcript is waiting for you in the morning.</p>
+      <p>One important exception: if at any point she mentions a smell of gas, the booking flow stops and the call is transferred to a human immediately. That is the standing rule for anything that sounds like real danger.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container-narrow">
+    <h2>The proof, <span class="em">stated honestly.</span></h2>
+    <p>Our documented case study is not an HVAC company. It is Tri-Tech Auto Tinting, an auto services shop here in Tulsa. We think that makes it more useful, not less, because the mechanics are identical to yours: a call comes in, nobody can answer it, and the job is either captured or lost to the next shop down the list.</p>
+    <div class="proof-callout">
+      <p>In 30 days on Kaico Voice, Tri-Tech had about 7 appointments booked from calls that would otherwise have been missed. At the owner's stated minimum ticket of $300+, that is roughly $2,100+ per month recovered.</p>
+    </div>
+    <p>The basis matters, so here it is plainly: the bookings were confirmed from system data on June 27, 2026, and the dollar figure uses the owner's stated minimum ticket, so it is a conservative floor, not a projection. The full breakdown is on our <a href="/proof">proof page</a>.</p>
+    <p>An HVAC service call is its own math, and we are not going to invent a number for your ticket sizes. You already know what one lost after-hours call costs you, especially when the repair turns into a replacement conversation.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container-narrow">
+    <h2>Pricing that <span class="em">fits the math.</span></h2>
+    <div class="price-figure">$250<span>/month, flat</span></div>
+    <p class="price-note">Month to month. No contract. Cancel whenever you want.</p>
+    <p>One flat subscription, no setup fee, no contract. The price in a slow shoulder season is the price in the middle of a July heat wave.</p>
+    <p>We will not pretend to know your average ticket, but you do. Take what one lost service call actually costs you, including the repair you never did and the replacement quote you never got to give, and weigh it against $250. The service does not need to save many calls in a month for the math to work. And if it is not obviously paying for itself, cancel. That is the whole pricing conversation.</p>
+    <p><a href="https://buy.stripe.com/6oUaEXb49evVfHA6sr2ZO00" target="_blank" rel="noopener noreferrer" class="btn btn-signal">Start service, $250/mo</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="container-narrow">
+    <h2>Frequently <span class="em">asked.</span></h2>
+    <details>
+      <summary>Will callers know they are talking to an AI?</summary>
+      <p>It sounds natural, and it never pretends to be a human if someone asks directly. Most callers just want their problem handled: a clear answer, an appointment, a callback. The fastest way to judge it is to call (918) 359-2644 yourself. That number is the agent, answering live.</p>
+    </details>
+    <details>
+      <summary>What happens with real emergencies?</summary>
+      <p>The agent does not handle real emergencies on its own. Calls like a gas smell, a suspected carbon monoxide problem, or no heat in dangerous cold with an infant or an elderly person in the home get transferred to a human immediately. You decide who that human is and how the escalation works.</p>
+    </details>
+    <details>
+      <summary>Does it work with my scheduling software?</summary>
+      <p>The agent books appointments directly onto your business calendar, such as Google Calendar. If your schedule lives inside field service software, tell us on the setup call and we will map out the cleanest handoff for your dispatcher before the agent takes a single live call.</p>
+    </details>
+    <details>
+      <summary>What if it cannot answer a question?</summary>
+      <p>It does not guess, and it does not invent prices. If a caller asks something outside what you have approved, the agent takes a message and texts the caller back so the lead stays warm. You get a transcript of every call, so you can see exactly what was asked and follow up yourself.</p>
+    </details>
+    <details>
+      <summary>How long does setup take?</summary>
+      <p>About a week. We learn your services, service area, hours, and the questions your customers actually ask, then test the agent with you before it ever answers a live call.</p>
+    </details>
+    <details>
+      <summary>Is there a contract?</summary>
+      <p>No. Kaico Voice is $250 per month, month to month. You can cancel any time. There is no long-term contract to sign.</p>
+    </details>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="container">
+    <h2>Hear it answer <span class="em">before you spend a dollar.</span></h2>
+    <p class="lead" style="max-width:52ch;">Call the number below and you are talking to the actual agent. Ask it what a customer with a dead AC would ask. Then decide.</p>
+    <div class="hero-cta">
+      <a href="tel:+19183592644" class="btn btn-signal btn-lg">Call (918) 359-2644, hear it live</a>
+      <a href="https://cal.com/kaicovoice/demo" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-lg">Book a 15-minute demo</a>
+      <a href="https://buy.stripe.com/6oUaEXb49evVfHA6sr2ZO00" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-lg">Start at $250/mo</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div>
+        <strong style="color:var(--ink);">Kaico</strong> · A Kaico LLC service · Tulsa, OK
+      </div>
+      <div class="footer-links">
+        <a href="/proof">Proof</a>
+        <a href="/industries/roofing">Roofing</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="/sms">SMS</a>
+        <a href="mailto:trey@kaicovoice.com">trey@kaicovoice.com</a>
+        <a href="tel:+19183592644">(918) 359-2644</a>
+        <a href="https://cal.com/kaicovoice/demo" target="_blank" rel="noopener noreferrer">Book a call</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

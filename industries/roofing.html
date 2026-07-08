@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Roofing Answering Service | Kaico Voice</title>
+<meta name="description" content="An AI answering service for roofing companies. Kaico Voice answers storm-season calls 24/7, books inspections onto your calendar, and transfers leak emergencies." />
+<meta name="theme-color" content="#0a0b0d" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon-180.png" />
+<meta property="og:title" content="Roofing Answering Service | Kaico Voice" />
+<meta property="og:description" content="An AI receptionist for roofers. Answers every call after the storm, books inspections, texts back missed callers, and transfers active leak emergencies to a human. $250 per month flat." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.kaicovoice.com/industries/roofing" />
+<meta property="og:image" content="https://www.kaicovoice.com/assets/og-card.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Roofing Answering Service | Kaico Voice" />
+<meta name="twitter:description" content="An AI receptionist for roofers. Answers every call after the storm, books inspections, texts back missed callers, and transfers active leak emergencies to a human. $250 per month flat." />
+<meta name="twitter:image" content="https://www.kaicovoice.com/assets/og-card.png" />
+<link rel="canonical" href="https://www.kaicovoice.com/industries/roofing" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Can it keep up with call volume after a hail storm?","acceptedAnswer":{"@type":"Answer","text":"Yes. It is software, not one person at a desk, so a post-storm surge does not turn into a hold queue or a busy signal. It answers every call, 24/7, including the ones that come in at 9 pm while you are still tarping roofs. Every booking lands on your calendar and every call gets a transcript you can read that night."}},
+    {"@type":"Question","name":"What happens when a caller has an active leak?","acceptedAnswer":{"@type":"Answer","text":"Calls about water actively coming into a house are treated as emergencies. The receptionist transfers real emergencies to a human on your team, and you decide which number it rings. Everything else gets booked or taken as a message so your phone only interrupts you when it should."}},
+    {"@type":"Question","name":"Can it answer insurance and adjuster questions?","acceptedAnswer":{"@type":"Answer","text":"No, and it does not pretend to. Questions about claims, deductibles, supplements, or adjuster meetings are taken down as detailed messages for a human on your team to return. The caller hears that a person will call them back, and you get the details in the transcript instead of a vague voicemail."}},
+    {"@type":"Question","name":"Will homeowners know they are talking to an AI?","acceptedAnswer":{"@type":"Answer","text":"The honest test is to hear it yourself. Call (918) 359-2644. That line is the receptionist itself, live, answering the way it would answer your customers. Most callers just want the roof dealt with, and a fast, competent answer beats a voicemail box every time."}},
+    {"@type":"Question","name":"How fast can we be live before the next storm?","acceptedAnswer":{"@type":"Answer","text":"Setup takes about a week from kickoff. You tell us your service area, what you inspect for free, and which calls should transfer to a person. If storm season is already here, a week is still faster than hiring, training, and scheduling a receptionist."}},
+    {"@type":"Question","name":"Is there a contract?","acceptedAnswer":{"@type":"Answer","text":"No. Kaico Voice is $250 per month flat, month to month. There is no contract to sign. If your season winds down and you want to stop, you stop."}}
+  ]
+}
+</script>
+
+<style>
+  :root {
+    --bg: #0a0b0d;
+    --ink: #eef1f4;
+    --ink-soft: #9aa4af;
+    --line: #23282f;
+    --accent: #c8ff3d;
+    --accent-ink: #c8ff3d;
+    --paper: #161a20;
+    --surface: #111418;
+    --surface-2: #161a20;
+    --ink-on-signal: #0a0b0d;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: 'Hanken Grotesk', system-ui, -apple-system, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+  .container-narrow { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+
+  /* nav */
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(10, 11, 13, 0.72);
+    backdrop-filter: saturate(140%) blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav .row {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 24px; max-width: 1120px; margin: 0 auto;
+  }
+  .brand { font-weight: 800; font-size: 18px; letter-spacing: -0.01em; text-decoration: none; color: inherit; }
+  .brand-mark { color: var(--accent); }
+  .nav-actions { display: flex; align-items: center; gap: 12px; }
+  .nav-call { font-size: 14px; font-weight: 600; color: var(--ink); text-decoration: none; }
+  .nav-call:hover { color: var(--accent-ink); }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 14px 22px; border-radius: 999px;
+    font-weight: 600; font-size: 15px; text-decoration: none;
+    cursor: pointer; border: 0;
+    transition: transform 0.08s ease, box-shadow 0.18s ease, background 0.18s;
+  }
+  .btn-ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+  .btn-ghost:hover { border-color: var(--ink); }
+  .btn-signal { background: var(--accent); color: var(--ink-on-signal); font-weight: 700; }
+  .btn-signal:hover { transform: translateY(-1px); box-shadow: 0 12px 30px -10px rgba(200,255,61,.5); }
+
+  h1, h2, h3 { font-family: 'Bricolage Grotesque', sans-serif; }
+  h1 {
+    font-size: clamp(36px, 5.6vw, 60px);
+    line-height: 1.02; letter-spacing: -0.025em;
+    margin: 0 0 18px; font-weight: 800; text-wrap: balance;
+  }
+  h1 em { font-style: normal; color: var(--accent); }
+  h2 { font-size: clamp(28px, 4.4vw, 44px); font-weight: 800; line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 14px; text-wrap: balance; }
+  h2 em { font-style: normal; color: var(--accent); }
+  h3 { font-size: 18px; font-weight: 700; margin: 0 0 8px; letter-spacing: -0.01em; }
+
+  section { padding: 80px 0; }
+  .eyebrow {
+    display: inline-block;
+    color: var(--accent-ink); background: rgba(200,255,61,0.08);
+    border: 1px solid rgba(200,255,61,0.25);
+    padding: 6px 12px; border-radius: 999px;
+    font-size: 12px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .lead { color: var(--ink-soft); font-size: 18px; line-height: 1.6; max-width: 58ch; margin: 0 0 30px; }
+  .lead strong { color: var(--ink); }
+  p { color: var(--ink-soft); font-size: 15.5px; }
+  .hero { padding: 72px 0 56px; }
+  .hero-cta { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+  .hero-sub { margin: 16px 0 0; font-size: 14px; color: var(--ink-soft); }
+  .hero-sub a { color: var(--ink); font-weight: 600; text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; }
+  .hero-sub a:hover { text-decoration-color: var(--accent); }
+
+  /* pain list */
+  .pain-list { display: grid; gap: 12px; max-width: 780px; margin: 28px 0 0; }
+  .pain-item {
+    padding: 20px 22px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface);
+  }
+  .pain-item h3 { margin-bottom: 6px; }
+  .pain-item p { margin: 0; }
+
+  /* how it works cards */
+  .grid-3 { display: grid; gap: 16px; grid-template-columns: repeat(3, 1fr); margin-top: 34px; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 28px; }
+  .card p { margin: 0; font-size: 15px; }
+  .card .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 34px; height: 34px; border-radius: 10px;
+    background: rgba(200,255,61,.12); color: var(--accent);
+    font-weight: 800; font-family: 'Bricolage Grotesque', sans-serif;
+    margin-bottom: 14px; font-size: 15px;
+  }
+
+  /* call illustration */
+  .call-demo {
+    background: var(--paper); border: 1px solid var(--line); border-radius: 20px;
+    padding: 28px; max-width: 640px; margin: 30px 0 0;
+  }
+  .call-label { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft); margin: 0 0 18px; }
+  .bubble { padding: 12px 16px; border-radius: 14px; font-size: 14.5px; line-height: 1.5; margin: 0 0 10px; max-width: 92%; }
+  .b-them { background: var(--surface); color: var(--ink); border: 1px solid var(--line); }
+  .b-ai { background: rgba(200,255,61,.12); color: #eaffc0; border: 1px solid rgba(200,255,61,.22); margin-left: auto; }
+  .bubble .who { display: block; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 4px; }
+  .call-fine { margin: 16px 0 0; font-size: 13px; color: var(--ink-soft); }
+
+  /* proof */
+  .proof-card {
+    border: 1px solid rgba(200,255,61,0.25);
+    background: rgba(200,255,61,0.05);
+    border-radius: 16px; padding: 26px 28px; max-width: 780px; margin: 26px 0 0;
+  }
+  .proof-card p { margin: 0 0 12px; color: var(--ink); font-size: 16px; }
+  .proof-card p:last-child { margin-bottom: 0; }
+  .proof-card .basis { color: var(--ink-soft); font-size: 14px; }
+  a.inline { color: var(--ink); text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; }
+  a.inline:hover { text-decoration-color: var(--accent); }
+
+  /* pricing */
+  .price-band {
+    background: var(--paper); border: 1px solid var(--line); border-radius: 22px;
+    padding: 40px; max-width: 780px; margin: 30px 0 0;
+  }
+  .price-amt { font-family: 'Bricolage Grotesque', sans-serif; font-size: 46px; font-weight: 800; letter-spacing: -0.02em; line-height: 1; }
+  .price-amt em { font-style: normal; font-size: 15px; font-weight: 600; color: var(--ink-soft); margin-left: 8px; font-family: 'Hanken Grotesk', sans-serif; }
+  .price-band p { margin: 16px 0 22px; }
+
+  /* faq */
+  .faq { max-width: 780px; }
+  details { border-bottom: 1px solid var(--line); padding: 20px 0; }
+  details:last-of-type { border-bottom: 0; }
+  summary { cursor: pointer; font-weight: 700; font-size: 17px; list-style: none; display: flex; justify-content: space-between; gap: 16px; font-family: 'Bricolage Grotesque', sans-serif; color: var(--ink); }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; font-size: 24px; color: var(--accent); line-height: 1; flex-shrink: 0; }
+  details[open] summary::after { content: "\2212"; }
+  details p { margin: 12px 0 0; color: var(--ink-soft); line-height: 1.6; }
+
+  /* final cta */
+  .final-cta {
+    text-align: center;
+    border: 1px solid var(--line);
+    background: radial-gradient(120% 100% at 50% 0%, rgba(200,255,61,.10), transparent 55%), var(--surface);
+    border-radius: 24px; padding: 64px 32px;
+  }
+  .final-cta h2 { max-width: 22ch; margin: 0 auto 14px; }
+  .final-cta p { max-width: 54ch; margin: 0 auto 28px; font-size: 17px; }
+  .final-cta .hero-cta { justify-content: center; }
+  .final-fine { margin-top: 22px; font-size: 13px; color: var(--ink-soft); }
+  .final-fine a { color: var(--ink-soft); }
+
+  /* footer */
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 32px 0 48px;
+    background: var(--paper);
+  }
+  footer .row {
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 16px;
+    font-size: 14px; color: var(--ink-soft);
+  }
+  footer a { color: var(--ink-soft); text-decoration: none; }
+  footer a:hover { color: var(--ink); }
+  footer .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+
+  :focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:4px;}
+  .skip-link { position: absolute; left: -9999px; top: 8px; z-index: 100; background: var(--accent); color: var(--ink-on-signal); padding: 10px 18px; border-radius: 8px; font-weight: 700; text-decoration: none; }
+  .skip-link:focus { left: 16px; }
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+  @media (max-width: 860px) {
+    .grid-3 { grid-template-columns: 1fr; }
+    section { padding: 60px 0; }
+    .nav-call { display: none; }
+    .price-band { padding: 30px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<nav>
+  <div class="row">
+    <a href="/" class="brand"><span class="brand-mark">Kaico</span> Voice</a>
+    <div class="nav-actions">
+      <a href="tel:+19183592644" class="nav-call">Call demo: (918) 359-2644</a>
+      <a href="https://cal.com/kaicovoice/demo" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" style="padding:10px 18px;font-size:14px;">Book a call</a>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+
+  <header class="hero">
+    <div class="container-narrow">
+      <span class="eyebrow">Industries | Roofing</span>
+      <h1>A roofing answering service that picks up <em>when the hail does.</em></h1>
+      <p class="lead">Kaico Voice is an AI receptionist for roofing companies. When a storm cell rolls across Tulsa and every homeowner in the metro starts dialing at once, it answers every call, books the inspection onto your calendar, and texts back anyone it could not help. <strong>Built in storm country. Works anywhere hail falls.</strong></p>
+      <div class="hero-cta">
+        <a class="btn btn-signal" href="tel:+19183592644">Call (918) 359-2644 and hear it live</a>
+        <a class="btn btn-ghost" href="https://cal.com/kaicovoice/demo" target="_blank" rel="noopener noreferrer">Book a demo</a>
+      </div>
+      <p class="hero-sub">That phone number is not a sales line. It is the AI receptionist itself, answering live.</p>
+    </div>
+  </header>
+
+  <section>
+    <div class="container-narrow">
+      <h2>Storm demand does not trickle. <em>It floods.</em></h2>
+      <p class="lead">Roofing is the only trade where a single night of weather can produce a month of phone calls, and most of them come in a window measured in days.</p>
+      <div class="pain-list">
+        <div class="pain-item">
+          <h3>Everyone's phone rings at once, and briefly</h3>
+          <p>After hail moves through, homeowners work down a list. They call, and if nobody picks up, they call the next roofer on that list. The company that answers first usually gets the inspection, and the inspection is where the job is won. Two weeks later the wave is over and the phones go quiet again.</p>
+        </div>
+        <div class="pain-item">
+          <h3>Your best people are on roofs, not at desks</h3>
+          <p>The exact moment the calls surge is the exact moment your crews and estimators are up on decking with nail guns running. Nobody should be reaching for a phone on a ridge line, and nobody can hear one over a compressor. So the calls ring out, and ringing out is the same as saying no.</p>
+        </div>
+        <div class="pain-item">
+          <h3>Leak calls do not wait for a callback</h3>
+          <p>A homeowner watching water come through a ceiling isn't leaving a voicemail and hoping. They are calling roofers until a voice says "we can help." If that voice is not yours, the job, the referral, and the insurance work that follows all go to whoever answered.</p>
+        </div>
+        <div class="pain-item">
+          <h3>You cannot staff for a spike</h3>
+          <p>Hiring a full-time receptionist to cover a two-week storm surge means paying a salary through every quiet month in between. Most roofing companies split the difference: the office manager drowns during the surge, and calls still get missed. The math has never worked, which is why it keeps not getting solved.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>What it actually does on a <em>roofing</em> phone line</h2>
+      <p class="lead">Kaico Voice answers every call, 24/7, including nights and weekends. Here is what that means when the caller is a homeowner with shingles in the yard.</p>
+      <div class="grid-3">
+        <div class="card">
+          <span class="num">1</span>
+          <h3>Books inspections onto your calendar</h3>
+          <p>It offers real slots and puts the appointment directly on your business calendar. The caller hangs up with a date, not a promise that someone will call back.</p>
+        </div>
+        <div class="card">
+          <span class="num">2</span>
+          <h3>Captures the details your estimator needs</h3>
+          <p>Address, what the caller saw, whether water is coming in, and where the damage is showing. Your estimator pulls up to the house already knowing what they are walking into.</p>
+        </div>
+        <div class="card">
+          <span class="num">3</span>
+          <h3>Texts back callers it could not help</h3>
+          <p>If a call needed a human and none was free, the caller gets a text instead of silence. They know you saw them, which is what keeps them from dialing the next roofer.</p>
+        </div>
+        <div class="card">
+          <span class="num">4</span>
+          <h3>Screens the post-storm robocall wave</h3>
+          <p>Storms bring out lead resellers, robocallers, and spam right when your line matters most. It filters that noise out so junk calls never touch your team.</p>
+        </div>
+        <div class="card">
+          <span class="num">5</span>
+          <h3>Transfers active-leak emergencies</h3>
+          <p>A caller with water actively entering the house gets transferred to a real person on your team. You choose what counts as an emergency and which number it rings.</p>
+        </div>
+        <div class="card">
+          <span class="num">6</span>
+          <h3>Transcribes every call</h3>
+          <p>Every conversation produces a transcript. At the end of a storm day you can read every call that came in while you were on a roof, and nothing gets lost in a voicemail box.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-narrow">
+      <h2>What it sounds like <em>after the storm</em></h2>
+      <p class="lead">A typical post-hail call, condensed. Judge the real thing by calling the number above.</p>
+      <div class="call-demo">
+        <p class="call-label">Illustration of a typical call. Not a recording.</p>
+        <div class="bubble b-them"><span class="who">Caller</span>"Hi, yeah, that hail last night came right over us in Broken Arrow. There's shingle pieces all over my yard and I think I've got a soft spot over the garage."</div>
+        <div class="bubble b-ai"><span class="who">Kaico receptionist</span>"Sorry to hear that, but you called the right place. Can I get your address so we can schedule an inspection? And is any water coming inside right now?"</div>
+        <div class="bubble b-them"><span class="who">Caller</span>"No water inside yet. It's 4211 South Maple."</div>
+        <div class="bubble b-ai"><span class="who">Kaico receptionist</span>"Got it. We can have an estimator out Thursday morning at nine or Friday at one. Which works better? I'll get you on the schedule right now."</div>
+        <p class="call-fine">The booking lands on the calendar, the notes land in the transcript, and the estimator arrives Thursday knowing it is a hail call in Broken Arrow with suspected damage over the garage.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-narrow">
+      <h2>Proof, stated <em>honestly</em></h2>
+      <p class="lead">We would rather show you one real, verified number than a page of invented roofing statistics.</p>
+      <div class="proof-card">
+        <p>Tri-Tech Auto Tinting in Tulsa had roughly 7 appointments booked in 30 days from calls that would otherwise have been missed. At the owner's stated minimum ticket of $300 and up, that is roughly $2,100 or more per month recovered.</p>
+        <p class="basis">Basis: bookings confirmed from system data on June 27, 2026. The ticket figure is the owner's stated minimum, so the dollar figure is conservative. Tri-Tech is a tint shop, not a roofer; it is simply the client data we can verify and publish. If a missed call is worth $300 to a tint shop, you can do the math on what a missed inspection is worth to a roofing company.</p>
+        <p><a class="inline" href="/proof">See the full breakdown on our proof page</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-narrow">
+      <h2>Priced like a phone bill, <em>not a hire</em></h2>
+      <div class="price-band">
+        <div class="price-amt">$250<em>per month, flat</em></div>
+        <p>Month to month. No contract. One flat subscription, no setup fee, no surprises. We do not need to quote you an average roofing ticket; you bid the jobs, you know what a single roof is worth. If answering the phone properly wins you one job you would otherwise have missed, the service has paid for itself many times over. The rest of the year, it screens your spam and answers your nights and weekends anyway.</p>
+        <a class="btn btn-signal" href="https://buy.stripe.com/6oUaEXb49evVfHA6sr2ZO00" target="_blank" rel="noopener noreferrer">Start service at $250/mo</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-narrow faq">
+      <h2>Roofer <em>questions</em></h2>
+      <details>
+        <summary>Can it keep up with call volume after a hail storm?</summary>
+        <p>Yes. It is software, not one person at a desk, so a post-storm surge does not turn into a hold queue or a busy signal. It answers every call, 24/7, including the ones that come in at 9 pm while you are still tarping roofs. Every booking lands on your calendar and every call gets a transcript you can read that night.</p>
+      </details>
+      <details>
+        <summary>What happens when a caller has an active leak?</summary>
+        <p>Calls about water actively coming into a house are treated as emergencies. The receptionist transfers real emergencies to a human on your team, and you decide which number it rings. Everything else gets booked or taken as a message so your phone only interrupts you when it should.</p>
+      </details>
+      <details>
+        <summary>Can it answer insurance and adjuster questions?</summary>
+        <p>No, and it does not pretend to. Questions about claims, deductibles, supplements, or adjuster meetings are taken down as detailed messages for a human on your team to return. The caller hears that a person will call them back, and you get the details in the transcript instead of a vague voicemail.</p>
+      </details>
+      <details>
+        <summary>Will homeowners know they are talking to an AI?</summary>
+        <p>The honest test is to hear it yourself. Call <a class="inline" href="tel:+19183592644">(918) 359-2644</a>. That line is the receptionist itself, live, answering the way it would answer your customers. Most callers just want the roof dealt with, and a fast, competent answer beats a voicemail box every time.</p>
+      </details>
+      <details>
+        <summary>How fast can we be live before the next storm?</summary>
+        <p>Setup takes about a week from kickoff. You tell us your service area, what you inspect for free, and which calls should transfer to a person. If storm season is already here, a week is still faster than hiring, training, and scheduling a receptionist.</p>
+      </details>
+      <details>
+        <summary>Is there a contract?</summary>
+        <p>No. Kaico Voice is $250 per month flat, month to month. There is no contract to sign. If your season winds down and you want to stop, you stop.</p>
+      </details>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="final-cta">
+        <h2>The next storm is already <em>on the radar</em></h2>
+        <p>Somewhere out west there is a cell that ends with your phone ringing off the hook. Decide now who answers it.</p>
+        <div class="hero-cta">
+          <a class="btn btn-signal" href="tel:+19183592644">Call (918) 359-2644, hear it live</a>
+          <a class="btn btn-ghost" href="https://cal.com/kaicovoice/demo" target="_blank" rel="noopener noreferrer">Book a demo</a>
+          <a class="btn btn-ghost" href="https://buy.stripe.com/6oUaEXb49evVfHA6sr2ZO00" target="_blank" rel="noopener noreferrer">Start at $250/mo</a>
+        </div>
+        <p class="final-fine">Questions first? Email <a href="mailto:trey@kaicovoice.com">trey@kaicovoice.com</a>. Also serving <a href="/industries/hvac">HVAC companies</a>.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div>
+        <strong style="color:var(--ink);">Kaico</strong> · A Kaico LLC service · Tulsa, OK
+      </div>
+      <div class="footer-links">
+        <a href="/proof">Proof</a>
+        <a href="/industries/hvac">HVAC</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="/sms">SMS</a>
+        <a href="mailto:trey@kaicovoice.com">trey@kaicovoice.com</a>
+        <a href="tel:+19183592644">(918) 359-2644</a>
+        <a href="https://cal.com/kaicovoice/demo" target="_blank" rel="noopener noreferrer">Book a call</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
