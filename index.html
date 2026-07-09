@@ -214,6 +214,34 @@
   .price-fine { color: var(--muted); font-size: 14px; line-height: 1.55; margin: 22px 0 26px; }
   .price-inner .btn { width: 100%; justify-content: center; }
 
+  /* dashboard showcase */
+  .dash-panel { margin-top: 40px; background: var(--surface); border: 1px solid var(--line); border-radius: 24px; padding: 24px; }
+  .dash-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 18px; }
+  .dash-head .dh-left { display: flex; align-items: center; gap: 10px; color: var(--muted); font-size: 13px; }
+  .dash-head .dh-left i { width: 8px; height: 8px; border-radius: 50%; background: var(--signal); animation: pulse 1.8s infinite; }
+  .dash-tag { border: 1px solid var(--line); background: var(--bg); color: var(--muted); padding: 5px 12px; border-radius: 999px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; }
+  .dash-tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 12px; }
+  .dash-tile { background: var(--surface-2); border: 1px solid var(--line); border-radius: 14px; padding: 18px; }
+  .dash-tile .k { font-size: 12px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .12em; margin-bottom: 8px; }
+  .dash-tile .v { font-family: 'Bricolage Grotesque'; font-size: clamp(26px, 3.2vw, 34px); font-weight: 800; letter-spacing: -0.02em; line-height: 1; }
+  .dash-tile .v.hot { color: var(--signal); }
+  .dash-tile .s { font-size: 12px; color: var(--muted); margin-top: 6px; }
+  .dash-recent { background: var(--surface-2); border: 1px solid var(--line); border-radius: 14px; padding: 4px 18px; }
+  .dash-recent .rt { font-size: 12px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .12em; padding: 14px 0 6px; }
+  .dash-row { display: grid; grid-template-columns: 150px 1fr auto; gap: 14px; align-items: center; padding: 13px 0; border-top: 1px solid var(--line); font-size: 14px; }
+  .dash-row .num { font-weight: 600; color: var(--ink); }
+  .dash-row .why { color: var(--muted); }
+  .dash-status { justify-self: end; font-size: 12px; font-weight: 700; padding: 5px 11px; border-radius: 999px; white-space: nowrap; }
+  .dash-status.booked { background: rgba(200,255,61,.14); color: var(--signal); border: 1px solid rgba(200,255,61,.25); }
+  .dash-status.callback { background: var(--surface); color: var(--muted); border: 1px solid var(--line); }
+  .dash-cta { margin-top: 26px; display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
+  .dash-cta .fine { font-size: 14px; color: var(--muted); max-width: 42ch; }
+  @media (max-width: 740px) {
+    .dash-tiles { grid-template-columns: repeat(2, 1fr); }
+    .dash-row { grid-template-columns: 1fr auto; }
+    .dash-row .why { grid-column: 1 / -1; order: 3; }
+  }
+
   /* verticals */
   .vert { padding: 22px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; }
   .vert strong { display: block; margin-bottom: 4px; font-size: 15px; }
@@ -279,6 +307,7 @@
     <div class="nav-actions">
       <a href="/proof" class="nav-call">Proof</a>
       <a href="tel:+19183592644" class="nav-call">Call demo: (918) 359-2644</a>
+      <a href="https://app.kaicovoice.com/dashboard" class="nav-call">Client login</a>
       <a href="https://cal.com/kaicovoice/demo" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" style="padding:10px 18px;font-size:14px;">Book a call</a>
     </div>
   </div>
@@ -388,6 +417,35 @@
 
 <section>
   <div class="container">
+    <h2>See every call, booking, and <span class="em">dollar</span> in one place.</h2>
+    <p class="lead" style="margin-bottom:8px;">Every Kaico client gets a live dashboard. Watch what your AI answered, what it booked, and where the money came from, all in real time.</p>
+    <div class="dash-panel reveal" role="img" aria-label="Example Kaico Voice dashboard with sample data">
+      <div class="dash-head">
+        <div class="dh-left"><i></i> Kaico Voice dashboard · last 30 days</div>
+        <span class="dash-tag">Example dashboard · sample data</span>
+      </div>
+      <div class="dash-tiles">
+        <div class="dash-tile"><div class="k">Answered</div><div class="v hot">100%</div><div class="s">of 240 calls</div></div>
+        <div class="dash-tile"><div class="k">Booked</div><div class="v">120</div><div class="s">appointments</div></div>
+        <div class="dash-tile"><div class="k">Conversion</div><div class="v">50%</div><div class="s">calls to bookings</div></div>
+        <div class="dash-tile"><div class="k">After-hours</div><div class="v">30%</div><div class="s">of bookings</div></div>
+      </div>
+      <div class="dash-recent">
+        <div class="rt">Recent calls</div>
+        <div class="dash-row"><span class="num">(918) 555-0142</span><span class="why">Brake job quote</span><span class="dash-status booked">Booked</span></div>
+        <div class="dash-row"><span class="num">(539) 555-0177</span><span class="why">After-hours AC repair</span><span class="dash-status booked">Booked</span></div>
+        <div class="dash-row"><span class="num">(918) 555-0108</span><span class="why">Reschedule appointment</span><span class="dash-status callback">Callback</span></div>
+      </div>
+      <div class="dash-cta">
+        <a href="https://app.kaicovoice.com/dashboard" class="btn btn-signal">Log in to your dashboard</a>
+        <p class="fine">Every Kaico client gets this. Bookings come straight from your calendar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
     <h2 style="text-align:center;">Simple, <span class="em">honest</span> pricing.</h2>
     <p class="lead" style="text-align:center;margin:0 auto 44px;">No surprises, no long contracts, no setup-fee-plus-mystery-overages.</p>
     <div class="price-card reveal">
@@ -455,6 +513,7 @@
         <a href="/privacy">Privacy</a>
         <a href="/terms">Terms</a>
         <a href="/sms">SMS</a>
+        <a href="https://app.kaicovoice.com/dashboard">Client login</a>
         <a href="mailto:trey@kaicovoice.com">trey@kaicovoice.com</a>
         <a href="tel:+19183592644">(918) 359-2644</a>
         <a href="https://cal.com/kaicovoice/demo" target="_blank" rel="noopener noreferrer">Book a call</a>
