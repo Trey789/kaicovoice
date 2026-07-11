@@ -214,6 +214,33 @@
   .price-fine { color: var(--muted); font-size: 14px; line-height: 1.55; margin: 22px 0 26px; }
   .price-inner .btn { width: 100%; justify-content: center; }
 
+  /* get started form */
+  .gs-card { max-width: 660px; margin: 40px auto 0; padding: 32px; }
+  .gs-form { display: grid; gap: 16px; }
+  .gs-row { display: grid; gap: 16px; grid-template-columns: 1fr 1fr; }
+  .gs-field { display: flex; flex-direction: column; gap: 7px; }
+  .gs-field label { font-size: 14px; font-weight: 600; color: var(--ink); }
+  .gs-field label .opt { color: var(--muted); font-weight: 500; }
+  .gs-input, .gs-select, .gs-textarea {
+    width: 100%; padding: 13px 15px; background: var(--bg); border: 1px solid var(--line);
+    border-radius: 10px; color: var(--ink); font-size: 15px; line-height: 1.4;
+    font-family: 'Hanken Grotesk', system-ui, sans-serif; transition: border-color .15s, box-shadow .15s;
+  }
+  .gs-input::placeholder, .gs-textarea::placeholder { color: var(--muted); }
+  .gs-input:focus, .gs-select:focus, .gs-textarea:focus {
+    outline: none; border-color: var(--signal); box-shadow: 0 0 0 3px rgba(200,255,61,.15);
+  }
+  .gs-textarea { resize: vertical; min-height: 104px; }
+  .gs-select {
+    appearance: none; -webkit-appearance: none; cursor: pointer; padding-right: 40px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%239aa4af' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 14px center;
+  }
+  .gs-hp { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+  .gs-form .btn { width: 100%; justify-content: center; margin-top: 4px; }
+  .gs-fine { font-size: 13px; color: var(--muted); text-align: center; margin: 6px 0 0; }
+  @media (max-width: 620px) { .gs-row { grid-template-columns: 1fr; } }
+
   /* dashboard showcase */
   .dash-panel { margin-top: 40px; background: var(--surface); border: 1px solid var(--line); border-radius: 24px; padding: 24px; }
   .dash-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 18px; }
@@ -460,6 +487,62 @@
   </div>
 </section>
 
+<section id="get-started">
+  <div class="container">
+    <h2 style="text-align:center;">Tell us your <span class="em">biggest phone problem.</span></h2>
+    <p class="lead" style="text-align:center;margin:0 auto 8px;">Send a few details about your shop and where calls slip through. We build your plan, then you pick a time to talk.</p>
+    <div class="card gs-card reveal">
+      <form class="gs-form" id="leadForm" novalidate>
+        <div class="gs-row">
+          <div class="gs-field">
+            <label for="lf-name">Your name</label>
+            <input class="gs-input" type="text" id="lf-name" name="name" autocomplete="name" placeholder="Jane Doe" required />
+          </div>
+          <div class="gs-field">
+            <label for="lf-business">Business name</label>
+            <input class="gs-input" type="text" id="lf-business" name="business" autocomplete="organization" placeholder="Acme Air" required />
+          </div>
+        </div>
+        <div class="gs-row">
+          <div class="gs-field">
+            <label for="lf-trade">Trade</label>
+            <select class="gs-select" id="lf-trade" name="trade">
+              <option value="HVAC">HVAC</option>
+              <option value="Plumbing">Plumbing</option>
+              <option value="Electrical">Electrical</option>
+              <option value="Roofing">Roofing</option>
+              <option value="Restoration">Restoration</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="gs-field">
+            <label for="lf-phone">Phone</label>
+            <input class="gs-input" type="tel" id="lf-phone" name="phone" autocomplete="tel" placeholder="(918) 555-0100" />
+          </div>
+        </div>
+        <div class="gs-field">
+          <label for="lf-email">Email</label>
+          <input class="gs-input" type="email" id="lf-email" name="email" autocomplete="email" placeholder="you@yourshop.com" />
+        </div>
+        <div class="gs-field">
+          <label for="lf-problem">Your biggest phone or lead problem</label>
+          <textarea class="gs-textarea" id="lf-problem" name="problem" placeholder="We miss calls when the crew is on a job, and the answering service just takes a message."></textarea>
+        </div>
+        <div class="gs-field">
+          <label for="lf-referral">How did you hear about us? <span class="opt">(optional)</span></label>
+          <input class="gs-input" type="text" id="lf-referral" name="referral_source" autocomplete="off" placeholder="Google, a referral, a friend" />
+        </div>
+        <div class="gs-hp" aria-hidden="true">
+          <label for="lf-company-url" tabindex="-1">Company URL (leave this blank)</label>
+          <input type="text" id="lf-company-url" name="company_url" tabindex="-1" autocomplete="off" />
+        </div>
+        <button type="submit" class="btn btn-signal btn-lg">Get my plan &rarr;</button>
+        <p class="gs-fine">We never spam you or share your info. You pick a time to talk on the next screen.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
 <section>
   <div class="container">
     <h2>Built for businesses that <span class="em">book by the hour.</span></h2>
@@ -564,6 +647,36 @@
   window.addEventListener("scroll",onScroll,{passive:true}); onScroll();
   var tl=document.getElementById("timeline");
   if(tl){ if(reduce||!("IntersectionObserver" in window)){ tl.classList.add("lit"); } else { var tio=new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersecting){ tl.classList.add("lit"); tio.disconnect(); } });},{threshold:.35}); tio.observe(tl); } }
+  // lead capture form: POST /leads (best effort), then ALWAYS redirect to Cal.com
+  var leadForm = document.getElementById('leadForm');
+  if (leadForm) {
+    leadForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var CAL = 'https://cal.com/kaicovoice/demo';
+      var go = function () { window.location.href = CAL; };
+      // honeypot: real people never fill company_url. If filled, treat as a bot and just redirect.
+      var hp = leadForm.querySelector('[name="company_url"]');
+      if (hp && hp.value.trim() !== '') { go(); return; }
+      var val = function (n) { var el = leadForm.querySelector('[name="' + n + '"]'); return el ? el.value.trim() : ''; };
+      var fields = {
+        name: val('name'),
+        business: val('business'),
+        trade: val('trade'),
+        phone: val('phone'),
+        email: val('email'),
+        problem: val('problem'),
+        referral_source: val('referral_source')
+      };
+      try {
+        fetch('https://web-production-976b9.up.railway.app/leads', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(fields)
+        }).then(go, go);
+      } catch (err) { go(); }
+    });
+  }
+
   // scroll reveal
   if (!reduce && 'IntersectionObserver' in window) {
     document.documentElement.classList.add('js-reveal');
