@@ -277,6 +277,13 @@
     .js-reveal .reveal { opacity: 1 !important; transform: none !important; }
     .glow { display: none; }
   }
+
+.nav-dd{position:relative}.nav-dd summary{list-style:none;cursor:pointer;color:var(--ink-soft);font-size:14px;padding:8px 10px}.nav-dd summary::-webkit-details-marker{display:none}.nav-dd[open] summary{color:var(--ink)}
+.nav-dd ul{position:absolute;top:100%;left:0;min-width:220px;margin:0;padding:8px;list-style:none;background:var(--paper);border:1px solid var(--line);border-radius:10px;z-index:60}.nav-dd ul a{display:block;padding:8px 10px;color:var(--ink);text-decoration:none;font-size:14px}.nav-dd ul a:hover,.nav-dd ul a:focus{background:rgba(255,255,255,.06)}
+.sticky-cta{display:none}@media(max-width:720px){.sticky-cta{display:flex;gap:8px;position:fixed;left:0;right:0;bottom:0;padding:10px 12px;background:rgba(10,11,13,.92);border-top:1px solid var(--line);z-index:70}.sticky-cta a{flex:1;text-align:center}body{padding-bottom:64px}}
+.gs-error{color:#ff8a8a;font-size:14px;margin:8px 0 0}.gs-consent{font-size:12px;color:var(--ink-soft);line-height:1.5;margin-top:10px}.gs-checks{display:flex;flex-wrap:wrap;gap:10px 16px;margin:6px 0 2px}.gs-checks label{font-size:14px;display:flex;gap:6px;align-items:center}
+.breadcrumbs{font-size:13px;color:var(--ink-soft);margin:0 0 12px}.breadcrumbs a{color:var(--ink-soft)}
+.foot-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;font-size:14px;color:var(--ink-soft)}.foot-cols a{color:var(--ink-soft)}
 </style>
 
 <script type="application/ld+json">{
@@ -335,12 +342,33 @@
 
 <nav>
   <div class="row">
-    <a href="#top" class="brand"><b>Kaico</b> Voice</a>
+    <a href="/" aria-current="page" class="brand"><b>Kaico</b> Voice</a>
     <div class="nav-actions">
+      <details class="nav-dd"><summary>Services</summary>
+        <ul>
+          <!-- P0-T9: <li><a href="/services/websites">Websites</a></li> -->
+          <!-- P0-T9: <li><a href="/services/phone">24/7 phone</a></li> -->
+          <!-- P1: <li><a href="/services/front-door">Front Door, monthly</a></li> -->
+          <!-- P1: <li><a href="/services/google-business-profile">Google Business Profile</a></li> -->
+          <!-- P1: <li><a href="/services/google-ads">Google Ads</a></li> -->
+        </ul>
+      </details>
+      <details class="nav-dd"><summary>Industries</summary>
+        <ul>
+          <li><a href="/industries/hvac">HVAC</a></li>
+          <!-- P1: <li><a href="/industries/plumbing">Plumbing</a></li> -->
+          <!-- P1: <li><a href="/industries/electrical">Electrical</a></li> -->
+          <li><a href="/industries/roofing">Roofing</a></li>
+          <!-- P1: <li><a href="/industries/restoration">Restoration</a></li> -->
+          <!-- P1: <li><a href="/industries/truck-repair">Truck repair</a></li> -->
+        </ul>
+      </details>
+      <!-- P0-T8: <a href="/pricing" class="nav-call">Pricing</a> -->
       <a href="/proof" class="nav-call">Proof</a>
+      <!-- P1: <a href="/about" class="nav-call">About</a> -->
       <a href="tel:+19183592644" class="nav-call">Call demo: (918) 359-2644</a>
       <a href="https://app.kaicovoice.com/dashboard" class="nav-call">Client login</a>
-      <a href="https://cal.com/kaicovoice/demo" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" style="padding:10px 18px;font-size:14px;">Book a call</a>
+      <a href="/#audit" class="btn btn-ghost btn-audit" style="padding:10px 18px;font-size:14px;">Free audit</a>
     </div>
   </div>
 </nav>
@@ -560,23 +588,17 @@
 </main>
 <footer>
   <div class="container">
-    <div class="row">
-      <div><span style="color:var(--ink);font-weight:700;">Kaico</span> · A Kaico LLC service · Tulsa, OK</div>
-      <div class="links">
-        <a href="/proof">Proof</a>
-        <a href="/industries/hvac">HVAC</a>
-        <a href="/industries/roofing">Roofing</a>
-        <a href="/privacy">Privacy</a>
-        <a href="/terms">Terms</a>
-        <a href="/sms">SMS</a>
-        <a href="https://app.kaicovoice.com/dashboard">Client login</a>
-        <a href="mailto:trey@kaicovoice.com">trey@kaicovoice.com</a>
-        <a href="tel:+19183592644">(918) 359-2644</a>
-        <a href="https://cal.com/kaicovoice/demo" target="_blank" rel="noopener noreferrer">Book a call</a>
-      </div>
+    <div class="foot-cols">
+      <div><b>Services</b><br><!-- P0-T9: <a href="/services/websites">Websites</a> · <a href="/services/phone">24/7 phone</a> · --><!-- P0-T8: <a href="/pricing">Pricing</a> · --><a href="/proof">Proof</a></div>
+      <div><b>Industries</b><br><a href="/industries/hvac">HVAC</a> · <a href="/industries/roofing">Roofing</a></div>
+      <div><b>Kaico Voice LLC</b><br>Tulsa, Oklahoma · <a href="mailto:trey@kaicovoice.com">trey@kaicovoice.com</a> · <a href="tel:+19183592644">(918) 359-2644</a><br><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <!-- P0-T11: <a href="/client-agreement">Client agreement</a> · --><a href="/sms">SMS</a> · <a href="https://app.kaicovoice.com/dashboard">Client login</a></div>
     </div>
   </div>
 </footer>
+<div class="sticky-cta">
+  <a href="/#audit" class="btn btn-signal btn-audit">Free audit</a>
+  <a href="tel:+19183592644" class="btn btn-ghost">Call</a>
+</div>
 
 <script>
 (function () {
@@ -589,30 +611,29 @@
   // cursor-tracked glow
   if (!reduce) { window.addEventListener('pointermove', function(e){ document.documentElement.style.setProperty('--mx', e.clientX+'px'); document.documentElement.style.setProperty('--my', e.clientY+'px'); }, {passive:true}); }
 
-  // configurator
-  var trades = [
-    { k:'Auto shop', t:'Mike’s Auto · sample call', feed:[['them','Hey, can I get my windows tinted this week?'],['ai','Absolutely. Ceramic or standard? I can get you in Thursday at 9.'],['them','Ceramic, Thursday works.'],['ai','Booked, you’re on the schedule. Text confirmation sent.']] },
-    { k:'Salon', t:'Lux Salon · sample call', feed:[['them','Do you have anything for a cut and color Saturday?'],['ai','I do, 11:00 with Bre, or 2:30. Which works?'],['them','11 is perfect.'],['ai','You’re booked for Saturday at 11. See you then!']] },
-    { k:'HVAC', t:'Tulsa Air · sample call', feed:[['them','My AC stopped working, it’s 95 in here.'],['ai','I’m sorry, that’s urgent. I can dispatch a tech today between 1 and 3.'],['them','Yes please.'],['ai','Done. A tech is on the way and your cell is on file.']] },
-    { k:'Dentist', t:'Bright Dental · sample call', feed:[['them','I need to book a cleaning, I’m a new patient.'],['ai','Welcome! New-patient cleanings are 60 minutes. Tuesday 10 AM open?'],['them','That works.'],['ai','Booked. I’ll text your intake forms now.']] },
-    { k:'Plumber', t:'Reliable Plumbing · sample call', feed:[['them','Water heater’s leaking, can someone come out?'],['ai','Yes. I can have a plumber out tomorrow morning, 8 to 10.'],['them','Great, book it.'],['ai','You’re scheduled. We’ll call 30 minutes before arrival.']] }
-  ];
+  // configurator (only on pages that still carry it; guarded so its absence never breaks the rest)
   var chips=document.getElementById('cfgChips'), feed=document.getElementById('cfgFeed'), title=document.getElementById('cfgTitle'), note=document.getElementById('cfgNote');
-  var notes={'Auto shop':'Tint quotes, drop-offs, PPF, booked while you’re under a hood.','Salon':'Cuts, color, lashes, no more double-bookings or missed DMs.','HVAC':'Emergencies routed to your cell, everything else booked.','Dentist':'New-patient intake and scheduling, forms texted automatically.','Plumber':'Urgent jobs triaged, routine work scheduled around your route.'};
-  var timer=null;
-  function render(tr){
-    title.textContent=tr.t; note.textContent=notes[tr.k]||'';
-    feed.innerHTML=''; if(timer) clearTimeout(timer);
-    var i=0;
-    (function add(){
-      if(i>=tr.feed.length) return;
-      var b=document.createElement('div'); b.className='bubble '+(tr.feed[i][0]==='ai'?'b-ai':'b-them'); b.textContent=tr.feed[i][1]; feed.appendChild(b);
-      requestAnimationFrame(function(){requestAnimationFrame(function(){b.classList.add('show');});});
-      i++; timer=setTimeout(add, reduce?260:760);
-    })();
+  if (chips && feed && title && note) {
+    var trades = [
+      { k:'HVAC', t:'Tulsa Air · sample call', feed:[['them','My AC stopped working, it’s 95 in here.'],['ai','I’m sorry, that’s urgent. I can dispatch a tech today between 1 and 3.'],['them','Yes please.'],['ai','Done. A tech is on the way and your cell is on file.']] },
+      { k:'Plumber', t:'Reliable Plumbing · sample call', feed:[['them','Water heater’s leaking, can someone come out?'],['ai','Yes. I can have a plumber out tomorrow morning, 8 to 10.'],['them','Great, book it.'],['ai','You’re scheduled. We’ll call 30 minutes before arrival.']] }
+    ];
+    var notes={'HVAC':'Emergencies routed to your cell, everything else booked.','Plumber':'Urgent jobs triaged, routine work scheduled around your route.'};
+    var timer=null;
+    function render(tr){
+      title.textContent=tr.t; note.textContent=notes[tr.k]||'';
+      feed.innerHTML=''; if(timer) clearTimeout(timer);
+      var i=0;
+      (function add(){
+        if(i>=tr.feed.length) return;
+        var b=document.createElement('div'); b.className='bubble '+(tr.feed[i][0]==='ai'?'b-ai':'b-them'); b.textContent=tr.feed[i][1]; feed.appendChild(b);
+        requestAnimationFrame(function(){requestAnimationFrame(function(){b.classList.add('show');});});
+        i++; timer=setTimeout(add, reduce?260:760);
+      })();
+    }
+    trades.forEach(function(tr,idx){ var c=document.createElement('button'); c.className='chip'; c.type='button'; c.textContent=tr.k; c.setAttribute('aria-pressed', idx===0?'true':'false'); c.onclick=function(){ chips.querySelectorAll('.chip').forEach(function(x){x.setAttribute('aria-pressed','false');}); c.setAttribute('aria-pressed','true'); render(tr); }; chips.appendChild(c); });
+    render(trades[0]);
   }
-  trades.forEach(function(tr,idx){ var c=document.createElement('button'); c.className='chip'; c.type='button'; c.textContent=tr.k; c.setAttribute('aria-pressed', idx===0?'true':'false'); c.onclick=function(){ chips.querySelectorAll('.chip').forEach(function(x){x.setAttribute('aria-pressed','false');}); c.setAttribute('aria-pressed','true'); render(tr); }; chips.appendChild(c); });
-  render(trades[0]);
 
   // scroll-progress signal bar
   var prog=document.querySelector(".scroll-prog");
@@ -620,35 +641,6 @@
   window.addEventListener("scroll",onScroll,{passive:true}); onScroll();
   var tl=document.getElementById("timeline");
   if(tl){ if(reduce||!("IntersectionObserver" in window)){ tl.classList.add("lit"); } else { var tio=new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersecting){ tl.classList.add("lit"); tio.disconnect(); } });},{threshold:.35}); tio.observe(tl); } }
-  // lead capture form: POST /leads (best effort), then ALWAYS redirect to Cal.com
-  var leadForm = document.getElementById('leadForm');
-  if (leadForm) {
-    leadForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var CAL = 'https://cal.com/kaicovoice/demo';
-      var go = function () { window.location.href = CAL; };
-      // honeypot: real people never fill company_url. If filled, treat as a bot and just redirect.
-      var hp = leadForm.querySelector('[name="company_url"]');
-      if (hp && hp.value.trim() !== '') { go(); return; }
-      var val = function (n) { var el = leadForm.querySelector('[name="' + n + '"]'); return el ? el.value.trim() : ''; };
-      var fields = {
-        name: val('name'),
-        business: val('business'),
-        trade: val('trade'),
-        phone: val('phone'),
-        email: val('email'),
-        problem: val('problem'),
-        referral_source: val('referral_source')
-      };
-      try {
-        fetch('https://web-production-976b9.up.railway.app/leads', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(fields)
-        }).then(go, go);
-      } catch (err) { go(); }
-    });
-  }
 
   // scroll reveal
   if (!reduce && 'IntersectionObserver' in window) {
@@ -656,6 +648,46 @@
     var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-visible');io.unobserve(e.target);}});},{rootMargin:'0px 0px -10% 0px',threshold:.1});
     document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
   }
+})();
+
+(function () {
+  var form = document.getElementById('leadForm');
+  if (!form) return;
+  var API = 'https://web-production-976b9.up.railway.app/leads';
+  var err = document.getElementById('lf-error');
+  var btn = form.querySelector('button[type="submit"]');
+  function val(n) { var el = form.querySelector('[name="' + n + '"]'); return el ? el.value.trim() : ''; }
+  function fail(msg) { if (err) { err.textContent = msg; err.hidden = false; } btn.disabled = false; btn.textContent = 'Get my free audit'; }
+  function track(name) { if (typeof gtag === 'function') gtag('event', name); }
+  form.addEventListener('submit', function (e) {
+    e.preventDefault(); if (err) err.hidden = true;
+    if (val('company_url')) { window.location.href = '/thanks'; return; } // honeypot: pretend success, post nothing
+    var name = val('name'), business = val('business'), trade = val('trade'), phone = val('phone'), email = val('email');
+    var digits = phone.replace(/\D/g, '');
+    if (!name || !business) { return fail('Add your name and your business name.'); }
+    if (!trade) { return fail('Pick your trade.'); }
+    if (!phone && !email) { return fail('Add a phone number or an email so we can send the audit.'); }
+    if (phone && !(digits.length === 10 || (digits.length === 11 && digits.charAt(0) === '1'))) { return fail('Enter a 10-digit US phone number.'); }
+    if (email && email.indexOf('@') < 0) { return fail('That email does not look right.'); }
+    var needs = Array.prototype.map.call(form.querySelectorAll('input[name="needs"]:checked'), function (c) { return c.value; });
+    // ponytail: page and needs ride inside `problem` so POST /leads needs no new fields; real columns when volume justifies it
+    var problem = 'From: ' + window.location.pathname + '. ' + (needs.length ? 'Needs: ' + needs.join(', ') + '. ' : '') + val('problem');
+    btn.disabled = true; btn.textContent = 'Sending';
+    fetch(API, { method: 'POST', keepalive: true, headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: name, business: business, trade: trade, phone: phone, email: email, problem: problem, source: 'web_form' }) })
+      .then(function (r) { if (!r.ok) { throw new Error('status ' + r.status); } track('form_submit'); window.location.href = '/thanks'; })
+      .catch(function () { track('form_error'); fail('That did not go through. Call (918) 359-2644 and the receptionist will take your details, or email trey@kaicovoice.com.'); });
+  });
+})();
+
+(function () {
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('a') : null; if (!a || typeof gtag !== 'function') return;
+    var h = a.getAttribute('href') || '';
+    if (h.indexOf('tel:') === 0) gtag('event', 'tel_click');
+    else if (h.indexOf('cal.com') > -1) gtag('event', 'cal_click');
+    else if (a.classList.contains('btn-audit')) gtag('event', 'audit_cta_click');
+  });
 })();
 </script>
 </body>

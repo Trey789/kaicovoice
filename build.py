@@ -74,7 +74,8 @@ def check(root, pages):
     errs, seen = [], {"title": {}, "description": {}, "canonical": {}}
     paths = {p["canonical"] for p in pages} | STATIC
     for p in pages:
-        c, m, html = p["canonical"], p["meta"], p["html"]
+        # checks run on what a browser renders; HTML comments (the P0-T8 / P1 pending-link markers) are not content
+        c, m, html = p["canonical"], p["meta"], re.sub(r"<!--.*?-->", "", p["html"], flags=re.S)
         t, d = m.get("title", ""), m.get("description", "")
         for k in ("title", "description", "canonical"):
             if not m.get(k):
