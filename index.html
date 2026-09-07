@@ -284,6 +284,12 @@
 .gs-error{color:#ff8a8a;font-size:14px;margin:8px 0 0}.gs-consent{font-size:12px;color:var(--ink-soft);line-height:1.5;margin-top:10px}.gs-checks{display:flex;flex-wrap:wrap;gap:10px 16px;margin:6px 0 2px}.gs-checks label{font-size:14px;display:flex;gap:6px;align-items:center}
 .breadcrumbs{font-size:13px;color:var(--ink-soft);margin:0 0 12px}.breadcrumbs a{color:var(--ink-soft)}
 .foot-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;font-size:14px;color:var(--ink-soft)}.foot-cols a{color:var(--ink-soft)}
+.nav-dd summary{font-family:inherit;font-weight:600;font-size:14px;display:inline-flex;justify-content:flex-start;align-items:center;gap:6px;color:var(--muted);padding:6px 8px}
+.nav-dd summary::after{content:"+";font-size:16px;color:var(--signal);line-height:1}
+.nav-dd[open] summary::after{content:"\2212"}
+.nav-dd summary:hover{color:var(--ink)}
+@media (max-width:720px){.nav-dd{display:none}}
+@media (max-width:720px){html body > .sticky-cta.sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:70}}
 </style>
 
 <script type="application/ld+json">{
@@ -324,15 +330,81 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type":"Question","name":"How long does setup take?","acceptedAnswer":{"@type":"Answer","text":"About a week from signed agreement to live calls. We do the heavy lifting. You give us your hours, services, and pricing on a 20-minute kickoff call."}},
-    {"@type":"Question","name":"Will it sound like a robot?","acceptedAnswer":{"@type":"Answer","text":"Call (918) 359-2644 and judge for yourself. Most people can't tell."}},
-    {"@type":"Question","name":"What happens if it can't answer something?","acceptedAnswer":{"@type":"Answer","text":"It transfers to your cell or any number you pick. You decide which questions trigger a transfer."}},
-    {"@type":"Question","name":"What if I want to change what it says?","acceptedAnswer":{"@type":"Answer","text":"Free updates anytime within your plan. Tweaks usually go live within 24 hours."}},
-    {"@type":"Question","name":"Do I have to keep my current phone number?","acceptedAnswer":{"@type":"Answer","text":"No. We can give you a new local number, or set up call forwarding from your existing number to ours. You don't lose your number either way."}},
-    {"@type":"Question","name":"What if it doesn't book any appointments?","acceptedAnswer":{"@type":"Answer","text":"30-day money-back guarantee. If it captures zero bookings in 30 days, you get your money back, no questions."}},
-    {"@type":"Question","name":"Can it call my customers, not just answer?","acceptedAnswer":{"@type":"Answer","text":"Outbound calling (reminders, confirmations, follow-ups) is on the roadmap. Inbound is the focus today."}}
+    {
+      "@type": "Question",
+      "name": "What is the free Front Door Audit, and what is it not?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "One page, from public data only: what your website, Google listing and phone are leaking, what is working, and what we would fix first. It is not a sales call and it does not require one. You get it whether or not we ever talk again."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "I already have a website. Do I need this?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Maybe not. The audit says whether your site is salvageable. If it is, the Front Door Fix at $1,500 wires in click-to-call, a real quote form, your Google listing and tracking. If it is not, we rebuild. If you need neither, the audit says that too."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I own the site, the domain and the Google listing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. You own your domain, your Google Business Profile, your content and your customer data at all times, including after you cancel. On exit we hand over the files and every login within 14 days. That is section 5 of the client agreement."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long until it is live?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We set the date at kickoff, once we have your content and your logins. We do not promise a timeline on a web page for work we have not scoped yet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens if I cancel or stop paying?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Monthly service is month to month with 30 days written notice. If a payment fails and stays unpaid for 14 days, managed services pause: ads pause, the phone reverts to your own number, listing management stops. Your website stays up for at least 60 days. Pay the open balance and everything resumes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the phone an AI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. It is an AI receptionist that answers, books to your calendar and texts you a summary. Callers are told they are speaking with an AI, and every text carries STOP. Call (918) 359-2644 and hear it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work outside Tulsa?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Everything we deliver, the site, the listing, the phone and the job system, is built and run remotely. Tulsa is home and where our first clients are."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why $900 a month when an answering app is $149?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because the phone is one part of it. Front Door is done for you: site care, Google listing management, 24/7 answering, a self-serve scheduler, the job system and a monthly report reconciled against your calendar. The $149 app is a tool you run. This is a front door someone runs for you."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "I already use Jobber or Housecall Pro. Does that matter?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Keep it. Front Door feeds the system you already run. Our job system is there for shops running on texts and a notebook, and nothing forces you to switch."
+      }
+    }
   ]
-}</script>
+}
+</script>
 
 </head>
 <body>
@@ -377,108 +449,74 @@
 <header id="top" class="hero">
   <div class="container">
     <span class="pill"><i></i> Answering now · (918) 359-2644</span>
-    <h1>Never miss <span class="em">another booking.</span></h1>
-    <p class="lead">An AI receptionist that picks up on the first ring, books straight to your calendar, and works 24/7, even after hours, for less than a part-time hire.</p>
+    <h1>Your website, Google listing and phone, <span class="em">run for you.</span> Built for the trades.</h1>
+    <p class="lead">When someone Googles you at 9pm, they book you or they call the next guy. Kaico makes sure it's you. Start with a free Front Door Audit.</p>
     <div class="hero-cta">
-      <a href="tel:+19183592644" class="btn btn-signal btn-lg">▶ Hear the live demo</a>
-      <a href="https://cal.com/kaicovoice/demo" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-lg">Book a 15-min call</a>
+      <a href="#audit" class="btn btn-signal btn-lg btn-audit">Get my free Front Door Audit</a>
+      <a href="https://cal.com/kaicovoice/demo" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-lg">Book 15 minutes with Trey</a>
     </div>
     <div class="wave" id="heroWave" aria-hidden="true"></div>
-    <p class="hero-trust">Built for auto shops, salons, dentists, HVAC, and other service businesses in Tulsa and beyond.</p>
+    <p class="hero-trust">HVAC, plumbing, electrical, roofing, restoration and heavy-duty repair shops. Founder-operated in Tulsa, Oklahoma.</p>
   </div>
 </header>
 
 <section>
   <div class="container">
-    <h2>Every missed call is money <span class="em">walking</span> to your competitor.</h2>
-    <p class="lead">An answering service takes a message. By the time you call back, they've booked the next shop on Google.</p>
-    <div class="pain-list">
-      <div class="pain-item reveal"><span class="mk" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a5 5 0 0 0-7 7M3 3l18 18M10.6 5A9 9 0 0 1 19 13.4"/></svg></span><div><h3>You're under the hood.</h3><p>The phone rings while your hands are full. They book with the next shop on Google.</p></div></div>
-      <div class="pain-item reveal"><span class="mk" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><h3>It's after 5pm.</h3><p>They're ready to spend. You're closed. They go elsewhere.</p></div></div>
-      <div class="pain-item reveal"><span class="mk" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><div><h3>The answering service just takes a message.</h3><p>By the time you call back, the job is gone.</p></div></div>
-    </div>
-    <div class="pain-closer reveal">A real receptionist costs <strong>$3,000+/month</strong>. Kaico Voice does the same job for a fraction of that, never takes a sick day, and books straight to your calendar.</div>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <h2>Here's what your <span class="em">AI receptionist</span> does.</h2>
-    <p class="lead" style="margin-bottom:44px;">It answers the phone, understands what the caller needs, and books the appointment before they hang up.</p>
+    <p class="lead" style="margin-bottom:20px;">Built and run by Kaico:</p>
     <div class="grid-3">
-      <div class="card reveal"><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></div><h3>Picks up every call, 24/7.</h3><p>First ring, every time. Mornings, lunch breaks, weekends, after hours. No voicemail, no "we'll call you back."</p></div>
-      <div class="card reveal"><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4"/></svg></div><h3>Books straight to your calendar.</h3><p>Customer says "Wednesday at 11," the AI checks your calendar in real time and confirms only if the slot is open. The appointment is booked before they hang up.</p></div>
-      <div class="card reveal"><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-3.8-.8L3 21l1.9-5.2A8.4 8.4 0 0 1 12 3a8.4 8.4 0 0 1 9 8.5z"/></svg></div><h3>Sounds like a real person.</h3><p>Calls don't feel robotic. The voice is warm, conversational, and trained on how YOUR shop talks.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="cfg">
-  <div class="container">
-    <h2>Hear what it says for <span class="em">your shop.</span></h2>
-    <p class="lead">Pick your trade, this is the kind of call your AI would handle, in your voice.</p>
-    <div class="cfg-wrap">
-      <div>
-        <div class="cfg-chips" id="cfgChips" role="group" aria-label="Choose a business type"></div>
-        <p class="cfg-note" id="cfgNote"></p>
-      </div>
-      <div class="device" aria-live="polite">
-        <div class="device-top"><i></i> <span id="cfgTitle">Kaico Voice · sample call</span></div>
-        <div class="miniwave" aria-hidden="true"><span style="animation-delay:-.1s"></span><span style="animation-delay:-.5s"></span><span style="animation-delay:-.2s"></span><span style="animation-delay:-.7s"></span><span style="animation-delay:-.3s"></span><span style="animation-delay:-.6s"></span><span style="animation-delay:-.15s"></span><span style="animation-delay:-.45s"></span></div>
-        <div id="cfgFeed"></div>
-      </div>
+      <div class="vert reveal"><strong>Blue Sands Trucking</strong><span>Hauling. 24-page site, delivered-price calculator, self-serve scheduler.</span></div>
+      <div class="vert reveal"><strong>Elite Car Plug</strong><span>Luxury rental. Nine-page site, online booking, AI phone line.</span></div>
+      <div class="vert reveal"><strong>Tri-Tech Auto Tinting</strong><span>Auto tint. Single-page site and a 24/7 phone.</span></div>
     </div>
   </div>
 </section>
 
 <section>
   <div class="container">
-    <div class="demo reveal">
-      <h2>Don't take our word for it. <span class="em">Hear it yourself.</span></h2>
-      <p>Call right now. Ask about pricing. Try to book a fake appointment. Try to throw it off. You'll be sold in 30 seconds.</p>
-      <a href="tel:+19183592644" class="demo-number"><span class="label">Call now</span><span class="num">(918) 359-2644</span></a>
-      <div class="demo-fine">No signup, no spam. Just call. We'll never use your number for anything else.</div>
+    <h2>Your front door is <span class="em">three things.</span></h2>
+    <p class="lead" style="margin-bottom:44px;">A customer meets your business in three places before they ever meet you. Kaico runs all three.</p>
+    <div class="grid-3">
+      <div class="card reveal"><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 21h8"/></svg></div><h3>The website.</h3><p>When somebody Googles you at 9pm, they either book you or they call the next guy. A site with a tappable phone, a real quote form and your listing wired in is the difference.</p><p><a href="/#audit">Websites for the trades</a><!-- P0-T9: <a href="/services/websites">Websites for the trades</a> --></p></div>
+      <div class="card reveal"><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg></div><h3>The Google listing.</h3><p>Most of your calls come off the map, not your website. If your listing is unclaimed, you are invisible where it matters most.</p><p><a href="/#audit">Google Business Profile</a><!-- P1: <a href="/services/google-business-profile">Google Business Profile</a> --></p></div>
+      <div class="card reveal"><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></div><h3>The phone.</h3><p>A missed call is a job that went to whoever picked up. The phone gets answered on the first ring, 24 hours a day, and booked straight to your calendar.</p><p><a href="/#audit">24/7 phone answering</a><!-- P0-T9: <a href="/services/phone">24/7 phone answering</a> --></p></div>
     </div>
   </div>
 </section>
 
 <section>
   <div class="container">
-    <h2>From signup to <span class="em">live in about a week.</span></h2>
-    <p class="lead" style="margin-bottom:40px;">We build and configure the whole thing for you, end to end, in under a week.</p>
+    <h2>How it <span class="em">works.</span></h2>
+    <p class="lead" style="margin-bottom:40px;">Three steps. The first one is free and asks nothing of you.</p>
     <div class="timeline" id="timeline">
     <div class="tl-track" aria-hidden="true"><div class="tl-fill"></div><span class="tl-node"></span><span class="tl-node"></span><span class="tl-node"></span></div>
     <div class="steps">
-      <div class="step reveal"><div class="step-day">Day 1 to 3</div><h3>We build your agent.</h3><p>We learn your business: services, prices, hours, address, the questions customers ask. We custom-write every word your AI says. No generic chatbot script.</p></div>
-      <div class="step reveal"><div class="step-day">Day 4</div><h3>We connect your calendar.</h3><p>Google Calendar, Microsoft 365, or whatever you use. Your AI checks availability in real time and books to the calendar your team already lives in.</p></div>
-      <div class="step reveal"><div class="step-day">Day 5</div><h3>We point your phone.</h3><p>We set up call forwarding so calls to your number ring the AI. You can still pick up your cell when you want; the AI is the safety net.</p></div>
+      <div class="step reveal"><div class="step-day">Step 1</div><h3>Free audit.</h3><p>We pull your site, your listing and your phone from public data and send one page: what leaks, what works, what to fix first. Yours whether or not we ever talk again.</p></div>
+      <div class="step reveal"><div class="step-day">Step 2</div><h3>Fix or build.</h3><p>A $1,500 fix if your site is salvageable, a $3,500 build if it is not. You own the domain, the files and the listing.</p></div>
+      <div class="step reveal"><div class="step-day">Step 3</div><h3>Run it monthly.</h3><p>Front Door keeps the site, the listing and the phone working, and hands you the job system, from $900 a month.</p></div>
     </div></div>
   </div>
 </section>
 
 <section>
   <div class="container">
-    <h2>Everything you need <span class="em">out of the box.</span></h2>
-    <div class="inc-list" style="margin-top:40px;">
-      <div class="inc"><span class="ck" aria-hidden="true">✓</span> Custom AI receptionist trained on your business</div>
-      <div class="inc"><span class="ck" aria-hidden="true">✓</span> Google Calendar booking with availability checks</div>
-      <div class="inc"><span class="ck" aria-hidden="true">✓</span> Call transfer to your cell for urgent matters</div>
-      <div class="inc"><span class="ck" aria-hidden="true">✓</span> 500 call minutes/month (~250+ customer calls)</div>
-      <div class="inc"><span class="ck" aria-hidden="true">✓</span> Free script and pricing updates anytime</div>
-      <div class="inc"><span class="ck" aria-hidden="true">✓</span> Phone number included (or use your own)</div>
-      <div class="inc"><span class="ck" aria-hidden="true">✓</span> Real-time call transcripts and bookings dashboard</div>
-      <div class="inc"><span class="ck" aria-hidden="true">✓</span> 30-day "we'll fix it or refund it" guarantee</div>
+    <h2>You stop running a $1M business <span class="em">out of your text messages.</span></h2>
+    <p class="lead" style="margin-bottom:44px;">Every Front Door client gets Kaico's job system, included, not sold separately. Already on Jobber or Housecall Pro? Keep it; Front Door feeds it.</p>
+    <div class="grid-3">
+      <div class="card reveal"><h3>Jobs board.</h3><p>Every job on one board, from lead to paid. Drag it forward as the work moves.</p></div>
+      <div class="card reveal"><h3>Quotes.</h3><p>Send a quote from the job. Your customer accepts it in one tap from their phone.</p></div>
+      <div class="card reveal"><h3>Card-payment invoices.</h3><p>Paid by card through your own Stripe account, marked paid on its own.</p></div>
+      <div class="card reveal"><h3>Two-way email you approve from your phone.</h3><p>Every reply is drafted for you and sent when you tap Approve. Nothing goes out without you.</p></div>
+      <div class="card reveal"><h3>Today view.</h3><p>What needs you today, and a setup checklist until it is empty.</p></div>
+      <div class="card reveal"><h3>Monthly report.</h3><p>Bookings reconciled against your calendar, never a raw count.</p></div>
     </div>
-    <p class="inc-fine">Optional add-ons available: SMS confirmations, after-hours messaging, multi-language, custom integrations.</p>
+    <p style="text-align:center;margin-top:32px;"><a href="/#audit" class="btn btn-ghost btn-audit">See what Front Door includes</a></p>
   </div>
 </section>
 
-
-
 <section>
   <div class="container">
-    <h2 style="text-align:center;">Simple, <span class="em">honest</span> pricing.</h2>
-    <p class="lead" style="text-align:center;margin:0 auto 44px;">No surprises, no long contracts, no setup-fee-plus-mystery-overages.</p>
+    <h2 style="text-align:center;">Pricing, <span class="em">in the open.</span></h2>
+    <p class="lead" style="text-align:center;margin:0 auto 44px;">Not sure which one? The free audit tells you which you need, or whether you need neither.</p>
     <div class="price-card reveal">
       <div class="price-inner">
         <div class="price-name">Start free, then pick the rung you need</div>
@@ -489,10 +527,58 @@
   </div>
 </section>
 
-<section id="get-started">
+<section>
   <div class="container">
-    <h2 style="text-align:center;">Tell us your <span class="em">biggest phone problem.</span></h2>
-    <p class="lead" style="text-align:center;margin:0 auto 8px;">Send a few details about your shop and where calls slip through. We build your plan, then you pick a time to talk.</p>
+    <div class="pain-closer reveal"><strong>Blue Sands Trucking:</strong> 24 pages, a delivered-price calculator and a self-serve scheduler, built and run by Kaico. <a href="/proof">See the work, stated honestly.</a></div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="demo reveal">
+      <h2>Hear the phone <span class="em">answer.</span></h2>
+      <p>Call right now. Ask what Kaico does. Try to book something. It is an AI, it will tell you so, and it will still get you booked.</p>
+      <a href="tel:+19183592644" class="demo-number"><span class="label">Call now</span><span class="num">(918) 359-2644</span></a>
+      <div class="demo-fine">No signup, no spam. We never use your number for anything else.</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Built for shops where the phone rings <span class="em">while you work.</span></h2>
+    <div class="grid-3" style="margin-top:40px;">
+      <div class="vert reveal"><strong><a href="/industries/hvac">HVAC</a></strong><span>Emergency calls booked, installs quoted, the after-hours line covered.</span></div>
+      <div class="vert reveal"><strong>Plumbing<!-- P1: <a href="/industries/plumbing">Plumbing</a> --></strong><span>The 2am burst pipe answered, booked and texted to you.</span></div>
+      <div class="vert reveal"><strong>Electrical<!-- P1: <a href="/industries/electrical">Electrical</a> --></strong><span>Outages and panel jobs captured while you are on a ladder.</span></div>
+      <div class="vert reveal"><strong><a href="/industries/roofing">Roofing</a></strong><span>Storm calls picked up when the hail does.</span></div>
+      <div class="vert reveal"><strong>Water damage restoration<!-- P1: <a href="/industries/restoration">Water damage restoration</a> --></strong><span>The phone and the referral network are the front door.</span></div>
+      <div class="vert reveal"><strong>Heavy-duty truck repair<!-- P1: <a href="/industries/truck-repair">Heavy-duty truck repair</a> --></strong><span>Fleet calls answered when the bays are full.</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container-narrow">
+    <h2>Frequently <span class="em">asked.</span></h2>
+    <div style="margin-top:32px;">
+      <details><summary>What is the free Front Door Audit, and what is it not?</summary><p>One page, from public data only: what your website, Google listing and phone are leaking, what is working, and what we would fix first. It is not a sales call and it does not require one. You get it whether or not we ever talk again.</p></details>
+      <details><summary>I already have a website. Do I need this?</summary><p>Maybe not. The audit says whether your site is salvageable. If it is, the Front Door Fix at $1,500 wires in click-to-call, a real quote form, your Google listing and tracking. If it is not, we rebuild. If you need neither, the audit says that too.</p></details>
+      <details><summary>Do I own the site, the domain and the Google listing?</summary><p>Yes. You own your domain, your Google Business Profile, your content and your customer data at all times, including after you cancel. On exit we hand over the files and every login within 14 days. That is section 5 of the client agreement.</p></details>
+      <details><summary>How long until it is live?</summary><p>We set the date at kickoff, once we have your content and your logins. We do not promise a timeline on a web page for work we have not scoped yet.</p></details>
+      <details><summary>What happens if I cancel or stop paying?</summary><p>Monthly service is month to month with 30 days written notice. If a payment fails and stays unpaid for 14 days, managed services pause: ads pause, the phone reverts to your own number, listing management stops. Your website stays up for at least 60 days. Pay the open balance and everything resumes.</p></details>
+      <details><summary>Is the phone an AI?</summary><p>Yes. It is an AI receptionist that answers, books to your calendar and texts you a summary. Callers are told they are speaking with an AI, and every text carries STOP. Call (918) 359-2644 and hear it.</p></details>
+      <details><summary>Do you work outside Tulsa?</summary><p>Yes. Everything we deliver, the site, the listing, the phone and the job system, is built and run remotely. Tulsa is home and where our first clients are.</p></details>
+      <details><summary>Why $900 a month when an answering app is $149?</summary><p>Because the phone is one part of it. Front Door is done for you: site care, Google listing management, 24/7 answering, a self-serve scheduler, the job system and a monthly report reconciled against your calendar. The $149 app is a tool you run. This is a front door someone runs for you.</p></details>
+      <details><summary>I already use Jobber or Housecall Pro. Does that matter?</summary><p>Keep it. Front Door feeds the system you already run. Our job system is there for shops running on texts and a notebook, and nothing forces you to switch.</p></details>
+    </div>
+  </div>
+</section>
+
+<section id="audit">
+  <div class="container">
+    <h2 style="text-align:center;">Get your <span class="em">free Front Door Audit.</span></h2>
+    <p class="lead" style="text-align:center;margin:0 auto 8px;">Tell us where to look. One page lands in your inbox within two business days: what leaks, what works, what we would fix first.</p>
     <div class="card gs-card reveal">
       <form class="gs-form" id="leadForm" novalidate>
         <div class="gs-row">
@@ -508,13 +594,15 @@
         <div class="gs-row">
           <div class="gs-field">
             <label for="lf-trade">Trade</label>
-            <select class="gs-select" id="lf-trade" name="trade">
-              <option value="HVAC">HVAC</option>
-              <option value="Plumbing">Plumbing</option>
-              <option value="Electrical">Electrical</option>
-              <option value="Roofing">Roofing</option>
-              <option value="Restoration">Restoration</option>
-              <option value="Other">Other</option>
+            <select class="gs-select" id="lf-trade" name="trade" required>
+              <option value="">Pick your trade</option>
+              <option>HVAC</option>
+              <option>Plumbing</option>
+              <option>Electrical</option>
+              <option>Roofing</option>
+              <option>Water damage restoration</option>
+              <option>Heavy-duty truck repair</option>
+              <option>Other trade</option>
             </select>
           </div>
           <div class="gs-field">
@@ -527,60 +615,38 @@
           <input class="gs-input" type="email" id="lf-email" name="email" autocomplete="email" placeholder="you@yourshop.com" />
         </div>
         <div class="gs-field">
-          <label for="lf-problem">Your biggest phone or lead problem</label>
-          <textarea class="gs-textarea" id="lf-problem" name="problem" placeholder="We miss calls when the crew is on a job, and the answering service just takes a message."></textarea>
+          <label>What do you need help with?</label>
+          <div class="gs-checks">
+            <label><input type="checkbox" name="needs" value="Website" /> Website</label>
+            <label><input type="checkbox" name="needs" value="Google listing" /> Google listing</label>
+            <label><input type="checkbox" name="needs" value="Phone answering" /> Phone answering</label>
+            <label><input type="checkbox" name="needs" value="Google Ads" /> Google Ads</label>
+            <label><input type="checkbox" name="needs" value="Running the jobs (CRM)" /> Running the jobs</label>
+            <label><input type="checkbox" name="needs" value="Not sure" /> Not sure</label>
+          </div>
         </div>
         <div class="gs-field">
-          <label for="lf-referral">How did you hear about us? <span class="opt">(optional)</span></label>
-          <input class="gs-input" type="text" id="lf-referral" name="referral_source" autocomplete="off" placeholder="Google, a referral, a friend" />
+          <label for="lf-problem">What is going wrong today? <span class="opt">(optional)</span></label>
+          <textarea class="gs-textarea" id="lf-problem" name="problem" placeholder="Our site is from 2019, our Google listing is unclaimed, and after 5 the phone goes to voicemail."></textarea>
         </div>
         <div class="gs-hp" aria-hidden="true">
           <label for="lf-company-url" tabindex="-1">Company URL (leave this blank)</label>
           <input type="text" id="lf-company-url" name="company_url" tabindex="-1" autocomplete="off" />
         </div>
-        <button type="submit" class="btn btn-signal btn-lg">Get my plan &rarr;</button>
-        <p class="gs-fine">We never spam you or share your info. You pick a time to talk on the next screen.</p>
+        <p id="lf-error" class="gs-error" hidden></p>
+        <button type="submit" class="btn btn-signal btn-lg">Get my free audit</button>
+        <p class="gs-consent">By sending this, you agree Kaico Voice may call, text or email you about your request. Message and data rates may apply; reply STOP to any text to opt out. See our <a href="/privacy">privacy policy</a>.</p>
       </form>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <h2>Built for businesses that <span class="em">book by the hour.</span></h2>
-    <p class="lead" style="margin-bottom:40px;">If your phone rings while you're working, Kaico Voice catches what you'd miss.</p>
-    <div class="grid-3">
-      <div class="vert reveal"><strong>Auto shops &amp; detailers</strong><span>Vehicle drop-offs, tint and PPF quotes</span></div>
-      <div class="vert reveal"><strong>HVAC &amp; plumbing</strong><span>Service calls, urgent jobs to your cell</span></div>
-      <div class="vert reveal"><strong>Salons &amp; barbers</strong><span>Cuts, color, lashes, no double-booking</span></div>
-      <div class="vert reveal"><strong>Dentists &amp; vets</strong><span>Appointment intake, insurance questions</span></div>
-      <div class="vert reveal"><strong>Mobile service techs</strong><span>Capture leads while you're on the road</span></div>
-      <div class="vert reveal"><strong>Anyone with a phone</strong><span>That rings while you're working</span></div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="container-narrow">
-    <h2>Frequently <span class="em">asked.</span></h2>
-    <div style="margin-top:32px;">
-      <details><summary>How long does setup take?</summary><p>About a week from signed agreement to live calls. We do the heavy lifting. You give us your hours, services, and pricing on a 20-minute kickoff call.</p></details>
-      <details><summary>Will it sound like a robot?</summary><p>Call (918) 359-2644 and judge for yourself. Most people can't tell.</p></details>
-      <details><summary>What happens if it can't answer something?</summary><p>It transfers to your cell or any number you pick. You decide which questions trigger a transfer.</p></details>
-      <details><summary>What if I want to change what it says?</summary><p>Free updates anytime within your plan. Tweaks usually go live within 24 hours.</p></details>
-      <details><summary>Do I have to keep my current phone number?</summary><p>No. We can give you a new local number, or set up call forwarding from your existing number to ours. You don't lose your number either way.</p></details>
-      <details><summary>What if it doesn't book any appointments?</summary><p>30-day money-back guarantee. If it captures zero bookings in 30 days, you get your money back, no questions.</p></details>
-      <details><summary>Can it call my customers, not just answer?</summary><p>Outbound calling (reminders, confirmations, follow-ups) is on the roadmap. Inbound is the focus today.</p></details>
     </div>
   </div>
 </section>
 
 <section class="final-cta">
   <div class="container">
-    <h2>Stop missing calls. <span class="em">Start booking jobs.</span></h2>
+    <h2>Get found. <span class="em">Get booked.</span></h2>
     <div class="hero-cta">
-      <a href="tel:+19183592644" class="btn btn-signal btn-lg">▶ Call the demo</a>
-      <a href="https://cal.com/kaicovoice/demo" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-lg">Book 15 min with Trey</a>
+      <a href="#audit" class="btn btn-signal btn-lg btn-audit">Get my free Front Door Audit</a>
+      <a href="tel:+19183592644" class="btn btn-ghost btn-lg">▶ Hear the phone answer</a>
     </div>
   </div>
 </section>

@@ -2,12 +2,77 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type":"Question","name":"How long does setup take?","acceptedAnswer":{"@type":"Answer","text":"About a week from signed agreement to live calls. We do the heavy lifting. You give us your hours, services, and pricing on a 20-minute kickoff call."}},
-    {"@type":"Question","name":"Will it sound like a robot?","acceptedAnswer":{"@type":"Answer","text":"Call (918) 359-2644 and judge for yourself. Most people can't tell."}},
-    {"@type":"Question","name":"What happens if it can't answer something?","acceptedAnswer":{"@type":"Answer","text":"It transfers to your cell or any number you pick. You decide which questions trigger a transfer."}},
-    {"@type":"Question","name":"What if I want to change what it says?","acceptedAnswer":{"@type":"Answer","text":"Free updates anytime within your plan. Tweaks usually go live within 24 hours."}},
-    {"@type":"Question","name":"Do I have to keep my current phone number?","acceptedAnswer":{"@type":"Answer","text":"No. We can give you a new local number, or set up call forwarding from your existing number to ours. You don't lose your number either way."}},
-    {"@type":"Question","name":"What if it doesn't book any appointments?","acceptedAnswer":{"@type":"Answer","text":"30-day money-back guarantee. If it captures zero bookings in 30 days, you get your money back, no questions."}},
-    {"@type":"Question","name":"Can it call my customers, not just answer?","acceptedAnswer":{"@type":"Answer","text":"Outbound calling (reminders, confirmations, follow-ups) is on the roadmap. Inbound is the focus today."}}
+    {
+      "@type": "Question",
+      "name": "What is the free Front Door Audit, and what is it not?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "One page, from public data only: what your website, Google listing and phone are leaking, what is working, and what we would fix first. It is not a sales call and it does not require one. You get it whether or not we ever talk again."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "I already have a website. Do I need this?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Maybe not. The audit says whether your site is salvageable. If it is, the Front Door Fix at $1,500 wires in click-to-call, a real quote form, your Google listing and tracking. If it is not, we rebuild. If you need neither, the audit says that too."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I own the site, the domain and the Google listing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. You own your domain, your Google Business Profile, your content and your customer data at all times, including after you cancel. On exit we hand over the files and every login within 14 days. That is section 5 of the client agreement."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long until it is live?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We set the date at kickoff, once we have your content and your logins. We do not promise a timeline on a web page for work we have not scoped yet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens if I cancel or stop paying?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Monthly service is month to month with 30 days written notice. If a payment fails and stays unpaid for 14 days, managed services pause: ads pause, the phone reverts to your own number, listing management stops. Your website stays up for at least 60 days. Pay the open balance and everything resumes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the phone an AI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. It is an AI receptionist that answers, books to your calendar and texts you a summary. Callers are told they are speaking with an AI, and every text carries STOP. Call (918) 359-2644 and hear it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work outside Tulsa?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Everything we deliver, the site, the listing, the phone and the job system, is built and run remotely. Tulsa is home and where our first clients are."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why $900 a month when an answering app is $149?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because the phone is one part of it. Front Door is done for you: site care, Google listing management, 24/7 answering, a self-serve scheduler, the job system and a monthly report reconciled against your calendar. The $149 app is a tool you run. This is a front door someone runs for you."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "I already use Jobber or Housecall Pro. Does that matter?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Keep it. Front Door feeds the system you already run. Our job system is there for shops running on texts and a notebook, and nothing forces you to switch."
+      }
+    }
   ]
 }
