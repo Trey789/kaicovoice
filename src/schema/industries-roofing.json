@@ -1,0 +1,12 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Can it keep up with call volume after a hail storm?","acceptedAnswer":{"@type":"Answer","text":"Yes. It is software, not one person at a desk, so a post-storm surge does not turn into a hold queue or a busy signal. It answers every call, 24/7, including the ones that come in at 9 pm while you are still tarping roofs. Every booking lands on your calendar and every call gets a transcript you can read that night."}},
+    {"@type":"Question","name":"What happens when a caller has an active leak?","acceptedAnswer":{"@type":"Answer","text":"Calls about water actively coming into a house are treated as emergencies. The receptionist transfers real emergencies to a human on your team, and you decide which number it rings. Everything else gets booked or taken as a message so your phone only interrupts you when it should."}},
+    {"@type":"Question","name":"Can it answer insurance and adjuster questions?","acceptedAnswer":{"@type":"Answer","text":"No, and it does not pretend to. Questions about claims, deductibles, supplements, or adjuster meetings are taken down as detailed messages for a human on your team to return. The caller hears that a person will call them back, and you get the details in the transcript instead of a vague voicemail."}},
+    {"@type":"Question","name":"Will homeowners know they are talking to an AI?","acceptedAnswer":{"@type":"Answer","text":"The honest test is to hear it yourself. Call (918) 359-2644. That line is the receptionist itself, live, answering the way it would answer your customers. Most callers just want the roof dealt with, and a fast, competent answer beats a voicemail box every time."}},
+    {"@type":"Question","name":"How fast can we be live before the next storm?","acceptedAnswer":{"@type":"Answer","text":"Setup takes about a week from kickoff. You tell us your service area, what you inspect for free, and which calls should transfer to a person. If storm season is already here, a week is still faster than hiring, training, and scheduling a receptionist."}},
+    {"@type":"Question","name":"Is there a contract?","acceptedAnswer":{"@type":"Answer","text":"Month to month, with 30 days written notice to cancel. The phone comes inside Front Door, Kaico's monthly service, from $900 a month. Build deposits are non-refundable once work begins; unused prepaid months are refunded."}}
+  ]
+}

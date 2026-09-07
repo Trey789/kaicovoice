@@ -1,0 +1,54 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Will callers know they are talking to an AI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It sounds natural, and it never pretends to be a human if someone asks directly. Most callers just want their problem handled: a clear answer, an appointment, a callback. The fastest way to judge it is to call (918) 359-2644 yourself. That number is the agent, answering live."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens with real emergencies?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The agent does not handle real emergencies on its own. Calls like a gas smell, a suspected carbon monoxide problem, or no heat in dangerous cold with an infant or an elderly person in the home get transferred to a human immediately. You decide who that human is and how the escalation works."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it work with my scheduling software?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The agent books appointments directly onto your business calendar, such as Google Calendar. If your schedule lives inside field service software, tell us on the setup call and we will map out the cleanest handoff for your dispatcher before the agent takes a single live call."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if it cannot answer a question?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It does not guess, and it does not invent prices. If a caller asks something outside what you have approved, the agent takes a message and texts the caller back so the lead stays warm. You get a transcript of every call, so you can see exactly what was asked and follow up yourself."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does setup take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "About a week. We learn your services, service area, hours, and the questions your customers actually ask, then test the agent with you before it ever answers a live call."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a contract?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Month to month, with 30 days written notice to cancel. The phone comes inside Front Door, Kaico's monthly service, from $900 a month. Build deposits are non-refundable once work begins; unused prepaid months are refunded."
+      }
+    }
+  ]
+}
