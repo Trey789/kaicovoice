@@ -1,0 +1,33 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Kaico Voice",
+  "legalName": "Kaico Voice LLC",
+  "url": "https://www.kaicovoice.com/",
+  "telephone": "+19183592644",
+  "email": "trey@kaicovoice.com",
+  "description": "Kaico builds and runs the online front door for the trades: the website, the Google listing, and the phone that answers when you can't.",
+  "image": "https://www.kaicovoice.com/assets/logo-k-512.png",
+  "logo": "https://www.kaicovoice.com/assets/logo-k-512.png",
+  "priceRange": "$$",
+  "address": { "@type": "PostalAddress", "addressLocality": "Tulsa", "addressRegion": "OK", "addressCountry": "US" },
+  "areaServed": [
+    { "@type": "City", "name": "Tulsa" },
+    { "@type": "State", "name": "Oklahoma" },
+    { "@type": "Country", "name": "United States" }
+  ],
+  "knowsAbout": ["contractor website design", "Google Business Profile optimization", "after-hours answering service", "Google Ads management for contractors", "done-for-you marketing for contractors"],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Kaico Voice services",
+    "itemListElement": [
+      { "@type": "Offer", "name": "Front Door Audit", "price": "0", "priceCurrency": "USD", "description": "Public-data audit of your website, Google listing and phone, delivered before any call." },
+      { "@type": "Offer", "name": "Front Door Fix", "price": "1500", "priceCurrency": "USD", "description": "One-time fix of an existing site: click-to-call, quote form, Google listing wired in, tracking." },
+      { "@type": "Offer", "name": "Website Build, Standard", "price": "3500", "priceCurrency": "USD" },
+      { "@type": "Offer", "name": "Website Build, Premium", "price": "6500", "priceCurrency": "USD" },
+      { "@type": "Offer", "name": "Front Door", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "900", "priceCurrency": "USD", "billingDuration": "P1M" } },
+      { "@type": "Offer", "name": "Front Door + Growth", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "1750", "priceCurrency": "USD", "billingDuration": "P1M" } },
+      { "@type": "Offer", "name": "Website Care", "priceSpecification": { "@type": "UnitPriceSpecification", "minPrice": "149", "maxPrice": "299", "priceCurrency": "USD", "billingDuration": "P1M" } }
+    ]
+  }
+}

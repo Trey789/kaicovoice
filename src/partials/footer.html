@@ -1,0 +1,102 @@
+<footer>
+  <div class="container">
+    <div class="row">
+      <div><span style="color:var(--ink);font-weight:700;">Kaico</span> · A Kaico LLC service · Tulsa, OK</div>
+      <div class="links">
+        <a href="/proof">Proof</a>
+        <a href="/industries/hvac">HVAC</a>
+        <a href="/industries/roofing">Roofing</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="/sms">SMS</a>
+        <a href="https://app.kaicovoice.com/dashboard">Client login</a>
+        <a href="mailto:trey@kaicovoice.com">trey@kaicovoice.com</a>
+        <a href="tel:+19183592644">(918) 359-2644</a>
+        <a href="https://cal.com/kaicovoice/demo" target="_blank" rel="noopener noreferrer">Book a call</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // hero waveform bars
+  var hw = document.getElementById('heroWave');
+  if (hw) { for (var i=0;i<56;i++){ var s=document.createElement('span'); if(!reduce){ s.style.animationDelay=(-(Math.random()*1.1)).toFixed(2)+'s'; s.style.animationDuration=(0.7+Math.random()*0.8).toFixed(2)+'s'; } else { s.style.height=(20+Math.random()*60)+'%'; } hw.appendChild(s);} }
+
+  // cursor-tracked glow
+  if (!reduce) { window.addEventListener('pointermove', function(e){ document.documentElement.style.setProperty('--mx', e.clientX+'px'); document.documentElement.style.setProperty('--my', e.clientY+'px'); }, {passive:true}); }
+
+  // configurator
+  var trades = [
+    { k:'Auto shop', t:'Mike’s Auto · sample call', feed:[['them','Hey, can I get my windows tinted this week?'],['ai','Absolutely. Ceramic or standard? I can get you in Thursday at 9.'],['them','Ceramic, Thursday works.'],['ai','Booked, you’re on the schedule. Text confirmation sent.']] },
+    { k:'Salon', t:'Lux Salon · sample call', feed:[['them','Do you have anything for a cut and color Saturday?'],['ai','I do, 11:00 with Bre, or 2:30. Which works?'],['them','11 is perfect.'],['ai','You’re booked for Saturday at 11. See you then!']] },
+    { k:'HVAC', t:'Tulsa Air · sample call', feed:[['them','My AC stopped working, it’s 95 in here.'],['ai','I’m sorry, that’s urgent. I can dispatch a tech today between 1 and 3.'],['them','Yes please.'],['ai','Done. A tech is on the way and your cell is on file.']] },
+    { k:'Dentist', t:'Bright Dental · sample call', feed:[['them','I need to book a cleaning, I’m a new patient.'],['ai','Welcome! New-patient cleanings are 60 minutes. Tuesday 10 AM open?'],['them','That works.'],['ai','Booked. I’ll text your intake forms now.']] },
+    { k:'Plumber', t:'Reliable Plumbing · sample call', feed:[['them','Water heater’s leaking, can someone come out?'],['ai','Yes. I can have a plumber out tomorrow morning, 8 to 10.'],['them','Great, book it.'],['ai','You’re scheduled. We’ll call 30 minutes before arrival.']] }
+  ];
+  var chips=document.getElementById('cfgChips'), feed=document.getElementById('cfgFeed'), title=document.getElementById('cfgTitle'), note=document.getElementById('cfgNote');
+  var notes={'Auto shop':'Tint quotes, drop-offs, PPF, booked while you’re under a hood.','Salon':'Cuts, color, lashes, no more double-bookings or missed DMs.','HVAC':'Emergencies routed to your cell, everything else booked.','Dentist':'New-patient intake and scheduling, forms texted automatically.','Plumber':'Urgent jobs triaged, routine work scheduled around your route.'};
+  var timer=null;
+  function render(tr){
+    title.textContent=tr.t; note.textContent=notes[tr.k]||'';
+    feed.innerHTML=''; if(timer) clearTimeout(timer);
+    var i=0;
+    (function add(){
+      if(i>=tr.feed.length) return;
+      var b=document.createElement('div'); b.className='bubble '+(tr.feed[i][0]==='ai'?'b-ai':'b-them'); b.textContent=tr.feed[i][1]; feed.appendChild(b);
+      requestAnimationFrame(function(){requestAnimationFrame(function(){b.classList.add('show');});});
+      i++; timer=setTimeout(add, reduce?260:760);
+    })();
+  }
+  trades.forEach(function(tr,idx){ var c=document.createElement('button'); c.className='chip'; c.type='button'; c.textContent=tr.k; c.setAttribute('aria-pressed', idx===0?'true':'false'); c.onclick=function(){ chips.querySelectorAll('.chip').forEach(function(x){x.setAttribute('aria-pressed','false');}); c.setAttribute('aria-pressed','true'); render(tr); }; chips.appendChild(c); });
+  render(trades[0]);
+
+  // scroll-progress signal bar
+  var prog=document.querySelector(".scroll-prog");
+  function onScroll(){ if(!prog)return; var h=document.documentElement; var p=h.scrollTop/((h.scrollHeight-h.clientHeight)||1); prog.style.width=(Math.max(0,Math.min(1,p))*100).toFixed(1)+"%"; }
+  window.addEventListener("scroll",onScroll,{passive:true}); onScroll();
+  var tl=document.getElementById("timeline");
+  if(tl){ if(reduce||!("IntersectionObserver" in window)){ tl.classList.add("lit"); } else { var tio=new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersecting){ tl.classList.add("lit"); tio.disconnect(); } });},{threshold:.35}); tio.observe(tl); } }
+  // lead capture form: POST /leads (best effort), then ALWAYS redirect to Cal.com
+  var leadForm = document.getElementById('leadForm');
+  if (leadForm) {
+    leadForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var CAL = 'https://cal.com/kaicovoice/demo';
+      var go = function () { window.location.href = CAL; };
+      // honeypot: real people never fill company_url. If filled, treat as a bot and just redirect.
+      var hp = leadForm.querySelector('[name="company_url"]');
+      if (hp && hp.value.trim() !== '') { go(); return; }
+      var val = function (n) { var el = leadForm.querySelector('[name="' + n + '"]'); return el ? el.value.trim() : ''; };
+      var fields = {
+        name: val('name'),
+        business: val('business'),
+        trade: val('trade'),
+        phone: val('phone'),
+        email: val('email'),
+        problem: val('problem'),
+        referral_source: val('referral_source')
+      };
+      try {
+        fetch('https://web-production-976b9.up.railway.app/leads', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(fields)
+        }).then(go, go);
+      } catch (err) { go(); }
+    });
+  }
+
+  // scroll reveal
+  if (!reduce && 'IntersectionObserver' in window) {
+    document.documentElement.classList.add('js-reveal');
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-visible');io.unobserve(e.target);}});},{rootMargin:'0px 0px -10% 0px',threshold:.1});
+    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  }
+})();
+</script>
+</body>
+</html>
