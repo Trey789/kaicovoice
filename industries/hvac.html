@@ -420,7 +420,7 @@
   </div>
 </nav>
 <style>
-  :root {
+:root {
     --bg: #0a0b0d;
     --ink: #eef1f4;
     --ink-soft: #9aa4af;
@@ -434,10 +434,7 @@
     --paper: #161a20;
     --surface: #111418;
   }
-
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
+body {
     margin: 0;
     font-family: 'Hanken Grotesk', system-ui, -apple-system, sans-serif;
     color: var(--ink);
@@ -445,78 +442,54 @@
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
-
-  .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
-  .container-narrow { max-width: 760px; margin: 0 auto; padding: 0 24px; }
-
-  :focus-visible { outline: 3px solid var(--signal); outline-offset: 3px; border-radius: 4px; }
-  .skip-link { position: absolute; left: -9999px; top: 8px; z-index: 100; background: var(--signal); color: var(--ink-on-signal); padding: 10px 18px; border-radius: 8px; font-weight: 700; text-decoration: none; }
-  .skip-link:focus { left: 16px; }
-
-  /* nav */
+.container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+.skip-link { position: absolute; left: -9999px; top: 8px; z-index: 100; background: var(--signal); color: var(--ink-on-signal); padding: 10px 18px; border-radius: 8px; font-weight: 700; text-decoration: none; }
+/* nav */
   nav {
     position: sticky; top: 0; z-index: 50;
     background: rgba(10, 11, 13, 0.72);
     backdrop-filter: saturate(140%) blur(10px);
     border-bottom: 1px solid var(--line);
   }
-  nav .row {
+nav .row {
     display: flex; align-items: center; justify-content: space-between;
     padding: 16px 24px; max-width: 1120px; margin: 0 auto;
   }
-  .brand { font-weight: 800; font-size: 18px; letter-spacing: -0.01em; text-decoration: none; color: inherit; }
-  .brand-mark { color: var(--accent); }
-  .nav-actions { display: flex; align-items: center; gap: 12px; }
-  .nav-call { font-size: 14px; font-weight: 600; color: var(--ink); text-decoration: none; }
-  .nav-call:hover { color: var(--accent-ink); }
-  .btn {
+.brand { font-weight: 800; font-size: 18px; letter-spacing: -0.01em; text-decoration: none; color: inherit; }
+.brand-mark { color: var(--accent); }
+.nav-actions { display: flex; align-items: center; gap: 12px; }
+.nav-call { font-size: 14px; font-weight: 600; color: var(--ink); text-decoration: none; }
+.nav-call:hover { color: var(--accent-ink); }
+.btn {
     display: inline-flex; align-items: center; gap: 8px;
     padding: 14px 22px; border-radius: 999px;
     font-weight: 600; font-size: 15px; text-decoration: none;
     cursor: pointer; border: 0;
     transition: transform 0.08s ease, box-shadow 0.18s ease, background 0.18s;
   }
-  .btn-signal { background: var(--signal); color: var(--ink-on-signal); font-weight: 700; }
-  .btn-signal:hover { transform: translateY(-1px); box-shadow: 0 12px 30px -10px rgba(200,255,61,.5); }
-  .btn-ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
-  .btn-ghost:hover { border-color: var(--ink); }
-  .btn-lg { padding: 17px 28px; font-size: 16px; }
-
-  /* typography */
+.btn-signal { background: var(--signal); color: var(--ink-on-signal); font-weight: 700; }
+.btn-ghost:hover { border-color: var(--ink); }
+/* typography */
   h1, h2, h3 { font-family: 'Bricolage Grotesque', sans-serif; }
-  h2 { font-size: clamp(28px, 4.4vw, 44px); font-weight: 800; line-height: 1.04; letter-spacing: -0.03em; margin: 0 0 16px; text-wrap: balance; }
-  h2 .em { color: var(--signal); }
-  h3 { font-size: 18px; font-weight: 700; margin: 0 0 8px; letter-spacing: -0.01em; }
-  .lead { color: var(--muted); font-size: 18px; line-height: 1.55; max-width: 60ch; text-wrap: pretty; }
-  section { padding: 80px 0; }
-  section p { color: var(--muted); font-size: 16px; margin: 0 0 16px; }
-  section p strong { color: var(--ink); }
-  section a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; }
-  section a:hover { text-decoration-color: var(--accent); }
-  section a.btn { text-decoration: none; }
-
-  /* hero */
+h2 { font-size: clamp(28px, 4.4vw, 44px); font-weight: 800; line-height: 1.04; letter-spacing: -0.03em; margin: 0 0 16px; text-wrap: balance; }
+section { padding: 80px 0; }
+section p { color: var(--muted); font-size: 16px; margin: 0 0 16px; }
+section p strong { color: var(--ink); }
+section a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; }
+section a:hover { text-decoration-color: var(--accent); }
+section a.btn { text-decoration: none; }
+/* hero */
   .hero { padding: 72px 0 56px; }
-  .pill { display: inline-flex; align-items: center; gap: 9px; border: 1px solid var(--line); background: var(--surface); padding: 7px 14px; border-radius: 999px; font-size: 13px; font-weight: 600; color: var(--muted); margin-bottom: 28px; }
-  .pill i { width: 8px; height: 8px; border-radius: 50%; background: var(--signal); animation: pulse 1.8s infinite; }
-  @keyframes pulse { 0%{box-shadow:0 0 0 0 rgba(200,255,61,.55)} 70%{box-shadow:0 0 0 9px rgba(200,255,61,0)} 100%{box-shadow:0 0 0 0 rgba(200,255,61,0)} }
-  .hero h1 { font-size: clamp(38px, 6vw, 66px); font-weight: 800; line-height: .98; letter-spacing: -0.035em; margin: 0 0 22px; max-width: 17ch; text-wrap: balance; }
-  .hero h1 .em { color: var(--signal); }
-  .hero .lead { margin: 0 0 34px; }
-  .hero-cta { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
-  .hero-sub { margin: 18px 0 0; font-size: 14px; color: var(--muted); }
-
-  /* cards */
+.hero h1 { font-size: clamp(38px, 6vw, 66px); font-weight: 800; line-height: .98; letter-spacing: -0.035em; margin: 0 0 22px; max-width: 17ch; text-wrap: balance; }
+.hero .lead { margin: 0 0 34px; }
+/* cards */
   .grid-3 { display: grid; gap: 18px; grid-template-columns: repeat(3, 1fr); margin-top: 36px; }
-  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 28px; }
-  .card p { color: var(--muted); margin: 0; font-size: 15px; }
-
-  /* call flow panel */
+.card p { color: var(--muted); margin: 0; font-size: 15px; }
+/* call flow panel */
   .flow-panel { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 28px 30px; margin-top: 28px; }
-  .flow-label { display: inline-block; color: var(--accent-ink); background: rgba(200,255,61,0.08); border: 1px solid rgba(200,255,61,0.25); padding: 5px 12px; border-radius: 999px; font-size: 12px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 18px; }
-  .flow-panel p:last-child { margin-bottom: 0; }
-
-  /* proof callout */
+.flow-label { display: inline-block; color: var(--accent-ink); background: rgba(200,255,61,0.08); border: 1px solid rgba(200,255,61,0.25); padding: 5px 12px; border-radius: 999px; font-size: 12px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 18px; }
+.flow-panel p:last-child { margin-bottom: 0; }
+/* proof callout */
   .proof-callout {
     border: 1px solid rgba(200,255,61,0.25);
     background: rgba(200,255,61,0.06);
@@ -524,51 +497,36 @@
     margin: 24px 0;
     border-radius: 12px;
   }
-  .proof-callout p { color: var(--ink); margin: 0; font-weight: 500; }
-
-  /* pricing */
+.proof-callout p { color: var(--ink); margin: 0; font-weight: 500; }
+/* pricing */
   .price-figure { font-family: 'Bricolage Grotesque', sans-serif; font-size: clamp(40px, 6vw, 64px); font-weight: 800; letter-spacing: -0.03em; line-height: 1; color: var(--ink); margin: 8px 0 4px; }
-  .price-figure span { font-size: 20px; color: var(--muted); font-weight: 600; letter-spacing: 0; }
-  .price-note { color: var(--muted); font-size: 15px; margin: 0 0 20px; }
-
-  /* faq */
-  details { border-bottom: 1px solid var(--line); padding: 20px 0; }
-  details:last-of-type { border-bottom: 0; }
-  summary { cursor: pointer; font-weight: 700; font-size: 17px; list-style: none; display: flex; justify-content: space-between; gap: 16px; font-family: 'Bricolage Grotesque', sans-serif; color: var(--ink); }
-  summary::-webkit-details-marker { display: none; }
-  summary::after { content: "+"; font-size: 24px; color: var(--signal); line-height: 1; }
-  details[open] summary::after { content: "−"; }
-  details p { margin: 12px 0 0; color: var(--muted); line-height: 1.6; }
-
-  /* final CTA */
+.price-figure span { font-size: 20px; color: var(--muted); font-weight: 600; letter-spacing: 0; }
+.price-note { color: var(--muted); font-size: 15px; margin: 0 0 20px; }
+summary { cursor: pointer; font-weight: 700; font-size: 17px; list-style: none; display: flex; justify-content: space-between; gap: 16px; font-family: 'Bricolage Grotesque', sans-serif; color: var(--ink); }
+/* final CTA */
   .final-cta { text-align: center; padding: 96px 24px; border-top: 1px solid var(--line); }
-  .final-cta h2 { max-width: 20ch; margin: 0 auto 16px; }
-  .final-cta .lead { margin: 0 auto 30px; }
-  .final-cta .hero-cta { justify-content: center; }
-
-  /* footer */
+.final-cta h2 { max-width: 20ch; margin: 0 auto 16px; }
+.final-cta .lead { margin: 0 auto 30px; }
+/* footer */
   footer {
     border-top: 1px solid var(--line);
     padding: 32px 0 48px;
     background: var(--paper);
   }
-  footer .row {
+footer .row {
     display: flex; justify-content: space-between; align-items: center;
     flex-wrap: wrap; gap: 16px;
     font-size: 14px; color: var(--ink-soft);
   }
-  footer a { color: var(--ink-soft); text-decoration: none; }
-  footer a:hover { color: var(--ink); }
-  footer .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
-
-  @media (max-width: 860px) {
-    .grid-3 { grid-template-columns: 1fr; }
-    section { padding: 60px 0; }
-    .hero { padding: 56px 0 44px; }
-    .nav-call { display: none; }
-    .final-cta { padding-left: 0; padding-right: 0; }
-  }
-  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation-duration:.001ms!important;transition-duration:.001ms!important}.pill i{animation:none!important}}
+footer a { color: var(--ink-soft); text-decoration: none; }
+footer .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+.grid-3 { grid-template-columns: 1fr; }
+section { padding: 60px 0; }
+.hero { padding: 56px 0 44px; }
+.final-cta { padding-left: 0; padding-right: 0; }
+html{scroll-behavior:auto}
+*{animation-duration:.001ms!important;transition-duration:.001ms!important}
+.pill i{animation:none!important}
 </style>
 <main id="main">
 
@@ -622,21 +580,16 @@
 </section>
 
 <section>
-  <div class="container-narrow">
+  <div class="container">
     <h2>The proof, <span class="em">stated honestly.</span></h2>
-    <p>Our documented case study is not an HVAC company. It is Tri-Tech Auto Tinting, an auto services shop here in Tulsa. We think that makes it more useful, not less, because the mechanics are identical to yours: a call comes in, nobody can answer it, and the job is either captured or lost to the next shop down the list.</p>
-    <div class="proof-callout">
-      <p>In 30 days on Kaico Voice, Tri-Tech had about 7 appointments booked from calls that would otherwise have been missed. At the shop's $280 average ticket, that is roughly $1,960 per month recovered.</p>
-    </div>
-    <p>The basis matters, so here it is plainly: the bookings were confirmed from system data on June 27, 2026, and the dollar figure uses the shop's average ticket, a number the owner provided, not a projection. The full breakdown is on our <a href="/proof">proof page</a>.</p>
-    <p>An HVAC service call is its own math, and we are not going to invent a number for your ticket sizes. You already know what one lost after-hours call costs you, especially when the repair turns into a replacement conversation.</p>
+    <p class="lead">A Tulsa shop we set up books after-hours jobs it used to miss. Every number we ever quote is reconciled against the owner's calendar first, which is why you will not see one here yet. <a href="/proof">How we verify, and the work so far.</a></p>
   </div>
 </section>
 
 <section>
   <div class="container">
     <h2 style="text-align:center;">Where the phone <span class="em">fits</span>.</h2>
-    <p class="lead" style="text-align:center;margin:0 auto 24px;">The phone is one part of Front Door, Kaico's monthly service for the trades: site care, Google listing, 24/7 answering, scheduler and job system, from $900 a month. Start with the free Front Door Audit.</p>
+    <p class="lead" style="text-align:center;margin:0 auto 24px;">The phone is one part of Front Door, Kaico's monthly service for the trades: <a href="/services/websites">site care</a>, Google listing<!-- P1: (<a href="/services/google-business-profile">what that covers</a>) -->, <a href="/services/phone">24/7 answering</a>, scheduler and job system, from $900 a month (<a href="/pricing">pricing</a>). Start with the free Front Door Audit.<!-- P1: The full monthly service is <a href="/services/front-door">Front Door</a>. --></p>
     <p style="text-align:center;"><a href="/#audit" class="btn btn-signal btn-audit">Get my free Front Door Audit</a></p>
   </div>
 </section>

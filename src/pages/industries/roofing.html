@@ -5,7 +5,7 @@ canonical: /industries/roofing
 schema: schema/industries-roofing.json
 -->
 <style>
-  :root {
+:root {
     --bg: #0a0b0d;
     --ink: #eef1f4;
     --ink-soft: #9aa4af;
@@ -17,10 +17,7 @@ schema: schema/industries-roofing.json
     --surface-2: #161a20;
     --ink-on-signal: #0a0b0d;
   }
-
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
+body {
     margin: 0;
     font-family: 'Hanken Grotesk', system-ui, -apple-system, sans-serif;
     color: var(--ink);
@@ -28,51 +25,43 @@ schema: schema/industries-roofing.json
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
-
-  .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
-  .container-narrow { max-width: 760px; margin: 0 auto; padding: 0 24px; }
-
-  /* nav */
+.container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+/* nav */
   nav {
     position: sticky; top: 0; z-index: 50;
     background: rgba(10, 11, 13, 0.72);
     backdrop-filter: saturate(140%) blur(10px);
     border-bottom: 1px solid var(--line);
   }
-  nav .row {
+nav .row {
     display: flex; align-items: center; justify-content: space-between;
     padding: 16px 24px; max-width: 1120px; margin: 0 auto;
   }
-  .brand { font-weight: 800; font-size: 18px; letter-spacing: -0.01em; text-decoration: none; color: inherit; }
-  .brand-mark { color: var(--accent); }
-  .nav-actions { display: flex; align-items: center; gap: 12px; }
-  .nav-call { font-size: 14px; font-weight: 600; color: var(--ink); text-decoration: none; }
-  .nav-call:hover { color: var(--accent-ink); }
-  .btn {
+.brand { font-weight: 800; font-size: 18px; letter-spacing: -0.01em; text-decoration: none; color: inherit; }
+.brand-mark { color: var(--accent); }
+.nav-actions { display: flex; align-items: center; gap: 12px; }
+.nav-call { font-size: 14px; font-weight: 600; color: var(--ink); text-decoration: none; }
+.nav-call:hover { color: var(--accent-ink); }
+.btn {
     display: inline-flex; align-items: center; gap: 8px;
     padding: 14px 22px; border-radius: 999px;
     font-weight: 600; font-size: 15px; text-decoration: none;
     cursor: pointer; border: 0;
     transition: transform 0.08s ease, box-shadow 0.18s ease, background 0.18s;
   }
-  .btn-ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
-  .btn-ghost:hover { border-color: var(--ink); }
-  .btn-signal { background: var(--accent); color: var(--ink-on-signal); font-weight: 700; }
-  .btn-signal:hover { transform: translateY(-1px); box-shadow: 0 12px 30px -10px rgba(200,255,61,.5); }
-
-  h1, h2, h3 { font-family: 'Bricolage Grotesque', sans-serif; }
-  h1 {
+.btn-ghost:hover { border-color: var(--ink); }
+.btn-signal { background: var(--accent); color: var(--ink-on-signal); font-weight: 700; }
+h1, h2, h3 { font-family: 'Bricolage Grotesque', sans-serif; }
+h1 {
     font-size: clamp(36px, 5.6vw, 60px);
     line-height: 1.02; letter-spacing: -0.025em;
     margin: 0 0 18px; font-weight: 800; text-wrap: balance;
   }
-  h1 em { font-style: normal; color: var(--accent); }
-  h2 { font-size: clamp(28px, 4.4vw, 44px); font-weight: 800; line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 14px; text-wrap: balance; }
-  h2 em { font-style: normal; color: var(--accent); }
-  h3 { font-size: 18px; font-weight: 700; margin: 0 0 8px; letter-spacing: -0.01em; }
-
-  section { padding: 80px 0; }
-  .eyebrow {
+h1 em { font-style: normal; color: var(--accent); }
+h2 { font-size: clamp(28px, 4.4vw, 44px); font-weight: 800; line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 14px; text-wrap: balance; }
+h2 em { font-style: normal; color: var(--accent); }
+section { padding: 80px 0; }
+.eyebrow {
     display: inline-block;
     color: var(--accent-ink); background: rgba(200,255,61,0.08);
     border: 1px solid rgba(200,255,61,0.25);
@@ -80,116 +69,97 @@ schema: schema/industries-roofing.json
     font-size: 12px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase;
     margin-bottom: 20px;
   }
-  .lead { color: var(--ink-soft); font-size: 18px; line-height: 1.6; max-width: 58ch; margin: 0 0 30px; }
-  .lead strong { color: var(--ink); }
-  p { color: var(--ink-soft); font-size: 15.5px; }
-  .hero { padding: 72px 0 56px; }
-  .hero-cta { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
-  .hero-sub { margin: 16px 0 0; font-size: 14px; color: var(--ink-soft); }
-  .hero-sub a { color: var(--ink); font-weight: 600; text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; }
-  .hero-sub a:hover { text-decoration-color: var(--accent); }
-
-  /* pain list */
+.lead { color: var(--ink-soft); font-size: 18px; line-height: 1.6; max-width: 58ch; margin: 0 0 30px; }
+.lead strong { color: var(--ink); }
+p { color: var(--ink-soft); font-size: 15.5px; }
+.hero { padding: 72px 0 56px; }
+.hero-sub { margin: 16px 0 0; font-size: 14px; color: var(--ink-soft); }
+.hero-sub a:hover { text-decoration-color: var(--accent); }
+/* pain list */
   .pain-list { display: grid; gap: 12px; max-width: 780px; margin: 28px 0 0; }
-  .pain-item {
+.pain-item {
     padding: 20px 22px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface);
   }
-  .pain-item h3 { margin-bottom: 6px; }
-  .pain-item p { margin: 0; }
-
-  /* how it works cards */
+.pain-item h3 { margin-bottom: 6px; }
+.pain-item p { margin: 0; }
+/* how it works cards */
   .grid-3 { display: grid; gap: 16px; grid-template-columns: repeat(3, 1fr); margin-top: 34px; }
-  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 28px; }
-  .card p { margin: 0; font-size: 15px; }
-  .card .num {
+.card p { margin: 0; font-size: 15px; }
+.card .num {
     display: inline-flex; align-items: center; justify-content: center;
     width: 34px; height: 34px; border-radius: 10px;
     background: rgba(200,255,61,.12); color: var(--accent);
     font-weight: 800; font-family: 'Bricolage Grotesque', sans-serif;
     margin-bottom: 14px; font-size: 15px;
   }
-
-  /* call illustration */
+/* call illustration */
   .call-demo {
     background: var(--paper); border: 1px solid var(--line); border-radius: 20px;
     padding: 28px; max-width: 640px; margin: 30px 0 0;
   }
-  .call-label { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft); margin: 0 0 18px; }
-  .bubble { padding: 12px 16px; border-radius: 14px; font-size: 14.5px; line-height: 1.5; margin: 0 0 10px; max-width: 92%; }
-  .b-them { background: var(--surface); color: var(--ink); border: 1px solid var(--line); }
-  .b-ai { background: rgba(200,255,61,.12); color: #eaffc0; border: 1px solid rgba(200,255,61,.22); margin-left: auto; }
-  .bubble .who { display: block; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 4px; }
-  .call-fine { margin: 16px 0 0; font-size: 13px; color: var(--ink-soft); }
-
-  /* proof */
+.call-label { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft); margin: 0 0 18px; }
+.bubble { padding: 12px 16px; border-radius: 14px; font-size: 14.5px; line-height: 1.5; margin: 0 0 10px; max-width: 92%; }
+.b-them { background: var(--surface); color: var(--ink); border: 1px solid var(--line); }
+.b-ai { background: rgba(200,255,61,.12); color: #eaffc0; border: 1px solid rgba(200,255,61,.22); margin-left: auto; }
+.bubble .who { display: block; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 4px; }
+.call-fine { margin: 16px 0 0; font-size: 13px; color: var(--ink-soft); }
+/* proof */
   .proof-card {
     border: 1px solid rgba(200,255,61,0.25);
     background: rgba(200,255,61,0.05);
     border-radius: 16px; padding: 26px 28px; max-width: 780px; margin: 26px 0 0;
   }
-  .proof-card p { margin: 0 0 12px; color: var(--ink); font-size: 16px; }
-  .proof-card p:last-child { margin-bottom: 0; }
-  .proof-card .basis { color: var(--ink-soft); font-size: 14px; }
-  a.inline { color: var(--ink); text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; }
-  a.inline:hover { text-decoration-color: var(--accent); }
-
-  /* pricing */
+.proof-card p { margin: 0 0 12px; color: var(--ink); font-size: 16px; }
+.proof-card p:last-child { margin-bottom: 0; }
+.proof-card .basis { color: var(--ink-soft); font-size: 14px; }
+a.inline { color: var(--ink); text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; }
+a.inline:hover { text-decoration-color: var(--accent); }
+/* pricing */
   .price-band {
     background: var(--paper); border: 1px solid var(--line); border-radius: 22px;
     padding: 40px; max-width: 780px; margin: 30px 0 0;
   }
-  .price-amt { font-family: 'Bricolage Grotesque', sans-serif; font-size: 46px; font-weight: 800; letter-spacing: -0.02em; line-height: 1; }
-  .price-amt em { font-style: normal; font-size: 15px; font-weight: 600; color: var(--ink-soft); margin-left: 8px; font-family: 'Hanken Grotesk', sans-serif; }
-  .price-band p { margin: 16px 0 22px; }
-
-  /* faq */
+.price-amt { font-family: 'Bricolage Grotesque', sans-serif; font-size: 46px; font-weight: 800; letter-spacing: -0.02em; line-height: 1; }
+.price-amt em { font-style: normal; font-size: 15px; font-weight: 600; color: var(--ink-soft); margin-left: 8px; font-family: 'Hanken Grotesk', sans-serif; }
+.price-band p { margin: 16px 0 22px; }
+/* faq */
   .faq { max-width: 780px; }
-  details { border-bottom: 1px solid var(--line); padding: 20px 0; }
-  details:last-of-type { border-bottom: 0; }
-  summary { cursor: pointer; font-weight: 700; font-size: 17px; list-style: none; display: flex; justify-content: space-between; gap: 16px; font-family: 'Bricolage Grotesque', sans-serif; color: var(--ink); }
-  summary::-webkit-details-marker { display: none; }
-  summary::after { content: "+"; font-size: 24px; color: var(--accent); line-height: 1; flex-shrink: 0; }
-  details[open] summary::after { content: "\2212"; }
-  details p { margin: 12px 0 0; color: var(--ink-soft); line-height: 1.6; }
-
-  /* final cta */
+details { border-bottom: 1px solid var(--line); padding: 20px 0; }
+summary { cursor: pointer; font-weight: 700; font-size: 17px; list-style: none; display: flex; justify-content: space-between; gap: 16px; font-family: 'Bricolage Grotesque', sans-serif; color: var(--ink); }
+summary::after { content: "+"; font-size: 24px; color: var(--accent); line-height: 1; flex-shrink: 0; }
+details[open] summary::after { content: "\2212"; }
+details p { margin: 12px 0 0; color: var(--ink-soft); line-height: 1.6; }
+/* final cta */
   .final-cta {
     text-align: center;
     border: 1px solid var(--line);
     background: radial-gradient(120% 100% at 50% 0%, rgba(200,255,61,.10), transparent 55%), var(--surface);
     border-radius: 24px; padding: 64px 32px;
   }
-  .final-cta h2 { max-width: 22ch; margin: 0 auto 14px; }
-  .final-cta p { max-width: 54ch; margin: 0 auto 28px; font-size: 17px; }
-  .final-cta .hero-cta { justify-content: center; }
-  .final-fine { margin-top: 22px; font-size: 13px; color: var(--ink-soft); }
-  .final-fine a { color: var(--ink-soft); }
-
-  /* footer */
+.final-cta h2 { max-width: 22ch; margin: 0 auto 14px; }
+.final-cta p { max-width: 54ch; margin: 0 auto 28px; font-size: 17px; }
+.final-fine { margin-top: 22px; font-size: 13px; color: var(--ink-soft); }
+.final-fine a { color: var(--ink-soft); }
+/* footer */
   footer {
     border-top: 1px solid var(--line);
     padding: 32px 0 48px;
     background: var(--paper);
   }
-  footer .row {
+footer .row {
     display: flex; justify-content: space-between; align-items: center;
     flex-wrap: wrap; gap: 16px;
     font-size: 14px; color: var(--ink-soft);
   }
-  footer a { color: var(--ink-soft); text-decoration: none; }
-  footer a:hover { color: var(--ink); }
-  footer .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
-
-  :focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:4px;}
-  .skip-link { position: absolute; left: -9999px; top: 8px; z-index: 100; background: var(--accent); color: var(--ink-on-signal); padding: 10px 18px; border-radius: 8px; font-weight: 700; text-decoration: none; }
-  .skip-link:focus { left: 16px; }
-  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
-  @media (max-width: 860px) {
-    .grid-3 { grid-template-columns: 1fr; }
-    section { padding: 60px 0; }
-    .nav-call { display: none; }
-    .price-band { padding: 30px 24px; }
-  }
+footer a { color: var(--ink-soft); text-decoration: none; }
+footer .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:4px;}
+.skip-link { position: absolute; left: -9999px; top: 8px; z-index: 100; background: var(--accent); color: var(--ink-on-signal); padding: 10px 18px; border-radius: 8px; font-weight: 700; text-decoration: none; }
+html{scroll-behavior:auto}
+*{animation-duration:.001ms!important;transition-duration:.001ms!important}
+.grid-3 { grid-template-columns: 1fr; }
+section { padding: 60px 0; }
+.price-band { padding: 30px 24px; }
 </style>
 <main id="main">
 
@@ -286,21 +256,16 @@ schema: schema/industries-roofing.json
   </section>
 
   <section>
-    <div class="container-narrow">
-      <h2>Proof, stated <em>honestly</em></h2>
-      <p class="lead">We would rather show you one real, verified number than a page of invented roofing statistics.</p>
-      <div class="proof-card">
-        <p>Tri-Tech Auto Tinting in Tulsa had roughly 7 appointments booked in 30 days from calls that would otherwise have been missed. At the shop's $280 average ticket, that is roughly $1,960 per month recovered.</p>
-        <p class="basis">Basis: bookings confirmed from system data on June 27, 2026. The ticket figure is the shop's average, a number the owner provided. Tri-Tech is a tint shop, not a roofer; it is simply the client data we can verify and publish. If a missed call is worth about $280 to a tint shop, you can do the math on what a missed inspection is worth to a roofing company.</p>
-        <p><a class="inline" href="/proof">See the full breakdown on our proof page</a></p>
-      </div>
-    </div>
-  </section>
+  <div class="container">
+    <h2>Proof, stated <em>honestly</em></h2>
+    <p class="lead">A Tulsa shop we set up books after-hours jobs it used to miss. Every number we ever quote is reconciled against the owner's calendar first, which is why you will not see one here yet. <a href="/proof">How we verify, and the work so far.</a></p>
+  </div>
+</section>
 
   <section>
   <div class="container">
     <h2 style="text-align:center;">Where the phone <span class="em">fits</span>.</h2>
-    <p class="lead" style="text-align:center;margin:0 auto 24px;">The phone is one part of Front Door, Kaico's monthly service for the trades: site care, Google listing, 24/7 answering, scheduler and job system, from $900 a month. Start with the free Front Door Audit.</p>
+    <p class="lead" style="text-align:center;margin:0 auto 24px;">The phone is one part of Front Door, Kaico's monthly service for the trades: <a href="/services/websites">site care</a>, Google listing<!-- P1: (<a href="/services/google-business-profile">what that covers</a>) -->, <a href="/services/phone">24/7 answering</a>, scheduler and job system, from $900 a month (<a href="/pricing">pricing</a>). Start with the free Front Door Audit.<!-- P1: The full monthly service is <a href="/services/front-door">Front Door</a>. --></p>
     <p style="text-align:center;"><a href="/#audit" class="btn btn-signal btn-audit">Get my free Front Door Audit</a></p>
   </div>
 </section>
