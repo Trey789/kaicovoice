@@ -1,0 +1,69 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "serviceType": "After-hours answering service",
+      "name": "After-hours answering service for the trades",
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "Kaico Voice",
+        "url": "https://www.kaicovoice.com/"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "url": "https://www.kaicovoice.com/services/phone",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Front Door",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "900",
+            "priceCurrency": "USD",
+            "billingDuration": "P1M"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is it a real person?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, and it says so. It is an AI receptionist trained on your business. Call (918) 359-2644 and judge the conversation for yourself."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens to a call it cannot handle?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It transfers to your cell or any number you pick, and texts you a summary either way. You decide which questions trigger a transfer."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I hear it first?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The demo line is live right now: (918) 359-2644. No signup."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How fast is it live?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "About a week from kickoff for the phone alone. You give us your hours, services and pricing on a 20-minute call; we build, connect your calendar, and point your number."
+          }
+        }
+      ]
+    }
+  ]
+}

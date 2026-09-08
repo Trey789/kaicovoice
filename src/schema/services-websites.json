@@ -1,0 +1,77 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "serviceType": "Contractor website design",
+      "name": "Contractor website design",
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "Kaico Voice",
+        "url": "https://www.kaicovoice.com/"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "url": "https://www.kaicovoice.com/services/websites",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Front Door Fix",
+          "price": "1500",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "name": "Website Build, Standard",
+          "price": "3500",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "name": "Website Build, Premium",
+          "price": "6500",
+          "priceCurrency": "USD"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "I have a site. Fix or rebuild?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The audit decides, from public data, before you spend anything. A site with a sound structure and a broken front door gets the $1,500 Fix. A template that fights every change, or a site that says the wrong things about your trade, gets rebuilt. If your site is fine, the audit says so."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who owns it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You do. Your domain name, your Google Business Profile, your content, your customer list and your customer data are yours at all times, including after cancellation. On exit we hand over the website files and every account login within 14 days. That is section 5 of the client agreement."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does it take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We set the launch date at kickoff, once we have your content and your logins. We do not promise a timeline on a web page for work we have not scoped yet."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you host it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, if you want us to. Website Care is $149 a month for hosting, updates, backups and small changes, or $299 with a monthly content and listing pass. Front Door, the monthly service, includes care."
+          }
+        }
+      ]
+    }
+  ]
+}
