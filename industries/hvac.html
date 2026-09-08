@@ -315,7 +315,7 @@
     "@type": "OfferCatalog",
     "name": "Kaico Voice services",
     "itemListElement": [
-      { "@type": "Offer", "name": "Front Door Audit", "price": "0", "priceCurrency": "USD", "description": "Public-data audit of your website, Google listing and phone, delivered before any call." },
+      { "@type": "Offer", "name": "Front-door audit (scoping)", "price": "0", "priceCurrency": "USD", "description": "Free scoping audit of your website, Google listing and phone, before any quote." },
       { "@type": "Offer", "name": "Front Door Fix", "price": "1500", "priceCurrency": "USD", "description": "One-time fix of an existing site: click-to-call, quote form, Google listing wired in, tracking." },
       { "@type": "Offer", "name": "Website Build, Standard", "price": "3500", "priceCurrency": "USD" },
       { "@type": "Offer", "name": "Website Build, Premium", "price": "6500", "priceCurrency": "USD" },
@@ -395,9 +395,10 @@
         <ul>
           <li><a href="/services/websites">Websites</a></li>
           <li><a href="/services/phone">24/7 phone</a></li>
+          <li><a href="/services/job-system">Job system</a></li>
+          <li><a href="/services/google-business-profile">Google Business Profile</a></li>
+          <li><a href="/services/google-ads">Google Ads</a></li>
           <!-- P1: <li><a href="/services/front-door">Front Door, monthly</a></li> -->
-          <!-- P1: <li><a href="/services/google-business-profile">Google Business Profile</a></li> -->
-          <!-- P1: <li><a href="/services/google-ads">Google Ads</a></li> -->
         </ul>
       </details>
       <details class="nav-dd"><summary>Industries</summary>
@@ -415,7 +416,7 @@
       <!-- P1: <a href="/about" class="nav-call">About</a> -->
       <a href="tel:+19183592644" class="nav-call">Call demo: (918) 359-2644</a>
       <a href="https://app.kaicovoice.com/dashboard" class="nav-call">Client login</a>
-      <a href="/#audit" class="btn btn-ghost btn-audit" style="padding:10px 18px;font-size:14px;">Free audit</a>
+      <a href="/#start" class="btn btn-ghost btn-start" style="padding:10px 18px;font-size:14px;">Get started</a>
     </div>
   </div>
 </nav>
@@ -589,8 +590,8 @@ html{scroll-behavior:auto}
 <section>
   <div class="container">
     <h2 style="text-align:center;">Where the phone <span class="em">fits</span>.</h2>
-    <p class="lead" style="text-align:center;margin:0 auto 24px;">The phone is one part of Front Door, Kaico's monthly service for the trades: <a href="/services/websites">site care</a>, Google listing<!-- P1: (<a href="/services/google-business-profile">what that covers</a>) -->, <a href="/services/phone">24/7 answering</a>, scheduler and job system, from $900 a month (<a href="/pricing">pricing</a>). Start with the free Front Door Audit.<!-- P1: The full monthly service is <a href="/services/front-door">Front Door</a>. --></p>
-    <p style="text-align:center;"><a href="/#audit" class="btn btn-signal btn-audit">Get my free Front Door Audit</a></p>
+    <p class="lead" style="text-align:center;margin:0 auto 24px;">The phone is one part of Front Door, Kaico's monthly service for the trades: <a href="/services/websites">site care</a>, <a href="/services/google-business-profile">Google listing</a>, <a href="/services/phone">24/7 answering</a>, scheduler and <a href="/services/job-system">job system</a>, from $900 a month (<a href="/pricing">pricing</a>). Every project is scoped with a free front-door audit before we quote.<!-- P1: The full monthly service is <a href="/services/front-door">Front Door</a>. --></p>
+    <p style="text-align:center;"><a href="/#start" class="btn btn-signal btn-start">Start my project</a></p>
   </div>
 </section>
 
@@ -631,7 +632,7 @@ html{scroll-behavior:auto}
     <div class="hero-cta">
       <a href="tel:+19183592644" class="btn btn-signal btn-lg">Call (918) 359-2644, hear it live</a>
       <a href="https://cal.com/kaicovoice/demo" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-lg">Book a 15-minute demo</a>
-      <a href="/#audit" class="btn btn-signal btn-lg btn-audit">Get my free Front Door Audit</a>
+      <a href="/#start" class="btn btn-signal btn-lg btn-start">Start my project</a>
     </div>
   </div>
 </section>
@@ -640,14 +641,14 @@ html{scroll-behavior:auto}
 <footer>
   <div class="container">
     <div class="foot-cols">
-      <div><b>Services</b><br><a href="/services/websites">Websites</a> · <a href="/services/phone">24/7 phone</a> · <a href="/pricing">Pricing</a> · <a href="/proof">Proof</a></div>
+      <div><b>Services</b><br><a href="/services/websites">Websites</a> · <a href="/services/phone">24/7 phone</a> · <a href="/services/job-system">Job system</a> · <a href="/services/google-business-profile">Google Business Profile</a> · <a href="/services/google-ads">Google Ads</a> · <a href="/pricing">Pricing</a> · <a href="/proof">Proof</a></div>
       <div><b>Industries</b><br><a href="/industries/hvac">HVAC</a> · <a href="/industries/roofing">Roofing</a></div>
       <div><b>Kaico Voice LLC</b><br>Tulsa, Oklahoma · <a href="mailto:trey.kaico@gmail.com">trey.kaico@gmail.com</a> · <a href="tel:+19183592644">(918) 359-2644</a><br><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/client-agreement">Client agreement</a> · <a href="/sms">SMS</a> · <a href="https://app.kaicovoice.com/dashboard">Client login</a></div>
     </div>
   </div>
 </footer>
 <div class="sticky-cta">
-  <a href="/#audit" class="btn btn-signal btn-audit">Free audit</a>
+  <a href="/#start" class="btn btn-signal btn-start">Start</a>
   <a href="tel:+19183592644" class="btn btn-ghost">Call</a>
 </div>
 
@@ -708,7 +709,7 @@ html{scroll-behavior:auto}
   var err = document.getElementById('lf-error');
   var btn = form.querySelector('button[type="submit"]');
   function val(n) { var el = form.querySelector('[name="' + n + '"]'); return el ? el.value.trim() : ''; }
-  function fail(msg) { if (err) { err.textContent = msg; err.hidden = false; } btn.disabled = false; btn.textContent = 'Get my free audit'; }
+  function fail(msg) { if (err) { err.textContent = msg; err.hidden = false; } btn.disabled = false; btn.textContent = 'Start my project'; }
   function track(name) { if (typeof gtag === 'function') gtag('event', name); }
   form.addEventListener('submit', function (e) {
     e.preventDefault(); if (err) err.hidden = true;
@@ -717,7 +718,7 @@ html{scroll-behavior:auto}
     var digits = phone.replace(/\D/g, '');
     if (!name || !business) { return fail('Add your name and your business name.'); }
     if (!trade) { return fail('Pick your trade.'); }
-    if (!phone && !email) { return fail('Add a phone number or an email so we can send the audit.'); }
+    if (!phone && !email) { return fail('Add a phone number or an email so we can send the quote.'); }
     if (phone && !(digits.length === 10 || (digits.length === 11 && digits.charAt(0) === '1'))) { return fail('Enter a 10-digit US phone number.'); }
     if (email && email.indexOf('@') < 0) { return fail('That email does not look right.'); }
     var needs = Array.prototype.map.call(form.querySelectorAll('input[name="needs"]:checked'), function (c) { return c.value; });
@@ -737,7 +738,7 @@ html{scroll-behavior:auto}
     var h = a.getAttribute('href') || '';
     if (h.indexOf('tel:') === 0) gtag('event', 'tel_click');
     else if (h.indexOf('cal.com') > -1) gtag('event', 'cal_click');
-    else if (a.classList.contains('btn-audit')) gtag('event', 'audit_cta_click');
+    else if (a.classList.contains('btn-start')) gtag('event', 'start_cta_click');
   });
 })();
 </script>

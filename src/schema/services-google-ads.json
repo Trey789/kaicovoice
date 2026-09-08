@@ -1,0 +1,79 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "serviceType": "Google Ads management",
+      "name": "Google Ads management for contractors",
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "Kaico Voice",
+        "url": "https://www.kaicovoice.com/"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "url": "https://www.kaicovoice.com/services/google-ads",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Ads Management",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "500",
+            "priceCurrency": "USD",
+            "billingDuration": "P1M"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Front Door + Growth",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "1750",
+            "priceCurrency": "USD",
+            "billingDuration": "P1M"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much should I spend?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We recommend a number after the scoping audit, never before. It depends on your trade's click prices, your service area and what one booked job is worth to you. Anyone who quotes a spend before looking is guessing with your money."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I own the account?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The ad account is yours, Google bills the media to you directly, and the campaign history stays with you if we ever part ways."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Google Ads or Local Services Ads?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Often both. Local Services Ads need Google's screening and sit above regular ads for some trades; we help you through the screening and run both where it pays."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I know it works?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Calls and bookings, reconciled against your calendar, in the monthly report. Not impressions, not clicks. If the ads are not producing booked jobs, we say so and change them or stop."
+          }
+        }
+      ]
+    }
+  ]
+}

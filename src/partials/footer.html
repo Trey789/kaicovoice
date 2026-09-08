@@ -1,14 +1,14 @@
 <footer>
   <div class="container">
     <div class="foot-cols">
-      <div><b>Services</b><br><a href="/services/websites">Websites</a> · <a href="/services/phone">24/7 phone</a> · <a href="/pricing">Pricing</a> · <a href="/proof">Proof</a></div>
+      <div><b>Services</b><br><a href="/services/websites">Websites</a> · <a href="/services/phone">24/7 phone</a> · <a href="/services/job-system">Job system</a> · <a href="/services/google-business-profile">Google Business Profile</a> · <a href="/services/google-ads">Google Ads</a> · <a href="/pricing">Pricing</a> · <a href="/proof">Proof</a></div>
       <div><b>Industries</b><br><a href="/industries/hvac">HVAC</a> · <a href="/industries/roofing">Roofing</a></div>
       <div><b>Kaico Voice LLC</b><br>Tulsa, Oklahoma · <a href="mailto:trey.kaico@gmail.com">trey.kaico@gmail.com</a> · <a href="tel:+19183592644">(918) 359-2644</a><br><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/client-agreement">Client agreement</a> · <a href="/sms">SMS</a> · <a href="https://app.kaicovoice.com/dashboard">Client login</a></div>
     </div>
   </div>
 </footer>
 <div class="sticky-cta">
-  <a href="/#audit" class="btn btn-signal btn-audit">Free audit</a>
+  <a href="/#start" class="btn btn-signal btn-start">Start</a>
   <a href="tel:+19183592644" class="btn btn-ghost">Call</a>
 </div>
 
@@ -69,7 +69,7 @@
   var err = document.getElementById('lf-error');
   var btn = form.querySelector('button[type="submit"]');
   function val(n) { var el = form.querySelector('[name="' + n + '"]'); return el ? el.value.trim() : ''; }
-  function fail(msg) { if (err) { err.textContent = msg; err.hidden = false; } btn.disabled = false; btn.textContent = 'Get my free audit'; }
+  function fail(msg) { if (err) { err.textContent = msg; err.hidden = false; } btn.disabled = false; btn.textContent = 'Start my project'; }
   function track(name) { if (typeof gtag === 'function') gtag('event', name); }
   form.addEventListener('submit', function (e) {
     e.preventDefault(); if (err) err.hidden = true;
@@ -78,7 +78,7 @@
     var digits = phone.replace(/\D/g, '');
     if (!name || !business) { return fail('Add your name and your business name.'); }
     if (!trade) { return fail('Pick your trade.'); }
-    if (!phone && !email) { return fail('Add a phone number or an email so we can send the audit.'); }
+    if (!phone && !email) { return fail('Add a phone number or an email so we can send the quote.'); }
     if (phone && !(digits.length === 10 || (digits.length === 11 && digits.charAt(0) === '1'))) { return fail('Enter a 10-digit US phone number.'); }
     if (email && email.indexOf('@') < 0) { return fail('That email does not look right.'); }
     var needs = Array.prototype.map.call(form.querySelectorAll('input[name="needs"]:checked'), function (c) { return c.value; });
@@ -98,7 +98,7 @@
     var h = a.getAttribute('href') || '';
     if (h.indexOf('tel:') === 0) gtag('event', 'tel_click');
     else if (h.indexOf('cal.com') > -1) gtag('event', 'cal_click');
-    else if (a.classList.contains('btn-audit')) gtag('event', 'audit_cta_click');
+    else if (a.classList.contains('btn-start')) gtag('event', 'start_cta_click');
   });
 })();
 </script>

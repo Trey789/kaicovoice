@@ -1,0 +1,69 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "serviceType": "Google Business Profile optimization",
+      "name": "Google Business Profile optimization for contractors",
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "Kaico Voice",
+        "url": "https://www.kaicovoice.com/"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "url": "https://www.kaicovoice.com/services/google-business-profile",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Front Door",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "900",
+            "priceCurrency": "USD",
+            "billingDuration": "P1M"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is this the same as Google Ads?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The Business Profile is the free listing on the map and in search. Google Ads is paid placement above it. We do both; this page is about the listing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you get me reviews?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We ask for them after paid jobs, in your voice, and route unhappy customers to you first. We never buy reviews and never write them. Google removes fake ones and can suspend the listing that carried them."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if someone else claimed my listing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It happens with old marketing vendors and former partners. We file Google's ownership request on your behalf and document it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long until it shows?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Verification depends on the method Google offers, usually days to a couple of weeks. Changes to hours, categories and photos appear within days of verification."
+          }
+        }
+      ]
+    }
+  ]
+}

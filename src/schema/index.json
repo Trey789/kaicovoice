@@ -4,10 +4,10 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What is the free Front Door Audit, and what is it not?",
+      "name": "What is the front-door audit?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "One page, from public data only: what your website, Google listing and phone are leaking, what is working, and what we would fix first. It is not a sales call and it does not require one. You get it whether or not we ever talk again."
+        "text": "The scoping step before every quote. We pull your website, Google listing and phone from public data and write one page: what leaks, what works, what we would fix first. It is free, it needs no call, and you keep it whether or not you buy anything."
       }
     },
     {

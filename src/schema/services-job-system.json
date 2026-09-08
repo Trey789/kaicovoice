@@ -1,0 +1,69 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "serviceType": "Job management system for contractors",
+      "name": "Kaico job system for trade shops",
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "Kaico Voice",
+        "url": "https://www.kaicovoice.com/"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "url": "https://www.kaicovoice.com/services/job-system",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Front Door (job system included)",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "900",
+            "priceCurrency": "USD",
+            "billingDuration": "P1M"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do I have to use it?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. It is included with Front Door because most of our clients need it, not because you are locked into it. If your shop already runs on Jobber or Housecall Pro, Front Door feeds that instead."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can my customers pay by card?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Invoices carry a card-payment link through your own Stripe account. The money goes to you directly, and the job marks itself paid when it clears."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does anything go out without me?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Every customer email is drafted for you and sent only when you tap Approve on your phone. Dismiss it and it never leaves."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who owns the data if I leave?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You do, at all times. Customer list, jobs, quotes, invoices. It is section 5 of the client agreement, in writing."
+          }
+        }
+      ]
+    }
+  ]
+}

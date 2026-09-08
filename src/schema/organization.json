@@ -21,7 +21,7 @@
     "@type": "OfferCatalog",
     "name": "Kaico Voice services",
     "itemListElement": [
-      { "@type": "Offer", "name": "Front Door Audit", "price": "0", "priceCurrency": "USD", "description": "Public-data audit of your website, Google listing and phone, delivered before any call." },
+      { "@type": "Offer", "name": "Front-door audit (scoping)", "price": "0", "priceCurrency": "USD", "description": "Free scoping audit of your website, Google listing and phone, before any quote." },
       { "@type": "Offer", "name": "Front Door Fix", "price": "1500", "priceCurrency": "USD", "description": "One-time fix of an existing site: click-to-call, quote form, Google listing wired in, tracking." },
       { "@type": "Offer", "name": "Website Build, Standard", "price": "3500", "priceCurrency": "USD" },
       { "@type": "Offer", "name": "Website Build, Premium", "price": "6500", "priceCurrency": "USD" },
