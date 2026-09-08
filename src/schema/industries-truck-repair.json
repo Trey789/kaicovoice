@@ -1,0 +1,38 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can it take a fleet account's PO number?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Fleet intake is part of the script: company, unit number, PO or authorization number, contact and callback. It lands in the transcript and on the job in the job system, so the repair order starts with the paperwork already done."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it know a hydraulic problem from a brake problem?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, and it does not pretend to. It captures what the caller says, in their words, and routes by the rules you set: a loaded unit down transfers to on-call, a PM request books, anything unclear takes a message and texts the caller back. Your tech reads the transcript and decides."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "We do not do marketing. Why would we need a site?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You probably do not need marketing. You need a site where a fleet manager can find your number at 3am, a contact path that reaches a person, and an intake form that asks for the unit and the PO. That is a front door, not a campaign. The search ads other trades buy are usually a waste here, and we will tell you so."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does it cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The phone is sold inside Front Door, Kaico's monthly service for the trades, from $900 a month, month to month with 30 days notice. That includes site care, your Google listing, the self-serve scheduler and the job system. Every project is scoped with a free front-door audit before we quote."
+      }
+    }
+  ]
+}

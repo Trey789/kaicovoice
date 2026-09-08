@@ -1,0 +1,38 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can it tell an emergency from a Monday job?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It asks the questions you give it: is water running now, is anyone without water, can the caller reach a shutoff. Active leaks and no-water calls get the next opening or a transfer to your on-call number; a slow drain or a dripping faucet gets the next regular slot. You set the rules, and you can read every transcript to check them."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it quote prices?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Only what you tell it to. If you give it a trip fee or an after-hours rate, it will say that and nothing else. It never invents a number. Anything outside what you approved becomes a message, and the caller gets a text back so the lead stays warm."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I want to take the call myself?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Then take it. The agent picks up only what you cannot: the calls you miss, the calls after hours, the calls that come in while you are under a house. Most 24-hour shops we talk to answer their own phone and want to keep it that way. The agent is the backstop, not the replacement."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does it cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The phone is sold inside Front Door, Kaico's monthly service for the trades, from $900 a month, month to month with 30 days notice. That includes site care, your Google listing, the self-serve scheduler and the job system. Every project is scoped with a free front-door audit before we quote."
+      }
+    }
+  ]
+}

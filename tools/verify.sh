@@ -4,7 +4,7 @@
 set -u
 BASE="${1:?base url}"; EXT="${2:-}"; CK=""; [ -n "${COOKIE:-}" ] && CK="-b $COOKIE"  # COOKIE=/path/jar for protected previews
 fail=0
-pages="/ /pricing /services/websites /services/phone /services/job-system /services/google-business-profile /services/google-ads /industries/hvac /industries/roofing /proof /client-agreement /thanks /sms /privacy /terms"
+pages="/ /pricing /services/websites /services/phone /services/front-door /services/job-system /services/google-business-profile /services/google-ads /industries/hvac /industries/roofing /industries/plumbing /industries/electrical /industries/restoration /industries/truck-repair /proof /client-agreement /thanks /sms /privacy /terms"
 for p in $pages; do
   url="$BASE$p"; [ "$p" != "/" ] && url="$BASE$p$EXT"
   code=$(curl -s $CK -o /tmp/page.html -w '%{http_code}' "$url"); head=$(curl -s $CK -o /dev/null -I -w '%{http_code}' "$url")

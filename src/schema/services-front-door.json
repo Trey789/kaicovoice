@@ -1,0 +1,95 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "serviceType": "Done-for-you marketing for contractors",
+      "name": "Front Door: contractor marketing services, done for you",
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "Kaico Voice",
+        "url": "https://www.kaicovoice.com/"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "url": "https://www.kaicovoice.com/services/front-door",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Front Door",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "900",
+            "priceCurrency": "USD",
+            "billingDuration": "P1M"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Front Door + Growth",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "1750",
+            "priceCurrency": "USD",
+            "billingDuration": "P1M"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do I have to use your job system?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. It is included because most shops need it, not because you are locked in. If you already run Jobber, Housecall Pro or ServiceTitan, keep it. Front Door feeds it: the site, the listing and the phone send the work in, and your software takes it from there."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if I already use Jobber?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Keep it. We do not ask anyone to switch software. The phone books to the calendar you already use, the form and the listing send leads where you already look, and our job system stays out of the way."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who owns the data?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You do, at all times: your domain, your Google Business Profile, your content, your customer list and your customer data, including after cancellation. On exit we hand over the site files and every account access within 14 days. It is section 5 of the client agreement."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does \"we run it\" mean day to day?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You do not log in to anything unless you want to. We keep the site current, post to the listing and answer reviews in your voice, keep the phone trained on your hours and services, and watch the scheduler. You get a text when a job books, an email to approve when a customer needs a reply, and one report a month."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is in the monthly report?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Calls answered, jobs booked, quotes sent and accepted, invoices paid, listing activity, and what changed on the site. Bookings are reconciled against your calendar before they go in, never taken from a raw system count."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens if I stop paying?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Month to month, with 30 days written notice to cancel. If an invoice fails we retry it and tell you. Unpaid 14 days after the due date, managed services pause: ads stop, the phone reverts to your own line and listing management stops. Your site stays up at least 60 days, and everything that is yours stays yours. Sections 3 to 5 of the client agreement."
+          }
+        }
+      ]
+    }
+  ]
+}

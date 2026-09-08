@@ -284,6 +284,9 @@
 .gs-error{color:#ff8a8a;font-size:14px;margin:8px 0 0}.gs-consent{font-size:12px;color:var(--ink-soft);line-height:1.5;margin-top:10px}.gs-checks{display:flex;flex-wrap:wrap;gap:10px 16px;margin:6px 0 2px}.gs-checks label{font-size:14px;display:flex;gap:6px;align-items:center}
 .breadcrumbs{font-size:13px;color:var(--ink-soft);margin:0 0 12px}.breadcrumbs a{color:var(--ink-soft)}
 .foot-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;font-size:14px;color:var(--ink-soft)}.foot-cols a{color:var(--ink-soft)}
+.flow-panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px 30px;margin-top:28px}
+.flow-panel p:last-child{margin-bottom:0}
+.flow-label{display:inline-block;color:var(--signal);background:rgba(200,255,61,.08);border:1px solid rgba(200,255,61,.25);padding:5px 12px;border-radius:999px;font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin-bottom:18px}
 main p a,main li a,main strong a,.pain-closer a{color:var(--ink);font-weight:600;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}
 .nav-dd summary{font-family:inherit;font-weight:600;font-size:14px;display:inline-flex;justify-content:flex-start;align-items:center;gap:6px;color:var(--muted);padding:6px 8px}
 .nav-dd summary::after{content:"+";font-size:16px;color:var(--signal);line-height:1}
@@ -399,17 +402,17 @@ main p a,main li a,main strong a,.pain-closer a{color:var(--ink);font-weight:600
           <li><a href="/services/job-system">Job system</a></li>
           <li><a href="/services/google-business-profile">Google Business Profile</a></li>
           <li><a href="/services/google-ads">Google Ads</a></li>
-          <!-- P1: <li><a href="/services/front-door">Front Door, monthly</a></li> -->
+          <li><a href="/services/front-door">Front Door, monthly</a></li>
         </ul>
       </details>
       <details class="nav-dd" name="nav"><summary>Industries</summary>
         <ul>
           <li><a href="/industries/hvac" aria-current="page">HVAC</a></li>
-          <!-- P1: <li><a href="/industries/plumbing">Plumbing</a></li> -->
-          <!-- P1: <li><a href="/industries/electrical">Electrical</a></li> -->
+          <li><a href="/industries/plumbing">Plumbing</a></li>
+          <li><a href="/industries/electrical">Electrical</a></li>
           <li><a href="/industries/roofing">Roofing</a></li>
-          <!-- P1: <li><a href="/industries/restoration">Restoration</a></li> -->
-          <!-- P1: <li><a href="/industries/truck-repair">Truck repair</a></li> -->
+          <li><a href="/industries/restoration">Restoration</a></li>
+          <li><a href="/industries/truck-repair">Truck repair</a></li>
         </ul>
       </details>
       <a href="/pricing" class="nav-call">Pricing</a>
@@ -421,115 +424,6 @@ main p a,main li a,main strong a,.pain-closer a{color:var(--ink);font-weight:600
     </div>
   </div>
 </nav>
-<style>
-:root {
-    --bg: #0a0b0d;
-    --ink: #eef1f4;
-    --ink-soft: #9aa4af;
-    --muted: #9aa4af;
-    --line: #23282f;
-    --accent: #c8ff3d;
-    --accent-ink: #c8ff3d;
-    --signal: #c8ff3d;
-    --signal-dim: #93c91f;
-    --ink-on-signal: #0a0b0d;
-    --paper: #161a20;
-    --surface: #111418;
-  }
-body {
-    margin: 0;
-    font-family: 'Hanken Grotesk', system-ui, -apple-system, sans-serif;
-    color: var(--ink);
-    background: var(--bg);
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-  }
-.container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
-.skip-link { position: absolute; left: -9999px; top: 8px; z-index: 100; background: var(--signal); color: var(--ink-on-signal); padding: 10px 18px; border-radius: 8px; font-weight: 700; text-decoration: none; }
-/* nav */
-  nav {
-    position: sticky; top: 0; z-index: 50;
-    background: rgba(10, 11, 13, 0.72);
-    backdrop-filter: saturate(140%) blur(10px);
-    border-bottom: 1px solid var(--line);
-  }
-nav .row {
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 16px 24px; max-width: 1120px; margin: 0 auto;
-  }
-.brand { font-weight: 800; font-size: 18px; letter-spacing: -0.01em; text-decoration: none; color: inherit; }
-.brand-mark { color: var(--accent); }
-.nav-actions { display: flex; align-items: center; gap: 12px; }
-.nav-call { font-size: 14px; font-weight: 600; color: var(--ink); text-decoration: none; }
-.nav-call:hover { color: var(--accent-ink); }
-.btn {
-    display: inline-flex; align-items: center; gap: 8px;
-    padding: 14px 22px; border-radius: 999px;
-    font-weight: 600; font-size: 15px; text-decoration: none;
-    cursor: pointer; border: 0;
-    transition: transform 0.08s ease, box-shadow 0.18s ease, background 0.18s;
-  }
-.btn-signal { background: var(--signal); color: var(--ink-on-signal); font-weight: 700; }
-.btn-ghost:hover { border-color: var(--ink); }
-/* typography */
-  h1, h2, h3 { font-family: 'Bricolage Grotesque', sans-serif; }
-h2 { font-size: clamp(28px, 4.4vw, 44px); font-weight: 800; line-height: 1.04; letter-spacing: -0.03em; margin: 0 0 16px; text-wrap: balance; }
-section { padding: 80px 0; }
-section p { color: var(--muted); font-size: 16px; margin: 0 0 16px; }
-section p strong { color: var(--ink); }
-section a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; }
-section a:hover { text-decoration-color: var(--accent); }
-section a.btn { text-decoration: none; }
-/* hero */
-  .hero { padding: 72px 0 56px; }
-.hero h1 { font-size: clamp(38px, 6vw, 66px); font-weight: 800; line-height: .98; letter-spacing: -0.035em; margin: 0 0 22px; max-width: 17ch; text-wrap: balance; }
-.hero .lead { margin: 0 0 34px; }
-/* cards */
-  .grid-3 { display: grid; gap: 18px; grid-template-columns: repeat(3, 1fr); margin-top: 36px; }
-.card p { color: var(--muted); margin: 0; font-size: 15px; }
-/* call flow panel */
-  .flow-panel { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 28px 30px; margin-top: 28px; }
-.flow-label { display: inline-block; color: var(--accent-ink); background: rgba(200,255,61,0.08); border: 1px solid rgba(200,255,61,0.25); padding: 5px 12px; border-radius: 999px; font-size: 12px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 18px; }
-.flow-panel p:last-child { margin-bottom: 0; }
-/* proof callout */
-  .proof-callout {
-    border: 1px solid rgba(200,255,61,0.25);
-    background: rgba(200,255,61,0.06);
-    padding: 20px 24px;
-    margin: 24px 0;
-    border-radius: 12px;
-  }
-.proof-callout p { color: var(--ink); margin: 0; font-weight: 500; }
-/* pricing */
-  .price-figure { font-family: 'Bricolage Grotesque', sans-serif; font-size: clamp(40px, 6vw, 64px); font-weight: 800; letter-spacing: -0.03em; line-height: 1; color: var(--ink); margin: 8px 0 4px; }
-.price-figure span { font-size: 20px; color: var(--muted); font-weight: 600; letter-spacing: 0; }
-.price-note { color: var(--muted); font-size: 15px; margin: 0 0 20px; }
-summary { cursor: pointer; font-weight: 700; font-size: 17px; list-style: none; display: flex; justify-content: space-between; gap: 16px; font-family: 'Bricolage Grotesque', sans-serif; color: var(--ink); }
-/* final CTA */
-  .final-cta { text-align: center; padding: 96px 24px; border-top: 1px solid var(--line); }
-.final-cta h2 { max-width: 20ch; margin: 0 auto 16px; }
-.final-cta .lead { margin: 0 auto 30px; }
-/* footer */
-  footer {
-    border-top: 1px solid var(--line);
-    padding: 32px 0 48px;
-    background: var(--paper);
-  }
-footer .row {
-    display: flex; justify-content: space-between; align-items: center;
-    flex-wrap: wrap; gap: 16px;
-    font-size: 14px; color: var(--ink-soft);
-  }
-footer a { color: var(--ink-soft); text-decoration: none; }
-footer .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
-.grid-3 { grid-template-columns: 1fr; }
-section { padding: 60px 0; }
-.hero { padding: 56px 0 44px; }
-.final-cta { padding-left: 0; padding-right: 0; }
-html{scroll-behavior:auto}
-*{animation-duration:.001ms!important;transition-duration:.001ms!important}
-.pill i{animation:none!important}
-</style>
 <main id="main">
 
 <header class="hero">
@@ -591,7 +485,7 @@ html{scroll-behavior:auto}
 <section>
   <div class="container">
     <h2 style="text-align:center;">Where the phone <span class="em">fits</span>.</h2>
-    <p class="lead" style="text-align:center;margin:0 auto 24px;">The phone is one part of Front Door, Kaico's monthly service for the trades: <a href="/services/websites">site care</a>, <a href="/services/google-business-profile">Google listing</a>, <a href="/services/phone">24/7 answering</a>, scheduler and <a href="/services/job-system">job system</a>, from $900 a month (<a href="/pricing">pricing</a>). Every project is scoped with a free front-door audit before we quote.<!-- P1: The full monthly service is <a href="/services/front-door">Front Door</a>. --></p>
+    <p class="lead" style="text-align:center;margin:0 auto 24px;">The phone is one part of <a href="/services/front-door">Front Door</a>, Kaico\'s monthly service for the trades: <a href="/services/websites">site care</a>, <a href="/services/google-business-profile">Google listing</a>, <a href="/services/phone">24/7 answering</a>, scheduler and <a href="/services/job-system">job system</a>, from $900 a month (<a href="/pricing">pricing</a>). Every project is scoped with a free front-door audit before we quote.</p>
     <p style="text-align:center;"><a href="/#start" class="btn btn-signal btn-start">Start my project</a></p>
   </div>
 </section>
@@ -642,8 +536,8 @@ html{scroll-behavior:auto}
 <footer>
   <div class="container">
     <div class="foot-cols">
-      <div><b>Services</b><br><a href="/services/websites">Websites</a> · <a href="/services/phone">24/7 phone</a> · <a href="/services/job-system">Job system</a> · <a href="/services/google-business-profile">Google Business Profile</a> · <a href="/services/google-ads">Google Ads</a> · <a href="/pricing">Pricing</a> · <a href="/proof">Proof</a></div>
-      <div><b>Industries</b><br><a href="/industries/hvac">HVAC</a> · <a href="/industries/roofing">Roofing</a></div>
+      <div><b>Services</b><br><a href="/services/websites">Websites</a> · <a href="/services/front-door">Front Door</a> · <a href="/services/phone">24/7 phone</a> · <a href="/services/job-system">Job system</a> · <a href="/services/google-business-profile">Google Business Profile</a> · <a href="/services/google-ads">Google Ads</a> · <a href="/pricing">Pricing</a> · <a href="/proof">Proof</a></div>
+      <div><b>Industries</b><br><a href="/industries/hvac">HVAC</a> · <a href="/industries/plumbing">Plumbing</a> · <a href="/industries/electrical">Electrical</a> · <a href="/industries/roofing">Roofing</a> · <a href="/industries/restoration">Restoration</a> · <a href="/industries/truck-repair">Truck repair</a></div>
       <div><b>Kaico Voice LLC</b><br>Tulsa, Oklahoma · <a href="mailto:trey.kaico@gmail.com">trey.kaico@gmail.com</a> · <a href="tel:+19183592644">(918) 359-2644</a><br><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/client-agreement">Client agreement</a> · <a href="/sms">SMS</a> · <a href="https://app.kaicovoice.com/dashboard">Client login</a></div>
     </div>
   </div>

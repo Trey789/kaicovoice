@@ -1,0 +1,38 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does it know an outage from a flickering light?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It captures what the caller describes and routes by the rules you set. It does not diagnose. A whole-house outage with the neighbors' lights on gets routed one way, a flickering fixture another, and anything with heat, smell or sparking transfers to a person. You read the transcript and make the call."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can it schedule inspections?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, the same way it books a service call: it checks your calendar and offers real openings. If inspections and installs live on different calendars or inside field service software, we map that on the setup call before it takes a single live call."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I want to take the call myself?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Then take it. The agent picks up only what you cannot: the calls you miss, the calls after hours, the calls that come in while you are in a panel. It is the backstop, not the replacement."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does it cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The phone is sold inside Front Door, Kaico's monthly service for the trades, from $900 a month, month to month with 30 days notice. That includes site care, your Google listing, the self-serve scheduler and the job system. Every project is scoped with a free front-door audit before we quote."
+      }
+    }
+  ]
+}
