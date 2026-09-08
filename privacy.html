@@ -284,6 +284,7 @@
 .gs-error{color:#ff8a8a;font-size:14px;margin:8px 0 0}.gs-consent{font-size:12px;color:var(--ink-soft);line-height:1.5;margin-top:10px}.gs-checks{display:flex;flex-wrap:wrap;gap:10px 16px;margin:6px 0 2px}.gs-checks label{font-size:14px;display:flex;gap:6px;align-items:center}
 .breadcrumbs{font-size:13px;color:var(--ink-soft);margin:0 0 12px}.breadcrumbs a{color:var(--ink-soft)}
 .foot-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;font-size:14px;color:var(--ink-soft)}.foot-cols a{color:var(--ink-soft)}
+main p a,main li a,main strong a{color:var(--ink);font-weight:600;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}
 .nav-dd summary{font-family:inherit;font-weight:600;font-size:14px;display:inline-flex;justify-content:flex-start;align-items:center;gap:6px;color:var(--muted);padding:6px 8px}
 .nav-dd summary::after{content:"+";font-size:16px;color:var(--signal);line-height:1}
 .nav-dd[open] summary::after{content:"\2212"}
@@ -337,7 +338,7 @@
   <div class="row">
     <a href="/" class="brand"><b>Kaico</b> Voice</a>
     <div class="nav-actions">
-      <details class="nav-dd"><summary>Services</summary>
+      <details class="nav-dd" name="nav"><summary>Services</summary>
         <ul>
           <li><a href="/services/websites">Websites</a></li>
           <li><a href="/services/phone">24/7 phone</a></li>
@@ -347,7 +348,7 @@
           <!-- P1: <li><a href="/services/front-door">Front Door, monthly</a></li> -->
         </ul>
       </details>
-      <details class="nav-dd"><summary>Industries</summary>
+      <details class="nav-dd" name="nav"><summary>Industries</summary>
         <ul>
           <li><a href="/industries/hvac">HVAC</a></li>
           <!-- P1: <li><a href="/industries/plumbing">Plumbing</a></li> -->
