@@ -1,6 +1,7 @@
 # Kaico Voice
 > Kaico builds and runs the online front door for the trades: the website, the Google listing, and the phone that answers when you can't.
 
+- [Client Services Agreement | Kaico Voice](https://www.kaicovoice.com/client-agreement): The standard terms for every Kaico Voice engagement: payment, month to month with 30 days notice, ownership of your site and data, and how the phone is handled.
 - [Website, Google Listing and Phone for Trades | Kaico Voice](https://www.kaicovoice.com/): Kaico builds and runs the online front door for HVAC, plumbing, electrical and roofing shops: website, Google listing and a phone that answers. Free audit.
 - [HVAC Answering Service | Kaico Voice](https://www.kaicovoice.com/industries/hvac): HVAC answering service that picks up on the first ring, books straight to your calendar and works after hours. Built for heating and air companies.
 - [Roofing Answering Service | Kaico Voice](https://www.kaicovoice.com/industries/roofing): Roofing answering service that picks up when the hail does: storm calls answered 24/7, booked to your calendar, texted to your phone. Hear it live.
