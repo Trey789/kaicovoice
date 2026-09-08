@@ -12,7 +12,8 @@ ROOT = pathlib.Path(__file__).resolve().parent
 SITE = "https://www.kaicovoice.com"
 GA4_ID = ""  # "G-XXXXXXXXXX" once Trey creates the property (spec 11.1); empty means no snippet
 TITLE_MAX = 61
-BANNED = [r"\$250", r"\bcancel anytime\b", r"\bno contract\b", r"\bsample data\b", "—", "–"]
+BANNED = [r"trey@kaicovoice\.com",  # mailbox lapsed 2026-08-08; the operator inbox is trey.kaico@gmail.com
+          r"\$250", r"\bcancel anytime\b", r"\bno contract\b", r"\bsample data\b", "—", "–"]
 STATIC = {"/robots.txt", "/sitemap.xml", "/llms.txt"}
 GA4_SNIPPET = ('<script async src="https://www.googletagmanager.com/gtag/js?id={id}"></script>'
                '<script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}'

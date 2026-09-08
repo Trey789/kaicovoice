@@ -98,6 +98,10 @@ class BuildChecks(unittest.TestCase):
         errs, _ = self.run_build({"pricing.html": page(body=body)})
         self.assertEqual(errs, [])
 
+    def test_dead_mailbox_address_fails(self):
+        errs, _ = self.run_build({"pricing.html": page(body='<main><h1>P</h1><a href="mailto:trey@kaicovoice.com">mail</a></main>')})
+        self.assertTrue(any("banned" in e for e in errs), errs)
+
     def test_duplicate_title_fails(self):
         errs, _ = self.run_build({"a.html": page(canonical="/a"), "b.html": page(canonical="/b")})
         self.assertTrue(any("duplicate title" in e for e in errs), errs)
