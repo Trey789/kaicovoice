@@ -308,6 +308,13 @@ main p a,main li a,main strong a,.pain-closer a,.inc a{color:var(--ink);font-wei
 @keyframes markWobble{from{transform:rotateY(-24deg) rotateX(7deg)}to{transform:rotateY(24deg) rotateX(-7deg)}}
 @media (min-width:1100px){.hero .container{position:relative}.mark3d-wrap{display:block}}
 @media (prefers-reduced-motion:reduce){.mark3d-spin{animation:none}.mark3d{transform:none;transition:none}}
+/* Task 2: nav panels flip down, buttons press in */
+.nav-dd{perspective:600px}
+.nav-dd[open] ul{animation:flipDown .22s ease-out;transform-origin:top center}
+@keyframes flipDown{from{transform:rotateX(-70deg);opacity:0}to{transform:rotateX(0);opacity:1}}
+.btn{transition:transform .12s ease,box-shadow .18s ease,background .18s}
+.btn:active{transform:translateY(1px) scale(.985)}
+@media (prefers-reduced-motion:reduce){.nav-dd[open] ul{animation:none}.btn:active{transform:none}}
 /* Task 1: the handset rings on call hover; arcs pulse with the pill */
 .mark3d-spin i.arcs{background-image:url(/assets/mark-arcs.png);transform:translateZ(2px);filter:none;animation:arcPulse 1.8s ease-out infinite}
 @keyframes arcPulse{0%{opacity:.55;transform:translateZ(2px) scale(.96)}60%{opacity:1;transform:translateZ(2px) scale(1.03)}100%{opacity:.55;transform:translateZ(2px) scale(.96)}}
