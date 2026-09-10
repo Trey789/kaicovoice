@@ -322,6 +322,7 @@ main p a,main li a,main strong a,.pain-closer a,.inc a{color:var(--ink);font-wei
 @keyframes unitIn{from{transform:rotateX(35deg) translateY(20px);opacity:.4}}
 }
 @media (prefers-reduced-motion:reduce){.unit{animation:none;transition:none;transform:none;opacity:1}}
+@media (prefers-reduced-motion:reduce){.price-card,.btn,.mark3d-mini,.grid-3 > .card{transition:none}.container:has(> .price-card) .price-card:hover,.container:has(> .price-card:hover) .price-card:not(:hover){transform:none}.brand:hover .mark3d-mini{transform:none}}
 /* Task 6: the front door opens on scroll */
 .door{display:none}
 @media (min-width:1100px){
