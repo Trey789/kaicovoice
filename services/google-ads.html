@@ -308,6 +308,13 @@ main p a,main li a,main strong a,.pain-closer a,.inc a{color:var(--ink);font-wei
 @keyframes markWobble{from{transform:rotateY(-24deg) rotateX(7deg)}to{transform:rotateY(24deg) rotateX(-7deg)}}
 @media (min-width:1100px){.hero .container{position:relative}.mark3d-wrap{display:block}}
 @media (prefers-reduced-motion:reduce){.mark3d-spin{animation:none}.mark3d{transform:none;transition:none}}
+/* Task 4: pricing cards step in depth */
+@media (hover:hover) and (pointer:fine) and (min-width:1100px){
+.container:has(> .price-card){perspective:1400px;transform-style:preserve-3d}
+.price-card{transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease}
+.container:has(> .price-card:hover) .price-card:not(:hover){transform:translateZ(-40px) scale(.985)}
+.price-card:hover{transform:translateZ(18px);box-shadow:0 30px 60px -30px rgba(0,0,0,.8)}
+}
 /* Task 3: hero depth plane */
 @media (min-width:1100px){
 .hero{position:relative;overflow:clip;overflow-clip-margin:24px}
