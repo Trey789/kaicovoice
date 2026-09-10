@@ -308,6 +308,18 @@ main p a,main li a,main strong a,.pain-closer a,.inc a{color:var(--ink);font-wei
 @keyframes markWobble{from{transform:rotateY(-24deg) rotateX(7deg)}to{transform:rotateY(24deg) rotateX(-7deg)}}
 @media (min-width:1100px){.hero .container{position:relative}.mark3d-wrap{display:block}}
 @media (prefers-reduced-motion:reduce){.mark3d-spin{animation:none}.mark3d{transform:none;transition:none}}
+/* Task 5: the mark docks into the nav; the hero mark leaves on scroll */
+.mark3d-mini{display:none}
+@media (min-width:1100px){
+.brand{display:inline-flex;align-items:center;perspective:300px}
+.mark3d-mini{display:inline-block;position:relative;width:26px;height:26px;margin-right:9px;transform-style:preserve-3d;transition:transform .4s ease}
+.mark3d-mini i{position:absolute;inset:0;background:url(/assets/mark-mini.png) center/contain no-repeat;transform:translateZ(calc(var(--i)*-1px));filter:brightness(calc(1 - var(--i)*.06))}
+.brand:hover .mark3d-mini{transform:rotateY(28deg)}
+@supports (animation-timeline: view()){.mark3d-wrap[data-scroll]{animation:markLeave linear both;animation-timeline:view();animation-range:exit 0% exit 60%}}
+@supports not (animation-timeline: view()){.mark3d-wrap[data-scroll]{transition:opacity .4s ease,transform .4s ease}.mark3d-wrap.out-view{opacity:0;transform:translateY(-50%) scale(.6)}}
+@keyframes markLeave{to{transform:translateY(-50%) scale(.6);opacity:0}}
+}
+@media (prefers-reduced-motion:reduce){.mark3d-mini{transition:none}.brand:hover .mark3d-mini{transform:none}.mark3d-wrap[data-scroll]{animation:none;transition:none}}
 /* Task 4: pricing cards step in depth */
 @media (hover:hover) and (pointer:fine) and (min-width:1100px){
 .container:has(> .price-card){perspective:1400px;transform-style:preserve-3d}
@@ -332,9 +344,9 @@ main p a,main li a,main strong a,.pain-closer a,.inc a{color:var(--ink);font-wei
 /* Task 1: the handset rings on call hover; arcs pulse with the pill */
 .mark3d-spin i.arcs{background-image:url(/assets/mark-arcs.png);transform:translateZ(2px);filter:none;animation:arcPulse 1.8s ease-out infinite}
 @keyframes arcPulse{0%{opacity:.55;transform:translateZ(2px) scale(.96)}60%{opacity:1;transform:translateZ(2px) scale(1.03)}100%{opacity:.55;transform:translateZ(2px) scale(.96)}}
-body:has(a[href^="tel:"]:hover) .mark3d-wrap{animation:ring .55s ease-in-out 1}
-@keyframes ring{0%,100%{transform:translateY(-50%) rotate(0)}20%{transform:translateY(-50%) rotate(-7deg)}40%{transform:translateY(-50%) rotate(7deg)}60%{transform:translateY(-50%) rotate(-4deg)}80%{transform:translateY(-50%) rotate(4deg)}}
-@media (prefers-reduced-motion:reduce){.mark3d-spin i.arcs{animation:none}.mark3d-wrap{animation:none}}
+body:has(a[href^="tel:"]:hover) .mark3d{animation:ring .55s ease-in-out 1}
+@keyframes ring{0%,100%{transform:rotate(0)}20%{transform:rotate(-7deg)}40%{transform:rotate(7deg)}60%{transform:rotate(-4deg)}80%{transform:rotate(4deg)}}
+@media (prefers-reduced-motion:reduce){.mark3d-spin i.arcs{animation:none}.mark3d-wrap{animation:none}.mark3d{animation:none}}
 </style>
 
 <script type="application/ld+json">{
@@ -476,7 +488,7 @@ body:has(a[href^="tel:"]:hover) .mark3d-wrap{animation:ring .55s ease-in-out 1}
 
 <nav>
   <div class="row">
-    <a href="/" class="brand"><b>Kaico</b> Voice</a>
+    <a href="/" class="brand"><span class="mark3d-mini" aria-hidden="true"><i style="--i:0"></i><i style="--i:1"></i><i style="--i:2"></i><i style="--i:3"></i><i style="--i:4"></i><i style="--i:5"></i></span><b>Kaico</b> Voice</a>
     <div class="nav-actions">
       <details class="nav-dd" name="nav"><summary>Services</summary>
         <ul>
@@ -680,6 +692,12 @@ body:has(a[href^="tel:"]:hover) .mark3d-wrap{animation:ring .55s ease-in-out 1}
   if (!reduce && window.matchMedia && window.matchMedia('(hover:hover) and (pointer:fine)').matches) {
     document.addEventListener('pointermove', function(e){ var c = e.target.closest ? e.target.closest('.card') : null; if (!c) return; var r = c.getBoundingClientRect(); c.style.setProperty('--ry', (((e.clientX - r.left) / r.width - .5) * 8).toFixed(2) + 'deg'); c.style.setProperty('--rx', ((.5 - (e.clientY - r.top) / r.height) * 8).toFixed(2) + 'deg'); }, {passive:true});
     document.addEventListener('pointerout', function(e){ var c = e.target.closest ? e.target.closest('.card') : null; if (c && !(e.relatedTarget && c.contains(e.relatedTarget))) { c.style.removeProperty('--rx'); c.style.removeProperty('--ry'); } }, {passive:true});
+  }
+
+  // scroll-driven effects: browsers without CSS scroll timelines get class toggles instead
+  if (!reduce && !(window.CSS && CSS.supports && CSS.supports('animation-timeline: view()')) && 'IntersectionObserver' in window) {
+    var so = new IntersectionObserver(function(es){ es.forEach(function(e){ e.target.classList.toggle('in-view', e.isIntersecting); e.target.classList.toggle('out-view', !e.isIntersecting); }); }, {threshold: .35});
+    document.querySelectorAll('[data-scroll]').forEach(function(el){ so.observe(el); });
   }
 
   // configurator (only on pages that still carry it; guarded so its absence never breaks the rest)

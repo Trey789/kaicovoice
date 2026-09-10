@@ -308,6 +308,18 @@ main p a,main li a,main strong a,.pain-closer a,.inc a{color:var(--ink);font-wei
 @keyframes markWobble{from{transform:rotateY(-24deg) rotateX(7deg)}to{transform:rotateY(24deg) rotateX(-7deg)}}
 @media (min-width:1100px){.hero .container{position:relative}.mark3d-wrap{display:block}}
 @media (prefers-reduced-motion:reduce){.mark3d-spin{animation:none}.mark3d{transform:none;transition:none}}
+/* Task 5: the mark docks into the nav; the hero mark leaves on scroll */
+.mark3d-mini{display:none}
+@media (min-width:1100px){
+.brand{display:inline-flex;align-items:center;perspective:300px}
+.mark3d-mini{display:inline-block;position:relative;width:26px;height:26px;margin-right:9px;transform-style:preserve-3d;transition:transform .4s ease}
+.mark3d-mini i{position:absolute;inset:0;background:url(/assets/mark-mini.png) center/contain no-repeat;transform:translateZ(calc(var(--i)*-1px));filter:brightness(calc(1 - var(--i)*.06))}
+.brand:hover .mark3d-mini{transform:rotateY(28deg)}
+@supports (animation-timeline: view()){.mark3d-wrap[data-scroll]{animation:markLeave linear both;animation-timeline:view();animation-range:exit 0% exit 60%}}
+@supports not (animation-timeline: view()){.mark3d-wrap[data-scroll]{transition:opacity .4s ease,transform .4s ease}.mark3d-wrap.out-view{opacity:0;transform:translateY(-50%) scale(.6)}}
+@keyframes markLeave{to{transform:translateY(-50%) scale(.6);opacity:0}}
+}
+@media (prefers-reduced-motion:reduce){.mark3d-mini{transition:none}.brand:hover .mark3d-mini{transform:none}.mark3d-wrap[data-scroll]{animation:none;transition:none}}
 /* Task 4: pricing cards step in depth */
 @media (hover:hover) and (pointer:fine) and (min-width:1100px){
 .container:has(> .price-card){perspective:1400px;transform-style:preserve-3d}
@@ -332,9 +344,9 @@ main p a,main li a,main strong a,.pain-closer a,.inc a{color:var(--ink);font-wei
 /* Task 1: the handset rings on call hover; arcs pulse with the pill */
 .mark3d-spin i.arcs{background-image:url(/assets/mark-arcs.png);transform:translateZ(2px);filter:none;animation:arcPulse 1.8s ease-out infinite}
 @keyframes arcPulse{0%{opacity:.55;transform:translateZ(2px) scale(.96)}60%{opacity:1;transform:translateZ(2px) scale(1.03)}100%{opacity:.55;transform:translateZ(2px) scale(.96)}}
-body:has(a[href^="tel:"]:hover) .mark3d-wrap{animation:ring .55s ease-in-out 1}
-@keyframes ring{0%,100%{transform:translateY(-50%) rotate(0)}20%{transform:translateY(-50%) rotate(-7deg)}40%{transform:translateY(-50%) rotate(7deg)}60%{transform:translateY(-50%) rotate(-4deg)}80%{transform:translateY(-50%) rotate(4deg)}}
-@media (prefers-reduced-motion:reduce){.mark3d-spin i.arcs{animation:none}.mark3d-wrap{animation:none}}
+body:has(a[href^="tel:"]:hover) .mark3d{animation:ring .55s ease-in-out 1}
+@keyframes ring{0%,100%{transform:rotate(0)}20%{transform:rotate(-7deg)}40%{transform:rotate(7deg)}60%{transform:rotate(-4deg)}80%{transform:rotate(4deg)}}
+@media (prefers-reduced-motion:reduce){.mark3d-spin i.arcs{animation:none}.mark3d-wrap{animation:none}.mark3d{animation:none}}
 </style>
 {{robots}}
 {{schema_jsonld}}{{ga4}}

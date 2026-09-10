@@ -29,6 +29,12 @@
     document.addEventListener('pointerout', function(e){ var c = e.target.closest ? e.target.closest('.card') : null; if (c && !(e.relatedTarget && c.contains(e.relatedTarget))) { c.style.removeProperty('--rx'); c.style.removeProperty('--ry'); } }, {passive:true});
   }
 
+  // scroll-driven effects: browsers without CSS scroll timelines get class toggles instead
+  if (!reduce && !(window.CSS && CSS.supports && CSS.supports('animation-timeline: view()')) && 'IntersectionObserver' in window) {
+    var so = new IntersectionObserver(function(es){ es.forEach(function(e){ e.target.classList.toggle('in-view', e.isIntersecting); e.target.classList.toggle('out-view', !e.isIntersecting); }); }, {threshold: .35});
+    document.querySelectorAll('[data-scroll]').forEach(function(el){ so.observe(el); });
+  }
+
   // configurator (only on pages that still carry it; guarded so its absence never breaks the rest)
   var chips=document.getElementById('cfgChips'), feed=document.getElementById('cfgFeed'), title=document.getElementById('cfgTitle'), note=document.getElementById('cfgNote');
   if (chips && feed && title && note) {
