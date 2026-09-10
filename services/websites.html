@@ -294,6 +294,20 @@ main p a,main li a,main strong a,.pain-closer a,.inc a{color:var(--ink);font-wei
 .nav-dd summary:hover{color:var(--ink)}
 @media (max-width:720px){.nav-dd{display:none}}
 @media (max-width:720px){html body > .sticky-cta.sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:70}}
+/* 3D layer (vault spec 2026-09-10): pointer tilt on cards, and the extruded handset mark as a stack of translateZ layers; no libraries, decorative only */
+.grid-3{perspective:1200px}
+@media (hover:hover) and (pointer:fine){
+.card{transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease}
+.card:hover{transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(-2px);box-shadow:0 24px 48px -28px rgba(0,0,0,.7)}
+}
+.mark3d-wrap{display:none;position:absolute;right:24px;top:50%;width:min(30vw,360px);aspect-ratio:1;transform:translateY(-50%);perspective:900px;pointer-events:none}
+.mark3d{position:absolute;inset:0;transform-style:preserve-3d;transform:rotateY(calc(var(--px,0)*16deg)) rotateX(calc(var(--py,0)*-10deg));transition:transform .5s ease-out}
+.mark3d-spin{position:absolute;inset:0;transform-style:preserve-3d;animation:markWobble 9s ease-in-out infinite alternate}
+.mark3d-spin i{position:absolute;inset:0;background:url(/assets/mark-handset.png) center/contain no-repeat;transform:translateZ(calc(var(--i)*-2px));filter:brightness(calc(1 - var(--i)*.04))}
+.mark3d-spin i:first-child{filter:drop-shadow(0 0 28px rgba(200,255,61,.35))}
+@keyframes markWobble{from{transform:rotateY(-24deg) rotateX(7deg)}to{transform:rotateY(24deg) rotateX(-7deg)}}
+@media (min-width:1100px){.hero .container{position:relative}.mark3d-wrap{display:block}}
+@media (prefers-reduced-motion:reduce){.mark3d-spin{animation:none}.mark3d{transform:none;transition:none}}
 </style>
 
 <script type="application/ld+json">{
@@ -573,8 +587,14 @@ main p a,main li a,main strong a,.pain-closer a,.inc a{color:var(--ink);font-wei
   var hw = document.getElementById('heroWave');
   if (hw) { for (var i=0;i<56;i++){ var s=document.createElement('span'); if(!reduce){ s.style.animationDelay=(-(Math.random()*1.1)).toFixed(2)+'s'; s.style.animationDuration=(0.7+Math.random()*0.8).toFixed(2)+'s'; } else { s.style.height=(20+Math.random()*60)+'%'; } hw.appendChild(s);} }
 
-  // cursor-tracked glow
-  if (!reduce) { window.addEventListener('pointermove', function(e){ document.documentElement.style.setProperty('--mx', e.clientX+'px'); document.documentElement.style.setProperty('--my', e.clientY+'px'); }, {passive:true}); }
+  // cursor-tracked glow, plus a unitless pointer position (-.5 to .5) for the 3D mark tilt
+  if (!reduce) { window.addEventListener('pointermove', function(e){ var d=document.documentElement.style; d.setProperty('--mx', e.clientX+'px'); d.setProperty('--my', e.clientY+'px'); if (innerWidth && innerHeight) { d.setProperty('--px', (e.clientX/innerWidth-.5).toFixed(3)); d.setProperty('--py', (e.clientY/innerHeight-.5).toFixed(3)); } }, {passive:true}); }
+
+  // card tilt toward the pointer, desktop pointers only; the CSS in head does the rest
+  if (!reduce && window.matchMedia && window.matchMedia('(hover:hover) and (pointer:fine)').matches) {
+    document.addEventListener('pointermove', function(e){ var c = e.target.closest ? e.target.closest('.card') : null; if (!c) return; var r = c.getBoundingClientRect(); c.style.setProperty('--ry', (((e.clientX - r.left) / r.width - .5) * 8).toFixed(2) + 'deg'); c.style.setProperty('--rx', ((.5 - (e.clientY - r.top) / r.height) * 8).toFixed(2) + 'deg'); }, {passive:true});
+    document.addEventListener('pointerout', function(e){ var c = e.target.closest ? e.target.closest('.card') : null; if (c && !(e.relatedTarget && c.contains(e.relatedTarget))) { c.style.removeProperty('--rx'); c.style.removeProperty('--ry'); } }, {passive:true});
+  }
 
   // configurator (only on pages that still carry it; guarded so its absence never breaks the rest)
   var chips=document.getElementById('cfgChips'), feed=document.getElementById('cfgFeed'), title=document.getElementById('cfgTitle'), note=document.getElementById('cfgNote');

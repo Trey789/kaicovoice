@@ -20,8 +20,14 @@
   var hw = document.getElementById('heroWave');
   if (hw) { for (var i=0;i<56;i++){ var s=document.createElement('span'); if(!reduce){ s.style.animationDelay=(-(Math.random()*1.1)).toFixed(2)+'s'; s.style.animationDuration=(0.7+Math.random()*0.8).toFixed(2)+'s'; } else { s.style.height=(20+Math.random()*60)+'%'; } hw.appendChild(s);} }
 
-  // cursor-tracked glow
-  if (!reduce) { window.addEventListener('pointermove', function(e){ document.documentElement.style.setProperty('--mx', e.clientX+'px'); document.documentElement.style.setProperty('--my', e.clientY+'px'); }, {passive:true}); }
+  // cursor-tracked glow, plus a unitless pointer position (-.5 to .5) for the 3D mark tilt
+  if (!reduce) { window.addEventListener('pointermove', function(e){ var d=document.documentElement.style; d.setProperty('--mx', e.clientX+'px'); d.setProperty('--my', e.clientY+'px'); if (innerWidth && innerHeight) { d.setProperty('--px', (e.clientX/innerWidth-.5).toFixed(3)); d.setProperty('--py', (e.clientY/innerHeight-.5).toFixed(3)); } }, {passive:true}); }
+
+  // card tilt toward the pointer, desktop pointers only; the CSS in head does the rest
+  if (!reduce && window.matchMedia && window.matchMedia('(hover:hover) and (pointer:fine)').matches) {
+    document.addEventListener('pointermove', function(e){ var c = e.target.closest ? e.target.closest('.card') : null; if (!c) return; var r = c.getBoundingClientRect(); c.style.setProperty('--ry', (((e.clientX - r.left) / r.width - .5) * 8).toFixed(2) + 'deg'); c.style.setProperty('--rx', ((.5 - (e.clientY - r.top) / r.height) * 8).toFixed(2) + 'deg'); }, {passive:true});
+    document.addEventListener('pointerout', function(e){ var c = e.target.closest ? e.target.closest('.card') : null; if (c && !(e.relatedTarget && c.contains(e.relatedTarget))) { c.style.removeProperty('--rx'); c.style.removeProperty('--ry'); } }, {passive:true});
+  }
 
   // configurator (only on pages that still carry it; guarded so its absence never breaks the rest)
   var chips=document.getElementById('cfgChips'), feed=document.getElementById('cfgFeed'), title=document.getElementById('cfgTitle'), note=document.getElementById('cfgNote');
