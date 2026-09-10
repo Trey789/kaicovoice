@@ -308,6 +308,22 @@ main p a,main li a,main strong a,.pain-closer a,.inc a{color:var(--ink);font-wei
 @keyframes markWobble{from{transform:rotateY(-24deg) rotateX(7deg)}to{transform:rotateY(24deg) rotateX(-7deg)}}
 @media (min-width:1100px){.hero .container{position:relative}.mark3d-wrap{display:block}}
 @media (prefers-reduced-motion:reduce){.mark3d-spin{animation:none}.mark3d{transform:none;transition:none}}
+/* Task 6: the front door opens on scroll */
+.door{display:none}
+@media (min-width:1100px){
+.door-row{display:grid;grid-template-columns:190px 1fr;grid-template-rows:auto auto auto;column-gap:44px;align-items:start}
+.door-row > .door{grid-column:1;grid-row:1/3}
+.door-row > h2,.door-row > p{grid-column:2}
+.door-row > .grid-3{grid-column:1/-1}
+.door{display:block;position:relative;width:170px;height:250px;perspective:900px;margin-top:4px}
+.door-frame{position:absolute;inset:0;border:3px solid var(--line);border-bottom:0;border-radius:8px 8px 0 0;background:radial-gradient(120px 200px at 60% 50%,rgba(200,255,61,.18),transparent 70%);transform-style:preserve-3d}
+.door-panel{position:absolute;inset:0;background:linear-gradient(180deg,#d9ff6a,#a8e02e);border-radius:5px 5px 0 0;box-shadow:inset 0 0 0 10px rgba(0,0,0,.12),inset 0 0 0 11px rgba(255,255,255,.08);transform-origin:left center;transform-style:preserve-3d}
+.door-panel i{position:absolute;right:14px;top:50%;width:10px;height:10px;border-radius:50%;background:#0a0b0d;transform:translateY(-50%)}
+@supports (animation-timeline: view()){.door-panel{animation:doorOpen linear both;animation-timeline:view();animation-range:entry 20% entry 90%}}
+@supports not (animation-timeline: view()){.door-panel{transition:transform .9s cubic-bezier(.22,1,.36,1)}.door.in-view .door-panel{transform:rotateY(-72deg)}}
+@keyframes doorOpen{to{transform:rotateY(-72deg)}}
+}
+@media (prefers-reduced-motion:reduce){.door-panel{animation:none;transition:none;transform:rotateY(-72deg)}}
 /* Task 5: the mark docks into the nav; the hero mark leaves on scroll */
 .mark3d-mini{display:none}
 @media (min-width:1100px){
@@ -534,7 +550,8 @@ body:has(a[href^="tel:"]:hover) .mark3d{animation:ring .55s ease-in-out 1}
 </header>
 
 <section>
-  <div class="container">
+  <div class="container door-row">
+    <div class="door" data-scroll aria-hidden="true"><div class="door-frame"><div class="door-panel"><i></i></div></div></div>
     <h2>What Front Door <span class="em">is.</span></h2>
     <p class="lead" style="margin-bottom:44px;">Five things a customer meets before they ever meet you, kept working by the same person who built them, plus the report that proves it.</p>
     <div class="grid-3">
