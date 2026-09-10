@@ -59,6 +59,29 @@
     if ('IntersectionObserver' in window) { new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting) { startAuto(); } else { stopAuto(); } }); }, {threshold: .4}).observe(walk); } else { startAuto(); }
   }
 
+  // "Call me now": one consented outbound demo call through /demo-call (sellers plan, feature A)
+  var cm = document.getElementById('callMe');
+  if (cm) {
+    var cmStatus = cm.querySelector('.callme-status'), cmBtn = cm.querySelector('button[type=submit]');
+    var cmSay = function(msg, isErr){ cmStatus.textContent = msg; cmStatus.hidden = false; cmStatus.classList.toggle('err', !!isErr); };
+    var cmReset = function(){ cmBtn.disabled = false; cmBtn.textContent = 'Call me now'; };
+    cm.addEventListener('submit', function(e){
+      e.preventDefault();
+      var name = (cm.querySelector('#cm-name').value || '').trim(), trade = cm.querySelector('#cm-trade').value;
+      var digits = (cm.querySelector('#cm-phone').value || '').replace(/\D/g, ''); if (digits.length === 11 && digits.charAt(0) === '1') digits = digits.slice(1);
+      if (!name) { return cmSay('Tell us your name so the assistant knows who it is calling.', true); }
+      if (digits.length !== 10 || '01'.indexOf(digits.charAt(0)) > -1 || '01'.indexOf(digits.charAt(3)) > -1) { return cmSay('Enter a US mobile number, area code first.', true); }
+      if (!cm.querySelector('#cm-consent').checked) { return cmSay('Tick the consent box so we can place the call.', true); }
+      cmBtn.disabled = true; cmBtn.textContent = 'Calling'; cmSay('Placing the call now.');
+      if (typeof gtag === 'function') gtag('event', 'demo_call_request');
+      fetch('https://web-production-976b9.up.railway.app/demo-call', { method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: name, phone: '+1' + digits, trade: trade, consent: true, consent_version: '2026-09-10', source: 'web_demo', company_url: cm.querySelector('#cm-company-url').value }) })
+        .then(function(r){ return r.json().catch(function(){ return {}; }).then(function(j){ return { ok: r.ok, j: j }; }); })
+        .then(function(res){ if (res.ok) { cmSay('Ringing you now from (918) 359-2644. Pick up and talk to it.'); cmBtn.textContent = 'Called'; } else { cmSay((res.j && res.j.error) || 'Could not place the call. Call the demo line instead: (918) 359-2644.', true); cmReset(); } })
+        .catch(function(){ cmSay('Could not place the call. Call the demo line instead: (918) 359-2644.', true); cmReset(); });
+    });
+  }
+
   // configurator (only on pages that still carry it; guarded so its absence never breaks the rest)
   var chips=document.getElementById('cfgChips'), feed=document.getElementById('cfgFeed'), title=document.getElementById('cfgTitle'), note=document.getElementById('cfgNote');
   if (chips && feed && title && note) {

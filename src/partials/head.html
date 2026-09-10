@@ -351,6 +351,15 @@ main p a,main li a,main strong a,.pain-closer a,.inc a{color:var(--ink);font-wei
 .walk-step:focus-visible{outline:3px solid var(--signal);outline-offset:2px}
 @media (max-width:860px){.walk{grid-template-columns:1fr;justify-items:center}.walk-steps{width:100%}}
 @media (prefers-reduced-motion:reduce){.walk-scene{transition:none}.walk-scene.is-on .ws-tap::after{animation:none}}
+/* "Call me now": one consented outbound demo call */
+.callme{text-align:left;margin-top:36px}
+.callme h3{margin:0 0 6px}
+.callme-lead{color:var(--muted);margin:0 0 6px;font-size:15px}
+.cm-honey{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.cm-consent{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--ink-soft);line-height:1.5;cursor:pointer}
+.cm-consent input{margin-top:3px;width:18px;height:18px;flex:none;accent-color:var(--signal)}
+.callme-status{margin:0;font-size:14px;color:var(--ink)}
+.callme-status.err{color:#ff8a8a}
 @media (prefers-reduced-motion:reduce){.price-card,.btn,.mark3d-mini,.grid-3 > .card{transition:none}.container:has(> .price-card) .price-card:hover,.container:has(> .price-card:hover) .price-card:not(:hover){transform:none}.brand:hover .mark3d-mini{transform:none}}
 /* Task 6: the front door opens on scroll */
 .door{display:none}

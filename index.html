@@ -351,6 +351,15 @@ main p a,main li a,main strong a,.pain-closer a,.inc a{color:var(--ink);font-wei
 .walk-step:focus-visible{outline:3px solid var(--signal);outline-offset:2px}
 @media (max-width:860px){.walk{grid-template-columns:1fr;justify-items:center}.walk-steps{width:100%}}
 @media (prefers-reduced-motion:reduce){.walk-scene{transition:none}.walk-scene.is-on .ws-tap::after{animation:none}}
+/* "Call me now": one consented outbound demo call */
+.callme{text-align:left;margin-top:36px}
+.callme h3{margin:0 0 6px}
+.callme-lead{color:var(--muted);margin:0 0 6px;font-size:15px}
+.cm-honey{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.cm-consent{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--ink-soft);line-height:1.5;cursor:pointer}
+.cm-consent input{margin-top:3px;width:18px;height:18px;flex:none;accent-color:var(--signal)}
+.callme-status{margin:0;font-size:14px;color:var(--ink)}
+.callme-status.err{color:#ff8a8a}
 @media (prefers-reduced-motion:reduce){.price-card,.btn,.mark3d-mini,.grid-3 > .card{transition:none}.container:has(> .price-card) .price-card:hover,.container:has(> .price-card:hover) .price-card:not(:hover){transform:none}.brand:hover .mark3d-mini{transform:none}}
 /* Task 6: the front door opens on scroll */
 .door{display:none}
@@ -677,6 +686,19 @@ body:has(a[href^="tel:"]:hover) .mark3d{animation:ring .55s ease-in-out 1}
       <p>Call right now. Ask what Kaico does. Try to book something. It is an AI, it will tell you so, and it will still get you booked.</p>
       <a href="tel:+19183592644" class="demo-number"><span class="label">Call now</span><span class="num">(918) 359-2644</span></a>
       <div class="demo-fine">No signup, no spam. We never use your number for anything else.</div>
+      <form class="gs-form gs-card callme" id="callMe" novalidate>
+        <h3>Or have it call you.</h3>
+        <p class="callme-lead">Type your cell and the assistant calls you within a minute, as if you were a customer. One call, only when you ask, between 8am and 9pm Central.</p>
+        <div class="gs-row">
+          <div class="gs-field"><label for="cm-name">Your name</label><input id="cm-name" name="name" type="text" autocomplete="name" required></div>
+          <div class="gs-field"><label for="cm-phone">Mobile number</label><input id="cm-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(918) 555-0100" required></div>
+        </div>
+        <div class="gs-field"><label for="cm-trade">Trade</label><select id="cm-trade" name="trade"><option value="">Pick your trade</option><option value="HVAC">HVAC</option><option value="Plumbing">Plumbing</option><option value="Electrical">Electrical</option><option value="Roofing">Roofing</option><option value="Water damage restoration">Water damage restoration</option><option value="Heavy-duty truck repair">Heavy-duty truck repair</option><option value="Other trade">Other trade</option></select></div>
+        <div class="cm-honey" aria-hidden="true"><label for="cm-company-url">Company URL</label><input id="cm-company-url" name="company_url" type="text" tabindex="-1" autocomplete="off"></div>
+        <label class="cm-consent"><input type="checkbox" id="cm-consent" name="consent" value="yes"><span>Yes, call me now. I agree that Kaico Voice may place one automated call to this number using an AI voice assistant so I can hear how it answers. The call may be recorded. Consent is not a condition of buying anything. Message and data rates may apply.</span></label>
+        <button type="submit" class="btn btn-signal">Call me now</button>
+        <p class="callme-status" aria-live="polite" hidden></p>
+      </form>
     </div>
   </div>
 </section>
@@ -848,6 +870,29 @@ body:has(a[href^="tel:"]:hover) .mark3d{animation:ring .55s ease-in-out 1}
     walk.addEventListener('mouseenter', stopAuto); walk.addEventListener('mouseleave', startAuto);
     walk.addEventListener('focusin', stopAuto); walk.addEventListener('focusout', startAuto);
     if ('IntersectionObserver' in window) { new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting) { startAuto(); } else { stopAuto(); } }); }, {threshold: .4}).observe(walk); } else { startAuto(); }
+  }
+
+  // "Call me now": one consented outbound demo call through /demo-call (sellers plan, feature A)
+  var cm = document.getElementById('callMe');
+  if (cm) {
+    var cmStatus = cm.querySelector('.callme-status'), cmBtn = cm.querySelector('button[type=submit]');
+    var cmSay = function(msg, isErr){ cmStatus.textContent = msg; cmStatus.hidden = false; cmStatus.classList.toggle('err', !!isErr); };
+    var cmReset = function(){ cmBtn.disabled = false; cmBtn.textContent = 'Call me now'; };
+    cm.addEventListener('submit', function(e){
+      e.preventDefault();
+      var name = (cm.querySelector('#cm-name').value || '').trim(), trade = cm.querySelector('#cm-trade').value;
+      var digits = (cm.querySelector('#cm-phone').value || '').replace(/\D/g, ''); if (digits.length === 11 && digits.charAt(0) === '1') digits = digits.slice(1);
+      if (!name) { return cmSay('Tell us your name so the assistant knows who it is calling.', true); }
+      if (digits.length !== 10 || '01'.indexOf(digits.charAt(0)) > -1 || '01'.indexOf(digits.charAt(3)) > -1) { return cmSay('Enter a US mobile number, area code first.', true); }
+      if (!cm.querySelector('#cm-consent').checked) { return cmSay('Tick the consent box so we can place the call.', true); }
+      cmBtn.disabled = true; cmBtn.textContent = 'Calling'; cmSay('Placing the call now.');
+      if (typeof gtag === 'function') gtag('event', 'demo_call_request');
+      fetch('https://web-production-976b9.up.railway.app/demo-call', { method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: name, phone: '+1' + digits, trade: trade, consent: true, consent_version: '2026-09-10', source: 'web_demo', company_url: cm.querySelector('#cm-company-url').value }) })
+        .then(function(r){ return r.json().catch(function(){ return {}; }).then(function(j){ return { ok: r.ok, j: j }; }); })
+        .then(function(res){ if (res.ok) { cmSay('Ringing you now from (918) 359-2644. Pick up and talk to it.'); cmBtn.textContent = 'Called'; } else { cmSay((res.j && res.j.error) || 'Could not place the call. Call the demo line instead: (918) 359-2644.', true); cmReset(); } })
+        .catch(function(){ cmSay('Could not place the call. Call the demo line instead: (918) 359-2644.', true); cmReset(); });
+    });
   }
 
   // configurator (only on pages that still carry it; guarded so its absence never breaks the rest)

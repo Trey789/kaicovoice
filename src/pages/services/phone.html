@@ -65,6 +65,19 @@ schema: schema/services-phone.json
       <p>Call right now. Ask what Kaico does. Try to book something. Try to throw it off.</p>
       <a href="tel:+19183592644" class="demo-number"><span class="label">Call now</span><span class="num">(918) 359-2644</span></a>
       <div class="demo-fine">No signup, no spam. We never use your number for anything else.</div>
+      <form class="gs-form gs-card callme" id="callMe" novalidate>
+        <h3>Or have it call you.</h3>
+        <p class="callme-lead">Type your cell and the assistant calls you within a minute, as if you were a customer. One call, only when you ask, between 8am and 9pm Central.</p>
+        <div class="gs-row">
+          <div class="gs-field"><label for="cm-name">Your name</label><input id="cm-name" name="name" type="text" autocomplete="name" required></div>
+          <div class="gs-field"><label for="cm-phone">Mobile number</label><input id="cm-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(918) 555-0100" required></div>
+        </div>
+        <div class="gs-field"><label for="cm-trade">Trade</label><select id="cm-trade" name="trade"><option value="">Pick your trade</option><option value="HVAC">HVAC</option><option value="Plumbing">Plumbing</option><option value="Electrical">Electrical</option><option value="Roofing">Roofing</option><option value="Water damage restoration">Water damage restoration</option><option value="Heavy-duty truck repair">Heavy-duty truck repair</option><option value="Other trade">Other trade</option></select></div>
+        <div class="cm-honey" aria-hidden="true"><label for="cm-company-url">Company URL</label><input id="cm-company-url" name="company_url" type="text" tabindex="-1" autocomplete="off"></div>
+        <label class="cm-consent"><input type="checkbox" id="cm-consent" name="consent" value="yes"><span>Yes, call me now. I agree that Kaico Voice may place one automated call to this number using an AI voice assistant so I can hear how it answers. The call may be recorded. Consent is not a condition of buying anything. Message and data rates may apply.</span></label>
+        <button type="submit" class="btn btn-signal">Call me now</button>
+        <p class="callme-status" aria-live="polite" hidden></p>
+      </form>
     </div>
   </div>
 </section>
