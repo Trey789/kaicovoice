@@ -298,7 +298,7 @@ main p a,main li a,main strong a,.pain-closer a,.inc a{color:var(--ink);font-wei
 .grid-3{perspective:1200px}
 @media (hover:hover) and (pointer:fine){
 .card{transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease}
-.card:hover{transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(-2px);box-shadow:0 24px 48px -28px rgba(0,0,0,.7)}
+.grid-3 > .card:hover{transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(-2px);box-shadow:0 24px 48px -28px rgba(0,0,0,.7)}
 }
 .mark3d-wrap{display:none;position:absolute;right:24px;top:50%;width:min(30vw,360px);aspect-ratio:1;transform:translateY(-50%);perspective:900px;pointer-events:none}
 .mark3d{position:absolute;inset:0;transform-style:preserve-3d;transform:rotateY(calc(var(--px,0)*16deg)) rotateX(calc(var(--py,0)*-10deg));transition:transform .5s ease-out}
@@ -313,7 +313,7 @@ main p a,main li a,main strong a,.pain-closer a,.inc a{color:var(--ink);font-wei
 .container:has(> .price-card){perspective:1400px;transform-style:preserve-3d}
 .price-card{transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease}
 .container:has(> .price-card:hover) .price-card:not(:hover){transform:translateZ(-40px) scale(.985)}
-.price-card:hover{transform:translateZ(18px);box-shadow:0 30px 60px -30px rgba(0,0,0,.8)}
+.container:has(> .price-card) .price-card:hover{transform:translateZ(18px);box-shadow:0 30px 60px -30px rgba(0,0,0,.8)}
 }
 /* Task 3: hero depth plane */
 @media (min-width:1100px){
