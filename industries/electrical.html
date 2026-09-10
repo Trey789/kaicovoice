@@ -308,6 +308,13 @@ main p a,main li a,main strong a,.pain-closer a,.inc a{color:var(--ink);font-wei
 @keyframes markWobble{from{transform:rotateY(-24deg) rotateX(7deg)}to{transform:rotateY(24deg) rotateX(-7deg)}}
 @media (min-width:1100px){.hero .container{position:relative}.mark3d-wrap{display:block}}
 @media (prefers-reduced-motion:reduce){.mark3d-spin{animation:none}.mark3d{transform:none;transition:none}}
+/* Task 3: hero depth plane */
+@media (min-width:1100px){
+.hero{position:relative;overflow:clip;overflow-clip-margin:24px}
+.hero::before{content:"";position:absolute;left:-10%;right:-10%;top:30%;height:120%;background:radial-gradient(circle,rgba(200,255,61,.22) 1px,transparent 1.5px) 0 0/28px 28px;transform:perspective(700px) rotateX(64deg) translate3d(calc(var(--px,0)*-24px),calc(var(--py,0)*-12px),0);transform-origin:top center;-webkit-mask:linear-gradient(to bottom,transparent,#000 30%,#000 70%,transparent);mask:linear-gradient(to bottom,transparent,#000 30%,#000 70%,transparent);pointer-events:none;z-index:0;transition:transform .5s ease-out}
+.hero .container{z-index:1}
+}
+@media (prefers-reduced-motion:reduce){.hero::before{transition:none}}
 /* Task 2: nav panels flip down, buttons press in */
 .nav-dd{perspective:600px}
 .nav-dd[open] ul{animation:flipDown .22s ease-out;transform-origin:top center}
