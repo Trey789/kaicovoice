@@ -308,6 +308,19 @@ main p a,main li a,main strong a,.pain-closer a,.inc a{color:var(--ink);font-wei
 @keyframes markWobble{from{transform:rotateY(-24deg) rotateX(7deg)}to{transform:rotateY(24deg) rotateX(-7deg)}}
 @media (min-width:1100px){.hero .container{position:relative}.mark3d-wrap{display:block}}
 @media (prefers-reduced-motion:reduce){.mark3d-spin{animation:none}.mark3d{transform:none;transition:none}}
+/* Task 7: extruded units on the industry pages */
+.unit-strip{display:flex;gap:18px;margin:8px 0 28px;flex-wrap:wrap}
+.unit{flex:1 1 220px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+.unit b{display:block;font-family:'Bricolage Grotesque',sans-serif;font-size:44px;font-weight:800;line-height:1;color:var(--signal);letter-spacing:-.02em}
+.unit span{display:block;font-size:13px;color:var(--muted);margin-top:8px}
+@media (min-width:1100px){
+.unit-strip{perspective:900px}
+.unit b{font-size:56px;text-shadow:1px 1px 0 #93c91f,2px 2px 0 #8ec21e,3px 3px 0 #86b81b,4px 4px 0 #7dad19,5px 5px 0 #74a217,6px 6px 0 #6b9615,7px 7px 0 #628b13,8px 8px 0 #597f11}
+@supports (animation-timeline: view()){.unit{animation:unitIn linear both;animation-timeline:view();animation-range:entry 0% entry 70%}}
+@supports not (animation-timeline: view()){.js-reveal .unit{transform:rotateX(35deg) translateY(20px);opacity:.4;transition:transform .7s cubic-bezier(.22,1,.36,1),opacity .7s}.js-reveal .unit.in-view{transform:none;opacity:1}}
+@keyframes unitIn{from{transform:rotateX(35deg) translateY(20px);opacity:.4}}
+}
+@media (prefers-reduced-motion:reduce){.unit{animation:none;transition:none;transform:none;opacity:1}}
 /* Task 6: the front door opens on scroll */
 .door{display:none}
 @media (min-width:1100px){
@@ -496,6 +509,7 @@ body:has(a[href^="tel:"]:hover) .mark3d{animation:ring .55s ease-in-out 1}
 <section>
   <div class="container-narrow">
     <h2>The calls you lose are the ones <span class="em">you never hear ring.</span></h2>
+    <div class="unit-strip" aria-hidden="true"><div class="unit" data-scroll><b>330</b><span>after-hours searches a month in Tulsa</span></div><div class="unit" data-scroll><b>$84</b><span>the top emergency click price</span></div></div>
     <p>Plumbing demand does not keep office hours. The water heater lets go at 11pm. The main backs up on Sunday morning with a house full of guests. The line that froze overnight thaws at 6am and starts spraying the garage. In Tulsa, about 260 people a month search "emergency plumber tulsa" and another 70 search "24 hour plumber tulsa" (Semrush, September 2026). That 330-a-month slice is the after-hours business, and only a shop that answers after hours can win it.</p>
     <p>Nationally, "plumbing answering service" is searched about 1,600 times a month, which tells you plumbers already know the problem. The owner who answers his own phone cannot pick up from under a sink or from the bottom of a trench, and the one who does pick up is the one not billing. The phone rings hardest in exactly the hours nobody can reach it.</p>
     <p>Meanwhile, the homeowner with water on the floor is not leaving a voicemail. They call you, hear the machine, hang up and dial the next name on the map. Whoever answers first gets the emergency, the repair that follows, and the water heater replacement next year. We audited a Tulsa plumber this month whose reviews say he is the only local company that answers right away. That reputation is his entire business. Voicemail does not lose you a call. It loses you the customer.</p>

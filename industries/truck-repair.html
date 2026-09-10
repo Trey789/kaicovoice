@@ -308,6 +308,19 @@ main p a,main li a,main strong a,.pain-closer a,.inc a{color:var(--ink);font-wei
 @keyframes markWobble{from{transform:rotateY(-24deg) rotateX(7deg)}to{transform:rotateY(24deg) rotateX(-7deg)}}
 @media (min-width:1100px){.hero .container{position:relative}.mark3d-wrap{display:block}}
 @media (prefers-reduced-motion:reduce){.mark3d-spin{animation:none}.mark3d{transform:none;transition:none}}
+/* Task 7: extruded units on the industry pages */
+.unit-strip{display:flex;gap:18px;margin:8px 0 28px;flex-wrap:wrap}
+.unit{flex:1 1 220px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+.unit b{display:block;font-family:'Bricolage Grotesque',sans-serif;font-size:44px;font-weight:800;line-height:1;color:var(--signal);letter-spacing:-.02em}
+.unit span{display:block;font-size:13px;color:var(--muted);margin-top:8px}
+@media (min-width:1100px){
+.unit-strip{perspective:900px}
+.unit b{font-size:56px;text-shadow:1px 1px 0 #93c91f,2px 2px 0 #8ec21e,3px 3px 0 #86b81b,4px 4px 0 #7dad19,5px 5px 0 #74a217,6px 6px 0 #6b9615,7px 7px 0 #628b13,8px 8px 0 #597f11}
+@supports (animation-timeline: view()){.unit{animation:unitIn linear both;animation-timeline:view();animation-range:entry 0% entry 70%}}
+@supports not (animation-timeline: view()){.js-reveal .unit{transform:rotateX(35deg) translateY(20px);opacity:.4;transition:transform .7s cubic-bezier(.22,1,.36,1),opacity .7s}.js-reveal .unit.in-view{transform:none;opacity:1}}
+@keyframes unitIn{from{transform:rotateX(35deg) translateY(20px);opacity:.4}}
+}
+@media (prefers-reduced-motion:reduce){.unit{animation:none;transition:none;transform:none;opacity:1}}
 /* Task 6: the front door opens on scroll */
 .door{display:none}
 @media (min-width:1100px){
@@ -496,6 +509,7 @@ body:has(a[href^="tel:"]:hover) .mark3d{animation:ring .55s ease-in-out 1}
 <section>
   <div class="container-narrow">
     <h2>Reachable 45 hours a week, <span class="em">in a 168-hour business.</span></h2>
+    <div class="unit-strip" aria-hidden="true"><div class="unit" data-scroll><b>54</b><span>percent of heavy-duty shops are understaffed</span></div><div class="unit" data-scroll><b>$149</b><span>median labor rate per hour</span></div></div>
     <p>In Tulsa, about 90 people a month search "truck repair" and 70 search "diesel repair", and a click costs about $5 (Semrush, September 2026). That is not a market you buy with ads, and we will not sell you any. It is a market you win by being the shop that picks up, because the fleet manager already knows who he wants to call. The only question is whether anyone answers.</p>
     <p>A fleet runs 168 hours a week. A shop that answers 8 to 5, Monday through Friday, is reachable for 45 of them. The unit on the shoulder of I-44 at 3am, the trailer that fails a DOT inspection on a Saturday, the reefer that quits on a Sunday load: every one of those calls goes to whoever picks up, and the shop that picks up keeps the fleet account.</p>
     <p>At $149 an hour, the tech cannot stop to answer the phone, and the owner who does is the one not billing. With 54 percent of shops short-handed, there is no office person to hire for it either. This is not a marketing problem. It is a capacity problem, and the fix is a phone that answers when the bays are full.</p>

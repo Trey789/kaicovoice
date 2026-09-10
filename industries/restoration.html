@@ -308,6 +308,19 @@ main p a,main li a,main strong a,.pain-closer a,.inc a{color:var(--ink);font-wei
 @keyframes markWobble{from{transform:rotateY(-24deg) rotateX(7deg)}to{transform:rotateY(24deg) rotateX(-7deg)}}
 @media (min-width:1100px){.hero .container{position:relative}.mark3d-wrap{display:block}}
 @media (prefers-reduced-motion:reduce){.mark3d-spin{animation:none}.mark3d{transform:none;transition:none}}
+/* Task 7: extruded units on the industry pages */
+.unit-strip{display:flex;gap:18px;margin:8px 0 28px;flex-wrap:wrap}
+.unit{flex:1 1 220px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+.unit b{display:block;font-family:'Bricolage Grotesque',sans-serif;font-size:44px;font-weight:800;line-height:1;color:var(--signal);letter-spacing:-.02em}
+.unit span{display:block;font-size:13px;color:var(--muted);margin-top:8px}
+@media (min-width:1100px){
+.unit-strip{perspective:900px}
+.unit b{font-size:56px;text-shadow:1px 1px 0 #93c91f,2px 2px 0 #8ec21e,3px 3px 0 #86b81b,4px 4px 0 #7dad19,5px 5px 0 #74a217,6px 6px 0 #6b9615,7px 7px 0 #628b13,8px 8px 0 #597f11}
+@supports (animation-timeline: view()){.unit{animation:unitIn linear both;animation-timeline:view();animation-range:entry 0% entry 70%}}
+@supports not (animation-timeline: view()){.js-reveal .unit{transform:rotateX(35deg) translateY(20px);opacity:.4;transition:transform .7s cubic-bezier(.22,1,.36,1),opacity .7s}.js-reveal .unit.in-view{transform:none;opacity:1}}
+@keyframes unitIn{from{transform:rotateX(35deg) translateY(20px);opacity:.4}}
+}
+@media (prefers-reduced-motion:reduce){.unit{animation:none;transition:none;transform:none;opacity:1}}
 /* Task 6: the front door opens on scroll */
 .door{display:none}
 @media (min-width:1100px){
@@ -496,6 +509,7 @@ body:has(a[href^="tel:"]:hover) .mark3d{animation:ring .55s ease-in-out 1}
 <section>
   <div class="container-narrow">
     <h2>Why search rank is not <span class="em">your front door.</span></h2>
+    <div class="unit-strip" aria-hidden="true"><div class="unit" data-scroll><b>70 to 85</b><span>percent of restoration revenue is insurance-paid</span></div><div class="unit" data-scroll><b>767</b><span>hailstorms in Oklahoma in 2024</span></div></div>
     <p>The 70 to 85 percent figure is industry data (PushLeads), not a Kaico result, and it explains something every restoration owner already knows: the job comes from the adjuster, the carrier program and the plumber who was there first, far more often than from a Google search. "Water damage restoration marketing" is searched about 390 times a month across the whole country (Semrush, September 2026). That is not where the work is decided.</p>
     <p>The work is decided by the weather and by who answers. Oklahoma ranked 3rd in the nation for hailstorms in 2024, with 767, 1st for tornadoes, with 151, and 5th in State Farm hail payouts in 2025 (Carrier Management; Live Insurance News). The season is predictable. The call at 2am is not, and it goes to whoever picks up: you, the shop across town, or the national franchise with a call center.</p>
     <p>A referral works the same way. The plumber standing in the flooded kitchen hands the homeowner a name. If that homeowner Googles the name and finds a listing with no emergency hours and a site with a dead contact form, the referral dies on the spot and the plumber stops making it. Your front door is what the referrer's customer sees in the first sixty seconds.</p>

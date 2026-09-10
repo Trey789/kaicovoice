@@ -308,6 +308,19 @@ main p a,main li a,main strong a,.pain-closer a,.inc a{color:var(--ink);font-wei
 @keyframes markWobble{from{transform:rotateY(-24deg) rotateX(7deg)}to{transform:rotateY(24deg) rotateX(-7deg)}}
 @media (min-width:1100px){.hero .container{position:relative}.mark3d-wrap{display:block}}
 @media (prefers-reduced-motion:reduce){.mark3d-spin{animation:none}.mark3d{transform:none;transition:none}}
+/* Task 7: extruded units on the industry pages */
+.unit-strip{display:flex;gap:18px;margin:8px 0 28px;flex-wrap:wrap}
+.unit{flex:1 1 220px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+.unit b{display:block;font-family:'Bricolage Grotesque',sans-serif;font-size:44px;font-weight:800;line-height:1;color:var(--signal);letter-spacing:-.02em}
+.unit span{display:block;font-size:13px;color:var(--muted);margin-top:8px}
+@media (min-width:1100px){
+.unit-strip{perspective:900px}
+.unit b{font-size:56px;text-shadow:1px 1px 0 #93c91f,2px 2px 0 #8ec21e,3px 3px 0 #86b81b,4px 4px 0 #7dad19,5px 5px 0 #74a217,6px 6px 0 #6b9615,7px 7px 0 #628b13,8px 8px 0 #597f11}
+@supports (animation-timeline: view()){.unit{animation:unitIn linear both;animation-timeline:view();animation-range:entry 0% entry 70%}}
+@supports not (animation-timeline: view()){.js-reveal .unit{transform:rotateX(35deg) translateY(20px);opacity:.4;transition:transform .7s cubic-bezier(.22,1,.36,1),opacity .7s}.js-reveal .unit.in-view{transform:none;opacity:1}}
+@keyframes unitIn{from{transform:rotateX(35deg) translateY(20px);opacity:.4}}
+}
+@media (prefers-reduced-motion:reduce){.unit{animation:none;transition:none;transform:none;opacity:1}}
 /* Task 6: the front door opens on scroll */
 .door{display:none}
 @media (min-width:1100px){
@@ -496,6 +509,7 @@ body:has(a[href^="tel:"]:hover) .mark3d{animation:ring .55s ease-in-out 1}
 <section>
   <div class="container-narrow">
     <h2>The calls you lose are the ones <span class="em">you never hear ring.</span></h2>
+    <div class="unit-strip" aria-hidden="true"><div class="unit" data-scroll><b>720</b><span>searches a month for electrician tulsa</span></div><div class="unit" data-scroll><b>$48</b><span>the click price on that term</span></div></div>
     <p>About 720 people a month search "electrician tulsa", and a click on that term costs about $48 (Semrush, September 2026). Nationally, "electrician answering service" is searched about 480 times a month at a $61 click price, which is what electricians are already paying to solve this problem with ads instead of a phone that picks up.</p>
     <p>An electrician cannot answer from a ladder, from inside a panel with the cover off, or from an attic in August. If the owner is the one answering, the owner is the one not billing. And the jobs that matter most, the panel upgrade, the EV charger, the whole-house rewire, all start as a phone call from someone who is comparing three shops that same afternoon.</p>
     <p>A tripped main after a storm, a burning smell from an outlet, half the house dark: that homeowner is working down a list. They call you, hear voicemail, hang up and dial the next name. Whoever answers first gets the service call, the panel job behind it and the inspection work after that. Voicemail does not lose you a call. It loses you the customer.</p>

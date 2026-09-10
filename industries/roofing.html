@@ -308,6 +308,19 @@ main p a,main li a,main strong a,.pain-closer a,.inc a{color:var(--ink);font-wei
 @keyframes markWobble{from{transform:rotateY(-24deg) rotateX(7deg)}to{transform:rotateY(24deg) rotateX(-7deg)}}
 @media (min-width:1100px){.hero .container{position:relative}.mark3d-wrap{display:block}}
 @media (prefers-reduced-motion:reduce){.mark3d-spin{animation:none}.mark3d{transform:none;transition:none}}
+/* Task 7: extruded units on the industry pages */
+.unit-strip{display:flex;gap:18px;margin:8px 0 28px;flex-wrap:wrap}
+.unit{flex:1 1 220px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+.unit b{display:block;font-family:'Bricolage Grotesque',sans-serif;font-size:44px;font-weight:800;line-height:1;color:var(--signal);letter-spacing:-.02em}
+.unit span{display:block;font-size:13px;color:var(--muted);margin-top:8px}
+@media (min-width:1100px){
+.unit-strip{perspective:900px}
+.unit b{font-size:56px;text-shadow:1px 1px 0 #93c91f,2px 2px 0 #8ec21e,3px 3px 0 #86b81b,4px 4px 0 #7dad19,5px 5px 0 #74a217,6px 6px 0 #6b9615,7px 7px 0 #628b13,8px 8px 0 #597f11}
+@supports (animation-timeline: view()){.unit{animation:unitIn linear both;animation-timeline:view();animation-range:entry 0% entry 70%}}
+@supports not (animation-timeline: view()){.js-reveal .unit{transform:rotateX(35deg) translateY(20px);opacity:.4;transition:transform .7s cubic-bezier(.22,1,.36,1),opacity .7s}.js-reveal .unit.in-view{transform:none;opacity:1}}
+@keyframes unitIn{from{transform:rotateX(35deg) translateY(20px);opacity:.4}}
+}
+@media (prefers-reduced-motion:reduce){.unit{animation:none;transition:none;transform:none;opacity:1}}
 /* Task 6: the front door opens on scroll */
 .door{display:none}
 @media (min-width:1100px){
@@ -623,11 +636,12 @@ footer .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
   <section>
     <div class="container-narrow">
       <h2>Storm demand does not trickle. <em>It floods.</em></h2>
+    <div class="unit-strip" aria-hidden="true"><div class="unit" data-scroll><b>390</b><span>searches a month for roofing answering service</span></div><div class="unit" data-scroll><b>$22</b><span>the click price on that term</span></div></div>
       <p class="lead">Roofing is the only trade where a single night of weather can produce a month of phone calls, and most of them come in a window measured in days.</p>
       <div class="pain-list">
         <div class="pain-item">
           <h3>Everyone's phone rings at once, and briefly</h3>
-          <p>After hail moves through, homeowners work down a list. They call, and if nobody picks up, they call the next roofer on that list. The company that answers first usually gets the inspection, and the inspection is where the job is won. Two weeks later the wave is over and the phones go quiet again.</p>
+          <p>After hail moves through, homeowners work down a list. They call, and if nobody picks up, they call the next roofer on that list. The company that answers first usually gets the inspection, and the inspection is where the job is won. Two weeks later the wave is over and the phones go quiet again. "Roofing answering service" is searched about 390 times a month in the United States, at a $22 click (Semrush, September 2026).</p>
         </div>
         <div class="pain-item">
           <h3>Your best people are on roofs, not at desks</h3>
