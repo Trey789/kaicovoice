@@ -424,6 +424,14 @@ body:has(a[href^="tel:"]:hover) .mark3d{animation:ring .55s ease-in-out 1}
 nav{view-transition-name:site-nav}
 @media (prefers-reduced-motion:reduce){@view-transition{navigation:none}}
 .load-badge{margin-top:10px;font-size:12px;color:var(--muted)}
+/* missed-call calculator: native sliders, the visitor's own numbers */
+.mc{max-width:640px;margin:22px auto 0;display:grid;gap:18px}
+.mc label{display:block;font-size:15px;color:var(--ink)}
+.mc label output{float:right;font-weight:700;color:var(--signal)}
+.mc input[type=range]{width:100%;margin:8px 0 0;accent-color:var(--signal)}
+.mc-result{font-size:20px;line-height:1.4;margin:6px 0 0}.mc-result output{font-weight:800;color:var(--signal)}
+.mc-fine{font-size:13px;color:var(--muted);margin:0}
+.mc.mc-zero .mc-if,.mc:not(.mc-zero) .mc-none{display:none}
 </style>
 
 <script type="application/ld+json">{
@@ -817,6 +825,21 @@ nav{view-transition-name:site-nav}
       lb.textContent = 'This page loaded in ' + s.toFixed(2) + ' s on your connection. Kaico builds sites like this.';
       lb.hidden = false;
     }, 0); });
+  }
+
+  // missed-call calculator: arithmetic on the visitor's sliders, nothing stored or sent
+  var mc = document.getElementById('mc');
+  if (mc) {
+    var g = function (id) { return document.getElementById(id); };
+    var money = function (n) { return '$' + (Math.round(n / 10) * 10).toLocaleString('en-US'); };
+    var mcRun = function () {
+      var calls = +g('mc-calls').value, miss = +g('mc-miss').value, job = +g('mc-job').value;
+      g('mc-calls-out').value = calls; g('mc-miss-out').value = miss + '%'; g('mc-job-out').value = money(job);
+      var missed = Math.round(calls * miss / 100 * 4.33);
+      g('mc-missed').value = missed; g('mc-all').value = money(missed * job); g('mc-quarter').value = money(missed * job / 4);
+      mc.classList.toggle('mc-zero', missed === 0);
+    };
+    mc.addEventListener('input', mcRun); mcRun();
   }
 })();
 

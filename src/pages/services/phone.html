@@ -40,6 +40,26 @@ schema: schema/services-phone.json
   </div>
 </section>
 
+<section>
+  <div class="container">
+    <h2>What does a missed call <span class="em">cost you?</span></h2>
+    <p class="lead">Slide these to your shop. The numbers that come out are yours, not ours.</p>
+    <form class="mc" id="mc" novalidate>
+      <label>Calls to your shop each week <output for="mc-calls" id="mc-calls-out">30</output>
+        <input type="range" id="mc-calls" name="calls" min="5" max="150" step="5" value="30"></label>
+      <label>Share you miss (after hours, on a ladder, on another call) <output for="mc-miss" id="mc-miss-out">30%</output>
+        <input type="range" id="mc-miss" name="miss" min="0" max="80" step="5" value="30"></label>
+      <label>What an average job is worth to you <output for="mc-job" id="mc-job-out">$350</output>
+        <input type="range" id="mc-job" name="job" min="100" max="5000" step="50" value="350"></label>
+      <p class="mc-result" aria-live="polite">
+        <span class="mc-if">You miss about <output id="mc-missed">39</output> calls a month. If each one was a job, that is up to <output id="mc-all">$13,650</output> of work. A quarter of them booking is still <output id="mc-quarter">$3,410</output> a month, against $900 for Front Door.</span>
+        <span class="mc-none">You miss no calls. Keep it that way; Front Door is for the day that changes.</span>
+      </p>
+      <p class="mc-fine">Your estimate, from your own sliders. Front Door answers every call, day and night, for $900 a month. <a href="/services/front-door">See what is in it</a>.</p>
+    </form>
+  </div>
+</section>
+
 <section class="cfg">
   <div class="container">
     <h2>What a call <span class="em">sounds like.</span></h2>

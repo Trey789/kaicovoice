@@ -424,6 +424,14 @@ body:has(a[href^="tel:"]:hover) .mark3d{animation:ring .55s ease-in-out 1}
 nav{view-transition-name:site-nav}
 @media (prefers-reduced-motion:reduce){@view-transition{navigation:none}}
 .load-badge{margin-top:10px;font-size:12px;color:var(--muted)}
+/* missed-call calculator: native sliders, the visitor's own numbers */
+.mc{max-width:640px;margin:22px auto 0;display:grid;gap:18px}
+.mc label{display:block;font-size:15px;color:var(--ink)}
+.mc label output{float:right;font-weight:700;color:var(--signal)}
+.mc input[type=range]{width:100%;margin:8px 0 0;accent-color:var(--signal)}
+.mc-result{font-size:20px;line-height:1.4;margin:6px 0 0}.mc-result output{font-weight:800;color:var(--signal)}
+.mc-fine{font-size:13px;color:var(--muted);margin:0}
+.mc.mc-zero .mc-if,.mc:not(.mc-zero) .mc-none{display:none}
 </style>
 
 <script type="application/ld+json">{
@@ -603,6 +611,26 @@ nav{view-transition-name:site-nav}
     <h2>Why the after-hours call is the one <span class="em">worth answering.</span></h2>
     <p class="lead">Across the United States, "after hours answering service" is searched about 2,400 times a month, and advertisers pay around $62 a click for that phrase. "Answering service for contractors" adds another 1,000 searches a month at about $60 a click. Nobody pays that for a message-taker. They pay it because the call that comes in after five is the one the customer is most ready to spend on, and it goes to whoever picks up.</p>
     <p class="lead" style="margin-top:16px;">A human answering service takes a message. By the time you call back, they have booked the next shop on Google. This one books the job.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>What does a missed call <span class="em">cost you?</span></h2>
+    <p class="lead">Slide these to your shop. The numbers that come out are yours, not ours.</p>
+    <form class="mc" id="mc" novalidate>
+      <label>Calls to your shop each week <output for="mc-calls" id="mc-calls-out">30</output>
+        <input type="range" id="mc-calls" name="calls" min="5" max="150" step="5" value="30"></label>
+      <label>Share you miss (after hours, on a ladder, on another call) <output for="mc-miss" id="mc-miss-out">30%</output>
+        <input type="range" id="mc-miss" name="miss" min="0" max="80" step="5" value="30"></label>
+      <label>What an average job is worth to you <output for="mc-job" id="mc-job-out">$350</output>
+        <input type="range" id="mc-job" name="job" min="100" max="5000" step="50" value="350"></label>
+      <p class="mc-result" aria-live="polite">
+        <span class="mc-if">You miss about <output id="mc-missed">39</output> calls a month. If each one was a job, that is up to <output id="mc-all">$13,650</output> of work. A quarter of them booking is still <output id="mc-quarter">$3,410</output> a month, against $900 for Front Door.</span>
+        <span class="mc-none">You miss no calls. Keep it that way; Front Door is for the day that changes.</span>
+      </p>
+      <p class="mc-fine">Your estimate, from your own sliders. Front Door answers every call, day and night, for $900 a month. <a href="/services/front-door">See what is in it</a>.</p>
+    </form>
   </div>
 </section>
 
@@ -847,6 +875,21 @@ nav{view-transition-name:site-nav}
       lb.textContent = 'This page loaded in ' + s.toFixed(2) + ' s on your connection. Kaico builds sites like this.';
       lb.hidden = false;
     }, 0); });
+  }
+
+  // missed-call calculator: arithmetic on the visitor's sliders, nothing stored or sent
+  var mc = document.getElementById('mc');
+  if (mc) {
+    var g = function (id) { return document.getElementById(id); };
+    var money = function (n) { return '$' + (Math.round(n / 10) * 10).toLocaleString('en-US'); };
+    var mcRun = function () {
+      var calls = +g('mc-calls').value, miss = +g('mc-miss').value, job = +g('mc-job').value;
+      g('mc-calls-out').value = calls; g('mc-miss-out').value = miss + '%'; g('mc-job-out').value = money(job);
+      var missed = Math.round(calls * miss / 100 * 4.33);
+      g('mc-missed').value = missed; g('mc-all').value = money(missed * job); g('mc-quarter').value = money(missed * job / 4);
+      mc.classList.toggle('mc-zero', missed === 0);
+    };
+    mc.addEventListener('input', mcRun); mcRun();
   }
 })();
 

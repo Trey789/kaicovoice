@@ -132,6 +132,21 @@
       lb.hidden = false;
     }, 0); });
   }
+
+  // missed-call calculator: arithmetic on the visitor's sliders, nothing stored or sent
+  var mc = document.getElementById('mc');
+  if (mc) {
+    var g = function (id) { return document.getElementById(id); };
+    var money = function (n) { return '$' + (Math.round(n / 10) * 10).toLocaleString('en-US'); };
+    var mcRun = function () {
+      var calls = +g('mc-calls').value, miss = +g('mc-miss').value, job = +g('mc-job').value;
+      g('mc-calls-out').value = calls; g('mc-miss-out').value = miss + '%'; g('mc-job-out').value = money(job);
+      var missed = Math.round(calls * miss / 100 * 4.33);
+      g('mc-missed').value = missed; g('mc-all').value = money(missed * job); g('mc-quarter').value = money(missed * job / 4);
+      mc.classList.toggle('mc-zero', missed === 0);
+    };
+    mc.addEventListener('input', mcRun); mcRun();
+  }
 })();
 
 (function () {
