@@ -20,6 +20,23 @@ schema: schema/index.json
     <p class="hero-trust">HVAC, plumbing, electrical, roofing, restoration and heavy-duty repair shops. Founder-operated in Tulsa, Oklahoma.</p>
   </div>
 </header>
+<script>
+(function(){
+  var t = new URLSearchParams(location.search).get('trade');
+  var copy = {
+    'hvac': ['HVAC', "When someone Googles an AC repair at 9pm in July, they book you or they call the next guy. Kaico makes sure it's you: the website, the Google listing, the phone that books the dead-AC call, and the job system that runs the work once it lands."],
+    'plumbing': ['Plumbing', "When someone Googles a plumber at 2am, they book you or they call the next guy. Kaico makes sure it's you: the website, the Google listing, the phone that sorts the burst pipe from the Monday faucet, and the job system that runs the work."],
+    'electrical': ['Electrical', "When half the house goes dark after a storm, they book you or they call the next guy. Kaico makes sure it's you: the website, the Google listing, the phone that captures what the caller sees and books the panel job, and the job system that runs the work."],
+    'roofing': ['Roofing', "When the hail lands, every homeowner in the metro calls at once, and they book you or they call the next guy. Kaico makes sure it's you: the website, the Google listing, the phone that picks up when the storm does, and the job system that tracks every claim."],
+    'restoration': ['Restoration', "Seventy to 85 percent of restoration work comes through referrals and carriers, so the front door is the phone at midnight and a site a referrer trusts. Kaico builds both, plus the job system that tracks the claim."],
+    'truck-repair': ['Heavy-duty', "Fleet managers do not Google a shop, they call the one that picks up. Kaico makes sure that is you: a phone that answers at 3am, a site with a working contact path, and the job system for repair orders."]
+  };
+  var c = copy[t]; if (!c) return;
+  document.documentElement.setAttribute('data-trade', t);
+  var lead = document.querySelector('.hero .lead'); if (lead) lead.textContent = c[1];
+  var pill = document.querySelector('.hero .pill'); if (pill && pill.lastChild) pill.lastChild.nodeValue = ' Answering now \u00b7 ' + c[0] + ' \u00b7 (918) 359-2644';
+})();
+</script>
 
 <section>
   <div class="container">

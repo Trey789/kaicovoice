@@ -35,6 +35,30 @@
     document.querySelectorAll('[data-scroll]').forEach(function(el){ so.observe(el); });
   }
 
+  // trade-aware landing (?trade=): the inline script in the home hero set data-trade; finish the swaps that need the rest of the page
+  var trade = document.documentElement.getAttribute('data-trade');
+  if (trade) {
+    var tradeNames = {'hvac':'HVAC','plumbing':'Plumbing','electrical':'Electrical','roofing':'Roofing','restoration':'Water damage restoration','truck-repair':'Heavy-duty truck repair'};
+    var tradeHints = {'hvac':'The AC that quit at 9pm and went to voicemail','plumbing':'The 2am burst pipe that went to voicemail','electrical':'The panel job that called three shops first','roofing':'The storm week when the phone never stopped','restoration':'The midnight loss that went to the franchise','truck-repair':'The 3am breakdown call nobody picked up'};
+    var sel = document.getElementById('lf-trade'); if (sel && tradeNames[trade]) sel.value = tradeNames[trade];
+    var prob = document.getElementById('lf-problem'); if (prob && tradeHints[trade]) prob.placeholder = tradeHints[trade];
+    var tl = document.querySelector('.vert a[href$="/industries/' + trade + '"]'); var tv = tl && tl.closest('.vert');
+    if (tv && tv.parentNode) { tv.parentNode.insertBefore(tv, tv.parentNode.firstChild); var tag = document.createElement('em'); tag.className = 'your-trade'; tag.textContent = 'Your trade'; tv.appendChild(tag); }
+  }
+
+  // job-system walkthrough: six scenes, a keyboard stepper, auto-advance while in view
+  var walk = document.getElementById('walk');
+  if (walk) {
+    var scenes = walk.querySelectorAll('.walk-scene'), steps = walk.querySelectorAll('.walk-step'), cur = 0, auto = null, manual = false;
+    var show = function(i){ cur = i; scenes.forEach(function(s, j){ s.classList.toggle('is-on', j === i); }); steps.forEach(function(b, j){ b.setAttribute('aria-pressed', j === i ? 'true' : 'false'); }); };
+    var stopAuto = function(){ if (auto) { clearInterval(auto); auto = null; } };
+    var startAuto = function(){ if (auto || manual || reduce) return; auto = setInterval(function(){ show((cur + 1) % scenes.length); }, 4000); };
+    steps.forEach(function(b, j){ b.addEventListener('click', function(){ manual = true; stopAuto(); show(j); }); });
+    walk.addEventListener('mouseenter', stopAuto); walk.addEventListener('mouseleave', startAuto);
+    walk.addEventListener('focusin', stopAuto); walk.addEventListener('focusout', startAuto);
+    if ('IntersectionObserver' in window) { new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting) { startAuto(); } else { stopAuto(); } }); }, {threshold: .4}).observe(walk); } else { startAuto(); }
+  }
+
   // configurator (only on pages that still carry it; guarded so its absence never breaks the rest)
   var chips=document.getElementById('cfgChips'), feed=document.getElementById('cfgFeed'), title=document.getElementById('cfgTitle'), note=document.getElementById('cfgNote');
   if (chips && feed && title && note) {

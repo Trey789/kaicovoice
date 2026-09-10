@@ -35,6 +35,31 @@ schema: schema/services-job-system.json
 
 <section>
   <div class="container">
+    <h2>Watch a job <span class="em">go through it.</span></h2>
+    <p class="lead" style="margin-bottom:28px;">An illustration of the flow with fictional names, not the live app. Six steps, from the call to the paid invoice.</p>
+    <div class="walk" id="walk">
+      <div class="walk-phone" aria-hidden="true"><div class="walk-screen">
+        <div class="walk-scene is-on"><div class="ws-top">Incoming call, 2:10am</div><div class="ws-big">(918) 555-0142</div><div class="ws-sub">"Water heater is leaking, the garage is flooding."</div><div class="ws-chip">Answered. Booked for 7:30am.</div></div>
+        <div class="walk-scene"><div class="ws-top">Jobs board</div><div class="ws-card"><b>Dana R.</b><span>Water heater replacement</span><em>New</em></div><div class="ws-card ws-dim"><b>M. Ortiz</b><span>Slab leak</span><em>Scheduled</em></div><div class="ws-card ws-dim"><b>T. Nguyen</b><span>Drain clear</span><em>Paid</em></div></div>
+        <div class="walk-scene"><div class="ws-top">Quote for Dana R.</div><div class="ws-line"><span>50 gal gas water heater, installed</span><b>$1,240</b></div><div class="ws-line"><span>Haul away and permit</span><b>included</b></div><div class="ws-btn">Send quote</div></div>
+        <div class="walk-scene"><div class="ws-top">Dana's phone</div><div class="ws-sub">Quote from Reliable Plumbing</div><div class="ws-big">$1,240</div><div class="ws-btn ws-tap">Accept</div><div class="ws-chip">Accepted. Job moved to Scheduled.</div></div>
+        <div class="walk-scene"><div class="ws-top">Invoice for Dana R.</div><div class="ws-big">$1,240</div><div class="ws-sub">Paid by card, Visa ending 4242.</div><div class="ws-stamp">Paid</div></div>
+        <div class="walk-scene"><div class="ws-top">Email to approve</div><div class="ws-sub">To Dana R.: "Your new water heater is registered for its 6-year warranty. Here is what to check each spring..."</div><div class="ws-row"><span class="ws-btn">Approve</span><span class="ws-btn ws-ghost">Dismiss</span></div><div class="ws-chip">Sent only when you tap Approve.</div></div>
+      </div></div>
+      <div class="walk-steps" role="group" aria-label="Walkthrough steps">
+        <button type="button" class="walk-step" aria-pressed="true">1. The 2am call lands and gets booked</button>
+        <button type="button" class="walk-step" aria-pressed="false">2. It shows up on the jobs board</button>
+        <button type="button" class="walk-step" aria-pressed="false">3. You send the quote from the job</button>
+        <button type="button" class="walk-step" aria-pressed="false">4. The customer taps Accept</button>
+        <button type="button" class="walk-step" aria-pressed="false">5. The invoice is paid by card</button>
+        <button type="button" class="walk-step" aria-pressed="false">6. You approve the email from your phone</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
     <h2>Who it is for, and who it <span class="em">is not.</span></h2>
     <p class="lead">It is for the shop running on texts, a notebook and a paper calendar. That is where a job system changes the day: the quote goes out the same hour, the invoice gets paid the same week, and nothing lives only in your head.</p>
     <p class="lead" style="margin-top:16px;">It is not a replacement for Jobber, Housecall Pro or ServiceTitan. If you already run one of those, keep it. Front Door feeds the system you have: the website, the listing and the phone send the work in, and your software takes it from there. You should not have to switch.</p>
