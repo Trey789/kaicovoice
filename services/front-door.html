@@ -71,6 +71,7 @@
   .nav-actions { display: flex; align-items: center; gap: 14px; }
   .nav-call { font-size: 14px; font-weight: 600; color: var(--muted); text-decoration: none; }
   .nav-call:hover { color: var(--ink); }
+  nav .nav-start { padding: 10px 18px; font-size: 14px; }
 
   .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 22px; border-radius: 10px; font-weight: 700; font-size: 15px; text-decoration: none; cursor: pointer; border: 0; transition: transform .1s ease, box-shadow .2s, background .2s, border-color .2s; font-family: 'Hanken Grotesk'; }
   .btn-signal { background: var(--signal); color: var(--ink-on-signal); box-shadow: 0 0 0 0 rgba(200,255,61,.0); }
@@ -272,6 +273,17 @@
     .grid-3, .steps { grid-template-columns: 1fr; }
     .inc-list { grid-template-columns: 1fr; }
     .nav-call { display: none; }
+    nav .row { padding: 12px; gap: 8px; }
+    nav .brand { white-space: nowrap; }
+    .nav-actions { gap: 8px; }
+    nav .nav-login { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 8px; color: var(--ink); white-space: nowrap; }
+    nav .nav-start { min-height: 44px; padding: 10px; white-space: nowrap; }
+  }
+  @media (max-width: 380px) {
+    nav .brand { font-size: 17px; }
+    .nav-actions { gap: 4px; }
+    nav .nav-login, nav .nav-start { font-size: 13px; }
+    nav .nav-login { padding: 0 6px; }
   }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
@@ -599,8 +611,8 @@ nav{view-transition-name:site-nav}
       <a href="/proof" class="nav-call">Proof</a>
       <!-- P1: <a href="/about" class="nav-call">About</a> -->
       <a href="tel:+19183592644" class="nav-call">Call demo: (918) 359-2644</a>
-      <a href="https://app.kaicovoice.com/dashboard" class="nav-call">Client login</a>
-      <a href="/#start" class="btn btn-ghost btn-start" style="padding:10px 18px;font-size:14px;">Get started</a>
+      <a href="https://app.kaicovoice.com/dashboard" class="nav-call nav-login">Client login</a>
+      <a href="/#start" class="btn btn-ghost btn-start nav-start">Get started</a>
     </div>
   </div>
 </nav>
