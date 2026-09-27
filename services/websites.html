@@ -61,7 +61,7 @@
   /* ambient signal glow that tracks the cursor (showcase) */
   .glow { position: fixed; inset: 0; pointer-events: none; z-index: 0;
     background: radial-gradient(420px 420px at var(--mx, 80%) var(--my, 8%), rgba(200,255,61,.07), transparent 70%); transition: background .2s; }
-  body > *:not(.glow):not(nav) { position: relative; z-index: 1; }
+  body > *:not(.glow):not(nav):not(#siteFibers) { position: relative; z-index: 1; }
 
   /* nav */
   nav { position: sticky; top: 0; z-index: var(--z-nav); background: rgba(10,11,13,.72); backdrop-filter: saturate(140%) blur(12px); border-bottom: 1px solid var(--line); }
@@ -292,7 +292,7 @@
     .glow { display: none; }
   }
 
-.nav-dd{position:relative}.nav-dd summary{list-style:none;cursor:pointer;color:var(--ink-soft);font-size:14px;padding:8px 10px}.nav-dd summary::-webkit-details-marker{display:none}.nav-dd[open] summary{color:var(--ink)}
+.nav-dd{position:relative;padding:0;border:0}.nav-dd summary{list-style:none;cursor:pointer;color:var(--ink-soft);font-size:14px;padding:8px 10px}.nav-dd summary::-webkit-details-marker{display:none}.nav-dd[open] summary{color:var(--ink)}
 .nav-dd ul{position:absolute;top:100%;left:0;min-width:220px;margin:0;padding:8px;list-style:none;background:var(--paper);border:1px solid var(--line);border-radius:10px;z-index:60}.nav-dd ul a{display:block;padding:8px 10px;color:var(--ink);text-decoration:none;font-size:14px}.nav-dd ul a:hover,.nav-dd ul a:focus{background:rgba(255,255,255,.06)}
 .sticky-cta{display:none}@media(max-width:720px){.sticky-cta{display:flex;gap:8px;position:fixed;left:0;right:0;bottom:0;padding:10px 12px;background:rgba(10,11,13,.92);border-top:1px solid var(--line);z-index:70}.sticky-cta a{flex:1;text-align:center}body{padding-bottom:64px}}
 .gs-error{color:#ff8a8a;font-size:14px;margin:8px 0 0}.gs-consent{font-size:12px;color:var(--ink-soft);line-height:1.5;margin-top:10px}.gs-checks{display:flex;flex-wrap:wrap;gap:10px 16px;margin:6px 0 2px}.gs-checks label{font-size:14px;display:flex;gap:6px;align-items:center}
@@ -559,8 +559,10 @@ nav{view-transition-name:site-nav}
 }
 </script>
 
+<link rel="stylesheet" href="/assets/ghost-fibers.css" />
 </head>
 <body>
+<div id="siteFibers" aria-hidden="true"></div>
 <div class="glow" aria-hidden="true"></div>
 <a href="#main" class="skip-link">Skip to content</a>
 <div class="scroll-prog" aria-hidden="true"></div>
@@ -892,5 +894,6 @@ nav{view-transition-name:site-nav}
   });
 })();
 </script>
+<script type="module" src="/assets/ghost-fibers.js"></script>
 </body>
 </html>
