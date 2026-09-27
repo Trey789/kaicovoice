@@ -1,0 +1,21 @@
+.ghost-fibers-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#siteFibers {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: .55;
+}
+
+/* Let the site background carry through the sticky navigation. */
+body > nav {
+  background: linear-gradient(180deg, rgba(10, 11, 13, .45), transparent);
+  backdrop-filter: none;
+  border-bottom: 0;
+}
