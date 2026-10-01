@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Start Your Project | Kaico Voice</title>
-<meta name="description" content="Tell Kaico Voice what your business needs. Get a free front-door audit and a scoped quote for your website, Google listing, phone or job system." />
+<meta name="description" content="Tell Kaico Voice what your business needs. Request a free front-door audit for your website, Google listing, phone or job system." />
 <link rel="canonical" href="https://www.kaicovoice.com/start" />
 <meta name="theme-color" content="#0a0b0d" />
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
@@ -12,7 +12,7 @@
 
 <meta property="og:site_name" content="Kaico Voice" />
 <meta property="og:title" content="Start Your Project | Kaico Voice" />
-<meta property="og:description" content="Tell Kaico Voice what your business needs. Get a free front-door audit and a scoped quote for your website, Google listing, phone or job system." />
+<meta property="og:description" content="Tell Kaico Voice what your business needs. Request a free front-door audit for your website, Google listing, phone or job system." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.kaicovoice.com/start" />
 <meta property="og:image" content="https://www.kaicovoice.com/assets/og-card.png" />
@@ -21,7 +21,7 @@
 <meta property="og:image:alt" content="Kaico Voice, AI receptionist that answers and books 24/7" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Start Your Project | Kaico Voice" />
-<meta name="twitter:description" content="Tell Kaico Voice what your business needs. Get a free front-door audit and a scoped quote for your website, Google listing, phone or job system." />
+<meta name="twitter:description" content="Tell Kaico Voice what your business needs. Request a free front-door audit for your website, Google listing, phone or job system." />
 <meta name="twitter:image" content="https://www.kaicovoice.com/assets/og-card.png" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -528,7 +528,7 @@ nav{view-transition-name:site-nav}
       <div style="max-width:660px;margin:0 auto;">
         <span class="pill"><i></i> Free front-door audit</span>
         <h1>Tell us what your business <span class="em">needs.</span></h1>
-        <p class="lead">Share what is going wrong. We will review your website, Google listing and phone from public information, then send a scoped quote within two business days.</p>
+        <p class="lead">Share what is going wrong. We will review your request and take a first look at your online front door. If we are a fit, we will talk through your goals before preparing a quote.</p>
       </div>
       <div class="card gs-card reveal">
       <form class="gs-form" id="leadForm" novalidate>
@@ -770,9 +770,9 @@ nav{view-transition-name:site-nav}
     var digits = phone.replace(/\D/g, '');
     if (!name || !business) { return fail('Add your name and your business name.'); }
     if (!trade) { return fail('Pick your trade.'); }
-    if (!phone && !email) { return fail('Add a phone number or an email so we can send the quote.'); }
+    if (!phone && !email) { return fail('Add a phone number or an email so we have a way to reach you.'); }
     if (phone && !(digits.length === 10 || (digits.length === 11 && digits.charAt(0) === '1'))) { return fail('Enter a 10-digit US phone number.'); }
-    if (email && email.indexOf('@') < 0) { return fail('That email does not look right.'); }
+    if (email && !form.querySelector('[name="email"]').checkValidity()) { return fail('Enter a valid email address.'); }
     var needs = Array.prototype.map.call(form.querySelectorAll('input[name="needs"]:checked'), function (c) { return c.value; });
     // ponytail: page and needs ride inside `problem` so POST /leads needs no new fields; real columns when volume justifies it
     var problem = 'From: ' + window.location.pathname + '. ' + (needs.length ? 'Needs: ' + needs.join(', ') + '. ' : '') + val('problem');
