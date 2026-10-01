@@ -1,0 +1,59 @@
+<div class="card gs-card reveal">
+      <form class="gs-form" id="leadForm" novalidate>
+        <div class="gs-row">
+          <div class="gs-field">
+            <label for="lf-name">Your name</label>
+            <input class="gs-input" type="text" id="lf-name" name="name" autocomplete="name" placeholder="Jane Doe" required />
+          </div>
+          <div class="gs-field">
+            <label for="lf-business">Business name</label>
+            <input class="gs-input" type="text" id="lf-business" name="business" autocomplete="organization" placeholder="Acme Air" required />
+          </div>
+        </div>
+        <div class="gs-row">
+          <div class="gs-field">
+            <label for="lf-trade">Trade</label>
+            <select class="gs-select" id="lf-trade" name="trade" required>
+              <option value="">Pick your trade</option>
+              <option>HVAC</option>
+              <option>Plumbing</option>
+              <option>Electrical</option>
+              <option>Roofing</option>
+              <option>Water damage restoration</option>
+              <option>Heavy-duty truck repair</option>
+              <option>Other trade</option>
+            </select>
+          </div>
+          <div class="gs-field">
+            <label for="lf-phone">Phone</label>
+            <input class="gs-input" type="tel" id="lf-phone" name="phone" autocomplete="tel" placeholder="(918) 555-0100" />
+          </div>
+        </div>
+        <div class="gs-field">
+          <label for="lf-email">Email</label>
+          <input class="gs-input" type="email" id="lf-email" name="email" autocomplete="email" placeholder="you@yourshop.com" />
+        </div>
+        <div class="gs-field">
+          <label>What do you need help with?</label>
+          <div class="gs-checks">
+            <label><input type="checkbox" name="needs" value="Website" /> Website</label>
+            <label><input type="checkbox" name="needs" value="Google listing" /> Google listing</label>
+            <label><input type="checkbox" name="needs" value="Phone answering" /> Phone answering</label>
+            <label><input type="checkbox" name="needs" value="Google Ads" /> Google Ads</label>
+            <label><input type="checkbox" name="needs" value="Running the jobs (CRM)" /> Running the jobs</label>
+            <label><input type="checkbox" name="needs" value="Not sure" /> Not sure</label>
+          </div>
+        </div>
+        <div class="gs-field">
+          <label for="lf-problem">What is going wrong today? <span class="opt">(optional)</span></label>
+          <textarea class="gs-textarea" id="lf-problem" name="problem" placeholder="Our site is from 2019, our Google listing is unclaimed, and after 5 the phone goes to voicemail."></textarea>
+        </div>
+        <div class="gs-hp" aria-hidden="true">
+          <label for="lf-company-url" tabindex="-1">Company URL (leave this blank)</label>
+          <input type="text" id="lf-company-url" name="company_url" tabindex="-1" autocomplete="off" />
+        </div>
+        <p id="lf-error" class="gs-error" hidden></p>
+        <button type="submit" class="btn btn-signal btn-lg">Start my project</button>
+        <p class="gs-consent">By sending this, you agree Kaico Voice may call, text or email you about your request. Message and data rates may apply; reply STOP to any text to opt out. See our <a href="/privacy">privacy policy</a>.</p>
+      </form>
+    </div>

@@ -65,6 +65,7 @@ def render(root, meta, body, partials):
         "{{schema_jsonld}}": schema,
         "{{ga4}}": GA4_SNIPPET.format(id=GA4_ID) if GA4_ID else "",
         "{{robots}}": '<meta name="robots" content="noindex, nofollow" />' if noindex else "",
+        "{{lead_form}}": partials["lead-form"].rstrip("\n"),
     }
     for k, v in fills.items():
         html = html.replace(k, v)
@@ -113,7 +114,7 @@ def check(root, pages):
 def build(root=ROOT, write=True):
     """Render every page. Returns (errors, outputs). Writes files only when write=True and there are no errors."""
     src = root / "src"
-    partials = {n: read(src / "partials" / f"{n}.html") for n in ("head", "nav", "footer")}
+    partials = {n: read(src / "partials" / f"{n}.html") for n in ("head", "nav", "footer", "lead-form")}
     pages, errs = [], []
     for path in sorted((src / "pages").rglob("*.html")):
         meta, body = parse(path)
