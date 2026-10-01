@@ -19,6 +19,7 @@ def make_site(tmp, pages):
     (src / "partials" / "head.html").write_text(HEAD)
     (src / "partials" / "nav.html").write_text(NAV)
     (src / "partials" / "footer.html").write_text(FOOT)
+    (src / "partials" / "lead-form.html").write_text('<form id="leadForm"></form>')
     (src / "schema" / "organization.json").write_text('{"@type": "ProfessionalService"}')
     for name, text in pages.items():
         p = src / "pages" / name
@@ -47,6 +48,23 @@ class BuildChecks(unittest.TestCase):
         self.assertEqual(errs, [])
         self.assertIn('href="/pricing" aria-current="page"', out["/pricing"])
         self.assertIn("<title>Pricing | Kaico Voice</title>", out["/pricing"])
+
+    def test_shared_lead_form_renders_on_home_and_start(self):
+        pages = {
+            "index.html": page(title="Home | Kaico Voice", canonical="/",
+                               desc="Kaico Voice builds and runs your business front door: website, Google listing, phone answering and job systems for local trades.",
+                               body="<main><h1>Home</h1>{{lead_form}}</main>"),
+            "start.html": page(title="Start | Kaico Voice", canonical="/start",
+                               desc="Tell Kaico Voice what your business needs. Get a free front-door audit and a scoped quote for your website, Google listing, phone or job system.",
+                               body="<main><h1>Start</h1>{{lead_form}}</main>"),
+            "pricing.html": page(),
+        }
+        errs, out = self.run_build(pages)
+        self.assertEqual(errs, [])
+        for path in ("/", "/start"):
+            self.assertEqual(out[path].count('id="leadForm"'), 1)
+            self.assertNotIn("{{lead_form}}", out[path])
+        self.assertIn("https://www.kaicovoice.com/start", out["sitemap.xml"])
 
     def test_em_dash_fails(self):
         errs, _ = self.run_build({"pricing.html": page(body="<main><h1>Pricing</h1><p>a — b</p></main>")})
