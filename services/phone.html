@@ -913,6 +913,17 @@ nav{view-transition-name:site-nav}
   var API = 'https://web-production-976b9.up.railway.app/leads';
   var err = document.getElementById('lf-error');
   var btn = form.querySelector('button[type="submit"]');
+  var submissionId, storageKey = 'kaico-interest-submission';
+  function requestId() {
+    if (!submissionId) {
+      try { submissionId = sessionStorage.getItem(storageKey); } catch (_) {}
+      if (!submissionId) {
+        submissionId = window.crypto && window.crypto.randomUUID ? window.crypto.randomUUID() : Date.now().toString(36) + Math.random().toString(36).slice(2);
+        try { sessionStorage.setItem(storageKey, submissionId); } catch (_) {}
+      }
+    }
+    return submissionId;
+  }
   function val(n) { var el = form.querySelector('[name="' + n + '"]'); return el ? el.value.trim() : ''; }
   function fail(msg) { if (err) { err.textContent = msg; err.hidden = false; } btn.disabled = false; btn.textContent = 'Start my project'; }
   function track(name) { if (typeof gtag === 'function') gtag('event', name); }
@@ -931,8 +942,8 @@ nav{view-transition-name:site-nav}
     var problem = 'From: ' + window.location.pathname + '. ' + (needs.length ? 'Needs: ' + needs.join(', ') + '. ' : '') + val('problem');
     btn.disabled = true; btn.textContent = 'Sending';
     fetch(API, { method: 'POST', keepalive: true, headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name: name, business: business, trade: trade, phone: phone, email: email, problem: problem, source: 'web_form' }) })
-      .then(function (r) { if (!r.ok) { throw new Error('status ' + r.status); } track('form_submit'); window.location.href = '/thanks'; })
+      body: JSON.stringify({ name: name, business: business, trade: trade, phone: phone, email: email, problem: problem, source: 'web_form', submission_id: requestId() }) })
+      .then(function (r) { if (!r.ok) { throw new Error('status ' + r.status); } try { sessionStorage.removeItem(storageKey); } catch (_) {} track('form_submit'); window.location.href = '/thanks'; })
       .catch(function () { track('form_error'); fail('That did not go through. Call (918) 359-2644 and the receptionist will take your details, or email trey.kaico@gmail.com.'); });
   });
 })();
