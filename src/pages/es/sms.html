@@ -1,0 +1,346 @@
+<!-- meta
+title: Detalles del programa de SMS | Kaico Voice
+description: Cómo funciona el programa de SMS de Kaico Voice: mensajes que recibirás, cómo dar tu consentimiento, cómo darte de baja y cómo protegemos tus datos.
+canonical: /es/sms
+-->
+<style>
+  :root {
+    --bg: #0a0b0d;
+    --ink: #eef1f4;
+    --ink-soft: #9aa4af;
+    --line: #23282f;
+    --accent: #c8ff3d;
+    --accent-ink: #c8ff3d;
+    --paper: #161a20;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: 'Hanken Grotesk', system-ui, -apple-system, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+  .container-narrow { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+
+  /* nav */
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(10, 11, 13, 0.72);
+    backdrop-filter: saturate(140%) blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav .row {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 24px; max-width: 1120px; margin: 0 auto;
+  }
+  .brand { font-weight: 800; font-size: 18px; letter-spacing: -0.01em; text-decoration: none; color: inherit; }
+  .brand-mark { color: var(--accent); }
+  .nav-actions { display: flex; align-items: center; gap: 12px; }
+  .nav-call { font-size: 14px; font-weight: 600; color: var(--ink); text-decoration: none; }
+  .nav-call:hover { color: var(--accent-ink); }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 14px 22px; border-radius: 999px;
+    font-weight: 600; font-size: 15px; text-decoration: none;
+    cursor: pointer; border: 0;
+    transition: transform 0.08s ease, box-shadow 0.18s ease, background 0.18s;
+  }
+  .btn-ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+  .btn-ghost:hover { border-color: var(--ink); }
+
+  /* legal page */
+  main.legal { padding: 64px 0 96px; }
+  .legal-eyebrow {
+    display: inline-block;
+    color: var(--accent-ink); background: rgba(20, 184, 90, 0.10);
+    padding: 6px 12px; border-radius: 999px;
+    font-size: 12px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .legal h1 {
+    font-size: clamp(36px, 5vw, 56px);
+    line-height: 1.05; letter-spacing: -0.02em;
+    margin: 0 0 8px;
+    font-weight: 800;
+  }
+  .legal h1 em {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 400; font-style: italic;
+    color: var(--accent-ink);
+  }
+  .legal-meta {
+    color: var(--ink-soft); font-size: 14px;
+    margin: 0 0 32px;
+  }
+  .legal-intro {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin: 24px 0 40px;
+  }
+  .legal-intro p { margin: 0; color: var(--ink); font-size: 16px; }
+  .legal h2 {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin: 40px 0 12px;
+    color: var(--ink);
+  }
+  .legal h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 24px 0 8px;
+    color: var(--ink);
+  }
+  .legal p, .legal li {
+    color: var(--ink-soft);
+    font-size: 15px;
+    margin: 0 0 12px;
+  }
+  .legal ul, .legal ol { padding-left: 22px; margin: 0 0 16px; }
+  .legal ol li { color: var(--ink); }
+  .legal ol li::marker { color: var(--accent); font-weight: 700; }
+  .legal a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; }
+  .legal a:hover { text-decoration-color: var(--accent); }
+  .legal-callout {
+    border: 1px solid rgba(200,255,61,0.25);
+    background: rgba(200,255,61,0.06);
+    padding: 16px 20px;
+    margin: 24px 0;
+    border-radius: 12px;
+  }
+  .legal-callout p { color: var(--ink); margin: 0; font-weight: 500; }
+  .legal-table {
+    width: 100%; border-collapse: collapse;
+    margin: 16px 0 24px;
+    font-size: 15px;
+  }
+  .legal-table th, .legal-table td {
+    text-align: left; padding: 12px 16px;
+    border: 1px solid var(--line);
+    vertical-align: top;
+  }
+  .legal-table th {
+    background: var(--paper); color: var(--ink); font-weight: 600;
+    width: 32%;
+  }
+  .legal-table td { color: var(--ink-soft); }
+
+  /* transcript block */
+  .transcript {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 16px 0 24px;
+  }
+  .transcript .turn { margin: 0 0 14px; }
+  .transcript .turn:last-child { margin-bottom: 0; }
+  .transcript .speaker {
+    font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--accent-ink);
+    margin-bottom: 4px;
+  }
+  .transcript .speaker.caller { color: var(--ink-soft); }
+  .transcript .line { color: var(--ink); font-size: 15px; line-height: 1.55; margin: 0; }
+  .transcript .annotation {
+    color: var(--ink-soft); font-style: italic; font-size: 13px; margin-top: 4px;
+  }
+
+  /* sample message bubble */
+  .sms-sample {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 14px 18px;
+    margin: 12px 0;
+    max-width: 480px;
+    font-size: 15px;
+    color: var(--ink);
+    line-height: 1.5;
+  }
+  .sms-sample .sms-meta {
+    font-size: 12px;
+    color: var(--ink-soft);
+    margin-top: 6px;
+  }
+
+  /* CTA panel */
+  .cta-panel {
+    background: #0f2418;
+    border: 1px solid rgba(200,255,61,0.2);
+    color: #E9F8EE;
+    border-radius: 16px;
+    padding: 28px;
+    margin: 32px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .cta-panel h3 { color: #FFFFFF; margin: 0 0 6px; font-size: 18px; font-weight: 700; }
+  .cta-panel p { color: #C7E5D1; margin: 0; font-size: 14px; }
+  .cta-panel .cta-num {
+    font-size: 22px; font-weight: 800; color: #FFFFFF;
+    text-decoration: none; letter-spacing: -0.01em;
+  }
+  .cta-panel .cta-num:hover { color: var(--accent); }
+
+  /* footer */
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 32px 0 48px;
+    background: var(--paper);
+  }
+  footer .row {
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 16px;
+    font-size: 14px; color: var(--ink-soft);
+  }
+  footer a { color: var(--ink-soft); text-decoration: none; }
+  footer a:hover { color: var(--ink); }
+  footer .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+
+  :focus-visible{outline:3px solid #0E7A3C;outline-offset:2px;border-radius:4px;}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+
+  .legal h1, .legal h2, .legal h3 { font-family: 'Bricolage Grotesque', sans-serif; }
+  .legal h1 em { font-family: 'Bricolage Grotesque', sans-serif; font-style: normal; color: var(--accent); }
+  .legal table { border-color: var(--line); }
+  .legal th, .legal td { border-color: var(--line) !important; color: var(--ink); }
+  .legal th { background: #161a20; }
+</style>
+<main class="legal">
+  <div class="container-narrow">
+    <span class="legal-eyebrow">Programa de SMS</span>
+    <h1>Detalles del programa de <em>SMS</em></h1>
+    <p class="legal-meta">Última actualización: 1 de octubre de 2026 &middot; Operado por Kaico LLC, Tulsa, Oklahoma</p>
+
+    <div class="legal-intro">
+      <p><strong>En pocas palabras:</strong> los mensajes de texto sobre reservas son opcionales y solo están disponibles cuando hay un remitente aprobado y habilitado. Darnos tu número, por sí solo, no te inscribe. Si decides recibir mensajes, puedes responder STOP para darte de baja.</p>
+    </div>
+
+    <h2>Marca y programa</h2>
+    <table class="legal-table">
+      <tr>
+        <th>Marca</th>
+        <td>Kaico LLC (Kaico Voice es un servicio de Kaico LLC)</td>
+      </tr>
+      <tr>
+        <th>Nombre del programa</th>
+        <td>Kaico Voice Booking Confirmations</td>
+      </tr>
+      <tr>
+        <th>Uso previsto</th>
+        <td>Confirmaciones y recordatorios opcionales de citas para consultas con Kaico LLC. Un negocio que use Kaico Voice necesita su propio programa de mensajería aprobado antes de enviar mensajes en su nombre.</td>
+      </tr>
+      <tr>
+        <th>Frecuencia de mensajes</th>
+        <td>Hasta 5 mensajes por reserva, según las confirmaciones, recordatorios, cambios de fecha o cancelaciones.</td>
+      </tr>
+      <tr>
+        <th>Costo</th>
+        <td>Pueden aplicarse tarifas de mensajes y datos según tu operador móvil y plan. Kaico Voice no te cobra por los mensajes SMS.</td>
+      </tr>
+      <tr>
+        <th>Operadores compatibles</th>
+        <td>Los principales operadores de EE. UU. (AT&amp;T, T-Mobile, Verizon y US Cellular), además de la mayoría de los operadores regionales. Los operadores no son responsables por mensajes demorados o no entregados.</td>
+      </tr>
+    </table>
+
+    <h2 id="how-to-opt-in">Cómo das tu consentimiento</h2>
+    <p>Cuando un remitente aprobado ofrece mensajes sobre reservas, el consentimiento debe solicitarse <strong>verbalmente durante tu llamada telefónica</strong> con la recepcionista con IA. El formulario de proyecto del sitio web no te inscribe en SMS. Así funciona la inscripción:</p>
+
+    <ol>
+      <li>Llamas a Kaico LLC para reservar una consulta, o a un negocio con su propio programa de mensajería aprobado.</li>
+      <li>Nuestra recepcionista con IA contesta y te ayuda a reservar o conseguir información.</li>
+      <li>Antes de pedirte una respuesta afirmativa o negativa, la recepcionista identifica al remitente, el propósito, la frecuencia aproximada, las tarifas, las instrucciones STOP y HELP, y los enlaces a los términos y la política de privacidad.</li>
+      <li>Solo una respuesta afirmativa clara te inscribe. Puedes rechazar los mensajes y completar tu reserva de todos modos.</li>
+    </ol>
+
+    <h3>Ejemplo de consentimiento verbal para una consulta con Kaico LLC</h3>
+    <p>Este ejemplo muestra la solicitud de consentimiento necesaria antes de un mensaje sobre una reserva de Kaico LLC. No significa que los mensajes estén activos en todas las líneas. Cada negocio cliente debe usar su propia marca, remitente aprobado, términos, política de privacidad y solicitud de consentimiento correspondiente.</p>
+    <div class="transcript">
+      <div class="turn">
+        <div class="speaker">Recepcionista (IA)</div>
+        <p class="line">Tu consulta con Kaico LLC está reservada para el martes a las 8 a. m. ¿A qué número podemos devolverte la llamada?</p>
+      </div>
+      <div class="turn">
+        <div class="speaker caller">Persona que llama</div>
+        <p class="line">Es el 918-555-0123.</p>
+      </div>
+      <div class="turn">
+        <div class="speaker">Recepcionista (IA)</div>
+        <p class="line">Kaico Voice, un servicio de Kaico LLC, puede enviarte mensajes sobre esta consulta, incluida una confirmación y un recordatorio, hasta cinco mensajes por reserva. Pueden aplicarse tarifas de mensajes y datos. Responde STOP para darte de baja o HELP para obtener ayuda. Los términos están en kaicovoice punto com diagonal es diagonal terms y la política de privacidad en kaicovoice punto com diagonal es diagonal privacy. ¿Quieres recibir estos mensajes opcionales? Tu reserva está completa aunque no los aceptes.</p>
+        <p class="annotation">Una respuesta afirmativa clara a esta pregunta constituye el consentimiento.</p>
+      </div>
+      <div class="turn">
+        <div class="speaker caller">Persona que llama</div>
+        <p class="line">Sí, por favor envíenme mensajes.</p>
+      </div>
+      <div class="turn">
+        <div class="speaker">Recepcionista (IA)</div>
+        <p class="line">Gracias. Aceptaste recibir mensajes de Kaico Voice sobre esta consulta. Tu cita está confirmada.</p>
+      </div>
+    </div>
+
+    <div class="cta-panel">
+      <div>
+        <h3>¿Preguntas sobre las confirmaciones por mensaje?</h3>
+        <p>Llámanos para preguntar si el negocio con el que reservas tiene SMS habilitado.</p>
+      </div>
+      <a class="cta-num" href="tel:+19183592644">(918) 359-2644</a>
+    </div>
+
+    <h2>Ejemplos de mensajes</h2>
+    <p>Estos ejemplos muestran una confirmación de inscripción seguida de un mensaje de reserva de Kaico LLC después de que la persona que llama da su consentimiento expreso. No son ejemplos de mensajes enviados bajo la marca de un negocio cliente ni indican que el envío esté habilitado. Los mensajes con la marca de un cliente requieren su programa de mensajería aprobado y el consentimiento correspondiente.</p>
+
+    <h3>Confirmación de inscripción</h3>
+    <div class="sms-sample">
+      Kaico Voice (Kaico LLC): Aceptaste recibir mensajes sobre tu consulta, hasta 5 por reserva. Pueden aplicarse tarifas de mensajes y datos. Responde STOP para darte de baja o HELP para obtener ayuda. kaicovoice.com/es/sms
+      <div class="sms-meta">Mensaje ilustrativo de Kaico LLC</div>
+    </div>
+
+    <h3>Confirmación de reserva</h3>
+    <div class="sms-sample">
+      Kaico Voice (Kaico LLC): Tu consulta está reservada para el [fecha] a las [hora]. Responde STOP para darte de baja o HELP para obtener ayuda. kaicovoice.com/es/sms
+      <div class="sms-meta">Mensaje ilustrativo de Kaico LLC</div>
+    </div>
+
+    <h2 id="how-to-opt-out">Cómo darte de baja</h2>
+    <ul>
+      <li>Si este programa está habilitado, responde <strong>STOP</strong> a un mensaje para dejar de recibir mensajes de ese remitente.</li>
+      <li>Responde <strong>HELP</strong> para obtener información de asistencia, o escribe a <a href="mailto:trey.kaico@gmail.com">trey.kaico@gmail.com</a>.</li>
+    </ul>
+
+    <div class="legal-callout">
+      <p>Este programa de reservas no incluye mensajes de marketing, ofertas promocionales, solicitudes de reseñas, seguimiento de cotizaciones ni campañas para volver a contactar. Cualquier programa independiente de mensajes de marketing necesitaría su propio registro aprobado y consentimiento; aceptar mensajes sobre reservas no autoriza mensajes de marketing.</p>
+    </div>
+
+    <h2>Privacidad</h2>
+    <p>Tu número de teléfono y los datos de la reserva se tratan conforme a nuestra <a href="/es/privacy">Política de privacidad</a>. No vendemos ni compartimos tu número de teléfono con terceros para fines de marketing.</p>
+
+    <h2>Cambios en este programa</h2>
+    <p>Si cambiamos de forma importante el funcionamiento del programa, actualizaremos la fecha de "Última actualización" al comienzo de esta página y publicaremos un aviso en la página de inicio.</p>
+
+    <h2>Contacto</h2>
+    <p>
+      Kaico LLC<br />
+      Tulsa, OK<br />
+      <a href="mailto:trey.kaico@gmail.com">trey.kaico@gmail.com</a><br />
+      <a href="tel:+19183592644">(918) 359-2644</a>
+    </p>
+
+    <p style="margin-top: 32px; font-size: 13px; color: var(--ink-soft);">
+      Relacionado: <a href="/es/terms">Términos de servicio</a> &middot; <a href="/es/privacy">Política de privacidad</a>
+    </p>
+  </div>
+</main>

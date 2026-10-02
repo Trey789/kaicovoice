@@ -1,0 +1,205 @@
+<footer>
+  <div class="container">
+    <div class="foot-cols">
+      <div><b>Servicios</b><br><a href="/es/services/websites">Sitios web</a> · <a href="/es/services/front-door">Front Door</a> · <a href="/es/services/phone">Teléfono 24/7</a> · <a href="/es/services/job-system">Gestión de trabajos</a> · <a href="/es/services/google-business-profile">Perfil de Empresa en Google</a> · <a href="/es/services/google-ads">Google Ads</a> · <a href="/es/pricing">Precios</a> · <a href="/es/proof">Resultados</a></div>
+      <div><b>Sectores</b><br><a href="/es/industries/hvac">HVAC</a> · <a href="/es/industries/plumbing">Plomería</a> · <a href="/es/industries/electrical">Electricidad</a> · <a href="/es/industries/roofing">Techos</a> · <a href="/es/industries/restoration">Restauración</a> · <a href="/es/industries/truck-repair">Reparación de camiones</a></div>
+      <div><b>Kaico LLC</b><br>Tulsa, Oklahoma · <a href="mailto:trey.kaico@gmail.com">trey.kaico@gmail.com</a> · <a href="tel:+19183592644">(918) 359-2644</a><br><a href="/es/privacy">Privacidad</a> · <a href="/es/terms">Términos</a> · <a href="/es/client-agreement">Acuerdo con el cliente</a> · <a href="/es/sms">SMS</a> · <a href="https://app.kaicovoice.com/dashboard?lang=es">Acceso clientes</a><p class="load-badge" id="loadBadge" hidden></p></div>
+    </div>
+  </div>
+</footer>
+<div class="sticky-cta">
+  <a href="/es#start" class="btn btn-signal btn-start">Iniciar mi proyecto</a>
+  <a href="tel:+19183592644" class="btn btn-ghost">Llamar</a>
+</div>
+
+<script>
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // hero waveform bars
+  var hw = document.getElementById('heroWave');
+  if (hw) { for (var i=0;i<56;i++){ var s=document.createElement('span'); if(!reduce){ s.style.animationDelay=(-(Math.random()*1.1)).toFixed(2)+'s'; s.style.animationDuration=(0.7+Math.random()*0.8).toFixed(2)+'s'; } else { s.style.height=(20+Math.random()*60)+'%'; } hw.appendChild(s);} }
+
+  // cursor-tracked glow, plus a unitless pointer position (-.5 to .5) for the 3D mark tilt
+  if (!reduce) { window.addEventListener('pointermove', function(e){ var d=document.documentElement.style; d.setProperty('--mx', e.clientX+'px'); d.setProperty('--my', e.clientY+'px'); if (innerWidth && innerHeight) { d.setProperty('--px', (e.clientX/innerWidth-.5).toFixed(3)); d.setProperty('--py', (e.clientY/innerHeight-.5).toFixed(3)); } }, {passive:true}); }
+
+  // card tilt toward the pointer, desktop pointers only; the CSS in head does the rest
+  if (!reduce && window.matchMedia && window.matchMedia('(hover:hover) and (pointer:fine)').matches) {
+    document.addEventListener('pointermove', function(e){ var c = e.target.closest ? e.target.closest('.card') : null; if (!c) return; var r = c.getBoundingClientRect(); c.style.setProperty('--ry', (((e.clientX - r.left) / r.width - .5) * 8).toFixed(2) + 'deg'); c.style.setProperty('--rx', ((.5 - (e.clientY - r.top) / r.height) * 8).toFixed(2) + 'deg'); }, {passive:true});
+    document.addEventListener('pointerout', function(e){ var c = e.target.closest ? e.target.closest('.card') : null; if (c && !(e.relatedTarget && c.contains(e.relatedTarget))) { c.style.removeProperty('--rx'); c.style.removeProperty('--ry'); } }, {passive:true});
+  }
+
+  // scroll-driven effects: browsers without CSS scroll timelines get class toggles instead
+  if (!reduce && !(window.CSS && CSS.supports && CSS.supports('animation-timeline: view()')) && 'IntersectionObserver' in window) {
+    var so = new IntersectionObserver(function(es){ es.forEach(function(e){ e.target.classList.toggle('in-view', e.isIntersecting); e.target.classList.toggle('out-view', !e.isIntersecting); }); }, {threshold: .35});
+    document.querySelectorAll('[data-scroll]').forEach(function(el){ so.observe(el); });
+  }
+
+  // trade-aware landing (?trade=): the inline script in the home hero set data-trade; finish the swaps that need the rest of the page
+  var trade = document.documentElement.getAttribute('data-trade');
+  if (trade) {
+    var tradeNames = {'hvac':'HVAC','plumbing':'Plumbing','electrical':'Electrical','roofing':'Roofing','restoration':'Water damage restoration','truck-repair':'Heavy-duty truck repair'};
+    var tradeHints = {'hvac':'El aire acondicionado falló a las 9 p. m. y nadie contestó','plumbing':'Una tubería se rompió a las 2 a. m. y nadie contestó','electrical':'Un trabajo de panel eléctrico llamó primero a tres negocios','roofing':'Durante la tormenta, el teléfono no dejó de sonar','restoration':'El daño de medianoche terminó en una franquicia','truck-repair':'Nadie respondió a una avería a las 3 a. m.'};
+    var sel = document.getElementById('lf-trade'); if (sel && tradeNames[trade]) sel.value = tradeNames[trade];
+    var prob = document.getElementById('lf-problem'); if (prob && tradeHints[trade]) prob.placeholder = tradeHints[trade];
+    var tl = document.querySelector('.vert a[href$="/industries/' + trade + '"]'); var tv = tl && tl.closest('.vert');
+    if (tv && tv.parentNode) { tv.parentNode.insertBefore(tv, tv.parentNode.firstChild); var tag = document.createElement('em'); tag.className = 'your-trade'; tag.textContent = 'Tu sector'; tv.appendChild(tag); }
+  }
+
+  // job-system walkthrough: six scenes, a keyboard stepper, auto-advance while in view
+  var walk = document.getElementById('walk');
+  if (walk) {
+    var scenes = walk.querySelectorAll('.walk-scene'), steps = walk.querySelectorAll('.walk-step'), cur = 0, auto = null, manual = false;
+    var show = function(i){ cur = i; scenes.forEach(function(s, j){ s.classList.toggle('is-on', j === i); }); steps.forEach(function(b, j){ b.setAttribute('aria-pressed', j === i ? 'true' : 'false'); }); };
+    var stopAuto = function(){ if (auto) { clearInterval(auto); auto = null; } };
+    var startAuto = function(){ if (auto || manual || reduce) return; auto = setInterval(function(){ show((cur + 1) % scenes.length); }, 4000); };
+    steps.forEach(function(b, j){ b.addEventListener('click', function(){ manual = true; stopAuto(); show(j); }); });
+    walk.addEventListener('mouseenter', stopAuto); walk.addEventListener('mouseleave', startAuto);
+    walk.addEventListener('focusin', stopAuto); walk.addEventListener('focusout', startAuto);
+    if ('IntersectionObserver' in window) { new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting) { startAuto(); } else { stopAuto(); } }); }, {threshold: .4}).observe(walk); } else { startAuto(); }
+  }
+
+  // "Call me now": one consented outbound demo call through /demo-call (sellers plan, feature A)
+  var cm = document.getElementById('callMe');
+  if (cm) {
+    var cmStatus = cm.querySelector('.callme-status'), cmBtn = cm.querySelector('button[type=submit]');
+    var cmSay = function(msg, isErr){ cmStatus.textContent = msg; cmStatus.hidden = false; cmStatus.classList.toggle('err', !!isErr); };
+    var cmReset = function(){ cmBtn.disabled = false; cmBtn.textContent = 'Llámame ahora'; };
+    cm.addEventListener('submit', function(e){
+      e.preventDefault();
+      var name = (cm.querySelector('#cm-name').value || '').trim(), trade = cm.querySelector('#cm-trade').value;
+      var digits = (cm.querySelector('#cm-phone').value || '').replace(/\D/g, ''); if (digits.length === 11 && digits.charAt(0) === '1') digits = digits.slice(1);
+      if (!name) { return cmSay('Dinos tu nombre para que el asistente sepa a quién llama.', true); }
+      if (digits.length !== 10 || '01'.indexOf(digits.charAt(0)) > -1 || '01'.indexOf(digits.charAt(3)) > -1) { return cmSay('Ingresa un número móvil de EE. UU. de 10 dígitos, con código de área.', true); }
+      if (!cm.querySelector('#cm-consent').checked) { return cmSay('Marca la casilla de consentimiento para que podamos llamarte.', true); }
+      cmBtn.disabled = true; cmBtn.textContent = 'Llamando'; cmSay('Estamos iniciando la llamada.');
+      if (typeof gtag === 'function') gtag('event', 'demo_call_request');
+      fetch('https://web-production-976b9.up.railway.app/demo-call', { method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: name, phone: '+1' + digits, trade: trade, consent: true, consent_version: '2026-09-10', source: 'web_demo', company_url: cm.querySelector('#cm-company-url').value }) })
+        .then(function(r){ return r.json().catch(function(){ return {}; }).then(function(j){ return { ok: r.ok, j: j }; }); })
+        .then(function(res){ if (res.ok) { cmSay('Te estamos llamando desde el (918) 359-2644. Contesta para hablar con el asistente.'); cmBtn.textContent = 'Llamada iniciada'; } else { cmSay('No se pudo iniciar la llamada. Llama al número de demostración: (918) 359-2644.', true); cmReset(); } })
+        .catch(function(){ cmSay('No se pudo iniciar la llamada. Llama al número de demostración: (918) 359-2644.', true); cmReset(); });
+    });
+  }
+
+  // configurator (only on pages that still carry it; guarded so its absence never breaks the rest)
+  var chips=document.getElementById('cfgChips'), feed=document.getElementById('cfgFeed'), title=document.getElementById('cfgTitle'), note=document.getElementById('cfgNote');
+  if (chips && feed && title && note) {
+    var trades = [
+      { k:'HVAC', t:'Tulsa Air · llamada de ejemplo', feed:[['them','Mi aire acondicionado dejó de funcionar y aquí hace muchísimo calor.'],['ai','Lo siento, es urgente. Puedo enviar a un técnico hoy entre la 1 y las 3.'],['them','Sí, por favor.'],['ai','Listo. El técnico va en camino y tenemos tu celular registrado.']] },
+      { k:'Plomería', t:'Reliable Plumbing · llamada de ejemplo', feed:[['them','El calentador de agua tiene una fuga. ¿Pueden venir?'],['ai','Sí. Puedo enviar a un plomero mañana entre las 8 y las 10.'],['them','Perfecto, prográmalo.'],['ai','Tu cita quedó programada. Te llamaremos 30 minutos antes de llegar.']] }
+    ];
+    var notes={'HVAC':'Las urgencias llegan a tu celular; las demás llamadas se programan.','Plomería':'Se priorizan las urgencias y se programan los trabajos habituales.'};
+    var timer=null;
+    function render(tr){
+      title.textContent=tr.t; note.textContent=notes[tr.k]||'';
+      feed.innerHTML=''; if(timer) clearTimeout(timer);
+      var i=0;
+      (function add(){
+        if(i>=tr.feed.length) return;
+        var b=document.createElement('div'); b.className='bubble '+(tr.feed[i][0]==='ai'?'b-ai':'b-them'); b.textContent=tr.feed[i][1]; feed.appendChild(b);
+        requestAnimationFrame(function(){requestAnimationFrame(function(){b.classList.add('show');});});
+        i++; timer=setTimeout(add, reduce?260:760);
+      })();
+    }
+    trades.forEach(function(tr,idx){ var c=document.createElement('button'); c.className='chip'; c.type='button'; c.textContent=tr.k; c.setAttribute('aria-pressed', idx===0?'true':'false'); c.onclick=function(){ chips.querySelectorAll('.chip').forEach(function(x){x.setAttribute('aria-pressed','false');}); c.setAttribute('aria-pressed','true'); render(tr); }; chips.appendChild(c); });
+    render(trades[0]);
+  }
+
+  // scroll-progress signal bar
+  var prog=document.querySelector(".scroll-prog");
+  function onScroll(){ if(!prog)return; var h=document.documentElement; var p=h.scrollTop/((h.scrollHeight-h.clientHeight)||1); prog.style.width=(Math.max(0,Math.min(1,p))*100).toFixed(1)+"%"; }
+  window.addEventListener("scroll",onScroll,{passive:true}); onScroll();
+  var tl=document.getElementById("timeline");
+  if(tl){ if(reduce||!("IntersectionObserver" in window)){ tl.classList.add("lit"); } else { var tio=new IntersectionObserver(function(es){es.forEach(function(e){ if(e.isIntersecting){ tl.classList.add("lit"); tio.disconnect(); } });},{threshold:.35}); tio.observe(tl); } }
+
+  // scroll reveal
+  if (!reduce && 'IntersectionObserver' in window) {
+    document.documentElement.classList.add('js-reveal');
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-visible');io.unobserve(e.target);}});},{rootMargin:'0px 0px -10% 0px',threshold:.1});
+    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  }
+
+  // load-time badge: this visitor's own measurement, or nothing at all
+  var lb = document.getElementById('loadBadge');
+  if (lb && window.performance && performance.getEntriesByType) {
+    window.addEventListener('load', function () { setTimeout(function () {
+      var pn = performance.getEntriesByType('navigation')[0];
+      if (!pn || pn.type === 'back_forward' || pn.type === 'prerender') return;
+      var s = pn.loadEventEnd / 1000;
+      if (!(s > 0 && s < 20)) return;
+      lb.textContent = 'Esta página cargó en ' + s.toFixed(2) + ' s con tu conexión. Kaico crea sitios así.';
+      lb.hidden = false;
+    }, 0); });
+  }
+
+  // missed-call calculator: arithmetic on the visitor's sliders, nothing stored or sent
+  var mc = document.getElementById('mc');
+  if (mc) {
+    var g = function (id) { return document.getElementById(id); };
+    var money = function (n) { return '$' + (Math.round(n / 10) * 10).toLocaleString('en-US'); };
+    var mcRun = function () {
+      var calls = +g('mc-calls').value, miss = +g('mc-miss').value, job = +g('mc-job').value;
+      g('mc-calls-out').value = calls; g('mc-miss-out').value = miss + '%'; g('mc-job-out').value = money(job);
+      var missed = Math.round(calls * miss / 100 * 4.33);
+      g('mc-missed').value = missed; g('mc-all').value = money(missed * job); g('mc-quarter').value = money(missed * job / 4);
+      mc.classList.toggle('mc-zero', missed === 0);
+    };
+    mc.addEventListener('input', mcRun); mcRun();
+  }
+})();
+
+(function () {
+  var form = document.getElementById('leadForm');
+  if (!form) return;
+  var API = 'https://web-production-976b9.up.railway.app/leads';
+  var err = document.getElementById('lf-error');
+  var btn = form.querySelector('button[type="submit"]');
+  var submissionId, storageKey = 'kaico-interest-submission';
+  function requestId() {
+    if (!submissionId) {
+      try { submissionId = sessionStorage.getItem(storageKey); } catch (_) {}
+      if (!submissionId) {
+        submissionId = window.crypto && window.crypto.randomUUID ? window.crypto.randomUUID() : Date.now().toString(36) + Math.random().toString(36).slice(2);
+        try { sessionStorage.setItem(storageKey, submissionId); } catch (_) {}
+      }
+    }
+    return submissionId;
+  }
+  function val(n) { var el = form.querySelector('[name="' + n + '"]'); return el ? el.value.trim() : ''; }
+  function fail(msg) { if (err) { err.textContent = msg; err.hidden = false; } btn.disabled = false; btn.textContent = 'Iniciar mi proyecto'; }
+  function track(name) { if (typeof gtag === 'function') gtag('event', name); }
+  form.addEventListener('submit', function (e) {
+    e.preventDefault(); if (err) err.hidden = true;
+    if (val('company_url')) { window.location.href = '/es/thanks'; return; } // honeypot: pretend success, post nothing
+    var name = val('name'), business = val('business'), trade = val('trade'), phone = val('phone'), email = val('email');
+    var digits = phone.replace(/\D/g, '');
+    if (!name || !business) { return fail('Agrega tu nombre y el nombre de tu negocio.'); }
+    if (!trade) { return fail('Selecciona tu sector.'); }
+    if (!phone && !email) { return fail('Agrega un teléfono o correo electrónico para que podamos contactarte.'); }
+    if (phone && !(digits.length === 10 || (digits.length === 11 && digits.charAt(0) === '1'))) { return fail('Ingresa un número de teléfono de EE. UU. de 10 dígitos.'); }
+    if (email && !form.querySelector('[name="email"]').checkValidity()) { return fail('Ingresa un correo electrónico válido.'); }
+    var needs = Array.prototype.map.call(form.querySelectorAll('input[name="needs"]:checked'), function (c) { return c.value; });
+    // ponytail: page and needs ride inside `problem` so POST /leads needs no new fields; real columns when volume justifies it
+    var problem = 'From: ' + window.location.pathname + '. Preferred language: Spanish. ' + (needs.length ? 'Needs: ' + needs.join(', ') + '. ' : '') + val('problem');
+    btn.disabled = true; btn.textContent = 'Enviando';
+    fetch(API, { method: 'POST', keepalive: true, headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: name, business: business, trade: trade, phone: phone, email: email, problem: problem, source: 'web_form', submission_id: requestId() }) })
+      .then(function (r) { if (!r.ok) { throw new Error('status ' + r.status); } try { sessionStorage.removeItem(storageKey); } catch (_) {} track('form_submit'); window.location.href = '/es/thanks'; })
+      .catch(function () { track('form_error'); fail('No se pudo enviar. Llama al (918) 359-2644 para dejar tus datos o escribe a trey.kaico@gmail.com.'); });
+  });
+})();
+
+(function () {
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('a') : null; if (!a || typeof gtag !== 'function') return;
+    var h = a.getAttribute('href') || '';
+    if (h.indexOf('tel:') === 0) gtag('event', 'tel_click');
+    else if (h.indexOf('cal.com') > -1) gtag('event', 'cal_click');
+    else if (a.classList.contains('btn-start')) gtag('event', 'start_cta_click');
+  });
+})();
+</script>
+<script type="module" src="/assets/ghost-fibers.js"></script>
+</body>
+</html>

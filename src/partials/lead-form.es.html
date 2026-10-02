@@ -1,0 +1,61 @@
+<div class="card gs-card reveal">
+      <form class="gs-form" id="leadForm" novalidate>
+        <div class="gs-row">
+          <div class="gs-field">
+            <label for="lf-name">Tu nombre</label>
+            <input class="gs-input" type="text" id="lf-name" name="name" autocomplete="name" placeholder="Ana García" required />
+          </div>
+          <div class="gs-field">
+            <label for="lf-business">Nombre de tu negocio</label>
+            <input class="gs-input" type="text" id="lf-business" name="business" autocomplete="organization" placeholder="Tu negocio" required />
+          </div>
+        </div>
+        <div class="gs-row">
+          <div class="gs-field">
+            <label for="lf-trade">Tipo de negocio</label>
+            <select class="gs-select" id="lf-trade" name="trade" required>
+              <option value="">Selecciona tu sector</option>
+              <option value="HVAC">HVAC</option>
+              <option value="Plumbing">Plomería</option>
+              <option value="Electrical">Electricidad</option>
+              <option value="Roofing">Techos</option>
+              <option value="Water damage restoration">Restauración por daños de agua</option>
+              <option value="Heavy-duty truck repair">Reparación de camiones pesados</option>
+              <option value="Dump trucking">Transporte en camiones de volteo</option>
+              <option value="Barber shops">Barberías</option>
+              <option value="Other trade">Otro sector</option>
+            </select>
+          </div>
+          <div class="gs-field">
+            <label for="lf-phone">Teléfono</label>
+            <input class="gs-input" type="tel" id="lf-phone" name="phone" autocomplete="tel" placeholder="(918) 555-0100" />
+          </div>
+        </div>
+        <div class="gs-field">
+          <label for="lf-email">Correo electrónico</label>
+          <input class="gs-input" type="email" id="lf-email" name="email" autocomplete="email" placeholder="tu@negocio.com" />
+        </div>
+        <div class="gs-field">
+          <label>¿En qué necesitas ayuda?</label>
+          <div class="gs-checks">
+            <label><input type="checkbox" name="needs" value="Website" /> Sitio web</label>
+            <label><input type="checkbox" name="needs" value="Google listing" /> Perfil de Empresa en Google</label>
+            <label><input type="checkbox" name="needs" value="Phone answering" /> Atención telefónica</label>
+            <label><input type="checkbox" name="needs" value="Google Ads" /> Google Ads</label>
+            <label><input type="checkbox" name="needs" value="Running the jobs (CRM)" /> Gestión de trabajos</label>
+            <label><input type="checkbox" name="needs" value="Not sure" /> No estoy seguro</label>
+          </div>
+        </div>
+        <div class="gs-field">
+          <label for="lf-problem">¿Qué problema tienes ahora? <span class="opt">(opcional)</span></label>
+          <textarea class="gs-textarea" id="lf-problem" name="problem" placeholder="Mi sitio web es antiguo, mi perfil de Google no está reclamado y las llamadas van al buzón de voz después de las 5."></textarea>
+        </div>
+        <div class="gs-hp" aria-hidden="true">
+          <label for="lf-company-url" tabindex="-1">URL de la empresa (deja este campo vacío)</label>
+          <input type="text" id="lf-company-url" name="company_url" tabindex="-1" autocomplete="off" />
+        </div>
+        <p id="lf-error" class="gs-error" hidden></p>
+        <button type="submit" class="btn btn-signal btn-lg">Iniciar mi proyecto</button>
+        <p class="gs-consent">Kaico Voice, un servicio de Kaico LLC, puede llamarte o enviarte correos electrónicos sobre tu solicitud. Enviar este formulario no te inscribe para recibir mensajes de texto. Consulta nuestra <a href="/es/privacy">política de privacidad</a> y nuestros <a href="/es/terms">términos</a>.</p>
+      </form>
+    </div>

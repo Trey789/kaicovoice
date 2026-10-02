@@ -1,0 +1,218 @@
+<!-- meta
+title: Política de privacidad | Kaico Voice
+description: Cómo trata Kaico Voice tus datos cuando llamas a un negocio que utiliza nuestra recepcionista con IA.
+canonical: /es/privacy
+-->
+<style>
+  :root {
+    --bg: #0a0b0d;
+    --ink: #eef1f4;
+    --ink-soft: #9aa4af;
+    --line: #23282f;
+    --accent: #c8ff3d;
+    --accent-ink: #c8ff3d;
+    --paper: #161a20;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: 'Hanken Grotesk', system-ui, -apple-system, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+  .container-narrow { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+
+  /* nav */
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(10, 11, 13, 0.72);
+    backdrop-filter: saturate(140%) blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav .row {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 24px; max-width: 1120px; margin: 0 auto;
+  }
+  .brand { font-weight: 800; font-size: 18px; letter-spacing: -0.01em; text-decoration: none; color: inherit; }
+  .brand-mark { color: var(--accent); }
+  .nav-actions { display: flex; align-items: center; gap: 12px; }
+  .nav-call { font-size: 14px; font-weight: 600; color: var(--ink); text-decoration: none; }
+  .nav-call:hover { color: var(--accent-ink); }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 14px 22px; border-radius: 999px;
+    font-weight: 600; font-size: 15px; text-decoration: none;
+    cursor: pointer; border: 0;
+    transition: transform 0.08s ease, box-shadow 0.18s ease, background 0.18s;
+  }
+  .btn-ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+  .btn-ghost:hover { border-color: var(--ink); }
+
+  /* legal page */
+  main.legal { padding: 64px 0 96px; }
+  .legal-eyebrow {
+    display: inline-block;
+    color: var(--accent-ink); background: rgba(20, 184, 90, 0.10);
+    padding: 6px 12px; border-radius: 999px;
+    font-size: 12px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .legal h1 {
+    font-size: clamp(36px, 5vw, 56px);
+    line-height: 1.05; letter-spacing: -0.02em;
+    margin: 0 0 8px;
+    font-weight: 800;
+  }
+  .legal h1 em {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 400; font-style: italic;
+    color: var(--accent-ink);
+  }
+  .legal-meta {
+    color: var(--ink-soft); font-size: 14px;
+    margin: 0 0 32px;
+  }
+  .legal-intro {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin: 24px 0 40px;
+  }
+  .legal-intro p { margin: 0; color: var(--ink); font-size: 16px; }
+  .legal h2 {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin: 40px 0 12px;
+    color: var(--ink);
+  }
+  .legal h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 24px 0 8px;
+    color: var(--ink);
+  }
+  .legal p, .legal li {
+    color: var(--ink-soft);
+    font-size: 15px;
+    margin: 0 0 12px;
+  }
+  .legal ul { padding-left: 22px; margin: 0 0 16px; }
+  .legal a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; }
+  .legal a:hover { text-decoration-color: var(--accent); }
+  .legal-callout {
+    border: 1px solid rgba(200,255,61,0.25);
+    background: rgba(200,255,61,0.06);
+    padding: 16px 20px;
+    margin: 24px 0;
+    border-radius: 12px;
+  }
+  .legal-callout p { color: var(--ink); margin: 0; font-weight: 500; }
+
+  /* footer */
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 32px 0 48px;
+    background: var(--paper);
+  }
+  footer .row {
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 16px;
+    font-size: 14px; color: var(--ink-soft);
+  }
+  footer a { color: var(--ink-soft); text-decoration: none; }
+  footer a:hover { color: var(--ink); }
+  footer .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+
+  :focus-visible{outline:3px solid #0E7A3C;outline-offset:2px;border-radius:4px;}
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+
+  .legal h1, .legal h2, .legal h3 { font-family: 'Bricolage Grotesque', sans-serif; }
+  .legal h1 em { font-family: 'Bricolage Grotesque', sans-serif; font-style: normal; color: var(--accent); }
+  .legal table { border-color: var(--line); }
+  .legal th, .legal td { border-color: var(--line) !important; color: var(--ink); }
+  .legal th { background: #161a20; }
+</style>
+<main class="legal">
+  <div class="container-narrow">
+    <span class="legal-eyebrow">Legal</span>
+    <h1>Política de <em>privacidad</em></h1>
+    <p class="legal-meta">Última actualización: 1 de octubre de 2026</p>
+
+    <div class="legal-intro">
+      <p><strong>En pocas palabras:</strong> Kaico Voice contesta llamadas para negocios de servicios. Cuando llamas a uno de ellos, nuestra IA toma los datos de tu reserva. Los mensajes de texto opcionales requieren tu consentimiento expreso y que el negocio tenga un programa de mensajería aprobado. Los mensajes de consultas de Kaico LLC son independientes. No vendemos tus datos.</p>
+    </div>
+
+    <h2>Quiénes somos</h2>
+    <p>Kaico Voice es un servicio de <strong>Kaico LLC</strong>, con sede en Tulsa, Oklahoma. Proporcionamos recepcionistas telefónicas con IA a pequeños negocios de servicios (talleres de autos, empresas de transporte, salones, entre otros). Esta Política de privacidad explica cómo tratamos tus datos cuando interactúas con uno de esos negocios a través de nuestra recepcionista con IA, visitas kaicovoice.com o nos envías el formulario para iniciar un proyecto.</p>
+
+    <h2>Si visitas kaicovoice.com o nos envías el formulario para iniciar un proyecto</h2>
+    <p>Esta sección se aplica si eres dueño de un negocio y visitas nuestro sitio, no si llamas a uno de nuestros clientes.</p>
+    <p><strong>Qué recopilamos:</strong> si envías el formulario para iniciar un proyecto, recibimos tu nombre, nombre del negocio, oficio, número de teléfono, correo electrónico, la descripción del problema y la página desde la que lo enviaste. Si solo navegas, no recopilamos datos personales; cuando se habilite Google Analytics en este sitio, Google instalará cookies para medir las visitas de forma agregada. Puedes bloquearlas en tu navegador.</p>
+    <p><strong>Para qué:</strong> para definir el alcance de tu proyecto, preparar la evaluación de tu presencia digital y responderte por teléfono o correo electrónico. Enviar el formulario no te inscribe en mensajes de texto.</p>
+    <p><strong>Dónde se almacena:</strong> en la base de datos de Kaico alojada en Railway, con una copia en el correo electrónico del operador.</p>
+    <p><strong>Quiénes los procesan:</strong> Vercel aloja este sitio; Railway almacena el formulario; Cal.com interviene si reservas una llamada; Stripe, si nos pagas; y Google Analytics, para estadísticas de visitas. Cada proveedor debe usar los datos únicamente para prestar su servicio.</p>
+    <p><strong>Durante cuánto tiempo:</strong> eliminamos los datos del formulario 12 meses después de nuestro último contacto contigo, o antes si lo solicitas.</p>
+    <p><strong>Tus opciones:</strong> escribe a <a href="mailto:trey.kaico@gmail.com">trey.kaico@gmail.com</a> para consultar, corregir o eliminar los datos que tenemos sobre ti.</p>
+
+    <p><strong>Si usas "Llámenme ahora":</strong> recopilamos tu nombre, número de celular y oficio. También conservamos un registro de tu consentimiento (el texto aceptado, su versión, la hora y tu dirección IP) como prueba de que solicitaste la llamada. La asistente con IA de Kaico llama desde el (918) 359-2644; la llamada podría grabarse y se realiza como máximo una vez al día por número, entre las 8 a. m. y las 9 p. m., hora del centro. Los registros de consentimiento se conservan durante cinco años.</p>
+    <h2>Qué recopilamos</h2>
+    <p>Cuando llamas a un negocio que usa Kaico Voice, nuestra recepcionista con IA puede recopilar:</p>
+    <ul>
+      <li>Tu nombre</li>
+      <li>Tu número de teléfono</li>
+      <li>Tu correo electrónico (si lo proporcionas)</li>
+      <li>Datos sobre tu reserva o consulta, como tu vehículo y el servicio solicitado, o la dirección de entrega y el material que necesitas transportar</li>
+      <li>Audio de la llamada, para fines de calidad y mejora del servicio</li>
+    </ul>
+    <p>Recopilamos esta información para prestarte el servicio solicitado, por ejemplo, reservar una cita. Los mensajes de texto sobre reservas requieren un remitente aprobado por separado y tu consentimiento expreso.</p>
+
+    <h2>Cuándo te enviaremos mensajes de texto</h2>
+    <p>Proporcionar tu número de teléfono durante una reserva no te inscribe, por sí solo, en mensajes de texto. Si Kaico LLC tiene un remitente aprobado y habilita SMS para sus propias consultas, la recepcionista con IA puede preguntarte si deseas recibir mensajes opcionales sobre tu cita. Solo una respuesta afirmativa clara te inscribe; puedes negarte y reservar de todos modos. Antes de enviar mensajes en su propio nombre, un negocio cliente necesita su propio remitente aprobado, programa de mensajería, términos, política de privacidad y consentimiento independiente de quien llama.</p>
+    <p>El programa de mensajes de Kaico LLC para consultas, si está habilitado, se limita a:</p>
+    <ul>
+      <li>Confirmaciones de citas</li>
+      <li>Recordatorios de citas</li>
+      <li>Cambios en tu cita</li>
+    </ul>
+    <p>Este programa de reservas <strong>no</strong> incluye mensajes de marketing, solicitudes de reseñas, seguimiento de cotizaciones ni campañas para volver a contactar. Se envían hasta 5 mensajes por consulta. Pueden aplicarse tarifas de mensajes y datos según tu operador y plan. Responde <strong>STOP</strong> a un mensaje para darte de baja del programa de ese remitente, o <strong>HELP</strong> para obtener información de asistencia. Consentir mensajes sobre reservas no autoriza mensajes de marketing.</p>
+
+    <h2>Con quién compartimos tus datos</h2>
+    <div class="legal-callout">
+      <p>No compartimos, vendemos, alquilamos ni cedemos tu número de teléfono ni los datos de tu consentimiento para recibir SMS a terceros con fines de marketing o promoción. No compartiremos información de teléfonos móviles con terceros ni afiliados para esos fines. Todas las categorías anteriores excluyen los datos y el consentimiento de inscripción al programa de mensajes de texto del remitente; esta información no se compartirá con terceros.</p>
+    </div>
+    <p>Las únicas partes que ven tus datos son:</p>
+    <ul>
+      <li><strong>El negocio al que llamaste.</strong> Si llamaste a Tri-Tech Auto Tinting a través de Kaico Voice, tu reserva aparece en el calendario de Tri-Tech. No compartimos tus datos con otros clientes de Kaico Voice.</li>
+      <li><strong>Los proveedores de infraestructura que usamos para prestar el servicio.</strong> Entre ellos están RetellAI (procesamiento de voz), Twilio (envío de SMS, si está habilitado), Google (almacenamiento del calendario) y Cal.com (programación de llamadas de ventas de Kaico Voice). Cada uno tiene la obligación contractual de usar los datos solo para prestar su servicio.</li>
+    </ul>
+
+    <h2>Cuánto tiempo conservamos tus datos</h2>
+    <p>Los datos de la reserva pueden almacenarse en el calendario del negocio correspondiente y en los registros de servicio de Kaico. Si SMS está habilitado, el proveedor de mensajería puede conservar registros de entrega. RetellAI puede conservar el audio de las llamadas según su política.</p>
+
+    <h2>Tus opciones</h2>
+    <ul>
+      <li><strong>Baja de SMS:</strong> si recibes un mensaje, responde STOP a ese remitente.</li>
+      <li><strong>Cambios de reserva:</strong> comunícate directamente con el negocio donde reservaste.</li>
+      <li><strong>Preguntas o solicitudes de privacidad:</strong> escribe a <a href="mailto:trey.kaico@gmail.com">trey.kaico@gmail.com</a>.</li>
+    </ul>
+
+    <h2>Cambios en esta política</h2>
+    <p>Si actualizamos esta política, cambiaremos la fecha de "Última actualización" que aparece arriba. Los cambios importantes se anunciarán en la página de inicio.</p>
+
+    <h2>Contacto</h2>
+    <p>
+      Kaico LLC<br />
+      Tulsa, OK<br />
+      <a href="mailto:trey.kaico@gmail.com">trey.kaico@gmail.com</a><br />
+      <a href="tel:+19183592644">(918) 359-2644</a>
+    </p>
+  </div>
+</main>

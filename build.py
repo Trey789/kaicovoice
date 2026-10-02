@@ -49,14 +49,24 @@ def lastmod(root, path):
     return datetime.date.fromtimestamp(path.stat().st_mtime).isoformat()
 
 
-def render(root, meta, body, partials):
+def render(root, meta, body, partials, lang="en"):
     c = meta["canonical"]
-    schema = f'<script type="application/ld+json">{read(root / "src" / "schema" / "organization.json")}</script>\n'
-    if meta.get("schema"):
+    org = "organization.es.json" if lang == "es" else "organization.json"
+    schema = f'<script type="application/ld+json">{read(root / "src" / "schema" / org)}</script>\n'
+    # ponytail: Spanish pages omit English page-specific schema; localize it when Spanish SEO needs it.
+    if meta.get("schema") and lang == "en":
         schema += f'<script type="application/ld+json">{read(root / "src" / meta["schema"])}</script>\n'
     noindex = meta.get("noindex", "false").lower() == "true"
     nav = re.sub(rf'(<a href="{re.escape(c)}")', r'\1 aria-current="page"', partials["nav"])
     html = partials["head"] + nav + body + partials["footer"]
+    english = c[3:] or "/" if lang == "es" else c
+    spanish = c if lang == "es" else "/es" + ("" if c == "/" else c)
+    alternates = "\n".join(
+        f'<link rel="alternate" hreflang="{code}" href="{SITE}{path}" />'
+        for code, path in (("en", english), ("es", spanish), ("x-default", english)))
+    switch = ('<div class="lang-switch" role="group" aria-label="Language / Idioma">'
+              f'<a href="{english}" lang="en" hreflang="en"' + (' aria-current="page"' if lang == "en" else '') + '>EN</a>'
+              f'<a href="{spanish}" lang="es" hreflang="es"' + (' aria-current="page"' if lang == "es" else '') + '>ES</a></div>')
     fills = {
         "{{title}}": meta["title"],
         "{{description}}": meta["description"],
@@ -66,6 +76,11 @@ def render(root, meta, body, partials):
         "{{ga4}}": GA4_SNIPPET.format(id=GA4_ID) if GA4_ID else "",
         "{{robots}}": '<meta name="robots" content="noindex, nofollow" />' if noindex else "",
         "{{lead_form}}": partials["lead-form"].rstrip("\n"),
+        "{{lang}}": lang,
+        "{{hreflang}}": alternates,
+        "{{language_switch}}": switch,
+        "{{og_locale}}": "es_US" if lang == "es" else "en_US",
+        "{{og_image_alt}}": "Kaico Voice, asistente que atiende llamadas las 24 horas" if lang == "es" else "Kaico Voice, AI receptionist that answers and books 24/7",
     }
     for k, v in fills.items():
         html = html.replace(k, v)
@@ -115,6 +130,9 @@ def build(root=ROOT, write=True):
     """Render every page. Returns (errors, outputs). Writes files only when write=True and there are no errors."""
     src = root / "src"
     partials = {n: read(src / "partials" / f"{n}.html") for n in ("head", "nav", "footer", "lead-form")}
+    spanish = dict(partials)
+    if (src / "pages" / "es").exists():
+        spanish.update({n: read(src / "partials" / f"{n}.es.html") for n in ("nav", "footer", "lead-form")})
     pages, errs = [], []
     for path in sorted((src / "pages").rglob("*.html")):
         meta, body = parse(path)
@@ -122,13 +140,14 @@ def build(root=ROOT, write=True):
             errs.append(f"{path}: missing meta block")
             continue
         rel = "/" + str(path.relative_to(src / "pages"))[:-5]
-        meta.setdefault("canonical", "/" if rel == "/index" else rel)
-        if rel == "/404":
+        meta.setdefault("canonical", {"/index": "/", "/es/index": "/es"}.get(rel, rel))
+        if rel in ("/404", "/es/404"):
             meta["noindex"] = "true"
         for k in ("title", "description"):
             meta.setdefault(k, "")
+        lang = "es" if path.relative_to(src / "pages").parts[0] == "es" else "en"
         pages.append({"meta": meta, "canonical": meta["canonical"], "src": path,
-                      "html": render(root, meta, body, partials)})
+                      "html": render(root, meta, body, spanish if lang == "es" else partials, lang)})
     errs += check(root, pages)
     indexable = [p for p in pages if p["meta"].get("noindex", "false").lower() != "true"]
     sitemap = ['<?xml version="1.0" encoding="UTF-8"?>',

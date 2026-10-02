@@ -1,0 +1,103 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Kaico Voice",
+  "legalName": "Kaico LLC",
+  "url": "https://www.kaicovoice.com/es",
+  "telephone": "+19183592644",
+  "email": "trey.kaico@gmail.com",
+  "description": "Kaico crea y gestiona la presencia digital de negocios de servicios: sitio web, perfil de Google y atención telefónica.",
+  "image": "https://www.kaicovoice.com/assets/logo-k-512.png",
+  "logo": "https://www.kaicovoice.com/assets/logo-k-512.png",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Tulsa",
+    "addressRegion": "OK",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Tulsa"
+    },
+    {
+      "@type": "State",
+      "name": "Oklahoma"
+    },
+    {
+      "@type": "Country",
+      "name": "Estados Unidos"
+    }
+  ],
+  "knowsAbout": [
+    "diseño de sitios web para contratistas",
+    "optimización del Perfil de Empresa en Google",
+    "atención telefónica fuera de horario",
+    "gestión de Google Ads para contratistas",
+    "marketing gestionado para negocios de servicios"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Servicios de Kaico Voice",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "name": "Auditoría inicial gratuita",
+        "price": "0",
+        "priceCurrency": "USD",
+        "description": "Revisión gratuita del sitio web, perfil de Google y teléfono antes de preparar una cotización."
+      },
+      {
+        "@type": "Offer",
+        "name": "Front Door Fix",
+        "price": "1500",
+        "priceCurrency": "USD",
+        "description": "Mejora puntual de un sitio existente: botón para llamar, formulario de cotización, conexión con el perfil de Google y seguimiento."
+      },
+      {
+        "@type": "Offer",
+        "name": "Creación de sitio web, Estándar",
+        "price": "3500",
+        "priceCurrency": "USD"
+      },
+      {
+        "@type": "Offer",
+        "name": "Creación de sitio web, Premium",
+        "price": "6500",
+        "priceCurrency": "USD"
+      },
+      {
+        "@type": "Offer",
+        "name": "Front Door",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "900",
+          "priceCurrency": "USD",
+          "billingDuration": "P1M"
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Front Door + Growth",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "1750",
+          "priceCurrency": "USD",
+          "billingDuration": "P1M"
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Website Care",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "minPrice": "149",
+          "maxPrice": "299",
+          "priceCurrency": "USD",
+          "billingDuration": "P1M"
+        }
+      }
+    ]
+  }
+}

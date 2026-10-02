@@ -66,6 +66,25 @@ class BuildChecks(unittest.TestCase):
             self.assertNotIn("{{lead_form}}", out[path])
         self.assertIn("https://www.kaicovoice.com/start", out["sitemap.xml"])
 
+    def test_real_site_has_spanish_pair_for_every_page(self):
+        errs, out = build.build(build.ROOT, write=False)
+        self.assertEqual(errs, [])
+        english = [route for route in out if route.startswith("/") and not route.startswith("/es")]
+        for route in english:
+            spanish = "/es" + ("" if route == "/" else route)
+            self.assertIn(spanish, out)
+            self.assertIn('<html lang="es">', out[spanish])
+            self.assertIn(f'hreflang="es" href="{build.SITE}{spanish}"', out[route])
+            self.assertIn(f'hreflang="en" href="{build.SITE}{route}"', out[spanish])
+            self.assertIn(f'href="{spanish}" lang="es"', out[route])
+            self.assertIn(f'href="{route}" lang="en"', out[spanish])
+        for route in ("/es", "/es/start"):
+            self.assertIn('value="Dump trucking"', out[route])
+            self.assertIn('value="Website"', out[route])
+            self.assertIn('Preferred language: Spanish', out[route])
+        self.assertIn(f"{build.SITE}/es/start", out["sitemap.xml"])
+        self.assertNotIn(f"{build.SITE}/es/thanks", out["sitemap.xml"])
+
     def test_em_dash_fails(self):
         errs, _ = self.run_build({"pricing.html": page(body="<main><h1>Pricing</h1><p>a — b</p></main>")})
         self.assertTrue(any("banned" in e for e in errs), errs)

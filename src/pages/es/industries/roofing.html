@@ -1,0 +1,316 @@
+<!-- meta
+title: Servicio de atención telefónica para techadores | Kaico Voice
+description: Atención telefónica para techadores: responde llamadas 24/7, agenda inspecciones y comparte detalles con tu equipo. Escúchala en vivo.
+canonical: /es/industries/roofing
+schema: schema/industries-roofing.json
+-->
+<style>
+:root {
+    --bg: #0a0b0d;
+    --ink: #eef1f4;
+    --ink-soft: #9aa4af;
+    --line: #23282f;
+    --accent: #c8ff3d;
+    --accent-ink: #c8ff3d;
+    --paper: #161a20;
+    --surface: #111418;
+    --surface-2: #161a20;
+    --ink-on-signal: #0a0b0d;
+  }
+body {
+    margin: 0;
+    font-family: 'Hanken Grotesk', system-ui, -apple-system, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+.container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+/* nav */
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(10, 11, 13, 0.72);
+    backdrop-filter: saturate(140%) blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+nav .row {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 24px; max-width: 1120px; margin: 0 auto;
+  }
+.brand { font-weight: 800; font-size: 18px; letter-spacing: -0.01em; text-decoration: none; color: inherit; }
+.brand-mark { color: var(--accent); }
+.nav-actions { display: flex; align-items: center; gap: 12px; }
+.nav-call { font-size: 14px; font-weight: 600; color: var(--ink); text-decoration: none; }
+.nav-call:hover { color: var(--accent-ink); }
+.btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 14px 22px; border-radius: 999px;
+    font-weight: 600; font-size: 15px; text-decoration: none;
+    cursor: pointer; border: 0;
+    transition: transform 0.08s ease, box-shadow 0.18s ease, background 0.18s;
+  }
+.btn-ghost:hover { border-color: var(--ink); }
+.btn-signal { background: var(--accent); color: var(--ink-on-signal); font-weight: 700; }
+h1, h2, h3 { font-family: 'Bricolage Grotesque', sans-serif; }
+h1 {
+    font-size: clamp(36px, 5.6vw, 60px);
+    line-height: 1.02; letter-spacing: -0.025em;
+    margin: 0 0 18px; font-weight: 800; text-wrap: balance;
+  }
+h1 em { font-style: normal; color: var(--accent); }
+h2 { font-size: clamp(28px, 4.4vw, 44px); font-weight: 800; line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 14px; text-wrap: balance; }
+h2 em { font-style: normal; color: var(--accent); }
+section { padding: 80px 0; }
+.eyebrow {
+    display: inline-block;
+    color: var(--accent-ink); background: rgba(200,255,61,0.08);
+    border: 1px solid rgba(200,255,61,0.25);
+    padding: 6px 12px; border-radius: 999px;
+    font-size: 12px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+.lead { color: var(--ink-soft); font-size: 18px; line-height: 1.6; max-width: 58ch; margin: 0 0 30px; }
+.lead strong { color: var(--ink); }
+p { color: var(--ink-soft); font-size: 15.5px; }
+.hero { padding: 72px 0 56px; }
+.hero-sub { margin: 16px 0 0; font-size: 14px; color: var(--ink-soft); }
+.hero-sub a:hover { text-decoration-color: var(--accent); }
+/* pain list */
+  .pain-list { display: grid; gap: 12px; max-width: 780px; margin: 28px 0 0; }
+.pain-item {
+    padding: 20px 22px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface);
+  }
+.pain-item h3 { margin-bottom: 6px; }
+.pain-item p { margin: 0; }
+/* how it works cards */
+  .grid-3 { display: grid; gap: 16px; grid-template-columns: repeat(3, 1fr); margin-top: 34px; }
+.card p { margin: 0; font-size: 15px; }
+.card .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 34px; height: 34px; border-radius: 10px;
+    background: rgba(200,255,61,.12); color: var(--accent);
+    font-weight: 800; font-family: 'Bricolage Grotesque', sans-serif;
+    margin-bottom: 14px; font-size: 15px;
+  }
+/* call illustration */
+  .call-demo {
+    background: var(--paper); border: 1px solid var(--line); border-radius: 20px;
+    padding: 28px; max-width: 640px; margin: 30px 0 0;
+  }
+.call-label { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft); margin: 0 0 18px; }
+.bubble { padding: 12px 16px; border-radius: 14px; font-size: 14.5px; line-height: 1.5; margin: 0 0 10px; max-width: 92%; }
+.b-them { background: var(--surface); color: var(--ink); border: 1px solid var(--line); }
+.b-ai { background: rgba(200,255,61,.12); color: #eaffc0; border: 1px solid rgba(200,255,61,.22); margin-left: auto; }
+.bubble .who { display: block; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 4px; }
+.call-fine { margin: 16px 0 0; font-size: 13px; color: var(--ink-soft); }
+/* proof */
+  .proof-card {
+    border: 1px solid rgba(200,255,61,0.25);
+    background: rgba(200,255,61,0.05);
+    border-radius: 16px; padding: 26px 28px; max-width: 780px; margin: 26px 0 0;
+  }
+.proof-card p { margin: 0 0 12px; color: var(--ink); font-size: 16px; }
+.proof-card p:last-child { margin-bottom: 0; }
+.proof-card .basis { color: var(--ink-soft); font-size: 14px; }
+a.inline { color: var(--ink); text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; }
+a.inline:hover { text-decoration-color: var(--accent); }
+/* pricing */
+  .price-band {
+    background: var(--paper); border: 1px solid var(--line); border-radius: 22px;
+    padding: 40px; max-width: 780px; margin: 30px 0 0;
+  }
+.price-amt { font-family: 'Bricolage Grotesque', sans-serif; font-size: 46px; font-weight: 800; letter-spacing: -0.02em; line-height: 1; }
+.price-amt em { font-style: normal; font-size: 15px; font-weight: 600; color: var(--ink-soft); margin-left: 8px; font-family: 'Hanken Grotesk', sans-serif; }
+.price-band p { margin: 16px 0 22px; }
+/* faq */
+  .faq { max-width: 780px; }
+details { border-bottom: 1px solid var(--line); padding: 20px 0; }
+summary { cursor: pointer; font-weight: 700; font-size: 17px; list-style: none; display: flex; justify-content: space-between; gap: 16px; font-family: 'Bricolage Grotesque', sans-serif; color: var(--ink); }
+summary::after { content: "+"; font-size: 24px; color: var(--accent); line-height: 1; flex-shrink: 0; }
+details[open] summary::after { content: "\2212"; }
+details p { margin: 12px 0 0; color: var(--ink-soft); line-height: 1.6; }
+/* final cta */
+  .final-cta {
+    text-align: center;
+    border: 1px solid var(--line);
+    background: radial-gradient(120% 100% at 50% 0%, rgba(200,255,61,.10), transparent 55%), var(--surface);
+    border-radius: 24px; padding: 64px 32px;
+  }
+.final-cta h2 { max-width: 22ch; margin: 0 auto 14px; }
+.final-cta p { max-width: 54ch; margin: 0 auto 28px; font-size: 17px; }
+.final-fine { margin-top: 22px; font-size: 13px; color: var(--ink-soft); }
+.final-fine a { color: var(--ink-soft); }
+/* footer */
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 32px 0 48px;
+    background: var(--paper);
+  }
+footer .row {
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 16px;
+    font-size: 14px; color: var(--ink-soft);
+  }
+footer a { color: var(--ink-soft); text-decoration: none; }
+footer .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:4px;}
+.skip-link { position: absolute; left: -9999px; top: 8px; z-index: 100; background: var(--accent); color: var(--ink-on-signal); padding: 10px 18px; border-radius: 8px; font-weight: 700; text-decoration: none; }
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+@media (max-width: 720px){.grid-3 { grid-template-columns: 1fr; } section { padding: 60px 0; } .price-band { padding: 30px 24px; }}
+</style>
+<main id="main">
+
+  <header class="hero">
+    <div class="container-narrow">
+      <span class="eyebrow">Sectores | Techado</span>
+      <h1>Atención telefónica para techadores que responde <em>cuando llega el granizo.</em></h1>
+      <p class="lead">Kaico Voice es una recepcionista con IA para empresas de techado. Cuando una tormenta cruza Tulsa y todos los propietarios del área empiezan a llamar a la vez, contesta cada llamada, agenda la inspección en su calendario y marca las llamadas que necesitan una persona. <strong>Creado en tierra de tormentas. Funciona dondequiera que caiga granizo.</strong></p>
+      <div class="hero-cta">
+        <a class="btn btn-signal" href="tel:+19183592644">Llame al (918) 359-2644 y escúchelo en vivo</a>
+        <a class="btn btn-ghost" href="https://cal.com/kaicovoice/demo" target="_blank" rel="noopener noreferrer">Agende una demostración</a>
+      </div>
+      <p class="hero-sub">Ese número no es una línea de ventas. Contesta la propia recepcionista con IA, en vivo.</p>
+    </div>
+  </header>
+
+  <section>
+    <div class="container-narrow">
+      <h2>La demanda tras una tormenta no llega poco a poco. <em>Llega de golpe.</em></h2>
+    <div class="unit-strip" aria-hidden="true"><div class="unit" data-scroll><b>390</b><span>búsquedas mensuales de atención telefónica para techadores</span></div><div class="unit" data-scroll><b>$22</b><span>costo por clic de esa búsqueda</span></div></div>
+      <p class="lead">El techado es el único oficio en que una sola noche de mal tiempo puede generar un mes de llamadas, y la mayoría llegan en cuestión de días.</p>
+      <div class="pain-list">
+        <div class="pain-item">
+          <h3>Todos los teléfonos suenan a la vez, por poco tiempo</h3>
+          <p>Después de una granizada, los propietarios van llamando a una lista. Si nadie contesta, llaman al siguiente techador. La empresa que responde primero suele conseguir la inspección, y allí se gana el trabajo. Dos semanas después pasa la ola y los teléfonos vuelven a estar tranquilos. «Roofing answering service» recibe unas 390 búsquedas al mes en Estados Unidos, con un costo de $22 por clic (Semrush, septiembre de 2026).</p>
+        </div>
+        <div class="pain-item">
+          <h3>Sus mejores trabajadores están en los techos, no en escritorios</h3>
+          <p>Justo cuando aumentan las llamadas, sus cuadrillas y estimadores están sobre los techos trabajando con clavadoras. Nadie debería intentar contestar desde la cumbrera, y nadie puede oír el teléfono por encima de un compresor. Las llamadas quedan sin respuesta, y para el cliente eso equivale a un no.</p>
+        </div>
+        <div class="pain-item">
+          <h3>Las filtraciones no esperan a que devuelva una llamada</h3>
+          <p>Quien ve entrar agua por el techo no deja un mensaje de voz con la esperanza de que alguien responda. Llama a techadores hasta que alguien le dice «podemos ayudarle». Si esa voz no es la suya, el trabajo, el referido y el trámite con el seguro posterior irán a quien contestó.</p>
+        </div>
+        <div class="pain-item">
+          <h3>No puede contratar personal solo para un pico de llamadas</h3>
+          <p>Contratar a una recepcionista a tiempo completo para cubrir dos semanas de llamadas por tormentas implica pagar el sueldo durante todos los meses tranquilos. Muchas empresas dividen la carga: el gerente de oficina se satura durante la ola y aun así se pierden llamadas. Por eso el problema sigue sin resolverse.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Lo que hace en una línea telefónica <em>de techado</em> </h2>
+      <p class="lead">Kaico Voice contesta cada llamada, 24/7, incluso de noche y los fines de semana. Esto es lo que significa cuando llama un propietario que encontró tejas en el jardín.</p>
+      <div class="grid-3">
+        <div class="card">
+          <span class="num">1</span>
+          <h3>Agenda inspecciones en su calendario</h3>
+          <p>Ofrece horarios realmente disponibles y coloca la cita directamente en el calendario de su empresa. Quien llama termina con una fecha, no con la promesa de que alguien le devolverá la llamada.</p>
+        </div>
+        <div class="card">
+          <span class="num">2</span>
+          <h3>Registra los detalles que necesita su estimador</h3>
+          <p>Dirección, lo que observó la persona, si está entrando agua y dónde aparece el daño. Su estimador llega a la casa sabiendo qué encontrará.</p>
+        </div>
+        <div class="card">
+          <span class="num">3</span>
+          <h3>Marca las llamadas que necesitan una persona</h3>
+          <p>Si una llamada necesita una persona y nadie está disponible, la recepcionista registra los datos para que su equipo responda. Los mensajes de texto al cliente requieren consentimiento por separado y una configuración de mensajería aprobada para su empresa.</p>
+        </div>
+        <div class="card">
+          <span class="num">4</span>
+          <h3>Filtra las llamadas automáticas después de la tormenta</h3>
+          <p>Las tormentas atraen revendedores de contactos, llamadas automáticas y spam justo cuando su línea más importa. Filtra ese ruido para que las llamadas basura no lleguen a su equipo.</p>
+        </div>
+        <div class="card">
+          <span class="num">5</span>
+          <h3>Transfiere las emergencias por filtraciones activas</h3>
+          <p>Si está entrando agua en la casa, la llamada se transfiere a una persona de su equipo. Usted decide qué cuenta como emergencia y a qué número se transfiere.</p>
+        </div>
+        <div class="card">
+          <span class="num">6</span>
+          <h3>Transcribe cada llamada</h3>
+          <p>Cada conversación genera una transcripción. Al terminar un día de tormenta puede leer todas las llamadas que llegaron mientras estaba en un techo, sin perder nada en el buzón de voz.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-narrow">
+      <h2>Cómo suena una llamada <em>después de la tormenta</em></h2>
+      <p class="lead">Un ejemplo breve de una llamada tras una granizada. Evalúe el servicio real llamando al número de arriba.</p>
+      <div class="call-demo">
+        <p class="call-label">Ejemplo de una llamada típica. No es una grabación.</p>
+        <div class="bubble b-them"><span class="who">Cliente</span>«Hola, el granizo de anoche pasó justo sobre nosotros en Broken Arrow. Hay pedazos de tejas por todo el jardín y creo que el techo sobre el garaje tiene una parte blanda».</div>
+        <div class="bubble b-ai"><span class="who">Recepcionista de Kaico</span>«Lamento escuchar eso; llamó al lugar indicado. ¿Me da su dirección para programar una inspección? ¿Está entrando agua ahora mismo?»</div>
+        <div class="bubble b-them"><span class="who">Cliente</span>«Todavía no entra agua. La dirección es 4211 South Maple».</div>
+        <div class="bubble b-ai"><span class="who">Recepcionista de Kaico</span>«Entendido. Podemos enviar un estimador el jueves a las nueve de la mañana o el viernes a la una de la tarde. ¿Cuál le conviene más? Le agendo la cita ahora».</div>
+        <p class="call-fine">La cita queda en el calendario y los detalles en la transcripción. El estimador llega el jueves sabiendo que se trata de daño por granizo en Broken Arrow, posiblemente sobre el garaje.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+  <div class="container">
+    <h2>La evidencia, <em>sin exageraciones</em></h2>
+    <p class="lead">Un negocio de Tulsa que configuramos ahora agenda trabajos fuera de horario que antes perdía. Antes de publicar cualquier cifra, la contrastamos con el calendario del dueño. Por eso todavía no mostramos una aquí. <a href="/es/proof">Cómo verificamos los resultados y el trabajo hasta ahora.</a></p>
+  </div>
+</section>
+
+  <section>
+  <div class="container">
+    <h2 style="text-align:center;">Cómo encaja <span class="em">el teléfono</span>.</h2>
+    <p class="lead" style="text-align:center;margin:0 auto 24px;">El teléfono es parte de <a href="/es/services/front-door">Front Door</a>, el servicio mensual de Kaico para oficios: <a href="/es/services/websites">mantenimiento del sitio</a>, <a href="/es/services/google-business-profile">Perfil de Empresa en Google</a>, <a href="/es/services/phone">atención telefónica 24/7</a>, sistema de citas y <a href="/es/services/job-system">sistema de gestión de trabajos</a>, desde $900 al mes (<a href="/es/pricing">precios</a>). Definimos el alcance de cada proyecto mediante una auditoría gratuita de sus canales de contacto antes de cotizar.</p>
+    <p style="text-align:center;"><a href="/es#start" class="btn btn-signal btn-start">Iniciar mi proyecto</a></p>
+  </div>
+</section>
+
+  <section>
+    <div class="container-narrow faq">
+      <h2>Techadores <em>preguntas</em></h2>
+      <details>
+        <summary>¿Puede manejar muchas llamadas después de una granizada?</summary>
+        <p>Sí. Es software, no una sola persona en un escritorio, así que el aumento de llamadas después de una tormenta no se convierte en una fila de espera ni en una señal de ocupado. Contesta cada llamada, 24/7, incluso las que llegan a las 9 de la noche mientras usted sigue cubriendo techos con lonas. Cada cita queda en su calendario y cada llamada genera una transcripción que puede leer esa noche.</p>
+      </details>
+      <details>
+        <summary>¿Qué pasa cuando alguien tiene una filtración activa?</summary>
+        <p>Las llamadas por agua que está entrando en una casa se tratan como emergencias. La recepcionista transfiere las emergencias reales a una persona de su equipo, y usted decide a qué número. Lo demás se agenda o queda como mensaje, para que el teléfono solo lo interrumpa cuando corresponda.</p>
+      </details>
+      <details>
+        <summary>¿Puede responder preguntas sobre seguros y ajustadores?</summary>
+        <p>No, y no finge hacerlo. Las preguntas sobre reclamos, deducibles, suplementos o reuniones con ajustadores se registran detalladamente para que una persona de su equipo responda. Quien llama sabe que recibirá una devolución de llamada y usted obtiene los detalles en la transcripción, en vez de un mensaje de voz impreciso.</p>
+      </details>
+      <details>
+        <summary>¿Sabrán los propietarios que hablan con una IA?</summary>
+        <p>La prueba más honesta es escucharla usted mismo. Llame al <a class="inline" href="tel:+19183592644">(918) 359-2644</a>. Esa línea la contesta la propia recepcionista en vivo, tal como atendería a sus clientes. La mayoría solo quiere resolver el problema del techo; una respuesta rápida y competente supera al buzón de voz.</p>
+      </details>
+      <details>
+        <summary>¿Cuánto tardamos en empezar antes de la próxima tormenta?</summary>
+        <p>La configuración tarda aproximadamente una semana desde el inicio. Usted nos indica su zona de cobertura, qué inspecciones ofrece sin costo y qué llamadas deben transferirse a una persona. Si ya comenzó la temporada de tormentas, una semana sigue siendo más rápido que contratar, capacitar y programar a una recepcionista.</p>
+      </details>
+      <details>
+        <summary>¿Hay contrato?</summary>
+        <p>Es mes a mes, con aviso por escrito de 30 días para cancelar. El teléfono está incluido en Front Door, el servicio mensual de Kaico, desde $900 al mes. Los depósitos de construcción no son reembolsables una vez iniciado el trabajo; se reembolsan los meses prepagados que no se hayan utilizado.</p>
+      </details>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="final-cta">
+        <h2>La próxima tormenta ya está <em>en el radar</em></h2>
+        <p>En algún lugar al oeste se forma una tormenta que hará sonar su teléfono sin parar. Decida ahora quién va a contestar.</p>
+        <div class="hero-cta">
+          <a class="btn btn-signal" href="tel:+19183592644">Llame al (918) 359-2644 y escúchelo en vivo</a>
+          <a class="btn btn-ghost" href="https://cal.com/kaicovoice/demo" target="_blank" rel="noopener noreferrer">Agende una demostración</a>
+          <a href="/es#start" class="btn btn-signal btn-lg btn-start">Iniciar mi proyecto</a>
+        </div>
+        <p class="final-fine">¿Tiene preguntas? Escriba a <a href="mailto:trey.kaico@gmail.com">trey.kaico@gmail.com</a>. También atendemos a <a href="/es/industries/hvac">empresas de calefacción y aire acondicionado</a>.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
