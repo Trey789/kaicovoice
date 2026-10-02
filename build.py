@@ -77,6 +77,7 @@ def render(root, meta, body, partials, lang="en"):
         "{{robots}}": '<meta name="robots" content="noindex, nofollow" />' if noindex else "",
         "{{lead_form}}": partials["lead-form"].rstrip("\n"),
         "{{lang}}": lang,
+        "{{skip_link}}": "Ir al contenido" if lang == "es" else "Skip to content",
         "{{hreflang}}": alternates,
         "{{language_switch}}": switch,
         "{{og_locale}}": "es_US" if lang == "es" else "en_US",

@@ -78,6 +78,7 @@ class BuildChecks(unittest.TestCase):
             self.assertIn(f'hreflang="en" href="{build.SITE}{route}"', out[spanish])
             self.assertIn(f'href="{spanish}" lang="es"', out[route])
             self.assertIn(f'href="{route}" lang="en"', out[spanish])
+            self.assertIn('class="skip-link">Ir al contenido</a>', out[spanish])
         for route in ("/es", "/es/start"):
             self.assertIn('value="Dump trucking"', out[route])
             self.assertIn('value="Website"', out[route])
