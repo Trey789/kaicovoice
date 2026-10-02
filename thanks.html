@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Thanks | Kaico Voice</title>
-<meta name="description" content="Your project request is in. We scope it with a free front-door audit and send your quote within two business days." />
+<meta name="description" content="Your project request is in. Trey will review it; a free front-door audit and discovery may follow before any quote." />
 <link rel="canonical" href="https://www.kaicovoice.com/thanks" />
 <meta name="theme-color" content="#0a0b0d" />
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
@@ -12,7 +12,7 @@
 
 <meta property="og:site_name" content="Kaico Voice" />
 <meta property="og:title" content="Thanks | Kaico Voice" />
-<meta property="og:description" content="Your project request is in. We scope it with a free front-door audit and send your quote within two business days." />
+<meta property="og:description" content="Your project request is in. Trey will review it; a free front-door audit and discovery may follow before any quote." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.kaicovoice.com/thanks" />
 <meta property="og:image" content="https://www.kaicovoice.com/assets/og-card.png" />
@@ -21,7 +21,7 @@
 <meta property="og:image:alt" content="Kaico Voice, AI receptionist that answers and books 24/7" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Thanks | Kaico Voice" />
-<meta name="twitter:description" content="Your project request is in. We scope it with a free front-door audit and send your quote within two business days." />
+<meta name="twitter:description" content="Your project request is in. Trey will review it; a free front-door audit and discovery may follow before any quote." />
 <meta name="twitter:image" content="https://www.kaicovoice.com/assets/og-card.png" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -526,8 +526,8 @@ nav{view-transition-name:site-nav}
 <header class="hero">
   <div class="container">
     <span class="pill"><i></i> Request received</span>
-    <h1>Got it. Your quote is <span class="em">on its way.</span></h1>
-    <p class="lead">We scope every project with a free front-door audit first, so the quote is right. Expect it in your inbox within two business days. Want to talk sooner? Book 15 minutes with Trey. Or call (918) 359-2644 any time and the receptionist will take your details.</p>
+    <h1>Got it. Your request is <span class="em">in.</span></h1>
+    <p class="lead">Trey will review your request and take a first look at your online front door. If we are a fit, we will arrange a short conversation about your goals before preparing a quote. Want to talk sooner? Book 15 minutes with Trey. Or call (918) 359-2644 any time and the receptionist will take your details.</p>
     <div class="hero-cta">
       <a href="tel:+19183592644" class="btn btn-signal btn-lg">▶ Call (918) 359-2644</a>
       <a href="https://cal.com/kaicovoice/demo" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-lg">Talk to Trey</a>
@@ -714,9 +714,9 @@ nav{view-transition-name:site-nav}
     var digits = phone.replace(/\D/g, '');
     if (!name || !business) { return fail('Add your name and your business name.'); }
     if (!trade) { return fail('Pick your trade.'); }
-    if (!phone && !email) { return fail('Add a phone number or an email so we can send the quote.'); }
+    if (!phone && !email) { return fail('Add a phone number or an email so we have a way to reach you.'); }
     if (phone && !(digits.length === 10 || (digits.length === 11 && digits.charAt(0) === '1'))) { return fail('Enter a 10-digit US phone number.'); }
-    if (email && email.indexOf('@') < 0) { return fail('That email does not look right.'); }
+    if (email && !form.querySelector('[name="email"]').checkValidity()) { return fail('Enter a valid email address.'); }
     var needs = Array.prototype.map.call(form.querySelectorAll('input[name="needs"]:checked'), function (c) { return c.value; });
     // ponytail: page and needs ride inside `problem` so POST /leads needs no new fields; real columns when volume justifies it
     var problem = 'From: ' + window.location.pathname + '. ' + (needs.length ? 'Needs: ' + needs.join(', ') + '. ' : '') + val('problem');

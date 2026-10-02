@@ -841,9 +841,9 @@ nav{view-transition-name:site-nav}
     var digits = phone.replace(/\D/g, '');
     if (!name || !business) { return fail('Add your name and your business name.'); }
     if (!trade) { return fail('Pick your trade.'); }
-    if (!phone && !email) { return fail('Add a phone number or an email so we can send the quote.'); }
+    if (!phone && !email) { return fail('Add a phone number or an email so we have a way to reach you.'); }
     if (phone && !(digits.length === 10 || (digits.length === 11 && digits.charAt(0) === '1'))) { return fail('Enter a 10-digit US phone number.'); }
-    if (email && email.indexOf('@') < 0) { return fail('That email does not look right.'); }
+    if (email && !form.querySelector('[name="email"]').checkValidity()) { return fail('Enter a valid email address.'); }
     var needs = Array.prototype.map.call(form.querySelectorAll('input[name="needs"]:checked'), function (c) { return c.value; });
     // ponytail: page and needs ride inside `problem` so POST /leads needs no new fields; real columns when volume justifies it
     var problem = 'From: ' + window.location.pathname + '. ' + (needs.length ? 'Needs: ' + needs.join(', ') + '. ' : '') + val('problem');
