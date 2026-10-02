@@ -1,0 +1,120 @@
+<!-- meta
+title: Sistema de trabajos para negocios de oficios | Kaico Voice
+description: Sistema de trabajos de Kaico incluido en Front Door: tablero, cotizaciones fáciles de aceptar, facturas con tarjeta y correos que apruebas desde tu teléfono.
+canonical: /es/services/job-system
+schema: schema/services-job-system.json
+-->
+<main id="main">
+
+<header class="hero">
+  <div class="container">
+    <p class="breadcrumbs"><a href="/es">Inicio</a> / Servicios / Sistema de trabajos</p>
+    <h1>Gestiona tus trabajos en un solo lugar. <span class="em">Está incluido.</span></h1>
+    <p class="lead">Deja de administrar un negocio de $1 millón desde tus mensajes de texto. Cada cliente de Front Door recibe el sistema de trabajos de Kaico: entra el contacto, sale la cotización, el cliente toca Aceptar, paga la factura con tarjeta y tú apruebas cada correo desde tu teléfono. Sin costo adicional.</p>
+    <div class="hero-cta">
+      <a href="/es/pricing" class="btn btn-signal btn-lg">Ver precios</a>
+      <a href="/es#start" class="btn btn-ghost btn-lg btn-start">Iniciar mi proyecto</a>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="container">
+    <h2>Qué <span class="em">hace.</span></h2>
+    <p class="lead" style="margin-bottom:44px;">Seis funciones, sin módulos, complementos ni cobros por usuario.</p>
+    <div class="grid-3">
+      <div class="card reveal"><h3>Tablero de trabajos.</h3><p>Todos los trabajos en un tablero, desde el primer contacto hasta el pago. Un formulario o una llamada reservada crea una tarjeta. Muévela según avance el trabajo: nuevo, cotizado, programado, terminado y pagado.</p></div>
+      <div class="card reveal"><h3>Cotizaciones que el cliente acepta con un toque.</h3><p>Crea la cotización desde la tarjeta del trabajo. El cliente recibe un enlace, ve el precio y toca Aceptar desde su teléfono. El trabajo pasa a programado.</p></div>
+      <div class="card reveal"><h3>Facturas pagadas con tarjeta.</h3><p>Envía la factura desde el trabajo. El cliente paga con tarjeta a través de tu propia cuenta de Stripe, el dinero llega a ti y el trabajo se marca como pagado. Sin perseguir pagos.</p></div>
+      <div class="card reveal"><h3>Correo bidireccional que apruebas desde tu teléfono.</h3><p>Preparamos cada correo al cliente para que lo revises. Lo recibes en tu teléfono con opciones para Aprobar o Descartar. No se envía hasta que lo apruebes y las respuestas llegan al mismo hilo.</p></div>
+      <div class="card reveal"><h3>Vista de Hoy.</h3><p>Una pantalla con lo que necesita tu atención hoy, lo que espera al cliente y una lista de configuración que se reduce conforme la completas.</p></div>
+      <div class="card reveal"><h3>Informe mensual.</h3><p>Reservas cotejadas con tu calendario, nunca un conteo sin verificar. Llamadas, cotizaciones, facturas y pagos en una página que puedes leer en un minuto.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Mira cómo avanza <span class="em">un trabajo.</span></h2>
+    <p class="lead" style="margin-bottom:28px;">Esta ilustración muestra el proceso con nombres ficticios; no es la aplicación en vivo. Son seis pasos, desde la llamada hasta el pago de la factura.</p>
+    <div class="walk" id="walk">
+      <div class="walk-phone" aria-hidden="true"><div class="walk-screen">
+        <div class="walk-scene is-on"><div class="ws-top">Llamada entrante, 2:10 a. m.</div><div class="ws-big">(918) 555-0142</div><div class="ws-sub">«El calentador de agua tiene una fuga y el garaje se está inundando».</div><div class="ws-chip">Contestada. Cita a las 7:30 a. m.</div></div>
+        <div class="walk-scene"><div class="ws-top">Tablero de trabajos</div><div class="ws-card"><b>Dana R.</b><span>Cambio de calentador de agua</span><em>Nuevo</em></div><div class="ws-card ws-dim"><b>M. Ortiz</b><span>Fuga bajo la losa</span><em>Programado</em></div><div class="ws-card ws-dim"><b>T. Nguyen</b><span>Destape de drenaje</span><em>Pagado</em></div></div>
+        <div class="walk-scene"><div class="ws-top">Cotización para Dana R.</div><div class="ws-line"><span>Calentador de gas de 50 galones, instalado</span><b>$1,240</b></div><div class="ws-line"><span>Retiro y permiso</span><b>incluidos</b></div><div class="ws-btn">Enviar cotización</div></div>
+        <div class="walk-scene"><div class="ws-top">Teléfono de Dana</div><div class="ws-sub">Cotización de Reliable Plumbing</div><div class="ws-big">$1,240</div><div class="ws-btn ws-tap">Aceptar</div><div class="ws-chip">Aceptada. El trabajo pasó a Programado.</div></div>
+        <div class="walk-scene"><div class="ws-top">Factura para Dana R.</div><div class="ws-big">$1,240</div><div class="ws-sub">Pagada con tarjeta Visa terminada en 4242.</div><div class="ws-stamp">Pagado</div></div>
+        <div class="walk-scene"><div class="ws-top">Correo pendiente de aprobación</div><div class="ws-sub">Para Dana R.: «Tu nuevo calentador de agua está registrado para su garantía de 6 años. Esto es lo que debes revisar cada primavera...»</div><div class="ws-row"><span class="ws-btn">Aprobar</span><span class="ws-btn ws-ghost">Descartar</span></div><div class="ws-chip">Se envía solo cuando tocas Aprobar.</div></div>
+      </div></div>
+      <div class="walk-steps" role="group" aria-label="Pasos del ejemplo">
+        <button type="button" class="walk-step" aria-pressed="true">1. Entra la llamada de las 2 a. m. y se reserva la cita</button>
+        <button type="button" class="walk-step" aria-pressed="false">2. Aparece en el tablero de trabajos</button>
+        <button type="button" class="walk-step" aria-pressed="false">3. Envías la cotización desde el trabajo</button>
+        <button type="button" class="walk-step" aria-pressed="false">4. El cliente toca Aceptar</button>
+        <button type="button" class="walk-step" aria-pressed="false">5. La factura se paga con tarjeta</button>
+        <button type="button" class="walk-step" aria-pressed="false">6. Apruebas el correo desde tu teléfono</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Para quién es y para quién <span class="em">no es.</span></h2>
+    <p class="lead">Es para el negocio que funciona con mensajes, una libreta y un calendario de papel. Ahí un sistema de trabajos cambia el día: la cotización sale en la misma hora, la factura se paga esa semana y nada depende solo de tu memoria.</p>
+    <p class="lead" style="margin-top:16px;">No reemplaza a Jobber, Housecall Pro ni ServiceTitan. Si ya usas uno de ellos, consérvalo. Front Door envía los contactos desde el sitio web, la ficha y el teléfono al sistema que ya tienes. No tienes que cambiar.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>A quién pertenecen <span class="em">los datos.</span></h2>
+    <p class="lead">A ti. Tu lista de clientes, trabajos, cotizaciones y facturas siempre te pertenecen, incluso después de cancelar. Está por escrito en la sección 5 del <a href="/es/client-agreement">acuerdo con el cliente</a>.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Dónde se <span class="em">incluye.</span></h2>
+    <p class="lead">No se vende por separado. El sistema de trabajos está incluido en <a href="/es/services/front-door">Front Door</a>, el servicio mensual de Kaico para oficios desde $900 al mes, junto con el mantenimiento del sitio, la ficha de Google, la atención telefónica 24/7 y las reservas en línea. ¿Ya eres cliente? <a href="https://app.kaicovoice.com/dashboard?lang=es">Iniciar sesión</a>.</p>
+    <p style="margin-top:20px;"><a href="/es/pricing" class="btn btn-ghost">Ver precios</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Para quién es <span class="em">este servicio.</span></h2>
+    <div class="grid-3" style="margin-top:32px;">
+      <div class="vert reveal"><strong><a href="/es/industries/hvac">Climatización</a></strong><span>Cotiza la instalación desde el camión y recibe la aceptación antes de cenar.</span></div>
+      <div class="vert reveal"><strong><a href="/es/industries/plumbing">Plomería</a></strong><span>El trabajo de las 2 a. m. aparece en el tablero antes de que despiertes.</span></div>
+      <div class="vert reveal"><strong><a href="/es/industries/electrical">Electricidad</a></strong><span>Cotizaciones de tableros eléctricos aceptadas con un toque.</span></div>
+      <div class="vert reveal"><strong><a href="/es/industries/roofing">Techos</a></strong><span>La temporada de tormentas en un tablero en vez de cuarenta mensajes.</span></div>
+      <div class="vert reveal"><strong><a href="/es/industries/restoration">Restauración por daños de agua</a></strong><span>Cada reclamación y cada correo, aprobados desde tu teléfono.</span></div>
+      <div class="vert reveal"><strong><a href="/es/industries/truck-repair">Reparación de camiones pesados</a></strong><span>Órdenes de reparación de flotas cotizadas, facturadas y pagadas con tarjeta.</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container-narrow">
+    <h2>Preguntas <span class="em">frecuentes.</span></h2>
+    <div style="margin-top:32px;">
+      <details><summary>¿Tengo que usarlo?</summary><p>No. Está incluido en Front Door porque muchos clientes lo necesitan, no para obligarte a usarlo. Si tu negocio ya utiliza Jobber o Housecall Pro, Front Door envía los contactos allí.</p></details>
+      <details><summary>¿Mis clientes pueden pagar con tarjeta?</summary><p>Sí. Las facturas incluyen un enlace de pago con tarjeta a través de tu propia cuenta de Stripe. El dinero llega directamente a ti y el trabajo se marca como pagado cuando se confirma el pago.</p></details>
+      <details><summary>¿Se envía algo sin mi aprobación?</summary><p>No. Cada correo al cliente se prepara para que lo revises y solo se envía cuando tocas Aprobar en tu teléfono. Si lo descartas, no se envía.</p></details>
+      <details><summary>¿De quién son los datos si cancelo?</summary><p>Tuyos, en todo momento: lista de clientes, trabajos, cotizaciones y facturas. Está por escrito en la sección 5 del acuerdo con el cliente.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="container">
+    <h2>Inicia tu <span class="em">proyecto.</span></h2>
+    <div class="hero-cta">
+      <a href="/es/pricing" class="btn btn-signal btn-lg">Ver precios</a>
+      <a href="/es#start" class="btn btn-ghost btn-lg btn-start">Iniciar mi proyecto</a>
+    </div>
+  </div>
+</section>
+
+</main>
