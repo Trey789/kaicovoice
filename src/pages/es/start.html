@@ -7,11 +7,22 @@ canonical: /es/start
   <section id="start">
     <div class="container">
       <div style="max-width:660px;margin:0 auto;">
-        <span class="pill"><i></i> Evaluación gratuita de tu presencia digital</span>
+        <span class="pill" id="start-context"><i></i> Evaluación gratuita de tu presencia digital</span>
         <h1>Cuéntanos qué <span class="em">necesita tu negocio.</span></h1>
-        <p class="lead">Cuéntanos qué no está funcionando. Revisaremos tu solicitud y daremos un primer vistazo a cómo te encuentran y contactan tus clientes. Si podemos ayudarte, hablaremos de tus objetivos antes de preparar una cotización.</p>
+        <p class="lead" id="start-intro">Cuéntanos qué no está funcionando. Revisaremos tu solicitud y daremos un primer vistazo a cómo te encuentran y contactan tus clientes. Si podemos ayudarte, hablaremos de tus objetivos antes de preparar una cotización.</p>
       </div>
       {{lead_form}}
     </div>
   </section>
 </main>
+<script>
+if (new URLSearchParams(window.location.search).get('need') === 'business-consulting') {
+  document.getElementById('start-context').lastChild.textContent = ' Consultoría de negocios';
+  document.getElementById('start-intro').textContent = 'Cuéntanos qué proceso de tu negocio quieres mejorar. Hablaremos de si podemos ayudarte y del alcance antes de cotizar una revisión enfocada.';
+  var choice = document.querySelector('#leadForm input[name="needs"][value="Business consulting / process improvement"]');
+  if (choice) choice.checked = true;
+  var submit = document.querySelector('#leadForm button[type="submit"]');
+  if (submit) { submit.textContent = 'Solicitar una consulta'; submit.setAttribute('data-default-text', submit.textContent); }
+  document.querySelectorAll('.lang-switch a').forEach(function (a) { a.search = '?need=business-consulting'; });
+}
+</script>
