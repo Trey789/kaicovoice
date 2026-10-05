@@ -7,14 +7,14 @@
           </div>
           <div class="gs-field">
             <label for="lf-business">Business name</label>
-            <input class="gs-input" type="text" id="lf-business" name="business" autocomplete="organization" placeholder="Acme Air" required />
+            <input class="gs-input" type="text" id="lf-business" name="business" autocomplete="organization" placeholder="Your business" required />
           </div>
         </div>
         <div class="gs-row">
           <div class="gs-field">
-            <label for="lf-trade">Trade</label>
+            <label for="lf-trade">Business type</label>
             <select class="gs-select" id="lf-trade" name="trade" required>
-              <option value="">Pick your trade</option>
+              <option value="">Pick your business type</option>
               <option>HVAC</option>
               <option>Plumbing</option>
               <option>Electrical</option>
@@ -24,6 +24,7 @@
               <option>Dump trucking</option>
               <option>Barber shops</option>
               <option>Other trade</option>
+              <option>Other business</option>
             </select>
           </div>
           <div class="gs-field">
@@ -43,18 +44,19 @@
             <label><input type="checkbox" name="needs" value="Phone answering" /> Phone answering</label>
             <label><input type="checkbox" name="needs" value="Google Ads" /> Google Ads</label>
             <label><input type="checkbox" name="needs" value="Running the jobs (CRM)" /> Running the jobs</label>
+            <label><input type="checkbox" name="needs" value="Business consulting / process improvement" /> Business consulting / process improvement</label>
             <label><input type="checkbox" name="needs" value="Not sure" /> Not sure</label>
           </div>
         </div>
         <div class="gs-field">
           <label for="lf-problem">What is going wrong today? <span class="opt">(optional)</span></label>
-          <textarea class="gs-textarea" id="lf-problem" name="problem" placeholder="Our site is from 2019, our Google listing is unclaimed, and after 5 the phone goes to voicemail."></textarea>
+          <textarea class="gs-textarea" id="lf-problem" name="problem" placeholder="Tell us which part of the business you want to improve."></textarea>
         </div>
         <div class="gs-hp" aria-hidden="true">
           <label for="lf-company-url" tabindex="-1">Company URL (leave this blank)</label>
           <input type="text" id="lf-company-url" name="company_url" tabindex="-1" autocomplete="off" />
         </div>
-        <p id="lf-error" class="gs-error" hidden></p>
+        <p id="lf-error" class="gs-error" role="alert" tabindex="-1" hidden></p>
         <button type="submit" class="btn btn-signal btn-lg">Start my project</button>
         <p class="gs-consent">Kaico Voice, a service of Kaico LLC, may call or email you about your request. Sending this form does not enroll you in text messages. See our <a href="/privacy">privacy policy</a> and <a href="/terms">terms</a>.</p>
       </form>

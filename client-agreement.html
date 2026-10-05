@@ -65,7 +65,7 @@
   /* ambient signal glow that tracks the cursor (showcase) */
   .glow { position: fixed; inset: 0; pointer-events: none; z-index: 0;
     background: radial-gradient(420px 420px at var(--mx, 80%) var(--my, 8%), rgba(200,255,61,.07), transparent 70%); transition: background .2s; }
-  body > *:not(.glow):not(nav):not(#siteFibers) { position: relative; z-index: 1; }
+  body > *:not(.glow):not(nav):not(#siteFibers):not(.sticky-cta) { position: relative; z-index: 1; }
 
   /* nav */
   nav { position: sticky; top: 0; z-index: var(--z-nav); background: rgba(10,11,13,.72); backdrop-filter: saturate(140%) blur(12px); border-bottom: 1px solid var(--line); }
@@ -303,7 +303,7 @@
 
 .nav-dd{position:relative;padding:0;border:0}.nav-dd summary{list-style:none;cursor:pointer;color:var(--ink-soft);font-size:14px;padding:8px 10px}.nav-dd summary::-webkit-details-marker{display:none}.nav-dd[open] summary{color:var(--ink)}
 .nav-dd ul{position:absolute;top:100%;left:0;min-width:220px;margin:0;padding:8px;list-style:none;background:var(--paper);border:1px solid var(--line);border-radius:10px;z-index:60}.nav-dd ul a{display:block;padding:8px 10px;color:var(--ink);text-decoration:none;font-size:14px}.nav-dd ul a:hover,.nav-dd ul a:focus{background:rgba(255,255,255,.06)}
-.sticky-cta{display:none}@media(max-width:720px){.sticky-cta{display:flex;gap:8px;position:fixed;left:0;right:0;bottom:0;padding:10px 12px;background:rgba(10,11,13,.92);border-top:1px solid var(--line);z-index:70}.sticky-cta a{flex:1;text-align:center}body{padding-bottom:64px}}
+.sticky-cta{display:none}@media(max-width:720px){.sticky-cta{display:flex;gap:8px;position:fixed;left:0;right:0;bottom:0;padding:10px 12px;background:rgba(10,11,13,.92);border-top:1px solid var(--line);z-index:70}.sticky-cta a{flex:1;text-align:center}.sticky-cta .btn-start{flex:2}body{padding-bottom:110px}}
 .gs-error{color:#ff8a8a;font-size:14px;margin:8px 0 0}.gs-consent{font-size:12px;color:var(--ink-soft);line-height:1.5;margin-top:10px}.gs-checks{display:flex;flex-wrap:wrap;gap:10px 16px;margin:6px 0 2px}.gs-checks label{font-size:14px;display:flex;gap:6px;align-items:center}
 .breadcrumbs{font-size:13px;color:var(--ink-soft);margin:0 0 12px}.breadcrumbs a{color:var(--ink-soft)}
 .foot-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;font-size:14px;color:var(--ink-soft)}.foot-cols a{color:var(--ink-soft)}
@@ -509,6 +509,7 @@ nav{view-transition-name:site-nav}
           <li><a href="/services/google-business-profile">Google Business Profile</a></li>
           <li><a href="/services/google-ads">Google Ads</a></li>
           <li><a href="/services/front-door">Front Door, monthly</a></li>
+          <li><a href="/services/business-consulting">Business consulting</a></li>
         </ul>
       </details>
       <details class="nav-dd" name="nav"><summary>Industries</summary>
@@ -573,7 +574,7 @@ nav{view-transition-name:site-nav}
 <footer>
   <div class="container">
     <div class="foot-cols">
-      <div><b>Services</b><br><a href="/services/websites">Websites</a> · <a href="/services/front-door">Front Door</a> · <a href="/services/phone">24/7 phone</a> · <a href="/services/job-system">Job system</a> · <a href="/services/google-business-profile">Google Business Profile</a> · <a href="/services/google-ads">Google Ads</a> · <a href="/pricing">Pricing</a> · <a href="/proof">Proof</a></div>
+      <div><b>Services</b><br><a href="/services/websites">Websites</a> · <a href="/services/front-door">Front Door</a> · <a href="/services/phone">24/7 phone</a> · <a href="/services/job-system">Job system</a> · <a href="/services/google-business-profile">Google Business Profile</a> · <a href="/services/google-ads">Google Ads</a> · <a href="/services/business-consulting">Business consulting</a> · <a href="/pricing">Pricing</a> · <a href="/proof">Proof</a></div>
       <div><b>Industries</b><br><a href="/industries/hvac">HVAC</a> · <a href="/industries/plumbing">Plumbing</a> · <a href="/industries/electrical">Electrical</a> · <a href="/industries/roofing">Roofing</a> · <a href="/industries/restoration">Restoration</a> · <a href="/industries/truck-repair">Truck repair</a></div>
       <div><b>Kaico LLC</b><br>Tulsa, Oklahoma · <a href="mailto:trey.kaico@gmail.com">trey.kaico@gmail.com</a> · <a href="tel:+19183592644">(918) 359-2644</a><br><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/client-agreement">Client agreement</a> · <a href="/sms">SMS</a> · <a href="https://app.kaicovoice.com/dashboard">Client login</a><p class="load-badge" id="loadBadge" hidden></p></div>
     </div>
@@ -586,6 +587,10 @@ nav{view-transition-name:site-nav}
 
 <script>
 (function () {
+  if (window.location.pathname === '/services/business-consulting') {
+    var consultationLink = document.querySelector('.sticky-cta .btn-start');
+    if (consultationLink) { consultationLink.href = '/start?need=business-consulting'; consultationLink.textContent = 'Request a consultation'; }
+  }
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // hero waveform bars
@@ -727,6 +732,13 @@ nav{view-transition-name:site-nav}
   var API = 'https://web-production-976b9.up.railway.app/leads';
   var err = document.getElementById('lf-error');
   var btn = form.querySelector('button[type="submit"]');
+  var defaultSubmitText = btn.textContent;
+  window.addEventListener('pageshow', function (event) {
+    if (event.persisted) {
+      btn.disabled = false;
+      btn.textContent = btn.getAttribute('data-default-text') || defaultSubmitText;
+    }
+  });
   var submissionId, storageKey = 'kaico-interest-submission';
   function requestId() {
     if (!submissionId) {
@@ -739,7 +751,7 @@ nav{view-transition-name:site-nav}
     return submissionId;
   }
   function val(n) { var el = form.querySelector('[name="' + n + '"]'); return el ? el.value.trim() : ''; }
-  function fail(msg) { if (err) { err.textContent = msg; err.hidden = false; } btn.disabled = false; btn.textContent = 'Start my project'; }
+  function fail(msg) { if (err) { err.textContent = msg; err.hidden = false; err.focus(); } btn.disabled = false; btn.textContent = btn.getAttribute('data-default-text') || 'Start my project'; }
   function track(name) { if (typeof gtag === 'function') gtag('event', name); }
   form.addEventListener('submit', function (e) {
     e.preventDefault(); if (err) err.hidden = true;
@@ -747,7 +759,7 @@ nav{view-transition-name:site-nav}
     var name = val('name'), business = val('business'), trade = val('trade'), phone = val('phone'), email = val('email');
     var digits = phone.replace(/\D/g, '');
     if (!name || !business) { return fail('Add your name and your business name.'); }
-    if (!trade) { return fail('Pick your trade.'); }
+    if (!trade) { return fail('Pick your business type.'); }
     if (!phone && !email) { return fail('Add a phone number or an email so we have a way to reach you.'); }
     if (phone && !(digits.length === 10 || (digits.length === 11 && digits.charAt(0) === '1'))) { return fail('Enter a 10-digit US phone number.'); }
     if (email && !form.querySelector('[name="email"]').checkValidity()) { return fail('Enter a valid email address.'); }

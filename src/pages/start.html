@@ -7,11 +7,22 @@ canonical: /start
   <section id="start">
     <div class="container">
       <div style="max-width:660px;margin:0 auto;">
-        <span class="pill"><i></i> Free front-door audit</span>
+        <span class="pill" id="start-context"><i></i> Free front-door audit</span>
         <h1>Tell us what your business <span class="em">needs.</span></h1>
-        <p class="lead">Share what is going wrong. We will review your request and take a first look at your online front door. If we are a fit, we will talk through your goals before preparing a quote.</p>
+        <p class="lead" id="start-intro">Share what is going wrong. We will review your request and take a first look at your online front door. If we are a fit, we will talk through your goals before preparing a quote.</p>
       </div>
       {{lead_form}}
     </div>
   </section>
 </main>
+<script>
+if (new URLSearchParams(window.location.search).get('need') === 'business-consulting') {
+  document.getElementById('start-context').lastChild.textContent = ' Business consulting';
+  document.getElementById('start-intro').textContent = 'Tell us which business process you want to improve. We will talk through fit and scope before quoting a focused review.';
+  var choice = document.querySelector('#leadForm input[name="needs"][value="Business consulting / process improvement"]');
+  if (choice) choice.checked = true;
+  var submit = document.querySelector('#leadForm button[type="submit"]');
+  if (submit) { submit.textContent = 'Request a consultation'; submit.setAttribute('data-default-text', submit.textContent); }
+  document.querySelectorAll('.lang-switch a').forEach(function (a) { a.search = '?need=business-consulting'; });
+}
+</script>

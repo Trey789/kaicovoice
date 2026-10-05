@@ -1,7 +1,7 @@
 <footer>
   <div class="container">
     <div class="foot-cols">
-      <div><b>Servicios</b><br><a href="/es/services/websites">Sitios web</a> · <a href="/es/services/front-door">Front Door</a> · <a href="/es/services/phone">Teléfono 24/7</a> · <a href="/es/services/job-system">Gestión de trabajos</a> · <a href="/es/services/google-business-profile">Perfil de Empresa en Google</a> · <a href="/es/services/google-ads">Google Ads</a> · <a href="/es/pricing">Precios</a> · <a href="/es/proof">Resultados</a></div>
+      <div><b>Servicios</b><br><a href="/es/services/websites">Sitios web</a> · <a href="/es/services/front-door">Front Door</a> · <a href="/es/services/phone">Teléfono 24/7</a> · <a href="/es/services/job-system">Gestión de trabajos</a> · <a href="/es/services/google-business-profile">Perfil de Empresa en Google</a> · <a href="/es/services/google-ads">Google Ads</a> · <a href="/es/services/business-consulting">Consultoría de negocios</a> · <a href="/es/pricing">Precios</a> · <a href="/es/proof">Resultados</a></div>
       <div><b>Sectores</b><br><a href="/es/industries/hvac">HVAC</a> · <a href="/es/industries/plumbing">Plomería</a> · <a href="/es/industries/electrical">Electricidad</a> · <a href="/es/industries/roofing">Techos</a> · <a href="/es/industries/restoration">Restauración</a> · <a href="/es/industries/truck-repair">Reparación de camiones</a></div>
       <div><b>Kaico LLC</b><br>Tulsa, Oklahoma · <a href="mailto:trey.kaico@gmail.com">trey.kaico@gmail.com</a> · <a href="tel:+19183592644">(918) 359-2644</a><br><a href="/es/privacy">Privacidad</a> · <a href="/es/terms">Términos</a> · <a href="/es/client-agreement">Acuerdo con el cliente</a> · <a href="/es/sms">SMS</a> · <a href="https://app.kaicovoice.com/dashboard?lang=es">Acceso clientes</a><p class="load-badge" id="loadBadge" hidden></p></div>
     </div>
@@ -14,6 +14,10 @@
 
 <script>
 (function () {
+  if (window.location.pathname === '/es/services/business-consulting') {
+    var consultationLink = document.querySelector('.sticky-cta .btn-start');
+    if (consultationLink) { consultationLink.href = '/es/start?need=business-consulting'; consultationLink.textContent = 'Solicitar una consulta'; }
+  }
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // hero waveform bars
@@ -155,6 +159,13 @@
   var API = 'https://web-production-976b9.up.railway.app/leads';
   var err = document.getElementById('lf-error');
   var btn = form.querySelector('button[type="submit"]');
+  var defaultSubmitText = btn.textContent;
+  window.addEventListener('pageshow', function (event) {
+    if (event.persisted) {
+      btn.disabled = false;
+      btn.textContent = btn.getAttribute('data-default-text') || defaultSubmitText;
+    }
+  });
   var submissionId, storageKey = 'kaico-interest-submission';
   function requestId() {
     if (!submissionId) {
@@ -167,7 +178,7 @@
     return submissionId;
   }
   function val(n) { var el = form.querySelector('[name="' + n + '"]'); return el ? el.value.trim() : ''; }
-  function fail(msg) { if (err) { err.textContent = msg; err.hidden = false; } btn.disabled = false; btn.textContent = 'Iniciar mi proyecto'; }
+  function fail(msg) { if (err) { err.textContent = msg; err.hidden = false; err.focus(); } btn.disabled = false; btn.textContent = btn.getAttribute('data-default-text') || 'Iniciar mi proyecto'; }
   function track(name) { if (typeof gtag === 'function') gtag('event', name); }
   form.addEventListener('submit', function (e) {
     e.preventDefault(); if (err) err.hidden = true;
