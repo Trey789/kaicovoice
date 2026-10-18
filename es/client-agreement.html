@@ -304,7 +304,7 @@
 .nav-dd{position:relative;padding:0;border:0}.nav-dd summary{list-style:none;cursor:pointer;color:var(--ink-soft);font-size:14px;padding:8px 10px}.nav-dd summary::-webkit-details-marker{display:none}.nav-dd[open] summary{color:var(--ink)}
 .nav-dd ul{position:absolute;top:100%;left:0;min-width:220px;margin:0;padding:8px;list-style:none;background:var(--paper);border:1px solid var(--line);border-radius:10px;z-index:60}.nav-dd ul a{display:block;padding:8px 10px;color:var(--ink);text-decoration:none;font-size:14px}.nav-dd ul a:hover,.nav-dd ul a:focus{background:rgba(255,255,255,.06)}
 .sticky-cta{display:none}@media(max-width:720px){.sticky-cta{display:flex;gap:8px;position:fixed;left:0;right:0;bottom:0;padding:10px 12px;background:rgba(10,11,13,.92);border-top:1px solid var(--line);z-index:70}.sticky-cta a{flex:1;text-align:center}.sticky-cta .btn-start{flex:2}body{padding-bottom:110px}}
-.gs-error{color:#ff8a8a;font-size:14px;margin:8px 0 0}.gs-consent{font-size:12px;color:var(--ink-soft);line-height:1.5;margin-top:10px}.gs-checks{display:flex;flex-wrap:wrap;gap:10px 16px;margin:6px 0 2px}.gs-checks label{font-size:14px;display:flex;gap:6px;align-items:center}
+.gs-error{color:#ff8a8a;font-size:14px;margin:8px 0 0}.gs-consent{font-size:12px;color:var(--ink-soft);line-height:1.5;margin-top:10px}.gs-checks{display:flex;flex-wrap:wrap;gap:10px 16px;margin:6px 0 2px}.gs-checks label{font-size:14px;display:flex;gap:6px;align-items:center}.gs-field label.gs-sms{font-size:14px;font-weight:400;text-transform:none;letter-spacing:0;display:flex;gap:8px;align-items:flex-start;line-height:1.45;color:var(--ink)}.gs-sms input{margin-top:3px;flex:none}
 .breadcrumbs{font-size:13px;color:var(--ink-soft);margin:0 0 12px}.breadcrumbs a{color:var(--ink-soft)}
 .foot-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;font-size:14px;color:var(--ink-soft)}.foot-cols a{color:var(--ink-soft)}
 .flow-panel{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px 30px;margin-top:28px}
@@ -605,7 +605,7 @@ nav{view-transition-name:site-nav}
   <div class="container-narrow" style="padding-top:56px;padding-bottom:96px;">
     <p class="breadcrumbs"><a href="/es">Inicio</a> / Acuerdo con el cliente</p>
     <h1>Acuerdo de servicios al cliente: <span class="em">condiciones estándar.</span></h1>
-    <p class="lead">Última actualización: 2026-10-01. Estas son las condiciones estándar de todos los servicios de Kaico Voice. Tu Pedido (alcance, precio y fechas) se acuerda por separado y por escrito.</p>
+    <p class="lead">Última actualización: 2026-10-18. Estas son las condiciones estándar de todos los servicios de Kaico Voice. Tu Pedido (alcance, precio y fechas) se acuerda por separado y por escrito.</p>
 
     <h2>1. Partes</h2>
     <p>Entre Kaico LLC ("Kaico"), de Tulsa, Oklahoma, y el cliente identificado en el Pedido ("Cliente").</p>
@@ -630,6 +630,8 @@ nav{view-transition-name:site-nav}
 
     <h2>7. Teléfono, mensajería y consentimiento</h2>
     <p>Kaico configura la atención de llamadas entrantes y la mensajería en nombre del Cliente. <strong>No se realizarán llamadas salientes ni se enviarán mensajes de texto automatizados o generados por IA a ninguna lista de contactos, a menos que el Cliente proporcione registros escritos del consentimiento expreso previo y por escrito de cada contacto</strong>, según lo exigen la TCPA y las normas de la FCC. El Cliente garantiza que es propietario de toda lista que proporcione y que los consentimientos son auténticos. Cada parte defenderá e indemnizará a la otra frente a reclamaciones derivadas de su propio incumplimiento de esta sección.</p>
+
+    <p><strong>Mensajes de texto de Kaico Voice al Cliente (opcional).</strong> El Cliente puede elegir recibir mensajes de texto de Kaico Voice (Kaico LLC) desde el (918) 359-2644 sobre su propia cuenta: avisos de nuevos clientes potenciales y reservas, actualizaciones de proyectos, cotizaciones, facturas, recibos de pago y un recordatorio antes del vencimiento de cada factura. El Cliente se inscribe dando un número de celular para mensajes y marcando la casilla de consentimiento de mensajes en el formulario de inicio, o pidiéndolo a Kaico por escrito; Kaico guarda un registro de la inscripción. Los mensajes son opcionales y no son condición del servicio: sin ellos, la misma información llega por correo electrónico o en el panel del cliente. La frecuencia varía según la actividad de la cuenta: un aviso por cada nuevo cliente potencial o reserva, como máximo 5 mensajes por proyecto, 1 por cotización y 3 por factura. Pueden aplicarse tarifas de mensajes y datos. Responde STOP a cualquier mensaje para detener todos los mensajes de Kaico Voice, incluidas las facturas y los avisos, o HELP para obtener ayuda. Estos mensajes nunca incluyen marketing. Los detalles están en la <a href="/es/sms">página del programa de SMS</a>.</p>
 
     <h2>8. Responsabilidad</h2>
     <p>Ninguna de las partes responde ante la otra por daños indirectos o consecuentes. La responsabilidad total de cada parte conforme a este acuerdo se limita a los importes pagados por el Cliente a Kaico durante los <strong>tres meses</strong> anteriores a la reclamación. Kaico no garantiza posiciones en buscadores, rendimiento de anuncios, volumen de llamadas ni resultados de ingresos.</p>
@@ -832,12 +834,15 @@ nav{view-transition-name:site-nav}
     if (!phone && !email) { return fail('Agrega un teléfono o correo electrónico para que podamos contactarte.'); }
     if (phone && !(digits.length === 10 || (digits.length === 11 && digits.charAt(0) === '1'))) { return fail('Ingresa un número de teléfono de EE. UU. de 10 dígitos.'); }
     if (email && !form.querySelector('[name="email"]').checkValidity()) { return fail('Ingresa un correo electrónico válido.'); }
+    var sms = form.querySelector('#lf-sms');
+    var smsConsent = !!(sms && sms.checked);
+    if (smsConsent && !phone) { return fail('Agrega tu número de teléfono para recibir mensajes, o desmarca la casilla de mensajes.'); }
     var needs = Array.prototype.map.call(form.querySelectorAll('input[name="needs"]:checked'), function (c) { return c.value; });
     // ponytail: page and needs ride inside `problem` so POST /leads needs no new fields; real columns when volume justifies it
     var problem = 'From: ' + window.location.pathname + '. Preferred language: Spanish. ' + (needs.length ? 'Needs: ' + needs.join(', ') + '. ' : '') + val('problem');
     btn.disabled = true; btn.textContent = 'Enviando';
     fetch(API, { method: 'POST', keepalive: true, headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name: name, business: business, trade: trade, phone: phone, email: email, problem: problem, source: 'web_form', submission_id: requestId() }) })
+      body: JSON.stringify({ name: name, business: business, trade: trade, phone: phone, email: email, problem: problem, source: 'web_form', submission_id: requestId(), sms_consent: smsConsent, sms_consent_version: smsConsent ? sms.value : '', sms_consent_lang: 'es' }) })
       .then(function (r) { if (!r.ok) { throw new Error('status ' + r.status); } try { sessionStorage.removeItem(storageKey); } catch (_) {} track('form_submit'); window.location.href = '/es/thanks'; })
       .catch(function () { track('form_error'); fail('No se pudo enviar. Llama al (918) 359-2644 para dejar tus datos o escribe a trey.kaico@gmail.com.'); });
   });
