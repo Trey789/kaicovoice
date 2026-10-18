@@ -15,6 +15,50 @@ TITLE_MAX = 61
 BANNED = [r"trey@kaicovoice\.com",  # mailbox lapsed 2026-08-08; the operator inbox is trey.kaico@gmail.com
           r"\$250", r"\bcancel anytime\b", r"\bno contract\b", r"\bsample data\b", "—", "–"]
 STATIC = {"/robots.txt", "/sitemap.xml", "/llms.txt"}
+LLMS_SECTIONS = (
+    ("English: overview", (
+        ("/", "Website, Google listing, phone and job-system services for trade businesses."),
+        ("/pricing", "Published one-time and monthly options, with terms and scope details."),
+        ("/proof", "Examples of completed work and how Kaico checks reported numbers."),
+        ("/start", "Request a review of your website, listing, phone or job workflow."),
+    )),
+    ("English: services", (
+        ("/services/front-door", "Monthly website, listing, phone, scheduling and job-system service."),
+        ("/services/phone", "Phone answering and calendar booking for trade businesses."),
+        ("/services/websites", "Website builds with contact and quote-request paths."),
+        ("/services/job-system", "Jobs, quotes, invoices and customer email workflow."),
+        ("/services/google-business-profile", "Google Business Profile setup and ongoing care."),
+        ("/services/google-ads", "Managed search and call advertising; ad spend is separate."),
+        ("/services/business-consulting", "Process review, workflow map and prioritized plan."),
+    )),
+    ("English: policies", (
+        ("/client-agreement", "Payment, ownership, cancellation and service terms."),
+        ("/privacy", "How information is handled, including calls to the AI receptionist."),
+        ("/terms", "Website, service and SMS terms."),
+        ("/sms", "SMS consent, message types and opt-out details."),
+    )),
+    ("Español: información general", (
+        ("/es", "Servicios de sitios web, perfil de Google, teléfono y sistema de trabajos para oficios."),
+        ("/es/pricing", "Opciones publicadas de pago único y mensual, con detalles de condiciones y alcance."),
+        ("/es/proof", "Ejemplos de trabajo realizado y cómo Kaico verifica las cifras publicadas."),
+        ("/es/start", "Solicita una revisión de tu sitio, perfil, teléfono o proceso de trabajos."),
+    )),
+    ("Español: servicios", (
+        ("/es/services/front-door", "Servicio mensual de sitio web, perfil, teléfono, reservas y sistema de trabajos."),
+        ("/es/services/phone", "Atención telefónica y reservas en calendario para negocios de oficios."),
+        ("/es/services/websites", "Creación de sitios web con opciones de contacto y solicitud de cotización."),
+        ("/es/services/job-system", "Gestión de trabajos, cotizaciones, facturas y correos a clientes."),
+        ("/es/services/google-business-profile", "Configuración y mantenimiento del Perfil de Negocio de Google."),
+        ("/es/services/google-ads", "Gestión de anuncios de búsqueda y llamadas; inversión publicitaria aparte."),
+        ("/es/services/business-consulting", "Revisión de procesos, mapa de trabajo y plan priorizado."),
+    )),
+    ("Español: políticas", (
+        ("/es/client-agreement", "Condiciones de pago, propiedad, cancelación y servicio."),
+        ("/es/privacy", "Tratamiento de datos, incluidas las llamadas a la recepcionista con IA."),
+        ("/es/terms", "Condiciones del sitio web, los servicios y los SMS."),
+        ("/es/sms", "Consentimiento, tipos de mensajes y baja del programa de SMS."),
+    )),
+)
 GA4_SNIPPET = ('<script async src="https://www.googletagmanager.com/gtag/js?id={id}"></script>'
                '<script>window.dataLayer=window.dataLayer||[];function gtag(){{dataLayer.push(arguments);}}'
                'gtag("js",new Date());gtag("config","{id}");</script>')
@@ -157,9 +201,14 @@ def build(root=ROOT, write=True):
                 for p in indexable]
     sitemap.append("</urlset>")
     llms = ["# Kaico Voice",
-            "> Kaico builds and runs the online front door for the trades: the website, the Google listing, "
-            "and the phone that answers when you can't.", ""]
-    llms += [f"- [{p['meta']['title']}]({SITE}{p['canonical']}): {p['meta']['description']}" for p in indexable]
+            "> Website, Google Business Profile, phone and job-system services for trade businesses. "
+            "English and Spanish site guides below.", ""]
+    by_canonical = {p["canonical"]: p for p in indexable}
+    for heading, entries in LLMS_SECTIONS:
+        links = [f"- [{by_canonical[path]['meta']['title']}]({SITE}{path}): {summary}"
+                 for path, summary in entries if path in by_canonical]
+        if links:
+            llms += [f"## {heading}", *links, ""]
     out = {p["canonical"]: p["html"] for p in pages}
     out["sitemap.xml"] = "\n".join(sitemap) + "\n"
     out["llms.txt"] = "\n".join(llms) + "\n"
