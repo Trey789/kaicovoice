@@ -190,12 +190,15 @@
     if (!phone && !email) { return fail('Agrega un teléfono o correo electrónico para que podamos contactarte.'); }
     if (phone && !(digits.length === 10 || (digits.length === 11 && digits.charAt(0) === '1'))) { return fail('Ingresa un número de teléfono de EE. UU. de 10 dígitos.'); }
     if (email && !form.querySelector('[name="email"]').checkValidity()) { return fail('Ingresa un correo electrónico válido.'); }
+    var sms = form.querySelector('#lf-sms');
+    var smsConsent = !!(sms && sms.checked);
+    if (smsConsent && !phone) { return fail('Agrega tu número de teléfono para recibir mensajes, o desmarca la casilla de mensajes.'); }
     var needs = Array.prototype.map.call(form.querySelectorAll('input[name="needs"]:checked'), function (c) { return c.value; });
     // ponytail: page and needs ride inside `problem` so POST /leads needs no new fields; real columns when volume justifies it
     var problem = 'From: ' + window.location.pathname + '. Preferred language: Spanish. ' + (needs.length ? 'Needs: ' + needs.join(', ') + '. ' : '') + val('problem');
     btn.disabled = true; btn.textContent = 'Enviando';
     fetch(API, { method: 'POST', keepalive: true, headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name: name, business: business, trade: trade, phone: phone, email: email, problem: problem, source: 'web_form', submission_id: requestId() }) })
+      body: JSON.stringify({ name: name, business: business, trade: trade, phone: phone, email: email, problem: problem, source: 'web_form', submission_id: requestId(), sms_consent: smsConsent, sms_consent_version: smsConsent ? sms.value : '', sms_consent_lang: 'es' }) })
       .then(function (r) { if (!r.ok) { throw new Error('status ' + r.status); } try { sessionStorage.removeItem(storageKey); } catch (_) {} track('form_submit'); window.location.href = '/es/thanks'; })
       .catch(function () { track('form_error'); fail('No se pudo enviar. Llama al (918) 359-2644 para dejar tus datos o escribe a trey.kaico@gmail.com.'); });
   });

@@ -190,12 +190,15 @@
     if (!phone && !email) { return fail('Add a phone number or an email so we have a way to reach you.'); }
     if (phone && !(digits.length === 10 || (digits.length === 11 && digits.charAt(0) === '1'))) { return fail('Enter a 10-digit US phone number.'); }
     if (email && !form.querySelector('[name="email"]').checkValidity()) { return fail('Enter a valid email address.'); }
+    var sms = form.querySelector('#lf-sms');
+    var smsConsent = !!(sms && sms.checked);
+    if (smsConsent && !phone) { return fail('Add your phone number to get texts, or untick the text box.'); }
     var needs = Array.prototype.map.call(form.querySelectorAll('input[name="needs"]:checked'), function (c) { return c.value; });
     // ponytail: page and needs ride inside `problem` so POST /leads needs no new fields; real columns when volume justifies it
     var problem = 'From: ' + window.location.pathname + '. ' + (needs.length ? 'Needs: ' + needs.join(', ') + '. ' : '') + val('problem');
     btn.disabled = true; btn.textContent = 'Sending';
     fetch(API, { method: 'POST', keepalive: true, headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name: name, business: business, trade: trade, phone: phone, email: email, problem: problem, source: 'web_form', submission_id: requestId() }) })
+      body: JSON.stringify({ name: name, business: business, trade: trade, phone: phone, email: email, problem: problem, source: 'web_form', submission_id: requestId(), sms_consent: smsConsent, sms_consent_version: smsConsent ? sms.value : '', sms_consent_lang: 'en' }) })
       .then(function (r) { if (!r.ok) { throw new Error('status ' + r.status); } try { sessionStorage.removeItem(storageKey); } catch (_) {} track('form_submit'); window.location.href = '/thanks'; })
       .catch(function () { track('form_error'); fail('That did not go through. Call (918) 359-2644 and the receptionist will take your details, or email trey.kaico@gmail.com.'); });
   });
