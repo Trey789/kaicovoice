@@ -37,6 +37,9 @@ LLMS_SECTIONS = (
         ("/terms", "Website, service and SMS terms."),
         ("/sms", "SMS consent, message types and opt-out details."),
     )),
+    ("English: tools", (
+        ("/tools/after-hours-coverage-checker", "Free checker: enter the hours your shop answers and see the unanswered hours, nights and weekend days each week."),
+    )),
     ("Español: información general", (
         ("/es", "Servicios de sitios web, perfil de Google, teléfono y sistema de trabajos para oficios."),
         ("/es/pricing", "Opciones publicadas de pago único y mensual, con detalles de condiciones y alcance."),
@@ -57,6 +60,9 @@ LLMS_SECTIONS = (
         ("/es/privacy", "Tratamiento de datos, incluidas las llamadas a la recepcionista con IA."),
         ("/es/terms", "Condiciones del sitio web, los servicios y los SMS."),
         ("/es/sms", "Consentimiento, tipos de mensajes y baja del programa de SMS."),
+    )),
+    ("Español: herramientas", (
+        ("/es/tools/after-hours-coverage-checker", "Verificador gratuito: ingresa las horas en que tu negocio contesta y ve las horas, noches y fines de semana sin cobertura."),
     )),
 )
 GA4_SNIPPET = ('<script async src="https://www.googletagmanager.com/gtag/js?id={id}"></script>'
