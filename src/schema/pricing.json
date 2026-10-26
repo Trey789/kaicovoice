@@ -7,7 +7,15 @@
       "name": "Which one do I need?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We scope it with a free front-door audit before we quote. If your site is salvageable, the Fix. If it is not, a Build. If your front door is already fine, we say so and you owe nothing. Front Door, the monthly service, is for shops that want it run for them after the build."
+        "text": "We scope it with a free front-door audit before we quote. If the phone is the leak, start with the 24/7 AI Receptionist at $299 a month. If you want the site, the listing and the phone run for you, Front Door. If your site needs replacing, a Standard or Premium build. If your front door is already fine, we say so and you owe nothing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the founding offer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The first 3 paying Front Door clients pay $450 a month for their first 6 months, then $900 a month. It is written into the client agreement, and it ends when the 3 spots are taken."
       }
     },
     {

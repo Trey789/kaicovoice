@@ -18,6 +18,16 @@
       "offers": [
         {
           "@type": "Offer",
+          "name": "24/7 AI Receptionist",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "299",
+            "priceCurrency": "USD",
+            "billingDuration": "P1M"
+          }
+        },
+        {
+          "@type": "Offer",
           "name": "Front Door",
           "priceSpecification": {
             "@type": "UnitPriceSpecification",

@@ -1,6 +1,6 @@
 <!-- meta
 title: Teléfono fuera de horario para oficios | Kaico Voice
-description: Atención telefónica fuera de horario para negocios de oficios: llamadas contestadas, citas en tu calendario y detalles registrados. Escúchala: (918) 359-2644.
+description: Atención telefónica fuera de horario para oficios: cada llamada contestada, citas en tu calendario y detalles enviados a ti. $299 al mes o con Front Door.
 canonical: /es/services/phone
 schema: schema/services-phone.json
 -->
@@ -11,7 +11,7 @@ schema: schema/services-phone.json
     <p class="breadcrumbs"><a href="/es">Inicio</a> / Servicios / Teléfono 24/7</p>
     <span class="pill"><i></i> Atendiendo ahora · (918) 359-2644</span>
     <h1>Atención telefónica fuera de horario <span class="em">para negocios de oficios.</span></h1>
-    <p class="lead">Cada llamada perdida puede convertirse en un trabajo para quien sí conteste. Este servicio responde desde el primer timbre, reserva directamente en tu calendario y te envía los detalles, a las 2 de la tarde o de la madrugada.</p>
+    <p class="lead">Cada llamada perdida puede convertirse en un trabajo para quien sí conteste. Este servicio responde desde el primer timbre, reserva directamente en tu calendario y te envía los detalles, a las 2 de la tarde o de la madrugada. Por sí sola cuesta $299 al mes.</p>
     <div class="hero-cta">
       <a href="tel:+19183592644" class="btn btn-signal btn-lg">▶ Escucha cómo contesta</a>
       <a href="/es#start" class="btn btn-ghost btn-lg btn-start">Iniciar mi proyecto</a>
@@ -42,21 +42,34 @@ schema: schema/services-phone.json
 
 <section>
   <div class="container">
-    <h2>¿Cuánto te cuesta <span class="em">una llamada perdida?</span></h2>
-    <p class="lead">Ajusta los controles según tu negocio. Los resultados se basan en tus cifras.</p>
-    <form class="mc" id="mc" novalidate>
+    <h2>¿Cuántas llamadas <span class="em">estás perdiendo?</span></h2>
+    <p class="lead">Ajusta los controles según tu negocio. La cifra que sale es tuya, no nuestra.</p>
+    <form class="mc" id="missedCalls" novalidate>
       <label>Llamadas a tu negocio por semana <output for="mc-calls" id="mc-calls-out">30</output>
         <input type="range" id="mc-calls" name="calls" min="5" max="150" step="5" value="30"></label>
       <label>Porcentaje que pierdes (fuera de horario, mientras trabajas o atiendes otra llamada) <output for="mc-miss" id="mc-miss-out">30%</output>
         <input type="range" id="mc-miss" name="miss" min="0" max="80" step="5" value="30"></label>
-      <label>Valor promedio de un trabajo para ti <output for="mc-job" id="mc-job-out">$350</output>
-        <input type="range" id="mc-job" name="job" min="100" max="5000" step="50" value="350"></label>
       <p class="mc-result" aria-live="polite">
-        <span class="mc-if">Pierdes unas <output id="mc-missed">39</output> llamadas al mes. Si cada una representara un trabajo, sería hasta <output id="mc-all">$13,650</output> en trabajos. Aunque solo una cuarta parte reserve, serían <output id="mc-quarter">$3,410</output> al mes, frente a $900 por Front Door.</span>
-        <span class="mc-none">No pierdes llamadas. Sigue así; Front Door está disponible si eso cambia.</span>
+        <span class="mc-if">Pierdes unas <output id="mc-missed">39</output> llamadas al mes. La recepcionista contesta cada una, agenda el trabajo en tu calendario y te envía los detalles de la llamada.</span>
+        <span class="mc-none">No pierdes llamadas. Sigue así; la recepcionista está para el día en que eso cambie.</span>
       </p>
-      <p class="mc-fine">Estimación basada en tus cifras. Front Door contesta todas las llamadas, día y noche, por $900 al mes. <a href="/es/services/front-door">Ver qué incluye</a>.</p>
+      <p class="mc-fine">Tu cifra, con tus propios valores. La Recepcionista con IA 24/7 contesta todas por $299 al mes, sola o dentro de Front Door desde $900 al mes. <a href="/es/pricing">Ver precios</a>.</p>
     </form>
+    <script>
+    (function () {
+      var mc = document.getElementById('missedCalls');
+      if (!mc) return;
+      var g = function (id) { return document.getElementById(id); };
+      var run = function () {
+        var calls = +g('mc-calls').value, miss = +g('mc-miss').value;
+        g('mc-calls-out').value = calls; g('mc-miss-out').value = miss + '%';
+        var missed = Math.round(calls * miss / 100 * 4.33);
+        g('mc-missed').value = missed;
+        mc.classList.toggle('mc-zero', missed === 0);
+      };
+      mc.addEventListener('input', run); run();
+    })();
+    </script>
   </div>
 </section>
 
@@ -118,16 +131,44 @@ schema: schema/services-phone.json
 
 <section>
   <div class="container">
-    <h2>Dónde se <span class="em">incluye.</span></h2>
-    <p class="lead">El teléfono es parte de Front Door, el servicio mensual de Kaico para oficios desde $900 al mes. No se vende por separado. Un teléfono que reserva para un sitio que nadie encuentra solo resuelve la mitad del problema; lo mismo ocurre con un sitio al que nadie puede llamar. Front Door se encarga de ambos, además de tu ficha de Google, las reservas en línea y el sistema de trabajos.</p>
-    <p style="margin-top:20px;"><a href="/es/pricing" class="btn btn-ghost">Ver precios</a></p>
+    <h2>Cómo se <span class="em">vende.</span></h2>
+    <p class="lead" style="margin-bottom:28px;">Por sí sola, la Recepcionista con IA 24/7 cuesta $299 al mes, mes a mes. <a href="/es/services/front-door">Front Door</a>, desde $900 al mes, pone la misma recepcionista junto al mantenimiento del sitio, tu ficha de Google, una agenda de reservas en línea y el sistema de trabajos, con alguien que lo gestiona todo. Front Door + Growth, $1,750 al mes, agrega la gestión de Google Ads y campañas de reactivación; tú pagas el gasto publicitario.</p>
+    <div class="cmp-wrap">
+      <table class="cmp">
+        <caption>Qué incluye la Recepcionista con IA 24/7 y qué incluye Front Door, lado a lado</caption>
+        <thead>
+          <tr><th scope="col">Incluye</th><th scope="col">Recepcionista con IA 24/7, $299/mes</th><th scope="col">Front Door, $900/mes</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Contesta todas las llamadas 24/7 y avisa que es una IA</th><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td></tr>
+          <tr><th scope="row">Un guion escrito para tu negocio: servicios, horarios y las preguntas que hacen tus clientes</th><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td></tr>
+          <tr><th scope="row">Agenda citas en tu Google Calendar con los detalles de la llamada</th><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td></tr>
+          <tr><th scope="row">Un resumen de cada llamada enviado a ti</th><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td></tr>
+          <tr><th scope="row">Desvío de llamadas desde tu número actual</th><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td></tr>
+          <tr><th scope="row">Mantenimiento del sitio web</th><td class="no">No</td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td></tr>
+          <tr><th scope="row">Gestión del Perfil de Empresa en Google</th><td class="no">No</td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td></tr>
+          <tr><th scope="row">Agenda de reservas en línea en tu sitio</th><td class="no">No</td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td></tr>
+          <tr><th scope="row">Sistema de trabajos: cotizaciones, facturas y correo al cliente</th><td class="no">No</td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td></tr>
+          <tr><th scope="row">Correo mensual de retención a clientes anteriores</th><td class="no">No</td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td></tr>
+          <tr><th scope="row">Informe mensual</th><td class="no">No</td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="price-fine">Oferta fundadora: los primeros 3 clientes de Front Door que paguen tienen $450 al mes durante sus primeros 6 meses y después $900 al mes. Queda por escrito en el acuerdo con el cliente. Ambos planes son mes a mes; cancela con 30 días de aviso por escrito.</p>
+    <p><a href="/es/pricing" class="btn btn-ghost">Ver precios</a></p>
   </div>
 </section>
 
 <section>
   <div class="container">
     <h2>Dicho con <span class="em">claridad.</span></h2>
-    <p class="lead">La recepcionista es una IA y se informa de ello a quienes llaman. Un negocio cliente puede agregar mensajes opcionales sobre reservas solo con su propio programa de mensajería aprobado y un sí claro de cada persona que llama. Los mensajes de texto propios de Kaico Voice se explican en nuestra <a href="/es/sms">página de SMS</a>. La llamada de demostración solo se hace cuando la solicitas.</p>
+    <div class="inc-list" style="margin-top:28px;">
+      <div class="inc"><span class="ck" aria-hidden="true">✓</span> Operado por su fundador. Trey dirige Kaico desde Tulsa, Oklahoma, y es la persona con la que tratas.</div>
+      <div class="inc"><span class="ck" aria-hidden="true">✓</span> A quienes llaman se les informa que hablan con una IA, en cada llamada.</div>
+      <div class="inc"><span class="ck" aria-hidden="true">✓</span> Un mensaje de texto a tus clientes solo se envía bajo tu propio programa de mensajería aprobado y con un sí claro de cada persona. Consulta <a href="/es/sms">SMS</a> y <a href="/es/privacy">privacidad</a>.</div>
+      <div class="inc"><span class="ck" aria-hidden="true">✓</span> Front Door tiene 3 lugares fundadores: $450 al mes durante los primeros 6 meses y después $900.</div>
+    </div>
+    <p class="inc-fine">La llamada de demostración solo se hace cuando la solicitas.</p>
   </div>
 </section>
 

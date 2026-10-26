@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Pricing | Kaico Voice</title>
-<meta name="description" content="Website builds from $3,500, Front Door Fix $1,500, Front Door $900 a month with the job system included, Growth $1,750. Month to month, 30 days notice." />
+<meta name="description" content="24/7 AI Receptionist $299 a month, Front Door from $900 a month, Growth $1,750, website builds from $1,500. Month to month with 30 days written notice." />
 <link rel="canonical" href="https://www.kaicovoice.com/pricing" />
 <link rel="alternate" hreflang="en" href="https://www.kaicovoice.com/pricing" />
 <link rel="alternate" hreflang="es" href="https://www.kaicovoice.com/es/pricing" />
@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Kaico Voice" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:title" content="Pricing | Kaico Voice" />
-<meta property="og:description" content="Website builds from $3,500, Front Door Fix $1,500, Front Door $900 a month with the job system included, Growth $1,750. Month to month, 30 days notice." />
+<meta property="og:description" content="24/7 AI Receptionist $299 a month, Front Door from $900 a month, Growth $1,750, website builds from $1,500. Month to month with 30 days written notice." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.kaicovoice.com/pricing" />
 <meta property="og:image" content="https://www.kaicovoice.com/assets/og-card.png" />
@@ -25,7 +25,7 @@
 <meta property="og:image:alt" content="Kaico Voice, AI receptionist that answers and books 24/7" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Pricing | Kaico Voice" />
-<meta name="twitter:description" content="Website builds from $3,500, Front Door Fix $1,500, Front Door $900 a month with the job system included, Growth $1,750. Month to month, 30 days notice." />
+<meta name="twitter:description" content="24/7 AI Receptionist $299 a month, Front Door from $900 a month, Growth $1,750, website builds from $1,500. Month to month with 30 days written notice." />
 <meta name="twitter:image" content="https://www.kaicovoice.com/assets/og-card.png" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -453,6 +453,21 @@ nav{view-transition-name:site-nav}
 .mc-result{font-size:20px;line-height:1.4;margin:6px 0 0}.mc-result output{font-weight:800;color:var(--signal)}
 .mc-fine{font-size:13px;color:var(--muted);margin:0}
 .mc.mc-zero .mc-if,.mc:not(.mc-zero) .mc-none{display:none}
+/* plan compare table (pricing, phone) and a two-up grid for short lists */
+.grid-2{display:grid;gap:18px;grid-template-columns:repeat(2,1fr);max-width:760px}
+.cmp-wrap{overflow-x:auto;margin-top:8px}
+.cmp{width:100%;border-collapse:separate;border-spacing:0;font-size:15px;background:var(--surface);border:1px solid var(--line);border-radius:14px}
+.cmp caption{text-align:left;font-size:13px;color:var(--muted);padding:0 0 10px}
+.cmp th,.cmp td{padding:13px 16px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;line-height:1.4}
+.cmp thead th{font-family:'Bricolage Grotesque';font-weight:700;background:var(--surface-2)}
+.cmp thead th:first-child{border-radius:14px 0 0 0}.cmp thead th:last-child{border-radius:0 14px 0 0}
+.cmp thead th:not(:first-child),.cmp td{text-align:center;width:24%}
+.cmp tbody th{font-weight:500}
+.cmp tbody tr:last-child th,.cmp tbody tr:last-child td{border-bottom:0}
+.cmp .yes{color:var(--signal);font-weight:800;font-size:18px}
+.cmp .no{color:var(--muted)}
+.vh{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media (max-width:740px){.grid-2{grid-template-columns:1fr}.cmp{font-size:14px}.cmp th,.cmp td{padding:11px 10px}.cmp thead th:not(:first-child),.cmp td{width:25%}}
 </style>
 
 <script type="application/ld+json">{
@@ -498,7 +513,15 @@ nav{view-transition-name:site-nav}
       "name": "Which one do I need?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We scope it with a free front-door audit before we quote. If your site is salvageable, the Fix. If it is not, a Build. If your front door is already fine, we say so and you owe nothing. Front Door, the monthly service, is for shops that want it run for them after the build."
+        "text": "We scope it with a free front-door audit before we quote. If the phone is the leak, start with the 24/7 AI Receptionist at $299 a month. If you want the site, the listing and the phone run for you, Front Door. If your site needs replacing, a Standard or Premium build. If your front door is already fine, we say so and you owe nothing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the founding offer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The first 3 paying Front Door clients pay $450 a month for their first 6 months, then $900 a month. It is written into the client agreement, and it ends when the 3 spots are taken."
       }
     },
     {
@@ -561,7 +584,7 @@ nav{view-transition-name:site-nav}
   <div class="container">
     <p class="breadcrumbs"><a href="/">Home</a> / Pricing</p>
     <h1>Pricing, <span class="em">in the open.</span></h1>
-    <p class="lead">Not sure which one? Every project is scoped with a free front-door audit before we quote, so you never buy the wrong rung.</p>
+    <p class="lead">Start with the phone at $299 a month, or have Kaico run the whole front door. Not sure which? Every project is scoped with a free front-door audit before we quote, so you never buy the wrong rung.</p>
     <div class="hero-cta">
       <a href="/#start" class="btn btn-signal btn-lg btn-start">Start my project</a>
     </div>
@@ -584,22 +607,120 @@ nav{view-transition-name:site-nav}
 
 <section>
   <div class="container">
-    <h2>One-time: <span class="em">fix it or build it.</span></h2>
-    <p class="lead" style="margin-bottom:32px;">A build draws on a project budget, pays once, and you own every file. The scoping audit says which rung you are on.</p>
+    <h2>Monthly: <span class="em">start with the phone.</span></h2>
+    <p class="lead" style="margin-bottom:32px;">The <a href="/services/phone">24/7 AI Receptionist</a> is the entry point. <a href="/services/front-door">Front Door</a> wraps it with site care, your Google listing, a scheduler and the job system, run for you. Growth adds the ads.</p>
     <div class="price-card reveal">
       <div class="price-inner">
-        <div class="price-name">Front Door Fix</div>
-        <div class="price-headline">Your site is salvageable. We wire in click-to-call, a real quote form that captures a phone number, your Google listing and tracking, and hand it back.</div>
-        <div class="price-row"><span class="price-amt">$1,500</span><span class="price-meta">one time</span></div>
+        <span class="pill"><i></i> Start here</span>
+        <div class="price-name">24/7 AI Receptionist</div>
+        <div class="price-headline">Every call answered, day and night, by an assistant that tells callers it is an AI. A script written for your business, appointments booked into your Google Calendar with the call details, a summary sent to you after each call, and forwarding from the number you already have.</div>
+        <div class="price-row"><span class="price-amt">$299<em>/mo</em></span><span class="price-meta">month to month</span></div>
         <a href="/#start" class="btn btn-signal btn-start">Start my project</a>
-        <!-- STRIPE-PENDING <details><summary>Already talked to Trey?</summary><p><a href="https://buy.stripe.com/14A28rfkp1J9cvo5on2ZO08" target="_blank" rel="noopener noreferrer">Pay and start</a></p></details> -->
       </div>
     </div>
     <div class="price-card reveal">
       <div class="price-inner">
+        <span class="pill"><i></i> Founding offer: 3 spots</span>
+        <div class="price-name">Front Door</div>
+        <div class="price-headline">The receptionist, plus the rest of your front door, run for you. Site care and updates. Google Business Profile posts and review replies. Self-serve scheduler. Kaico's job system: a jobs board, quotes your customer accepts in one tap, card-payment invoices, two-way email you approve from your phone, and a Today view. Already on Jobber or Housecall Pro? We feed it. Monthly report reconciled against your calendar.</div>
+        <div class="price-row"><span class="price-amt">$900<em>/mo</em></span><span class="price-meta">month to month</span></div>
+        <div class="price-row"><span class="price-amt">$450<em>/mo</em></span><span class="price-meta">founding offer: first 6 months for the first 3 paying clients, then $900</span></div>
+        <a href="/#start" class="btn btn-signal btn-start">Start my project</a>
+        <!-- STRIPE-PENDING <details><summary>Already talked to Trey?</summary><p><a href="https://buy.stripe.com/28E14neglbjJ1QKbML2ZO0b" target="_blank" rel="noopener noreferrer">Subscribe and start</a></p></details> -->
+      </div>
+    </div>
+    <div class="price-card reveal">
+      <div class="price-inner">
+        <div class="price-name">Front Door + Growth</div>
+        <div class="price-headline">Everything in Front Door plus Google Ads management on the terms your customers type and reactivation campaigns to past customers, with the consent rules stated up front. You pay the ad spend. Ads management is sold only inside Growth.</div>
+        <div class="price-row"><span class="price-amt">$1,750<em>/mo</em></span><span class="price-meta">month to month, plus your ad spend</span></div>
+        <a href="/#start" class="btn btn-signal btn-start">Start my project</a>
+        <!-- STRIPE-PENDING <details><summary>Already talked to Trey?</summary><p><a href="https://buy.stripe.com/dRmfZhgot73t3YSaIH2ZO0c" target="_blank" rel="noopener noreferrer">Subscribe and start</a></p></details> -->
+      </div>
+    </div>
+    <div class="price-card reveal">
+      <div class="price-inner">
+        <div class="price-name">Website Care</div>
+        <div class="price-headline">For build-only clients who want the site looked after without a monthly plan: hosting, updates, backups, small changes. $149 a month for the essentials, $299 with a monthly content and listing pass.</div>
+        <div class="price-row"><span class="price-amt">$149<em>/mo</em></span><span class="price-meta">or $299/mo</span></div>
+        <a href="/#start" class="btn btn-signal btn-start">Start my project</a>
+      </div>
+    </div>
+    <p class="price-fine" style="margin-top:24px;">Month to month. Cancel with 30 days written notice. Deposits are non-refundable once work begins; unused prepaid months are refunded. Managed services pause at day 14 unpaid; your site stays up at least 60 days. Full terms: <a href="/client-agreement">client agreement</a>.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>What is in <span class="em">each.</span></h2>
+    <p class="lead" style="margin-bottom:28px;">The receptionist is the same in both. Front Door adds the rest of the front door and someone to run it.</p>
+    <div class="cmp-wrap">
+      <table class="cmp">
+        <caption>What the 24/7 AI Receptionist and Front Door include, side by side</caption>
+        <thead>
+          <tr><th scope="col">Included</th><th scope="col">24/7 AI Receptionist, $299/mo</th><th scope="col">Front Door, $900/mo</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Answers every call 24/7 and tells callers it is an AI</th><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Yes</span></td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Yes</span></td></tr>
+          <tr><th scope="row">A script written for your business: services, hours, the questions customers ask</th><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Yes</span></td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Yes</span></td></tr>
+          <tr><th scope="row">Books appointments into your Google Calendar with the call details</th><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Yes</span></td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Yes</span></td></tr>
+          <tr><th scope="row">A call summary sent to you after each call</th><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Yes</span></td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Yes</span></td></tr>
+          <tr><th scope="row">Call forwarding from your existing number</th><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Yes</span></td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Yes</span></td></tr>
+          <tr><th scope="row">Website care</th><td class="no">No</td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Yes</span></td></tr>
+          <tr><th scope="row">Google Business Profile management</th><td class="no">No</td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Yes</span></td></tr>
+          <tr><th scope="row">Self-serve scheduler on your site</th><td class="no">No</td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Yes</span></td></tr>
+          <tr><th scope="row">Job system: quotes, invoices, customer email</th><td class="no">No</td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Yes</span></td></tr>
+          <tr><th scope="row">Monthly retention email to past customers</th><td class="no">No</td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Yes</span></td></tr>
+          <tr><th scope="row">Monthly report</th><td class="no">No</td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Yes</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="price-fine">Founding offer: the first 3 paying Front Door clients pay $450 a month for their first 6 months, then $900 a month. The offer is written into the client agreement. Both plans are month to month; cancel with 30 days written notice.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>How many calls are <span class="em">you missing?</span></h2>
+    <p class="lead">Slide these to your shop. The count that comes out is yours, not ours.</p>
+    <form class="mc" id="missedCalls" novalidate>
+      <label>Calls to your shop each week <output for="mc-calls" id="mc-calls-out">30</output>
+        <input type="range" id="mc-calls" name="calls" min="5" max="150" step="5" value="30"></label>
+      <label>Share you miss (after hours, on a ladder, on another call) <output for="mc-miss" id="mc-miss-out">30%</output>
+        <input type="range" id="mc-miss" name="miss" min="0" max="80" step="5" value="30"></label>
+      <p class="mc-result" aria-live="polite">
+        <span class="mc-if">You miss about <output id="mc-missed">39</output> calls a month. The receptionist picks up each one, books the job into your calendar and sends you the call details.</span>
+        <span class="mc-none">You miss no calls. Keep it that way; the receptionist is for the day that changes.</span>
+      </p>
+      <p class="mc-fine">Your count, from your own sliders. The 24/7 AI Receptionist answers every one for $299 a month, on its own or inside Front Door from $900 a month. <a href="/services/phone">See the receptionist</a>.</p>
+    </form>
+    <script>
+    (function () {
+      var mc = document.getElementById('missedCalls');
+      if (!mc) return;
+      var g = function (id) { return document.getElementById(id); };
+      var run = function () {
+        var calls = +g('mc-calls').value, miss = +g('mc-miss').value;
+        g('mc-calls-out').value = calls; g('mc-miss-out').value = miss + '%';
+        var missed = Math.round(calls * miss / 100 * 4.33);
+        g('mc-missed').value = missed;
+        mc.classList.toggle('mc-zero', missed === 0);
+      };
+      mc.addEventListener('input', run); run();
+    })();
+    </script>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>One-time: <span class="em">build it.</span></h2>
+    <p class="lead" style="margin-bottom:32px;">A build draws on a project budget, pays once, and you own every file. The free audit says which size you need, or whether your current site already does the job.</p>
+    <div class="price-card reveal">
+      <div class="price-inner">
         <div class="price-name">Website Build, Standard</div>
         <div class="price-headline">The pages a trade shop needs, a quote form that captures a phone, your listing wired in, built to book. The Blue Sands shape, trimmed.</div>
-        <div class="price-row"><span class="price-amt">$3,500</span><span class="price-meta">one time</span></div>
+        <div class="price-row"><span class="price-amt">$1,500</span><span class="price-meta">one time</span></div>
         <a href="/#start" class="btn btn-signal btn-start">Start my project</a>
         <!-- STRIPE-PENDING <details><summary>Already talked to Trey?</summary><p><a href="https://buy.stripe.com/aFa4gz8W19bBfHA6sr2ZO09" target="_blank" rel="noopener noreferrer">Pay and start</a></p></details> -->
       </div>
@@ -608,7 +729,7 @@ nav{view-transition-name:site-nav}
       <div class="price-inner">
         <div class="price-name">Website Build, Premium</div>
         <div class="price-headline">Delivered-price calculator, self-serve scheduler, multi-service pages. The full 24-page shape.</div>
-        <div class="price-row"><span class="price-amt">$6,500</span><span class="price-meta">one time</span></div>
+        <div class="price-row"><span class="price-amt">$3,500</span><span class="price-meta">one time</span></div>
         <a href="/#start" class="btn btn-signal btn-start">Start my project</a>
         <!-- STRIPE-PENDING <details><summary>Already talked to Trey?</summary><p><a href="https://buy.stripe.com/6oU3cvb499bB8f8dUT2ZO0a" target="_blank" rel="noopener noreferrer">Pay and start</a></p></details> -->
       </div>
@@ -618,65 +739,23 @@ nav{view-transition-name:site-nav}
 
 <section>
   <div class="container">
-    <h2>What does a missed call <span class="em">cost you?</span></h2>
-    <p class="lead">Slide these to your shop. The numbers that come out are yours, not ours.</p>
-    <form class="mc" id="mc" novalidate>
-      <label>Calls to your shop each week <output for="mc-calls" id="mc-calls-out">30</output>
-        <input type="range" id="mc-calls" name="calls" min="5" max="150" step="5" value="30"></label>
-      <label>Share you miss (after hours, on a ladder, on another call) <output for="mc-miss" id="mc-miss-out">30%</output>
-        <input type="range" id="mc-miss" name="miss" min="0" max="80" step="5" value="30"></label>
-      <label>What an average job is worth to you <output for="mc-job" id="mc-job-out">$350</output>
-        <input type="range" id="mc-job" name="job" min="100" max="5000" step="50" value="350"></label>
-      <p class="mc-result" aria-live="polite">
-        <span class="mc-if">You miss about <output id="mc-missed">39</output> calls a month. If each one was a job, that is up to <output id="mc-all">$13,650</output> of work. A quarter of them booking is still <output id="mc-quarter">$3,410</output> a month, against $900 for Front Door.</span>
-        <span class="mc-none">You miss no calls. Keep it that way; Front Door is for the day that changes.</span>
-      </p>
-      <p class="mc-fine">Your estimate, from your own sliders. Front Door answers every call, day and night, for $900 a month. <a href="/services/front-door">See what is in it</a>.</p>
-    </form>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <h2>Monthly: <span class="em">we run it.</span></h2>
-    <p class="lead" style="margin-bottom:32px;"><a href="/services/front-door">Front Door</a> keeps the site, the listing and the phone working, and hands you the job system. Growth adds the ads.</p>
-    <div class="price-card reveal">
-      <div class="price-inner">
-        <span class="pill"><i></i> Most shops start here</span>
-        <div class="price-name">Front Door</div>
-        <div class="price-headline">Site care and updates. Google Business Profile posts and review replies. The phone answered 24/7 and booked to your calendar. Self-serve scheduler. Kaico's job system: a jobs board, quotes your customer accepts in one tap, card-payment invoices, two-way email you approve from your phone, and a Today view. Already on Jobber or Housecall Pro? We feed it. Monthly report reconciled against your calendar.</div>
-        <div class="price-row"><span class="price-amt">$900<em>/mo</em></span><span class="price-meta">month to month</span></div>
-        <a href="/#start" class="btn btn-signal btn-start">Start my project</a>
-        <!-- STRIPE-PENDING <details><summary>Already talked to Trey?</summary><p><a href="https://buy.stripe.com/28E14neglbjJ1QKbML2ZO0b" target="_blank" rel="noopener noreferrer">Subscribe and start</a></p></details> -->
-      </div>
+    <h2>Stated <span class="em">plainly.</span></h2>
+    <div class="inc-list" style="margin-top:28px;">
+      <div class="inc"><span class="ck" aria-hidden="true">✓</span> Founder-operated. Trey runs Kaico from Tulsa, Oklahoma, and is the person you deal with.</div>
+      <div class="inc"><span class="ck" aria-hidden="true">✓</span> Callers are told they are talking to an AI, on every call.</div>
+      <div class="inc"><span class="ck" aria-hidden="true">✓</span> A text to your callers goes out only under your own approved messaging program and with each caller's clear yes. See <a href="/sms">SMS</a> and <a href="/privacy">privacy</a>.</div>
+      <div class="inc"><span class="ck" aria-hidden="true">✓</span> Front Door has 3 founding spots: $450 a month for the first 6 months, then $900.</div>
     </div>
-    <div class="price-card reveal">
-      <div class="price-inner">
-        <div class="price-name">Front Door + Growth</div>
-        <div class="price-headline">Everything in Front Door plus Google Ads management on the terms your customers type and reactivation campaigns to past customers, with the consent rules stated up front. You pay the ad spend. Ads Management on its own: from $500 a month plus spend.</div>
-        <div class="price-row"><span class="price-amt">$1,750<em>/mo</em></span><span class="price-meta">month to month, plus your ad spend</span></div>
-        <a href="/#start" class="btn btn-signal btn-start">Start my project</a>
-        <!-- STRIPE-PENDING <details><summary>Already talked to Trey?</summary><p><a href="https://buy.stripe.com/dRmfZhgot73t3YSaIH2ZO0c" target="_blank" rel="noopener noreferrer">Subscribe and start</a></p></details> -->
-      </div>
-    </div>
-    <div class="price-card reveal">
-      <div class="price-inner">
-        <div class="price-name">Website Care</div>
-        <div class="price-headline">For build-only clients who do not want a tier: hosting, updates, backups, small changes. $149 a month for the essentials, $299 with a monthly content and listing pass.</div>
-        <div class="price-row"><span class="price-amt">$149<em>/mo</em></span><span class="price-meta">or $299/mo</span></div>
-        <a href="/#start" class="btn btn-signal btn-start">Start my project</a>
-      </div>
-    </div>
-    <p class="price-fine" style="margin-top:24px;">Month to month. Cancel with 30 days notice. Deposits are non-refundable once work begins; unused prepaid months are refunded. Managed services pause at day 14 unpaid; your site stays up at least 60 days. Full terms: <a href="/client-agreement">client agreement</a>.</p>
   </div>
 </section>
 
 <section>
   <div class="container-narrow">
-    <h2>Two <span class="em">questions.</span></h2>
+    <h2>Three <span class="em">questions.</span></h2>
     <div style="margin-top:32px;">
-      <details><summary>Which one do I need?</summary><p>We scope it with a free front-door audit before we quote. If your site is salvageable, the Fix. If it is not, a Build. If your front door is already fine, we say so and you owe nothing. Front Door, the monthly service, is for shops that want it run for them after the build.</p></details>
-      <details><summary>What are the terms?</summary><p>Month to month. Cancel with 30 days notice. Deposits are non-refundable once work begins; unused prepaid months are refunded. Managed services pause at day 14 unpaid; your site stays up at least 60 days. You own your domain, your listing, your content and your data at all times.</p></details>
+      <details><summary>Which one do I need?</summary><p>We scope it with a free front-door audit before we quote. If the phone is the leak, start with the 24/7 AI Receptionist at $299 a month. If you want the site, the listing and the phone run for you, Front Door. If your site needs replacing, a Standard or Premium build. If your front door is already fine, we say so and you owe nothing.</p></details>
+      <details><summary>What is the founding offer?</summary><p>The first 3 paying Front Door clients pay $450 a month for their first 6 months, then $900 a month. It is written into the client agreement, and it ends when the 3 spots are taken.</p></details>
+      <details><summary>What are the terms?</summary><p>Month to month. Cancel with 30 days written notice. Deposits are non-refundable once work begins; unused prepaid months are refunded. Managed services pause at day 14 unpaid; your site stays up at least 60 days. You own your domain, your listing, your content and your data at all times.</p></details>
     </div>
   </div>
 </section>
