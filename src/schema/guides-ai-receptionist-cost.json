@@ -30,10 +30,10 @@
         },
         {
           "@type": "Question",
-          "name": "Does it text callers or call people back?",
+          "name": "Does it call people back?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No. It answers inbound calls. It does not text callers and does not place outbound calls."
+            "text": "No. It answers inbound calls and does not place outbound calls."
           }
         },
         {
