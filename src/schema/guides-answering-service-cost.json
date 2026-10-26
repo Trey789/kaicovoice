@@ -9,7 +9,7 @@
           "name": "Is per-minute or flat pricing cheaper?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "It depends on your calls. Per-minute billing can come out lower for a shop that gets a few short calls and never passes its bundle. Flat pricing is easier to predict: the bill does not move when a storm week doubles your calls. Kaico's receptionist is $299 a month flat."
+            "text": "It depends on your calls. Per-minute billing can come out lower for a shop that gets a few short calls and never passes its bundle. Flat pricing is easier to predict: the bill does not move when a storm week doubles your calls. Kaico's receptionist is a $299 one-time setup, then $299 a month flat."
           }
         },
         {
@@ -17,7 +17,7 @@
           "name": "Does Kaico charge per minute or per call?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No. The 24/7 AI Receptionist is $299 a month flat. It is also included in Front Door at $900 a month and in Front Door + Growth at $1,750 a month plus your ad spend."
+            "text": "No. The 24/7 AI Receptionist is a $299 one-time setup, then $299 a month flat. It is also included in Front Door at $900 a month and in Front Door + Growth at $1,750 a month plus your ad spend."
           }
         },
         {
