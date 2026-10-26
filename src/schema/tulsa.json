@@ -63,7 +63,7 @@
           "name": "Which trades do you answer for?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "HVAC, plumbing, electrical, roofing, water damage restoration and heavy-duty truck repair shops. Each one has its own page with the calls it handles."
+            "text": "HVAC, plumbing, electrical, roofing, water damage restoration and heavy-duty truck repair shops. Each one has its own page above with the calls it handles."
           }
         },
         {
