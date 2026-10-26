@@ -28,6 +28,13 @@
         },
         {
           "@type": "Offer",
+          "name": "24/7 AI Receptionist setup",
+          "price": "299",
+          "priceCurrency": "USD",
+          "description": "One-time setup for the 24/7 AI Receptionist plan."
+        },
+        {
+          "@type": "Offer",
           "name": "Front Door",
           "priceSpecification": {
             "@type": "UnitPriceSpecification",
