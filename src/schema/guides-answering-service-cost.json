@@ -1,0 +1,50 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is per-minute or flat pricing cheaper?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on your calls. Per-minute billing can come out lower for a shop that gets a few short calls and never passes its bundle. Flat pricing is easier to predict: the bill does not move when a storm week doubles your calls. Kaico's receptionist is $299 a month flat."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Kaico charge per minute or per call?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The 24/7 AI Receptionist is $299 a month flat. It is also included in Front Door at $900 a month and in Front Door + Growth at $1,750 a month plus your ad spend."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long is the commitment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Month to month. You can cancel with 30 days written notice. The full terms are in the client agreement."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the founding offer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The first 3 paying Front Door clients get it at $450 a month for 6 months, then $900 a month. It applies to Front Door only."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I hear it before I pay?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Call (918) 359-2644 and talk to the receptionist as if you were a customer. No signup."
+          }
+        }
+      ]
+    }
+  ]
+}
