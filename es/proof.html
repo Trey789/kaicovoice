@@ -649,7 +649,7 @@ nav{view-transition-name:site-nav}
   .proof a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; }
   .proof a:hover { text-decoration-color: var(--accent, #c8ff3d); }
   .proof a.btn { text-decoration: none; }
-  .built-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0 8px; }
+  .built-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin: 20px 0 8px; max-width: 560px; }
   .built { border: 1px solid var(--line); background: var(--paper); border-radius: 16px; padding: 18px 20px; }
   .built .tag { font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-soft); }
   .built strong { display: block; color: var(--ink); margin: 6px 0 4px; }
@@ -664,7 +664,7 @@ nav{view-transition-name:site-nav}
   .cta-band h2 { margin: 0 auto 14px; max-width: 20ch; }
   .cta-band p { max-width: 54ch; margin: 0 auto 28px; }
   .cta-actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
-  @media (max-width: 640px) { .built-grid { grid-template-columns: 1fr; } .cta-band { padding: 44px 20px; } }
+  @media (max-width: 640px) { .cta-band { padding: 44px 20px; } }
 </style>
 <main id="main" class="proof">
   <div class="container-narrow">
@@ -691,10 +691,9 @@ nav{view-transition-name:site-nav}
     <p>¿Quieres revisar un proceso de tu negocio? <a href="/es/services/business-consulting">Conoce cómo Kaico empieza con un solo proceso</a>.</p>
 
     <h2>También construimos</h2>
-    <p>Otros dos negocios usan Kaico. No son negocios de oficios, así que los mostramos para dar una idea del alcance de nuestro trabajo, no como casos de estudio.</p>
+    <p>Otro negocio usa Kaico. No es un negocio de oficios, así que lo mostramos para dar una idea del alcance de nuestro trabajo, no como caso de estudio.</p>
     <div class="built-grid">
       <div class="built"><span class="tag">Alquiler de autos de lujo</span><strong>Elite Car Plug</strong><p>Sitio de nueve páginas, reservas en línea y una línea telefónica con IA que filtra llamadas y agenda citas.</p></div>
-      <div class="built"><span class="tag">Polarizado de autos</span><strong>Tri-Tech Auto Tinting</strong><p>Sitio de una página y teléfono atendido las 24 horas que agenda trabajos fuera del horario que antes se perdían.</p></div>
     </div>
 
     <h2>Cómo verificamos los resultados</h2>
