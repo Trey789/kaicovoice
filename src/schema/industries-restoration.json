@@ -15,7 +15,7 @@
       "name": "Can the phone route to my on-call tech?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. You set the rule: active water, sewage or fire damage transfers to the on-call number immediately, with the address and the source already captured. Everything else books onto the calendar or takes a message and texts the caller back."
+        "text": "Yes. You set the rule: active water, sewage or fire damage transfers to the on-call number immediately, with the address and the source already captured. Everything else books onto the calendar or becomes a message for your team to return."
       }
     },
     {
@@ -23,7 +23,7 @@
       "name": "Do you do the Google Ads too?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, inside Front Door + Growth at $1,750 a month; you pay the ad spend. For restoration we recommend a spend only after the scoping audit, because the referral network usually pays back faster than the click."
+        "text": "Yes, inside Front Door + Growth at $1,750 a month; you pay the ad spend. For restoration we recommend a spend only after the scoping audit, because the referral network usually pays back faster than the click. See Google Ads for contractors."
       }
     },
     {

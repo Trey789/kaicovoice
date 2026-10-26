@@ -31,7 +31,7 @@
       "name": "What if it cannot answer a question?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "It does not guess, and it does not invent prices. If a caller asks something outside what you have approved, the agent takes a message and texts the caller back so the lead stays warm. You get a transcript of every call, so you can see exactly what was asked and follow up yourself."
+        "text": "It does not guess, and it does not invent prices. If a caller asks something outside what you have approved, the agent takes a message for your team to return. You get a transcript of every call, so you can see exactly what was asked and follow up yourself."
       }
     },
     {

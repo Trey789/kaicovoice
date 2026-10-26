@@ -15,7 +15,7 @@
       "name": "Does it quote prices?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Only what you tell it to. If you give it a trip fee or an after-hours rate, it will say that and nothing else. It never invents a number. Anything outside what you approved becomes a message, and the caller gets a text back so the lead stays warm."
+        "text": "Only what you tell it to. If you give it a trip fee or an after-hours rate, it will say that and nothing else. It never invents a number. Anything outside what you approved becomes a message for your team to return."
       }
     },
     {
