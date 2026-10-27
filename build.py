@@ -21,6 +21,7 @@ LLMS_SECTIONS = (
         ("/pricing", "Published one-time and monthly options, with terms and scope details."),
         ("/proof", "Examples of completed work and how Kaico checks reported numbers."),
         ("/start", "Request a review of your website, listing, phone or job workflow."),
+        ("/tulsa", "Answering service in Tulsa, Oklahoma for trade businesses: founder-operated, delivered remotely, with setup steps and pricing."),
     )),
     ("English: services", (
         ("/services/front-door", "Monthly website, listing, phone, scheduling and job-system service."),
@@ -31,17 +32,26 @@ LLMS_SECTIONS = (
         ("/services/google-ads", "Managed search and call advertising; ad spend is separate."),
         ("/services/business-consulting", "Process review, workflow map and prioritized plan."),
     )),
+    ("English: guides", (
+        ("/guides/answering-service-cost", "Answering service pricing models explained, and what Kaico charges."),
+        ("/guides/ai-receptionist-cost", "What drives AI receptionist cost and what $299 a month includes."),
+        ("/guides/ai-receptionist-vs-answering-service", "Human answering service and AI receptionist compared, and who should pick which."),
+    )),
     ("English: policies", (
         ("/client-agreement", "Payment, ownership, cancellation and service terms."),
         ("/privacy", "How information is handled, including calls to the AI receptionist."),
         ("/terms", "Website, service and SMS terms."),
         ("/sms", "SMS consent, message types and opt-out details."),
     )),
+    ("English: tools", (
+        ("/tools/after-hours-coverage-checker", "Free checker: enter the hours your shop answers and see the unanswered hours, nights and weekend days each week."),
+    )),
     ("Español: información general", (
         ("/es", "Servicios de sitios web, perfil de Google, teléfono y sistema de trabajos para oficios."),
         ("/es/pricing", "Opciones publicadas de pago único y mensual, con detalles de condiciones y alcance."),
         ("/es/proof", "Ejemplos de trabajo realizado y cómo Kaico verifica las cifras publicadas."),
         ("/es/start", "Solicita una revisión de tu sitio, perfil, teléfono o proceso de trabajos."),
+        ("/es/tulsa", "Atención telefónica en Tulsa, Oklahoma para negocios de oficios: dirigida por su fundador, entregada a distancia, con pasos de configuración y precios."),
     )),
     ("Español: servicios", (
         ("/es/services/front-door", "Servicio mensual de sitio web, perfil, teléfono, reservas y sistema de trabajos."),
@@ -52,11 +62,19 @@ LLMS_SECTIONS = (
         ("/es/services/google-ads", "Gestión de anuncios de búsqueda y llamadas; inversión publicitaria aparte."),
         ("/es/services/business-consulting", "Revisión de procesos, mapa de trabajo y plan priorizado."),
     )),
+    ("Español: guías", (
+        ("/es/guides/answering-service-cost", "Modelos de precios de los servicios de contestación y lo que cobra Kaico."),
+        ("/es/guides/ai-receptionist-cost", "Qué determina el costo de una recepcionista con IA y qué incluyen los $299 al mes."),
+        ("/es/guides/ai-receptionist-vs-answering-service", "Servicio de contestación humano y recepcionista con IA, comparados, y cuál elegir."),
+    )),
     ("Español: políticas", (
         ("/es/client-agreement", "Condiciones de pago, propiedad, cancelación y servicio."),
         ("/es/privacy", "Tratamiento de datos, incluidas las llamadas a la recepcionista con IA."),
         ("/es/terms", "Condiciones del sitio web, los servicios y los SMS."),
         ("/es/sms", "Consentimiento, tipos de mensajes y baja del programa de SMS."),
+    )),
+    ("Español: herramientas", (
+        ("/es/tools/after-hours-coverage-checker", "Verificador gratuito: ingresa las horas en que tu negocio contesta y ve las horas, noches y fines de semana sin cobertura."),
     )),
 )
 GA4_SNIPPET = ('<script async src="https://www.googletagmanager.com/gtag/js?id={id}"></script>'

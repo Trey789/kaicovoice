@@ -1,0 +1,58 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is $299 the whole monthly price for the receptionist?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, the monthly price is $299 flat. The receptionist is a $299 one-time setup, then $299 a month, billed month to month, with 30 days written notice to cancel. Front Door and Front Door + Growth are separate services with their own monthly prices on the pricing page."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the price change with call volume?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It is a flat monthly price, not a per-minute or per-call rate. The bill is the same in a slow month and a busy one."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who writes the script?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Kaico does. We learn your services, hours, prices and the questions your customers ask, and write every word the receptionist says. Nothing generic."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it call people back?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. It answers inbound calls and does not place outbound calls."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do callers know it is an AI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. It tells them, and it still gets them booked. Call (918) 359-2644 and hear how it handles that."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which calendar does it book into?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Google Calendar. The appointment lands on your calendar with the caller's details, and you get a call summary as well."
+          }
+        }
+      ]
+    }
+  ]
+}
