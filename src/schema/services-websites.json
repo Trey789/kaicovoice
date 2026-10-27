@@ -18,20 +18,14 @@
       "offers": [
         {
           "@type": "Offer",
-          "name": "Front Door Fix",
+          "name": "Website Build, Standard",
           "price": "1500",
           "priceCurrency": "USD"
         },
         {
           "@type": "Offer",
-          "name": "Website Build, Standard",
-          "price": "3500",
-          "priceCurrency": "USD"
-        },
-        {
-          "@type": "Offer",
           "name": "Website Build, Premium",
-          "price": "6500",
+          "price": "3500",
           "priceCurrency": "USD"
         }
       ]
@@ -41,10 +35,10 @@
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "I have a site. Fix or rebuild?",
+          "name": "I have a site. Do I need a new one?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The audit decides, from public data, before you spend anything. A site with a sound structure and a broken front door gets the $1,500 Fix. A template that fights every change, or a site that says the wrong things about your trade, gets rebuilt. If your site is fine, the audit says so."
+            "text": "The audit decides, from public data, before you spend anything. A template that fights every change, a phone number that cannot be tapped, or a site that says the wrong things about your trade gets rebuilt, Standard or Premium. If your site is fine, the audit says so and you owe nothing."
           }
         },
         {

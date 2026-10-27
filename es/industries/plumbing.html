@@ -178,7 +178,7 @@
   .price-row:last-of-type { border-bottom: 0; }
   .price-amt { font-family: 'Bricolage Grotesque'; font-size: 32px; font-weight: 800; letter-spacing: -0.02em; }
   .price-amt em { font-style: normal; font-size: 14px; font-weight: 600; color: var(--muted); margin-left: 6px; font-family: 'Hanken Grotesk'; }
-  .price-meta { color: var(--muted); font-size: 14px; }
+  .price-meta { color: var(--muted); font-size: 14px; text-wrap: balance; }
   .price-fine { color: var(--muted); font-size: 14px; line-height: 1.55; margin: 22px 0 26px; }
   .price-inner .btn { width: 100%; justify-content: center; }
 
@@ -453,6 +453,21 @@ nav{view-transition-name:site-nav}
 .mc-result{font-size:20px;line-height:1.4;margin:6px 0 0}.mc-result output{font-weight:800;color:var(--signal)}
 .mc-fine{font-size:13px;color:var(--muted);margin:0}
 .mc.mc-zero .mc-if,.mc:not(.mc-zero) .mc-none{display:none}
+/* plan compare table (pricing, phone) and a two-up grid for short lists */
+.grid-2{display:grid;gap:18px;grid-template-columns:repeat(2,1fr);max-width:760px}
+.cmp-wrap{overflow-x:auto;margin-top:8px}
+.cmp{width:100%;border-collapse:separate;border-spacing:0;font-size:15px;background:var(--surface);border:1px solid var(--line);border-radius:14px}
+.cmp caption{text-align:left;font-size:13px;color:var(--muted);padding:0 0 10px}
+.cmp th,.cmp td{padding:13px 16px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;line-height:1.4}
+.cmp thead th{font-family:'Bricolage Grotesque';font-weight:700;background:var(--surface-2)}
+.cmp thead th:first-child{border-radius:14px 0 0 0}.cmp thead th:last-child{border-radius:0 14px 0 0}
+.cmp thead th:not(:first-child),.cmp td{text-align:center;width:24%}
+.cmp tbody th{font-weight:500}
+.cmp tbody tr:last-child th,.cmp tbody tr:last-child td{border-bottom:0}
+.cmp .yes{color:var(--signal);font-weight:800;font-size:18px}
+.cmp .no{color:var(--muted)}
+.vh{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media (max-width:740px){.grid-2{grid-template-columns:1fr}.cmp{font-size:14px}.cmp th,.cmp td{padding:11px 10px}.cmp thead th:not(:first-child),.cmp td{width:25%}}
 </style>
 
 <script type="application/ld+json">{
@@ -507,22 +522,32 @@ nav{view-transition-name:site-nav}
       },
       {
         "@type": "Offer",
-        "name": "Front Door Fix",
-        "price": "1500",
-        "priceCurrency": "USD",
-        "description": "Mejora puntual de un sitio existente: botón para llamar, formulario de cotización, conexión con el perfil de Google y seguimiento."
-      },
-      {
-        "@type": "Offer",
         "name": "Creación de sitio web, Estándar",
-        "price": "3500",
+        "price": "1500",
         "priceCurrency": "USD"
       },
       {
         "@type": "Offer",
         "name": "Creación de sitio web, Premium",
-        "price": "6500",
+        "price": "3500",
         "priceCurrency": "USD"
+      },
+      {
+        "@type": "Offer",
+        "name": "Recepcionista con IA 24/7",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "299",
+          "priceCurrency": "USD",
+          "billingDuration": "P1M"
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Configuración inicial de la Recepcionista con IA 24/7",
+        "price": "299",
+        "priceCurrency": "USD",
+        "description": "Pago único de configuración inicial para el plan de Recepcionista con IA 24/7."
       },
       {
         "@type": "Offer",
@@ -656,14 +681,14 @@ nav{view-transition-name:site-nav}
 <section>
   <div class="container">
     <h2>La evidencia, <span class="em">sin exageraciones.</span></h2>
-    <p class="lead">Un negocio de Tulsa que configuramos ahora agenda trabajos fuera de horario que antes perdía. Antes de publicar cualquier cifra, la contrastamos con el calendario del dueño. Por eso todavía no mostramos una aquí. <a href="/es/proof">Cómo verificamos los resultados y el trabajo hasta ahora.</a></p>
+    <p class="lead">Antes de publicar cualquier cifra, la contrastamos con el calendario del dueño. Por eso todavía no mostramos una aquí. <a href="/es/proof">Cómo verificamos los resultados y el trabajo hasta ahora.</a></p>
   </div>
 </section>
 
 <section>
   <div class="container">
     <h2 style="text-align:center;">Cómo encaja <span class="em">el teléfono</span>.</h2>
-    <p class="lead" style="text-align:center;margin:0 auto 24px;">El teléfono es parte de <a href="/es/services/front-door">Front Door</a>, el servicio mensual de Kaico para oficios: <a href="/es/services/websites">mantenimiento del sitio</a>, <a href="/es/services/google-business-profile">Perfil de Empresa en Google</a>, <a href="/es/services/phone">atención telefónica 24/7</a>, sistema de citas y <a href="/es/services/job-system">sistema de gestión de trabajos</a>, desde $900 al mes (<a href="/es/pricing">precios</a>). Definimos el alcance de cada proyecto mediante una auditoría gratuita de sus canales de contacto antes de cotizar.</p>
+    <p class="lead" style="text-align:center;margin:0 auto 24px;">El teléfono cuesta $299 al mes por sí solo como <a href="/es/services/phone">Recepcionista con IA 24/7</a>, más una configuración inicial de $299 por única vez, o va incluido en <a href="/es/services/front-door">Front Door</a> desde $900 al mes junto con el <a href="/es/services/websites">mantenimiento del sitio</a>, el <a href="/es/services/google-business-profile">Perfil de Empresa en Google</a>, el sistema de citas y el <a href="/es/services/job-system">sistema de gestión de trabajos</a> (<a href="/es/pricing">precios</a>). Definimos el alcance de cada proyecto mediante una auditoría gratuita de sus canales de contacto antes de cotizar.</p>
     <p style="text-align:center;"><a href="/es#start" class="btn btn-signal btn-start">Iniciar mi proyecto</a></p>
   </div>
 </section>
@@ -685,7 +710,7 @@ nav{view-transition-name:site-nav}
     </details>
     <details>
       <summary>¿Cuánto cuesta?</summary>
-      <p>El teléfono se ofrece dentro de Front Door, el servicio mensual de Kaico para oficios, desde $900 al mes, mes a mes y con aviso de cancelación de 30 días. Incluye mantenimiento del sitio, su Perfil de Empresa en Google, el sistema de citas de autoservicio y el sistema de gestión de trabajos. Definimos el alcance mediante una auditoría gratuita de sus canales de contacto antes de cotizar.</p>
+      <p>El teléfono cuesta $299 al mes por sí solo, más una configuración inicial de $299 por única vez, o va incluido en Front Door desde $900 al mes, mes a mes y con aviso de cancelación de 30 días por escrito. Front Door agrega mantenimiento del sitio, su Perfil de Empresa en Google, el sistema de citas de autoservicio y el sistema de gestión de trabajos. Definimos el alcance mediante una auditoría gratuita de sus canales de contacto antes de cotizar.</p>
     </details>
   </div>
 </section>

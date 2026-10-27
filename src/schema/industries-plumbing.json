@@ -15,7 +15,7 @@
       "name": "Does it quote prices?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Only what you tell it to. If you give it a trip fee or an after-hours rate, it will say that and nothing else. It never invents a number. Anything outside what you approved becomes a message, and the caller gets a text back so the lead stays warm."
+        "text": "Only what you tell it to. If you give it a trip fee or an after-hours rate, it will say that and nothing else. It never invents a number. Anything outside what you approved becomes a message for your team to return."
       }
     },
     {
@@ -31,7 +31,7 @@
       "name": "What does it cost?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The phone is sold inside Front Door, Kaico's monthly service for the trades, from $900 a month, month to month with 30 days notice. That includes site care, your Google listing, the self-serve scheduler and the job system. Every project is scoped with a free front-door audit before we quote."
+        "text": "The phone is $299 a month on its own, plus a one-time $299 setup, or inside Front Door from $900 a month, month to month with 30 days written notice. Front Door adds site care, your Google listing, the self-serve scheduler and the job system. Every project is scoped with a free front-door audit before we quote."
       }
     }
   ]
