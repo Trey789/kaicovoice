@@ -379,8 +379,8 @@ main p a,main li a,main strong a,.pain-closer a,.inc a{color:var(--ink);font-wei
 .callme{text-align:left;margin-top:36px}
 .callme h3{margin:0 0 6px}
 .callme-lead{color:var(--muted);margin:0 0 6px;font-size:15px}
-.cm-consent{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--ink-soft);line-height:1.5;cursor:pointer}
-.cm-consent input{margin-top:3px;width:18px;height:18px;flex:none;accent-color:var(--signal)}
+.cm-consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;font-weight:400;color:var(--ink);line-height:1.45;cursor:pointer} /* same rules as the lead form's .gs-sms consent row */
+.cm-consent input{margin-top:3px;flex:none}
 .callme-status{margin:0;font-size:14px;color:var(--ink)}
 .callme-status.err{color:#ff8a8a}
 @media (prefers-reduced-motion:reduce){.price-card,.btn,.mark3d-mini,.grid-3 > .card{transition:none}.container:has(> .price-card) .price-card:hover,.container:has(> .price-card:hover) .price-card:not(:hover){transform:none}.brand:hover .mark3d-mini{transform:none}}
@@ -726,10 +726,10 @@ nav{view-transition-name:site-nav}
         <h3>O recibe una llamada.</h3>
         <p class="callme-lead">Escribe tu celular y el asistente te llamará en aproximadamente un minuto, como si fueras un cliente. Una sola llamada, únicamente cuando la solicites, entre las 8 a. m. y las 9 p. m., hora del centro. La demostración actualmente es en inglés.</p>
         <div class="gs-row">
-          <div class="gs-field"><label for="cm-name">Tu nombre</label><input id="cm-name" name="name" type="text" autocomplete="name" required></div>
-          <div class="gs-field"><label for="cm-phone">Número de celular</label><input id="cm-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(918) 555-0100" required></div>
+          <div class="gs-field"><label for="cm-name">Tu nombre</label><input class="gs-input" id="cm-name" name="name" type="text" autocomplete="name" required></div>
+          <div class="gs-field"><label for="cm-phone">Número de celular</label><input class="gs-input" id="cm-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(918) 555-0100" required></div>
         </div>
-        <div class="gs-field"><label for="cm-trade">Oficio</label><select id="cm-trade" name="trade"><option value="">Elige tu oficio</option><option value="HVAC">Climatización</option><option value="Plumbing">Plomería</option><option value="Electrical">Electricidad</option><option value="Roofing">Techos</option><option value="Water damage restoration">Restauración por daños de agua</option><option value="Heavy-duty truck repair">Reparación de camiones pesados</option><option value="Dump trucking">Transporte de materiales en camión de volteo</option><option value="Barber shops">Barberías</option><option value="Other trade">Otro oficio</option></select></div>
+        <div class="gs-field"><label for="cm-trade">Oficio</label><select class="gs-select" id="cm-trade" name="trade"><option value="">Elige tu oficio</option><option value="HVAC">Climatización</option><option value="Plumbing">Plomería</option><option value="Electrical">Electricidad</option><option value="Roofing">Techos</option><option value="Water damage restoration">Restauración por daños de agua</option><option value="Heavy-duty truck repair">Reparación de camiones pesados</option><option value="Dump trucking">Transporte de materiales en camión de volteo</option><option value="Barber shops">Barberías</option><option value="Other trade">Otro oficio</option></select></div>
         <div class="gs-hp" aria-hidden="true"><label for="cm-company-url">URL de la empresa</label><input id="cm-company-url" name="company_url" type="text" tabindex="-1" autocomplete="off"></div>
         <label class="cm-consent"><input type="checkbox" id="cm-consent" name="consent" value="yes"><span>Sí, llámenme ahora. Acepto que Kaico Voice haga una llamada automatizada a este número mediante un asistente de voz con inteligencia artificial para escuchar cómo responde. La llamada podría grabarse. Dar mi consentimiento no es una condición para comprar nada. Podrían aplicarse cargos por mensajes y datos.</span></label>
         <button type="submit" class="btn btn-signal">Llámame ahora</button>
