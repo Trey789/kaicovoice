@@ -4,6 +4,16 @@ description: Kaico crea y gestiona la puerta de entrada de los oficios: recepcio
 canonical: /es
 schema: schema/index.json
 -->
+<style>
+  /* labeled sample call inside the demo box: same bubble markup as the roofing page, kept visible without the chat script */
+  .demo .call-demo { text-align: left; background: var(--bg); border: 1px solid var(--line); border-radius: 20px; padding: 24px; max-width: 640px; margin: 34px auto 0; }
+  .demo .call-demo p.call-label { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; line-height: 1.5; color: var(--muted); max-width: none; margin: 0 0 18px; }
+  .demo .call-demo .bubble { opacity: 1; transform: none; padding: 12px 16px; font-size: 14.5px; line-height: 1.5; margin: 0 0 10px; max-width: 92%; }
+  .demo .call-demo .b-ai { margin-left: auto; }
+  .demo .call-demo .bubble .who { display: block; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+  .demo p.demo-line { font-size: 15px; margin: 22px auto 0; }
+  @media (max-width: 740px) { .demo .call-demo { padding: 18px; } }
+</style>
 <main id="main">
 
 <header id="top" class="hero">
@@ -117,6 +127,16 @@ schema: schema/index.json
       <p>Llama ahora. Pregunta qué hace Kaico. Intenta reservar una cita. Te dirá que es una IA y aun así te ayudará a agendar.</p>
       <a href="tel:+19183592644" class="demo-number"><span class="label">Llama ahora</span><span class="num">(918) 359-2644</span></a>
       <div class="demo-fine">Sin registrarte y sin mensajes no deseados. Nunca usamos tu número para otro fin.</div>
+      <div class="call-demo">
+        <p class="call-label">Ilustración: una llamada de ejemplo fuera de horario para Reliable Plumbing, un negocio ficticio. No es una grabación.</p>
+        <div class="bubble b-them"><span class="who">Cliente</span>«¿Hola? ¿Hay alguien? Son las dos de la mañana y se acaba de romper una tubería debajo del fregadero de la cocina. Hay agua por todos lados».</div>
+        <div class="bubble b-ai"><span class="who">Recepcionista de Kaico</span>«Se comunicó con Reliable Plumbing. Soy una recepcionista con IA y puedo enviarle un plomero. Primero, ¿puede cerrar la llave de paso principal? ¿Y cuál es su nombre?»</div>
+        <div class="bubble b-them"><span class="who">Cliente</span>«Soy Marcos. Listo, ya cerré el agua. ¿Puede venir alguien esta noche?»</div>
+        <div class="bubble b-ai"><span class="who">Recepcionista de Kaico</span>«Gracias, Marcos. ¿Cuál es la dirección?» (Da la dirección.) «Anotado. El primer espacio libre en el calendario es hoy a las 7 de la mañana. ¿Se lo reservo y lo registro como tubería rota debajo del fregadero de la cocina?»</div>
+        <div class="bubble b-them"><span class="who">Cliente</span>«Sí, resérvelo. ¿Hay forma de que alguien venga antes?»</div>
+        <div class="bubble b-ai"><span class="who">Recepcionista de Kaico</span>«Queda agendado para las 7. Como se trata de una tubería rota, la regla de Reliable Plumbing es transferirlo ahora mismo al plomero de guardia, así que voy a intentarlo. Si no contesta, su cita sigue en pie y él tendrá su nombre, su dirección y los detalles de la fuga antes de salir».</div>
+      </div>
+      <p class="demo-line">Línea de demostración: el (918) 359-2644 es la propia recepcionista de Kaico. Llámala como si fueras un cliente de plomería con una tubería rota y escucha cómo gestiona la reserva (por ahora la demostración es en inglés).</p>
       <form class="gs-form gs-card callme" id="callMe" novalidate>
         <h3>O deja que te llame.</h3>
         <p class="callme-lead">Escribe tu número de celular y la asistente te llamará en aproximadamente un minuto, como si fueras un cliente. Una sola llamada, únicamente cuando la solicites, entre las 8 a. m. y las 9 p. m., hora del centro.</p>
