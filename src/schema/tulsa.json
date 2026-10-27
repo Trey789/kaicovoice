@@ -1,0 +1,96 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "serviceType": "Answering service",
+      "name": "Answering service in Tulsa for the trades",
+      "description": "A Tulsa answering service for HVAC, plumbing, electrical, roofing, restoration and heavy-duty truck repair shops. Calls picked up 24/7 and booked to the business's calendar. Callers are told they are talking to an AI.",
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "Kaico Voice",
+        "url": "https://www.kaicovoice.com/"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Tulsa" },
+        { "@type": "State", "name": "Oklahoma" }
+      ],
+      "url": "https://www.kaicovoice.com/tulsa",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "24/7 AI Receptionist",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "299",
+            "priceCurrency": "USD",
+            "billingDuration": "P1M"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Front Door",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "900",
+            "priceCurrency": "USD",
+            "billingDuration": "P1M"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is there a Tulsa office I can visit?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Kaico is founder-operated by Trey in Tulsa, Oklahoma, and the service is delivered remotely, so there is no storefront to drop by. The best way to see it is to hear it: call (918) 359-2644 and the agent answers. Or use the Start my project form and we review your request."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you work outside Tulsa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. This Tulsa answering service is built and run remotely, so a trade business anywhere in Oklahoma gets the same setup, the same agent and the same calendar booking. Tulsa is home and where our first clients are."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which trades do you answer for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "HVAC, plumbing, electrical, roofing, water damage restoration and heavy-duty truck repair shops. Each one has its own page above with the calls it handles."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does setup work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Three steps. We learn your business, meaning services, prices, hours and the questions customers ask, and write the script in your shop's words. We connect your Google Calendar so the agent checks real availability. Then we set up call forwarding so your existing number rings the agent, and you can still pick up when you want."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does it cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "On its own, the 24/7 AI Receptionist is $299 to set up, then $299 a month. Inside Front Door, which adds site care, your Google Business Profile, a self-serve scheduler and the job system, it is from $900 a month, with a founding offer of $450 a month for 6 months for the first 3 paying clients. Everything is month to month with 30 days written notice. Full details are on the pricing page."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it a real person?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. It is an AI, and callers are told so. It sounds natural, books the job and transfers urgent calls to your cell. Call (918) 359-2644 and judge it yourself."
+          }
+        }
+      ]
+    }
+  ]
+}

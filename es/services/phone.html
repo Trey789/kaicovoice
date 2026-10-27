@@ -4,7 +4,8 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Teléfono fuera de horario para oficios | Kaico Voice</title>
-<meta name="description" content="Atención telefónica fuera de horario para negocios de oficios: llamadas contestadas, citas en tu calendario y detalles registrados. Escúchala: (918) 359-2644." />
+<meta name="description" content="Atención telefónica fuera de horario para oficios: cada llamada contestada, citas en tu calendario y detalles enviados a ti. $299 al mes o con Front Door." />
+<meta name="google-site-verification" content="6VeQIS3aIFI7-0zFNG9jeagOR2BLdqZiQPeYyoq6jgE" />
 <link rel="canonical" href="https://www.kaicovoice.com/es/services/phone" />
 <link rel="alternate" hreflang="en" href="https://www.kaicovoice.com/services/phone" />
 <link rel="alternate" hreflang="es" href="https://www.kaicovoice.com/es/services/phone" />
@@ -16,7 +17,7 @@
 <meta property="og:site_name" content="Kaico Voice" />
 <meta property="og:locale" content="es_US" />
 <meta property="og:title" content="Teléfono fuera de horario para oficios | Kaico Voice" />
-<meta property="og:description" content="Atención telefónica fuera de horario para negocios de oficios: llamadas contestadas, citas en tu calendario y detalles registrados. Escúchala: (918) 359-2644." />
+<meta property="og:description" content="Atención telefónica fuera de horario para oficios: cada llamada contestada, citas en tu calendario y detalles enviados a ti. $299 al mes o con Front Door." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.kaicovoice.com/es/services/phone" />
 <meta property="og:image" content="https://www.kaicovoice.com/assets/og-card.png" />
@@ -25,7 +26,7 @@
 <meta property="og:image:alt" content="Kaico Voice, asistente que atiende llamadas las 24 horas" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Teléfono fuera de horario para oficios | Kaico Voice" />
-<meta name="twitter:description" content="Atención telefónica fuera de horario para negocios de oficios: llamadas contestadas, citas en tu calendario y detalles registrados. Escúchala: (918) 359-2644." />
+<meta name="twitter:description" content="Atención telefónica fuera de horario para oficios: cada llamada contestada, citas en tu calendario y detalles enviados a ti. $299 al mes o con Front Door." />
 <meta name="twitter:image" content="https://www.kaicovoice.com/assets/og-card.png" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -178,7 +179,7 @@
   .price-row:last-of-type { border-bottom: 0; }
   .price-amt { font-family: 'Bricolage Grotesque'; font-size: 32px; font-weight: 800; letter-spacing: -0.02em; }
   .price-amt em { font-style: normal; font-size: 14px; font-weight: 600; color: var(--muted); margin-left: 6px; font-family: 'Hanken Grotesk'; }
-  .price-meta { color: var(--muted); font-size: 14px; }
+  .price-meta { color: var(--muted); font-size: 14px; text-wrap: balance; }
   .price-fine { color: var(--muted); font-size: 14px; line-height: 1.55; margin: 22px 0 26px; }
   .price-inner .btn { width: 100%; justify-content: center; }
 
@@ -453,6 +454,21 @@ nav{view-transition-name:site-nav}
 .mc-result{font-size:20px;line-height:1.4;margin:6px 0 0}.mc-result output{font-weight:800;color:var(--signal)}
 .mc-fine{font-size:13px;color:var(--muted);margin:0}
 .mc.mc-zero .mc-if,.mc:not(.mc-zero) .mc-none{display:none}
+/* plan compare table (pricing, phone) and a two-up grid for short lists */
+.grid-2{display:grid;gap:18px;grid-template-columns:repeat(2,1fr);max-width:760px}
+.cmp-wrap{overflow-x:auto;margin-top:8px}
+.cmp{width:100%;border-collapse:separate;border-spacing:0;font-size:15px;background:var(--surface);border:1px solid var(--line);border-radius:14px}
+.cmp caption{text-align:left;font-size:13px;color:var(--muted);padding:0 0 10px}
+.cmp th,.cmp td{padding:13px 16px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;line-height:1.4}
+.cmp thead th{font-family:'Bricolage Grotesque';font-weight:700;background:var(--surface-2)}
+.cmp thead th:first-child{border-radius:14px 0 0 0}.cmp thead th:last-child{border-radius:0 14px 0 0}
+.cmp thead th:not(:first-child),.cmp td{text-align:center;width:24%}
+.cmp tbody th{font-weight:500}
+.cmp tbody tr:last-child th,.cmp tbody tr:last-child td{border-bottom:0}
+.cmp .yes{color:var(--signal);font-weight:800;font-size:18px}
+.cmp .no{color:var(--muted)}
+.vh{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media (max-width:740px){.grid-2{grid-template-columns:1fr}.cmp{font-size:14px}.cmp th,.cmp td{padding:11px 10px}.cmp thead th:not(:first-child),.cmp td{width:25%}}
 </style>
 
 <script type="application/ld+json">{
@@ -507,22 +523,32 @@ nav{view-transition-name:site-nav}
       },
       {
         "@type": "Offer",
-        "name": "Front Door Fix",
-        "price": "1500",
-        "priceCurrency": "USD",
-        "description": "Mejora puntual de un sitio existente: botón para llamar, formulario de cotización, conexión con el perfil de Google y seguimiento."
-      },
-      {
-        "@type": "Offer",
         "name": "Creación de sitio web, Estándar",
-        "price": "3500",
+        "price": "1500",
         "priceCurrency": "USD"
       },
       {
         "@type": "Offer",
         "name": "Creación de sitio web, Premium",
-        "price": "6500",
+        "price": "3500",
         "priceCurrency": "USD"
+      },
+      {
+        "@type": "Offer",
+        "name": "Recepcionista con IA 24/7",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "299",
+          "priceCurrency": "USD",
+          "billingDuration": "P1M"
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Configuración inicial de la Recepcionista con IA 24/7",
+        "price": "299",
+        "priceCurrency": "USD",
+        "description": "Pago único de configuración inicial para el plan de Recepcionista con IA 24/7."
       },
       {
         "@type": "Offer",
@@ -608,7 +634,7 @@ nav{view-transition-name:site-nav}
     <p class="breadcrumbs"><a href="/es">Inicio</a> / Servicios / Teléfono 24/7</p>
     <span class="pill"><i></i> Atendiendo ahora · (918) 359-2644</span>
     <h1>Atención telefónica fuera de horario <span class="em">para negocios de oficios.</span></h1>
-    <p class="lead">Cada llamada perdida puede convertirse en un trabajo para quien sí conteste. Este servicio responde desde el primer timbre, reserva directamente en tu calendario y te envía los detalles, a las 2 de la tarde o de la madrugada.</p>
+    <p class="lead">Cada llamada perdida puede convertirse en un trabajo para quien sí conteste. Este servicio responde desde el primer timbre, reserva directamente en tu calendario y te envía los detalles, a las 2 de la tarde o de la madrugada. Por sí sola cuesta $299 al mes, más una configuración inicial de $299 por única vez.</p>
     <div class="hero-cta">
       <a href="tel:+19183592644" class="btn btn-signal btn-lg">▶ Escucha cómo contesta</a>
       <a href="/es#start" class="btn btn-ghost btn-lg btn-start">Iniciar mi proyecto</a>
@@ -639,21 +665,34 @@ nav{view-transition-name:site-nav}
 
 <section>
   <div class="container">
-    <h2>¿Cuánto te cuesta <span class="em">una llamada perdida?</span></h2>
-    <p class="lead">Ajusta los controles según tu negocio. Los resultados se basan en tus cifras.</p>
-    <form class="mc" id="mc" novalidate>
+    <h2>¿Cuántas llamadas <span class="em">estás perdiendo?</span></h2>
+    <p class="lead">Ajusta los controles según tu negocio. La cifra que sale es tuya, no nuestra.</p>
+    <form class="mc" id="missedCalls" novalidate>
       <label>Llamadas a tu negocio por semana <output for="mc-calls" id="mc-calls-out">30</output>
         <input type="range" id="mc-calls" name="calls" min="5" max="150" step="5" value="30"></label>
       <label>Porcentaje que pierdes (fuera de horario, mientras trabajas o atiendes otra llamada) <output for="mc-miss" id="mc-miss-out">30%</output>
         <input type="range" id="mc-miss" name="miss" min="0" max="80" step="5" value="30"></label>
-      <label>Valor promedio de un trabajo para ti <output for="mc-job" id="mc-job-out">$350</output>
-        <input type="range" id="mc-job" name="job" min="100" max="5000" step="50" value="350"></label>
       <p class="mc-result" aria-live="polite">
-        <span class="mc-if">Pierdes unas <output id="mc-missed">39</output> llamadas al mes. Si cada una representara un trabajo, sería hasta <output id="mc-all">$13,650</output> en trabajos. Aunque solo una cuarta parte reserve, serían <output id="mc-quarter">$3,410</output> al mes, frente a $900 por Front Door.</span>
-        <span class="mc-none">No pierdes llamadas. Sigue así; Front Door está disponible si eso cambia.</span>
+        <span class="mc-if">Pierdes unas <output id="mc-missed">39</output> llamadas al mes. La recepcionista contesta cada una, agenda el trabajo en tu calendario y te envía los detalles de la llamada.</span>
+        <span class="mc-none">No pierdes llamadas. Sigue así; la recepcionista está para el día en que eso cambie.</span>
       </p>
-      <p class="mc-fine">Estimación basada en tus cifras. Front Door contesta todas las llamadas, día y noche, por $900 al mes. <a href="/es/services/front-door">Ver qué incluye</a>.</p>
+      <p class="mc-fine">Tu cifra, con tus propios valores. La Recepcionista con IA 24/7 contesta todas por $299 al mes, sola o dentro de Front Door desde $900 al mes. <a href="/es/pricing">Ver precios</a>.</p>
     </form>
+    <script>
+    (function () {
+      var mc = document.getElementById('missedCalls');
+      if (!mc) return;
+      var g = function (id) { return document.getElementById(id); };
+      var run = function () {
+        var calls = +g('mc-calls').value, miss = +g('mc-miss').value;
+        g('mc-calls-out').value = calls; g('mc-miss-out').value = miss + '%';
+        var missed = Math.round(calls * miss / 100 * 4.33);
+        g('mc-missed').value = missed;
+        mc.classList.toggle('mc-zero', missed === 0);
+      };
+      mc.addEventListener('input', run); run();
+    })();
+    </script>
   </div>
 </section>
 
@@ -701,8 +740,8 @@ nav{view-transition-name:site-nav}
 
 <section>
   <div class="container">
-    <h2>Desde el registro hasta <span class="em">la activación en aproximadamente una semana.</span></h2>
-    <p class="lead" style="margin-bottom:40px;">Construimos y configuramos todo por ti, de principio a fin.</p>
+    <h2>Desde el registro hasta <span class="em">la activación en un plazo de 7 días hábiles.</span></h2>
+    <p class="lead" style="margin-bottom:40px;">Construimos y configuramos todo por ti, de principio a fin. Desde que tenemos tus horarios, servicios y los datos del desvío de llamadas, tu recepcionista contesta llamadas en un plazo de 7 días hábiles; los mensajes de texto y el trabajo en el sitio web van aparte.</p>
     <div class="timeline" id="timeline">
     <div class="tl-track" aria-hidden="true"><div class="tl-fill"></div><span class="tl-node"></span><span class="tl-node"></span><span class="tl-node"></span></div>
     <div class="steps">
@@ -715,16 +754,44 @@ nav{view-transition-name:site-nav}
 
 <section>
   <div class="container">
-    <h2>Dónde se <span class="em">incluye.</span></h2>
-    <p class="lead">El teléfono es parte de Front Door, el servicio mensual de Kaico para oficios desde $900 al mes. No se vende por separado. Un teléfono que reserva para un sitio que nadie encuentra solo resuelve la mitad del problema; lo mismo ocurre con un sitio al que nadie puede llamar. Front Door se encarga de ambos, además de tu ficha de Google, las reservas en línea y el sistema de trabajos.</p>
-    <p style="margin-top:20px;"><a href="/es/pricing" class="btn btn-ghost">Ver precios</a></p>
+    <h2>Cómo se <span class="em">vende.</span></h2>
+    <p class="lead" style="margin-bottom:28px;">Por sí sola, la Recepcionista con IA 24/7 tiene una configuración inicial de $299 por única vez, luego $299 al mes, mes a mes. <a href="/es/services/front-door">Front Door</a>, desde $900 al mes, pone la misma recepcionista junto al mantenimiento del sitio, tu ficha de Google, una agenda de reservas en línea y el sistema de trabajos, con alguien que lo gestiona todo. Front Door + Growth, $1,750 al mes, agrega la gestión de Google Ads y campañas de reactivación; tú pagas el gasto publicitario.</p>
+    <div class="cmp-wrap">
+      <table class="cmp">
+        <caption>Qué incluye la Recepcionista con IA 24/7 y qué incluye Front Door, lado a lado</caption>
+        <thead>
+          <tr><th scope="col">Incluye</th><th scope="col">Recepcionista con IA 24/7, $299/mes</th><th scope="col">Front Door, $900/mes</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Contesta todas las llamadas 24/7 y avisa que es una IA</th><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td></tr>
+          <tr><th scope="row">Un guion escrito para tu negocio: servicios, horarios y las preguntas que hacen tus clientes</th><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td></tr>
+          <tr><th scope="row">Agenda citas en tu Google Calendar con los detalles de la llamada</th><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td></tr>
+          <tr><th scope="row">Un resumen de cada llamada enviado a ti</th><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td></tr>
+          <tr><th scope="row">Desvío de llamadas desde tu número actual</th><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td></tr>
+          <tr><th scope="row">Mantenimiento del sitio web</th><td class="no">No</td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td></tr>
+          <tr><th scope="row">Gestión del Perfil de Empresa en Google</th><td class="no">No</td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td></tr>
+          <tr><th scope="row">Agenda de reservas en línea en tu sitio</th><td class="no">No</td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td></tr>
+          <tr><th scope="row">Sistema de trabajos: cotizaciones, facturas y correo al cliente</th><td class="no">No</td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td></tr>
+          <tr><th scope="row">Correo mensual de retención a clientes anteriores</th><td class="no">No</td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td></tr>
+          <tr><th scope="row">Informe mensual</th><td class="no">No</td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="price-fine">Oferta fundadora: los primeros 3 clientes de Front Door que paguen tienen $450 al mes durante sus primeros 6 meses y después $900 al mes. Queda por escrito en el acuerdo con el cliente. La Recepcionista con IA 24/7 tiene una configuración inicial de $299 por única vez, luego $299 al mes; Front Door no tiene costo de configuración. Ambos planes son mes a mes; cancela con 30 días de aviso por escrito.</p>
+    <p><a href="/es/pricing" class="btn btn-ghost">Ver precios</a></p>
   </div>
 </section>
 
 <section>
   <div class="container">
     <h2>Dicho con <span class="em">claridad.</span></h2>
-    <p class="lead">La recepcionista es una IA y se informa de ello a quienes llaman. Un negocio cliente puede agregar mensajes opcionales sobre reservas solo con su propio programa de mensajería aprobado y un sí claro de cada persona que llama. Los mensajes de texto propios de Kaico Voice se explican en nuestra <a href="/es/sms">página de SMS</a>. La llamada de demostración solo se hace cuando la solicitas.</p>
+    <div class="inc-list" style="margin-top:28px;">
+      <div class="inc"><span class="ck" aria-hidden="true">✓</span> <span>Operado por su fundador. Trey dirige Kaico desde Tulsa, Oklahoma, y es la persona con la que tratas.</span></div>
+      <div class="inc"><span class="ck" aria-hidden="true">✓</span> <span>A quienes llaman se les informa que hablan con una IA, en cada llamada.</span></div>
+      <div class="inc"><span class="ck" aria-hidden="true">✓</span> <span>Un mensaje de texto a tus clientes solo se envía bajo tu propio programa de mensajería aprobado y con un sí claro de cada persona. Consulta <a href="/es/sms">SMS</a> y <a href="/es/privacy">privacidad</a>.</span></div>
+      <div class="inc"><span class="ck" aria-hidden="true">✓</span> <span>Front Door tiene 3 lugares fundadores: $450 al mes durante los primeros 6 meses y después $900.</span></div>
+    </div>
+    <p class="inc-fine">La llamada de demostración solo se hace cuando la solicitas.</p>
   </div>
 </section>
 
@@ -749,7 +816,7 @@ nav{view-transition-name:site-nav}
       <details><summary>¿Es una persona real?</summary><p>No, y lo aclara. Es una recepcionista con IA adaptada a tu negocio. Llama al (918) 359-2644 y evalúa la conversación por ti mismo. La demostración actualmente es en inglés.</p></details>
       <details><summary>¿Qué pasa con una llamada que no puede atender?</summary><p>La transfiere a tu celular o al número que elijas y registra los detalles para que tu equipo dé seguimiento. Tú decides qué preguntas activan una transferencia.</p></details>
       <details><summary>¿Puedo escucharlo antes?</summary><p>Sí. La línea de demostración está activa: (918) 359-2644. No necesitas registrarte. La demostración actualmente es en inglés.</p></details>
-      <details><summary>¿Cuándo puede estar activo?</summary><p>Aproximadamente una semana desde el inicio para el teléfono por sí solo. Nos das horarios, servicios y precios en una llamada de 20 minutos; lo configuramos, conectamos tu calendario y dirigimos tu número al asistente.</p></details>
+      <details><summary>¿Cuándo puede estar activo?</summary><p>Tu recepcionista contesta llamadas en un plazo de 7 días hábiles desde que tenemos tus horarios, servicios y los datos del desvío de llamadas. Nos los das en una llamada de 20 minutos; lo configuramos, conectamos tu calendario y dirigimos tu número al asistente. Los mensajes de texto y el trabajo en el sitio web van aparte.</p></details>
     </div>
   </div>
 </section>
@@ -768,9 +835,9 @@ nav{view-transition-name:site-nav}
 <footer>
   <div class="container">
     <div class="foot-cols">
-      <div><b>Servicios</b><br><a href="/es/services/websites">Sitios web</a> · <a href="/es/services/front-door">Front Door</a> · <a href="/es/services/phone">Teléfono 24/7</a> · <a href="/es/services/job-system">Gestión de trabajos</a> · <a href="/es/services/google-business-profile">Perfil de Empresa en Google</a> · <a href="/es/services/google-ads">Google Ads</a> · <a href="/es/services/business-consulting">Consultoría de negocios</a> · <a href="/es/pricing">Precios</a> · <a href="/es/proof">Resultados</a> · <a href="/es/tools/after-hours-coverage-checker">Verificador de cobertura fuera de horario</a></div>
+      <div><b>Servicios</b><br><a href="/es/services/websites">Sitios web</a> · <a href="/es/services/front-door">Front Door</a> · <a href="/es/services/phone">Teléfono 24/7</a> · <a href="/es/services/job-system">Gestión de trabajos</a> · <a href="/es/services/google-business-profile">Perfil de Empresa en Google</a> · <a href="/es/services/google-ads">Google Ads</a> · <a href="/es/services/business-consulting">Consultoría de negocios</a> · <a href="/es/pricing">Precios</a> · <a href="/es/proof">Resultados</a> · <a href="/es/guides/answering-service-cost">Costo de un servicio de contestación</a> · <a href="/es/guides/ai-receptionist-cost">Costo de una recepcionista con IA</a> · <a href="/es/guides/ai-receptionist-vs-answering-service">IA o servicio humano</a> · <a href="/es/tools/after-hours-coverage-checker">Verificador de cobertura fuera de horario</a></div>
       <div><b>Sectores</b><br><a href="/es/industries/hvac">HVAC</a> · <a href="/es/industries/plumbing">Plomería</a> · <a href="/es/industries/electrical">Electricidad</a> · <a href="/es/industries/roofing">Techos</a> · <a href="/es/industries/restoration">Restauración</a> · <a href="/es/industries/truck-repair">Reparación de camiones</a></div>
-      <div><b>Kaico LLC</b><br>Tulsa, Oklahoma · <a href="mailto:trey.kaico@gmail.com">trey.kaico@gmail.com</a> · <a href="tel:+19183592644">(918) 359-2644</a><br><a href="/es/privacy">Privacidad</a> · <a href="/es/terms">Términos</a> · <a href="/es/client-agreement">Acuerdo con el cliente</a> · <a href="/es/sms">SMS</a> · <a href="https://app.kaicovoice.com/dashboard?lang=es">Acceso clientes</a><p class="load-badge" id="loadBadge" hidden></p></div>
+      <div><b>Kaico LLC</b><br><a href="/es/tulsa">Tulsa, Oklahoma</a> · <a href="mailto:trey.kaico@gmail.com">trey.kaico@gmail.com</a> · <a href="tel:+19183592644">(918) 359-2644</a><br><a href="/es/privacy">Privacidad</a> · <a href="/es/terms">Términos</a> · <a href="/es/client-agreement">Acuerdo con el cliente</a> · <a href="/es/sms">SMS</a> · <a href="https://app.kaicovoice.com/dashboard?lang=es">Acceso clientes</a><p class="load-badge" id="loadBadge" hidden></p></div>
     </div>
   </div>
 </footer>
