@@ -628,6 +628,16 @@ nav{view-transition-name:site-nav}
     </div>
   </div>
 </nav>
+<style>
+  /* labeled sample call inside the demo box: same bubble markup as the roofing page, kept visible without the chat script */
+  .demo .call-demo { text-align: left; background: var(--bg); border: 1px solid var(--line); border-radius: 20px; padding: 24px; max-width: 640px; margin: 34px auto 0; }
+  .demo .call-demo p.call-label { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; line-height: 1.5; color: var(--muted); max-width: none; margin: 0 0 18px; }
+  .demo .call-demo .bubble { opacity: 1; transform: none; padding: 12px 16px; font-size: 14.5px; line-height: 1.5; margin: 0 0 10px; max-width: 92%; }
+  .demo .call-demo .b-ai { margin-left: auto; }
+  .demo .call-demo .bubble .who { display: block; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+  .demo p.demo-line { font-size: 15px; margin: 22px auto 0; }
+  @media (max-width: 740px) { .demo .call-demo { padding: 18px; } }
+</style>
 <main id="main">
 
 <header id="top" class="hero">
@@ -741,6 +751,16 @@ nav{view-transition-name:site-nav}
       <p>Call right now. Ask what Kaico does. Try to book something. It is an AI, it will tell you so, and it will still get you booked.</p>
       <a href="tel:+19183592644" class="demo-number"><span class="label">Call now</span><span class="num">(918) 359-2644</span></a>
       <div class="demo-fine">No signup, no spam. We never use your number for anything else.</div>
+      <div class="call-demo">
+        <p class="call-label">Illustration: a sample after-hours call for Reliable Plumbing, a fictional shop. Not a recording.</p>
+        <div class="bubble b-them"><span class="who">Caller</span>"Hi, is anyone there? It's two in the morning and a pipe just burst under my kitchen sink. There's water everywhere."</div>
+        <div class="bubble b-ai"><span class="who">Kaico receptionist</span>"You've reached Reliable Plumbing. I'm an AI receptionist and I can get a plumber headed your way. First, can you turn off the main shutoff valve? And what's your name?"</div>
+        <div class="bubble b-them"><span class="who">Caller</span>"It's Marcus. Okay, the water's off. Can somebody come out tonight?"</div>
+        <div class="bubble b-ai"><span class="who">Kaico receptionist</span>"Thanks, Marcus. What's the address?" (He gives the address.) "Got it. The first open slot on the calendar is 7 this morning. Want me to book that and note it as a burst pipe under the kitchen sink?"</div>
+        <div class="bubble b-them"><span class="who">Caller</span>"Yes, book it. Is there any way to get someone sooner?"</div>
+        <div class="bubble b-ai"><span class="who">Kaico receptionist</span>"You're booked for 7. Because this is an active leak, Reliable Plumbing's rule is to transfer you to the on-call plumber right now, so I'll try him. If he doesn't pick up, your appointment stands and he'll have your name, address and the leak details before he heads out."</div>
+      </div>
+      <p class="demo-line">Demo line: (918) 359-2644 is Kaico's own receptionist. Call it as a plumbing customer with a burst pipe and hear how it handles the booking.</p>
       <form class="gs-form gs-card callme" id="callMe" novalidate>
         <h3>Or have it call you.</h3>
         <p class="callme-lead">Type your cell and the assistant calls you within a minute, as if you were a customer. One call, only when you ask, between 8am and 9pm Central.</p>
