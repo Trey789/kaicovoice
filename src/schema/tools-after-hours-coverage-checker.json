@@ -1,0 +1,46 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does this store my hours?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The checker runs in your browser and sends nothing to Kaico or anyone else. Reload the page and it goes back to the default week."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What counts as covered?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An hour counts as covered when you mark it as a time someone at the shop answers. The checker does not know whether that person actually picked up; it only counts the hours you enter."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What about holidays?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not modeled. The checker assumes every week looks the same. Holidays, sick days and a tech out on a long job are not in the count."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is it accurate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is arithmetic on the hours you enter, nothing more: 168 hours in a week, minus the hours you mark as answered. If the shop line forwards to a cell after closing, enter those hours too."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How are nights and weekend days counted?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A night runs from 10:00 PM to 6:00 AM and counts as uncovered when nobody answers at any point in it. A weekend day counts when Saturday or Sunday has no answered hours at all."
+      }
+    }
+  ]
+}

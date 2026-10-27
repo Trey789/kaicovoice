@@ -28,6 +28,9 @@
 - [Terms of Service | Kaico Voice](https://www.kaicovoice.com/terms): Website, service and SMS terms.
 - [SMS Program Details | Kaico Voice](https://www.kaicovoice.com/sms): SMS consent, message types and opt-out details.
 
+## English: tools
+- [Free After-Hours Coverage Checker | Kaico Voice](https://www.kaicovoice.com/tools/after-hours-coverage-checker): Free checker: enter the hours your shop answers and see the unanswered hours, nights and weekend days each week.
+
 ## Español: información general
 - [Sitios web, Google y teléfono para oficios | Kaico Voice](https://www.kaicovoice.com/es): Servicios de sitios web, perfil de Google, teléfono y sistema de trabajos para oficios.
 - [Precios | Kaico Voice](https://www.kaicovoice.com/es/pricing): Opciones publicadas de pago único y mensual, con detalles de condiciones y alcance.
@@ -54,4 +57,7 @@
 - [Política de privacidad | Kaico Voice](https://www.kaicovoice.com/es/privacy): Tratamiento de datos, incluidas las llamadas a la recepcionista con IA.
 - [Términos de servicio | Kaico Voice](https://www.kaicovoice.com/es/terms): Condiciones del sitio web, los servicios y los SMS.
 - [Detalles del programa de SMS | Kaico Voice](https://www.kaicovoice.com/es/sms): Consentimiento, tipos de mensajes y baja del programa de SMS.
+
+## Español: herramientas
+- [Verificador de cobertura fuera de horario | Kaico Voice](https://www.kaicovoice.com/es/tools/after-hours-coverage-checker): Verificador gratuito: ingresa las horas en que tu negocio contesta y ve las horas, noches y fines de semana sin cobertura.
 
