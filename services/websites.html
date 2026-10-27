@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Contractor Website Design | Kaico Voice</title>
-<meta name="description" content="Contractor website design that books the job: click-to-call, a real quote form, your Google listing wired in. From $3,500, priced in the open." />
+<meta name="description" content="Contractor website design that books the job: click-to-call, a real quote form, your Google listing wired in. Standard $1,500, Premium $3,500, in the open." />
 <link rel="canonical" href="https://www.kaicovoice.com/services/websites" />
 <link rel="alternate" hreflang="en" href="https://www.kaicovoice.com/services/websites" />
 <link rel="alternate" hreflang="es" href="https://www.kaicovoice.com/es/services/websites" />
@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Kaico Voice" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:title" content="Contractor Website Design | Kaico Voice" />
-<meta property="og:description" content="Contractor website design that books the job: click-to-call, a real quote form, your Google listing wired in. From $3,500, priced in the open." />
+<meta property="og:description" content="Contractor website design that books the job: click-to-call, a real quote form, your Google listing wired in. Standard $1,500, Premium $3,500, in the open." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.kaicovoice.com/services/websites" />
 <meta property="og:image" content="https://www.kaicovoice.com/assets/og-card.png" />
@@ -25,7 +25,7 @@
 <meta property="og:image:alt" content="Kaico Voice, AI receptionist that answers and books 24/7" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Contractor Website Design | Kaico Voice" />
-<meta name="twitter:description" content="Contractor website design that books the job: click-to-call, a real quote form, your Google listing wired in. From $3,500, priced in the open." />
+<meta name="twitter:description" content="Contractor website design that books the job: click-to-call, a real quote form, your Google listing wired in. Standard $1,500, Premium $3,500, in the open." />
 <meta name="twitter:image" content="https://www.kaicovoice.com/assets/og-card.png" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -178,7 +178,7 @@
   .price-row:last-of-type { border-bottom: 0; }
   .price-amt { font-family: 'Bricolage Grotesque'; font-size: 32px; font-weight: 800; letter-spacing: -0.02em; }
   .price-amt em { font-style: normal; font-size: 14px; font-weight: 600; color: var(--muted); margin-left: 6px; font-family: 'Hanken Grotesk'; }
-  .price-meta { color: var(--muted); font-size: 14px; }
+  .price-meta { color: var(--muted); font-size: 14px; text-wrap: balance; }
   .price-fine { color: var(--muted); font-size: 14px; line-height: 1.55; margin: 22px 0 26px; }
   .price-inner .btn { width: 100%; justify-content: center; }
 
@@ -453,6 +453,21 @@ nav{view-transition-name:site-nav}
 .mc-result{font-size:20px;line-height:1.4;margin:6px 0 0}.mc-result output{font-weight:800;color:var(--signal)}
 .mc-fine{font-size:13px;color:var(--muted);margin:0}
 .mc.mc-zero .mc-if,.mc:not(.mc-zero) .mc-none{display:none}
+/* plan compare table (pricing, phone) and a two-up grid for short lists */
+.grid-2{display:grid;gap:18px;grid-template-columns:repeat(2,1fr);max-width:760px}
+.cmp-wrap{overflow-x:auto;margin-top:8px}
+.cmp{width:100%;border-collapse:separate;border-spacing:0;font-size:15px;background:var(--surface);border:1px solid var(--line);border-radius:14px}
+.cmp caption{text-align:left;font-size:13px;color:var(--muted);padding:0 0 10px}
+.cmp th,.cmp td{padding:13px 16px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;line-height:1.4}
+.cmp thead th{font-family:'Bricolage Grotesque';font-weight:700;background:var(--surface-2)}
+.cmp thead th:first-child{border-radius:14px 0 0 0}.cmp thead th:last-child{border-radius:0 14px 0 0}
+.cmp thead th:not(:first-child),.cmp td{text-align:center;width:24%}
+.cmp tbody th{font-weight:500}
+.cmp tbody tr:last-child th,.cmp tbody tr:last-child td{border-bottom:0}
+.cmp .yes{color:var(--signal);font-weight:800;font-size:18px}
+.cmp .no{color:var(--muted)}
+.vh{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media (max-width:740px){.grid-2{grid-template-columns:1fr}.cmp{font-size:14px}.cmp th,.cmp td{padding:11px 10px}.cmp thead th:not(:first-child),.cmp td{width:25%}}
 </style>
 
 <script type="application/ld+json">{
@@ -479,9 +494,10 @@ nav{view-transition-name:site-nav}
     "name": "Kaico Voice services",
     "itemListElement": [
       { "@type": "Offer", "name": "Front-door audit (scoping)", "price": "0", "priceCurrency": "USD", "description": "Free scoping audit of your website, Google listing and phone, before any quote." },
-      { "@type": "Offer", "name": "Front Door Fix", "price": "1500", "priceCurrency": "USD", "description": "One-time fix of an existing site: click-to-call, quote form, Google listing wired in, tracking." },
-      { "@type": "Offer", "name": "Website Build, Standard", "price": "3500", "priceCurrency": "USD" },
-      { "@type": "Offer", "name": "Website Build, Premium", "price": "6500", "priceCurrency": "USD" },
+      { "@type": "Offer", "name": "Website Build, Standard", "price": "1500", "priceCurrency": "USD" },
+      { "@type": "Offer", "name": "Website Build, Premium", "price": "3500", "priceCurrency": "USD" },
+      { "@type": "Offer", "name": "24/7 AI Receptionist", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "299", "priceCurrency": "USD", "billingDuration": "P1M" } },
+      { "@type": "Offer", "name": "24/7 AI Receptionist setup", "price": "299", "priceCurrency": "USD", "description": "One-time setup for the 24/7 AI Receptionist plan." },
       { "@type": "Offer", "name": "Front Door", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "900", "priceCurrency": "USD", "billingDuration": "P1M" } },
       { "@type": "Offer", "name": "Front Door + Growth", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "1750", "priceCurrency": "USD", "billingDuration": "P1M" } },
       { "@type": "Offer", "name": "Website Care", "priceSpecification": { "@type": "UnitPriceSpecification", "minPrice": "149", "maxPrice": "299", "priceCurrency": "USD", "billingDuration": "P1M" } }
@@ -509,20 +525,14 @@ nav{view-transition-name:site-nav}
       "offers": [
         {
           "@type": "Offer",
-          "name": "Front Door Fix",
+          "name": "Website Build, Standard",
           "price": "1500",
           "priceCurrency": "USD"
         },
         {
           "@type": "Offer",
-          "name": "Website Build, Standard",
-          "price": "3500",
-          "priceCurrency": "USD"
-        },
-        {
-          "@type": "Offer",
           "name": "Website Build, Premium",
-          "price": "6500",
+          "price": "3500",
           "priceCurrency": "USD"
         }
       ]
@@ -532,10 +542,10 @@ nav{view-transition-name:site-nav}
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "I have a site. Fix or rebuild?",
+          "name": "I have a site. Do I need a new one?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The audit decides, from public data, before you spend anything. A site with a sound structure and a broken front door gets the $1,500 Fix. A template that fights every change, or a site that says the wrong things about your trade, gets rebuilt. If your site is fine, the audit says so."
+            "text": "The audit decides, from public data, before you spend anything. A template that fights every change, a phone number that cannot be tapped, or a site that says the wrong things about your trade gets rebuilt, Standard or Premium. If your site is fine, the audit says so and you owe nothing."
           }
         },
         {
@@ -649,9 +659,9 @@ nav{view-transition-name:site-nav}
       <div class="inc"><span class="ck" aria-hidden="true">✓</span> Your domain, your files, your content, your data. Ownership is written into the client agreement, section 5</div>
     </div>
     <div class="grid-3" style="margin-top:40px;">
-      <div class="card reveal"><h3>Standard, $3,500.</h3><p>The Blue Sands shape, trimmed to what a trade shop needs: the core pages, the quote form, the listing wired in, tracking, and a launch checklist we walk through together.</p></div>
-      <div class="card reveal"><h3>Premium, $6,500.</h3><p>Everything in Standard plus a delivered-price calculator, a self-serve scheduler your customers book into without calling, and multi-service pages for shops that do more than one trade.</p></div>
-      <div class="card reveal"><h3>Already have a site? Fix, $1,500.</h3><p>If the audit says your site is salvageable, we wire in click-to-call, a real quote form, your listing and tracking, and hand it back. Half a build for a site that only needs its front door repaired.</p></div>
+      <div class="card reveal"><h3>Standard, $1,500.</h3><p>The Blue Sands shape, trimmed to what a trade shop needs: the core pages, the quote form, the listing wired in, tracking, and a launch checklist we walk through together.</p></div>
+      <div class="card reveal"><h3>Premium, $3,500.</h3><p>Everything in Standard plus a delivered-price calculator, a self-serve scheduler your customers book into without calling, and multi-service pages for shops that do more than one trade.</p></div>
+      <div class="card reveal"><h3>Already have a site? Start with the audit.</h3><p>The free front-door audit looks at your site, your listing and your phone from public data and says whether a Standard or a Premium build fits, or whether your current site already does the job. If it does, we say so and you owe nothing.</p></div>
     </div>
   </div>
 </section>
@@ -671,7 +681,7 @@ nav{view-transition-name:site-nav}
 <section>
   <div class="container">
     <h2>What it <span class="em">costs.</span></h2>
-    <p class="lead">Front Door Fix $1,500. Website Build, Standard $3,500. Website Build, Premium $6,500. One time, you own it, and the scoping audit tells you which one you actually need. Ongoing care, if you want it, is $149 or $299 a month.</p>
+    <p class="lead">Website Build, Standard $1,500. Website Build, Premium $3,500. One time, you own it, and the free scoping audit tells you which one you need. Ongoing care, if you want it, is $149 or $299 a month.</p>
     <p style="margin-top:20px;"><a href="/pricing" class="btn btn-ghost">See the full ladder</a></p>
   </div>
 </section>
@@ -694,7 +704,7 @@ nav{view-transition-name:site-nav}
   <div class="container-narrow">
     <h2>Frequently <span class="em">asked.</span></h2>
     <div style="margin-top:32px;">
-      <details><summary>I have a site. Fix or rebuild?</summary><p>The audit decides, from public data, before you spend anything. A site with a sound structure and a broken front door gets the $1,500 Fix. A template that fights every change, or a site that says the wrong things about your trade, gets rebuilt. If your site is fine, the audit says so.</p></details>
+      <details><summary>I have a site. Do I need a new one?</summary><p>The audit decides, from public data, before you spend anything. A template that fights every change, a phone number that cannot be tapped, or a site that says the wrong things about your trade gets rebuilt, Standard or Premium. If your site is fine, the audit says so and you owe nothing.</p></details>
       <details><summary>Who owns it?</summary><p>You do. Your domain name, your Google Business Profile, your content, your customer list and your customer data are yours at all times, including after cancellation. On exit we hand over the website files and every account login within 14 days. That is section 5 of the client agreement.</p></details>
       <details><summary>How long does it take?</summary><p>We set the launch date at kickoff, once we have your content and your logins. We do not promise a timeline on a web page for work we have not scoped yet.</p></details>
       <details><summary>Do you host it?</summary><p>Yes, if you want us to. Website Care is $149 a month for hosting, updates, backups and small changes, or $299 with a monthly content and listing pass. Front Door, the monthly service, includes care.</p></details>
@@ -718,7 +728,7 @@ nav{view-transition-name:site-nav}
     <div class="foot-cols">
       <div><b>Services</b><br><a href="/services/websites">Websites</a> · <a href="/services/front-door">Front Door</a> · <a href="/services/phone">24/7 phone</a> · <a href="/services/job-system">Job system</a> · <a href="/services/google-business-profile">Google Business Profile</a> · <a href="/services/google-ads">Google Ads</a> · <a href="/services/business-consulting">Business consulting</a> · <a href="/pricing">Pricing</a> · <a href="/proof">Proof</a> · <a href="/guides/answering-service-cost">Answering service cost</a> · <a href="/guides/ai-receptionist-cost">AI receptionist cost</a> · <a href="/guides/ai-receptionist-vs-answering-service">AI vs answering service</a></div>
       <div><b>Industries</b><br><a href="/industries/hvac">HVAC</a> · <a href="/industries/plumbing">Plumbing</a> · <a href="/industries/electrical">Electrical</a> · <a href="/industries/roofing">Roofing</a> · <a href="/industries/restoration">Restoration</a> · <a href="/industries/truck-repair">Truck repair</a></div>
-      <div><b>Kaico LLC</b><br>Tulsa, Oklahoma · <a href="mailto:trey.kaico@gmail.com">trey.kaico@gmail.com</a> · <a href="tel:+19183592644">(918) 359-2644</a><br><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/client-agreement">Client agreement</a> · <a href="/sms">SMS</a> · <a href="https://app.kaicovoice.com/dashboard">Client login</a><p class="load-badge" id="loadBadge" hidden></p></div>
+      <div><b>Kaico LLC</b><br><a href="/tulsa">Tulsa, Oklahoma</a> · <a href="mailto:trey.kaico@gmail.com">trey.kaico@gmail.com</a> · <a href="tel:+19183592644">(918) 359-2644</a><br><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/client-agreement">Client agreement</a> · <a href="/sms">SMS</a> · <a href="https://app.kaicovoice.com/dashboard">Client login</a><p class="load-badge" id="loadBadge" hidden></p></div>
     </div>
   </div>
 </footer>

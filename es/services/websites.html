@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Diseño de sitios web para contratistas | Kaico Voice</title>
-<meta name="description" content="Sitios web para contratistas que consiguen trabajos: botón de llamada, formulario de cotización y ficha de Google conectada. Desde $3,500, con precios claros." />
+<meta name="description" content="Sitios web para contratistas que consiguen trabajos: botón de llamada, formulario de cotización y ficha de Google conectada. Estándar $1,500, Premium $3,500." />
 <link rel="canonical" href="https://www.kaicovoice.com/es/services/websites" />
 <link rel="alternate" hreflang="en" href="https://www.kaicovoice.com/services/websites" />
 <link rel="alternate" hreflang="es" href="https://www.kaicovoice.com/es/services/websites" />
@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Kaico Voice" />
 <meta property="og:locale" content="es_US" />
 <meta property="og:title" content="Diseño de sitios web para contratistas | Kaico Voice" />
-<meta property="og:description" content="Sitios web para contratistas que consiguen trabajos: botón de llamada, formulario de cotización y ficha de Google conectada. Desde $3,500, con precios claros." />
+<meta property="og:description" content="Sitios web para contratistas que consiguen trabajos: botón de llamada, formulario de cotización y ficha de Google conectada. Estándar $1,500, Premium $3,500." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.kaicovoice.com/es/services/websites" />
 <meta property="og:image" content="https://www.kaicovoice.com/assets/og-card.png" />
@@ -25,7 +25,7 @@
 <meta property="og:image:alt" content="Kaico Voice, asistente que atiende llamadas las 24 horas" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Diseño de sitios web para contratistas | Kaico Voice" />
-<meta name="twitter:description" content="Sitios web para contratistas que consiguen trabajos: botón de llamada, formulario de cotización y ficha de Google conectada. Desde $3,500, con precios claros." />
+<meta name="twitter:description" content="Sitios web para contratistas que consiguen trabajos: botón de llamada, formulario de cotización y ficha de Google conectada. Estándar $1,500, Premium $3,500." />
 <meta name="twitter:image" content="https://www.kaicovoice.com/assets/og-card.png" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -178,7 +178,7 @@
   .price-row:last-of-type { border-bottom: 0; }
   .price-amt { font-family: 'Bricolage Grotesque'; font-size: 32px; font-weight: 800; letter-spacing: -0.02em; }
   .price-amt em { font-style: normal; font-size: 14px; font-weight: 600; color: var(--muted); margin-left: 6px; font-family: 'Hanken Grotesk'; }
-  .price-meta { color: var(--muted); font-size: 14px; }
+  .price-meta { color: var(--muted); font-size: 14px; text-wrap: balance; }
   .price-fine { color: var(--muted); font-size: 14px; line-height: 1.55; margin: 22px 0 26px; }
   .price-inner .btn { width: 100%; justify-content: center; }
 
@@ -453,6 +453,21 @@ nav{view-transition-name:site-nav}
 .mc-result{font-size:20px;line-height:1.4;margin:6px 0 0}.mc-result output{font-weight:800;color:var(--signal)}
 .mc-fine{font-size:13px;color:var(--muted);margin:0}
 .mc.mc-zero .mc-if,.mc:not(.mc-zero) .mc-none{display:none}
+/* plan compare table (pricing, phone) and a two-up grid for short lists */
+.grid-2{display:grid;gap:18px;grid-template-columns:repeat(2,1fr);max-width:760px}
+.cmp-wrap{overflow-x:auto;margin-top:8px}
+.cmp{width:100%;border-collapse:separate;border-spacing:0;font-size:15px;background:var(--surface);border:1px solid var(--line);border-radius:14px}
+.cmp caption{text-align:left;font-size:13px;color:var(--muted);padding:0 0 10px}
+.cmp th,.cmp td{padding:13px 16px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;line-height:1.4}
+.cmp thead th{font-family:'Bricolage Grotesque';font-weight:700;background:var(--surface-2)}
+.cmp thead th:first-child{border-radius:14px 0 0 0}.cmp thead th:last-child{border-radius:0 14px 0 0}
+.cmp thead th:not(:first-child),.cmp td{text-align:center;width:24%}
+.cmp tbody th{font-weight:500}
+.cmp tbody tr:last-child th,.cmp tbody tr:last-child td{border-bottom:0}
+.cmp .yes{color:var(--signal);font-weight:800;font-size:18px}
+.cmp .no{color:var(--muted)}
+.vh{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media (max-width:740px){.grid-2{grid-template-columns:1fr}.cmp{font-size:14px}.cmp th,.cmp td{padding:11px 10px}.cmp thead th:not(:first-child),.cmp td{width:25%}}
 </style>
 
 <script type="application/ld+json">{
@@ -507,22 +522,32 @@ nav{view-transition-name:site-nav}
       },
       {
         "@type": "Offer",
-        "name": "Front Door Fix",
-        "price": "1500",
-        "priceCurrency": "USD",
-        "description": "Mejora puntual de un sitio existente: botón para llamar, formulario de cotización, conexión con el perfil de Google y seguimiento."
-      },
-      {
-        "@type": "Offer",
         "name": "Creación de sitio web, Estándar",
-        "price": "3500",
+        "price": "1500",
         "priceCurrency": "USD"
       },
       {
         "@type": "Offer",
         "name": "Creación de sitio web, Premium",
-        "price": "6500",
+        "price": "3500",
         "priceCurrency": "USD"
+      },
+      {
+        "@type": "Offer",
+        "name": "Recepcionista con IA 24/7",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "299",
+          "priceCurrency": "USD",
+          "billingDuration": "P1M"
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Configuración inicial de la Recepcionista con IA 24/7",
+        "price": "299",
+        "priceCurrency": "USD",
+        "description": "Pago único de configuración inicial para el plan de Recepcionista con IA 24/7."
       },
       {
         "@type": "Offer",
@@ -640,9 +665,9 @@ nav{view-transition-name:site-nav}
       <div class="inc"><span class="ck" aria-hidden="true">✓</span> Tu dominio, archivos, contenido y datos te pertenecen. Esto está por escrito en la sección 5 del acuerdo con el cliente</div>
     </div>
     <div class="grid-3" style="margin-top:40px;">
-      <div class="card reveal"><h3>Estándar, $3,500.</h3><p>Una versión de Blue Sands adaptada a un negocio de oficios: páginas principales, formulario de cotización, ficha de Google conectada, seguimiento y una lista de verificación para el lanzamiento que revisamos juntos.</p></div>
-      <div class="card reveal"><h3>Premium, $6,500.</h3><p>Todo lo del plan Estándar, más una calculadora de precios, reservas en línea sin necesidad de llamar y páginas para negocios que ofrecen varios servicios.</p></div>
-      <div class="card reveal"><h3>¿Ya tienes un sitio? Corrección, $1,500.</h3><p>Si la evaluación muestra que tu sitio se puede mejorar, agregamos botones de llamada, un formulario de cotización, conexión con tu ficha y seguimiento, y te lo entregamos. Una solución más pequeña para un sitio que solo necesita reparar su entrada.</p></div>
+      <div class="card reveal"><h3>Estándar, $1,500.</h3><p>Una versión de Blue Sands adaptada a un negocio de oficios: páginas principales, formulario de cotización, ficha de Google conectada, seguimiento y una lista de verificación para el lanzamiento que revisamos juntos.</p></div>
+      <div class="card reveal"><h3>Premium, $3,500.</h3><p>Todo lo del plan Estándar, más una calculadora de precios, reservas en línea sin necesidad de llamar y páginas para negocios que ofrecen varios servicios.</p></div>
+      <div class="card reveal"><h3>¿Ya tienes un sitio? Empieza por la evaluación.</h3><p>La evaluación gratuita revisa tu sitio, tu ficha y tu teléfono con datos públicos y te dice si te conviene una construcción Estándar o Premium, o si tu sitio actual ya cumple. Si cumple, te lo decimos y no pagas nada.</p></div>
     </div>
   </div>
 </section>
@@ -662,7 +687,7 @@ nav{view-transition-name:site-nav}
 <section>
   <div class="container">
     <h2>Cuánto <span class="em">cuesta.</span></h2>
-    <p class="lead">Front Door Fix: $1,500. Sitio web Estándar: $3,500. Sitio web Premium: $6,500. Es un pago único y el sitio te pertenece. La evaluación de alcance indica qué opción necesitas. Si quieres mantenimiento continuo, cuesta $149 o $299 al mes.</p>
+    <p class="lead">Sitio web Estándar: $1,500. Sitio web Premium: $3,500. Es un pago único y el sitio te pertenece. La evaluación gratuita indica qué opción necesitas. Si quieres mantenimiento continuo, cuesta $149 o $299 al mes.</p>
     <p style="margin-top:20px;"><a href="/es/pricing" class="btn btn-ghost">Ver todos los precios</a></p>
   </div>
 </section>
@@ -685,7 +710,7 @@ nav{view-transition-name:site-nav}
   <div class="container-narrow">
     <h2>Preguntas <span class="em">frecuentes.</span></h2>
     <div style="margin-top:32px;">
-      <details><summary>Ya tengo un sitio. ¿Corregirlo o rehacerlo?</summary><p>La evaluación con datos públicos lo determina antes de que gastes. Si la estructura es buena pero la entrada falla, recomendamos la corrección de $1,500. Si la plantilla dificulta cada cambio o describe mal tu oficio, recomendamos rehacerlo. Si tu sitio ya funciona bien, también te lo decimos.</p></details>
+      <details><summary>Ya tengo un sitio. ¿Necesito uno nuevo?</summary><p>La evaluación con datos públicos lo determina antes de que gastes. Si la plantilla dificulta cada cambio, el teléfono no se puede tocar para llamar o el sitio describe mal tu oficio, recomendamos rehacerlo, en Estándar o Premium. Si tu sitio ya funciona bien, te lo decimos y no pagas nada.</p></details>
       <details><summary>¿A quién le pertenece?</summary><p>A ti. Tu dominio, Perfil de Negocio de Google, contenido, lista de clientes y datos siguen siendo tuyos, incluso después de cancelar. Al terminar, te entregamos los archivos del sitio y accesos a las cuentas en un plazo de 14 días. Está en la sección 5 del acuerdo con el cliente.</p></details>
       <details><summary>¿Cuánto tarda?</summary><p>Definimos la fecha de lanzamiento al comenzar, cuando tengamos tu contenido y accesos. No prometemos plazos en una página web para un trabajo cuyo alcance aún no evaluamos.</p></details>
       <details><summary>¿Ustedes alojan el sitio?</summary><p>Sí, si lo deseas. Website Care cuesta $149 al mes por alojamiento, actualizaciones, copias de seguridad y cambios pequeños; la opción de $299 agrega una revisión mensual del contenido y la ficha de Google. Front Door incluye mantenimiento.</p></details>
@@ -709,7 +734,7 @@ nav{view-transition-name:site-nav}
     <div class="foot-cols">
       <div><b>Servicios</b><br><a href="/es/services/websites">Sitios web</a> · <a href="/es/services/front-door">Front Door</a> · <a href="/es/services/phone">Teléfono 24/7</a> · <a href="/es/services/job-system">Gestión de trabajos</a> · <a href="/es/services/google-business-profile">Perfil de Empresa en Google</a> · <a href="/es/services/google-ads">Google Ads</a> · <a href="/es/services/business-consulting">Consultoría de negocios</a> · <a href="/es/pricing">Precios</a> · <a href="/es/proof">Resultados</a> · <a href="/es/guides/answering-service-cost">Costo de un servicio de contestación</a> · <a href="/es/guides/ai-receptionist-cost">Costo de una recepcionista con IA</a> · <a href="/es/guides/ai-receptionist-vs-answering-service">IA o servicio humano</a></div>
       <div><b>Sectores</b><br><a href="/es/industries/hvac">HVAC</a> · <a href="/es/industries/plumbing">Plomería</a> · <a href="/es/industries/electrical">Electricidad</a> · <a href="/es/industries/roofing">Techos</a> · <a href="/es/industries/restoration">Restauración</a> · <a href="/es/industries/truck-repair">Reparación de camiones</a></div>
-      <div><b>Kaico LLC</b><br>Tulsa, Oklahoma · <a href="mailto:trey.kaico@gmail.com">trey.kaico@gmail.com</a> · <a href="tel:+19183592644">(918) 359-2644</a><br><a href="/es/privacy">Privacidad</a> · <a href="/es/terms">Términos</a> · <a href="/es/client-agreement">Acuerdo con el cliente</a> · <a href="/es/sms">SMS</a> · <a href="https://app.kaicovoice.com/dashboard?lang=es">Acceso clientes</a><p class="load-badge" id="loadBadge" hidden></p></div>
+      <div><b>Kaico LLC</b><br><a href="/es/tulsa">Tulsa, Oklahoma</a> · <a href="mailto:trey.kaico@gmail.com">trey.kaico@gmail.com</a> · <a href="tel:+19183592644">(918) 359-2644</a><br><a href="/es/privacy">Privacidad</a> · <a href="/es/terms">Términos</a> · <a href="/es/client-agreement">Acuerdo con el cliente</a> · <a href="/es/sms">SMS</a> · <a href="https://app.kaicovoice.com/dashboard?lang=es">Acceso clientes</a><p class="load-badge" id="loadBadge" hidden></p></div>
     </div>
   </div>
 </footer>

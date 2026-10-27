@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Website, Google Listing and Phone for Trades | Kaico Voice</title>
-<meta name="description" content="Kaico builds and runs the front door for HVAC, plumbing, electrical and roofing shops: website, Google listing, phone and job system, priced in the open." />
+<meta name="description" content="Kaico builds and runs the front door for the trades: 24/7 AI receptionist $299 a month, Front Door from $900 a month, website builds from $1,500. In the open." />
 <link rel="canonical" href="https://www.kaicovoice.com/" />
 <link rel="alternate" hreflang="en" href="https://www.kaicovoice.com/" />
 <link rel="alternate" hreflang="es" href="https://www.kaicovoice.com/es" />
@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Kaico Voice" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:title" content="Website, Google Listing and Phone for Trades | Kaico Voice" />
-<meta property="og:description" content="Kaico builds and runs the front door for HVAC, plumbing, electrical and roofing shops: website, Google listing, phone and job system, priced in the open." />
+<meta property="og:description" content="Kaico builds and runs the front door for the trades: 24/7 AI receptionist $299 a month, Front Door from $900 a month, website builds from $1,500. In the open." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.kaicovoice.com/" />
 <meta property="og:image" content="https://www.kaicovoice.com/assets/og-card.png" />
@@ -25,7 +25,7 @@
 <meta property="og:image:alt" content="Kaico Voice, AI receptionist that answers and books 24/7" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Website, Google Listing and Phone for Trades | Kaico Voice" />
-<meta name="twitter:description" content="Kaico builds and runs the front door for HVAC, plumbing, electrical and roofing shops: website, Google listing, phone and job system, priced in the open." />
+<meta name="twitter:description" content="Kaico builds and runs the front door for the trades: 24/7 AI receptionist $299 a month, Front Door from $900 a month, website builds from $1,500. In the open." />
 <meta name="twitter:image" content="https://www.kaicovoice.com/assets/og-card.png" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -178,7 +178,7 @@
   .price-row:last-of-type { border-bottom: 0; }
   .price-amt { font-family: 'Bricolage Grotesque'; font-size: 32px; font-weight: 800; letter-spacing: -0.02em; }
   .price-amt em { font-style: normal; font-size: 14px; font-weight: 600; color: var(--muted); margin-left: 6px; font-family: 'Hanken Grotesk'; }
-  .price-meta { color: var(--muted); font-size: 14px; }
+  .price-meta { color: var(--muted); font-size: 14px; text-wrap: balance; }
   .price-fine { color: var(--muted); font-size: 14px; line-height: 1.55; margin: 22px 0 26px; }
   .price-inner .btn { width: 100%; justify-content: center; }
 
@@ -453,6 +453,21 @@ nav{view-transition-name:site-nav}
 .mc-result{font-size:20px;line-height:1.4;margin:6px 0 0}.mc-result output{font-weight:800;color:var(--signal)}
 .mc-fine{font-size:13px;color:var(--muted);margin:0}
 .mc.mc-zero .mc-if,.mc:not(.mc-zero) .mc-none{display:none}
+/* plan compare table (pricing, phone) and a two-up grid for short lists */
+.grid-2{display:grid;gap:18px;grid-template-columns:repeat(2,1fr);max-width:760px}
+.cmp-wrap{overflow-x:auto;margin-top:8px}
+.cmp{width:100%;border-collapse:separate;border-spacing:0;font-size:15px;background:var(--surface);border:1px solid var(--line);border-radius:14px}
+.cmp caption{text-align:left;font-size:13px;color:var(--muted);padding:0 0 10px}
+.cmp th,.cmp td{padding:13px 16px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;line-height:1.4}
+.cmp thead th{font-family:'Bricolage Grotesque';font-weight:700;background:var(--surface-2)}
+.cmp thead th:first-child{border-radius:14px 0 0 0}.cmp thead th:last-child{border-radius:0 14px 0 0}
+.cmp thead th:not(:first-child),.cmp td{text-align:center;width:24%}
+.cmp tbody th{font-weight:500}
+.cmp tbody tr:last-child th,.cmp tbody tr:last-child td{border-bottom:0}
+.cmp .yes{color:var(--signal);font-weight:800;font-size:18px}
+.cmp .no{color:var(--muted)}
+.vh{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media (max-width:740px){.grid-2{grid-template-columns:1fr}.cmp{font-size:14px}.cmp th,.cmp td{padding:11px 10px}.cmp thead th:not(:first-child),.cmp td{width:25%}}
 </style>
 
 <script type="application/ld+json">{
@@ -479,9 +494,10 @@ nav{view-transition-name:site-nav}
     "name": "Kaico Voice services",
     "itemListElement": [
       { "@type": "Offer", "name": "Front-door audit (scoping)", "price": "0", "priceCurrency": "USD", "description": "Free scoping audit of your website, Google listing and phone, before any quote." },
-      { "@type": "Offer", "name": "Front Door Fix", "price": "1500", "priceCurrency": "USD", "description": "One-time fix of an existing site: click-to-call, quote form, Google listing wired in, tracking." },
-      { "@type": "Offer", "name": "Website Build, Standard", "price": "3500", "priceCurrency": "USD" },
-      { "@type": "Offer", "name": "Website Build, Premium", "price": "6500", "priceCurrency": "USD" },
+      { "@type": "Offer", "name": "Website Build, Standard", "price": "1500", "priceCurrency": "USD" },
+      { "@type": "Offer", "name": "Website Build, Premium", "price": "3500", "priceCurrency": "USD" },
+      { "@type": "Offer", "name": "24/7 AI Receptionist", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "299", "priceCurrency": "USD", "billingDuration": "P1M" } },
+      { "@type": "Offer", "name": "24/7 AI Receptionist setup", "price": "299", "priceCurrency": "USD", "description": "One-time setup for the 24/7 AI Receptionist plan." },
       { "@type": "Offer", "name": "Front Door", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "900", "priceCurrency": "USD", "billingDuration": "P1M" } },
       { "@type": "Offer", "name": "Front Door + Growth", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "1750", "priceCurrency": "USD", "billingDuration": "P1M" } },
       { "@type": "Offer", "name": "Website Care", "priceSpecification": { "@type": "UnitPriceSpecification", "minPrice": "149", "maxPrice": "299", "priceCurrency": "USD", "billingDuration": "P1M" } }
@@ -506,7 +522,7 @@ nav{view-transition-name:site-nav}
       "name": "I already have a website. Do I need this?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Maybe not. The audit says whether your site is salvageable. If it is, the Front Door Fix at $1,500 wires in click-to-call, a real quote form, your Google listing and tracking. If it is not, we rebuild. If you need neither, the audit says that too."
+        "text": "Maybe not. The free audit says whether your site does its job. If it does, we say so and you owe nothing. If it does not, we build a new one, Standard at $1,500 or Premium at $3,500, and you own it. The phone can start on its own either way, at $299 a month."
       }
     },
     {
@@ -538,7 +554,7 @@ nav{view-transition-name:site-nav}
       "name": "Is the phone an AI?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. It is an AI receptionist that answers, books to your calendar and texts you a summary. Callers are told they are speaking with an AI, and every text carries STOP. Call (918) 359-2644 and hear it."
+        "text": "Yes. It is an AI receptionist that answers, books to your calendar and sends your business a summary. Callers are told they are speaking with an AI. A client business can add optional booking texts only with its own approved messaging program and each caller's consent. Call (918) 359-2644 and hear it."
       }
     },
     {
@@ -648,10 +664,9 @@ nav{view-transition-name:site-nav}
 <section>
   <div class="container">
     <p class="lead" style="margin-bottom:20px;">Built and run by Kaico:</p>
-    <div class="grid-3">
+    <div class="grid-2">
       <div class="vert reveal"><strong>Blue Sands Trucking</strong><span>Hauling. 24-page site, delivered-price calculator, self-serve scheduler.</span></div>
       <div class="vert reveal"><strong>Elite Car Plug</strong><span>Luxury rental. Nine-page site, online booking, AI phone line.</span></div>
-      <div class="vert reveal"><strong>Tri-Tech Auto Tinting</strong><span>Auto tint. Single-page site and a 24/7 phone.</span></div>
     </div>
   </div>
 </section>
@@ -676,8 +691,8 @@ nav{view-transition-name:site-nav}
     <div class="tl-track" aria-hidden="true"><div class="tl-fill"></div><span class="tl-node"></span><span class="tl-node"></span><span class="tl-node"></span></div>
     <div class="steps">
       <div class="step reveal"><div class="step-day">Step 1</div><h3>Tell us what you need.</h3><p>Use the form or call. We scope it with a free front-door audit from public data, so you see what leaks, what works and what we would fix first, before you spend anything.</p></div>
-      <div class="step reveal"><div class="step-day">Step 2</div><h3>Fix or build.</h3><p>A $1,500 fix if your site is salvageable, a $3,500 build if it is not. You own the domain, the files and the listing.</p></div>
-      <div class="step reveal"><div class="step-day">Step 3</div><h3>Run it monthly.</h3><p>Front Door keeps the site, the listing and the phone working, and hands you the job system, from $900 a month.</p></div>
+      <div class="step reveal"><div class="step-day">Step 2</div><h3>Build it, if you need it.</h3><p>If the audit says your site needs replacing, a Standard build is $1,500 and a Premium build is $3,500. You own the domain, the files and the listing.</p></div>
+      <div class="step reveal"><div class="step-day">Step 3</div><h3>Run it monthly.</h3><p>Start with the 24/7 AI Receptionist at $299 a month plus a one-time $299 setup, or have Front Door keep the site, the listing and the phone working and hand you the job system, from $900 a month.</p></div>
     </div></div>
   </div>
 </section>
@@ -705,7 +720,7 @@ nav{view-transition-name:site-nav}
     <div class="price-card reveal">
       <div class="price-inner">
         <div class="price-name">Pick the rung you need</div>
-        <div class="price-headline">One-time fixes and builds from $1,500. Front Door from $900 a month, job system included, month to month with 30 days notice.</div>
+        <div class="price-headline">The 24/7 AI Receptionist at $299 a month plus $299 one-time setup. Front Door from $900 a month, job system included. Website builds from $1,500. Month to month with 30 days notice.</div>
         <a href="/pricing" class="btn btn-signal">See the full ladder</a>
       </div>
     </div>
@@ -761,7 +776,7 @@ nav{view-transition-name:site-nav}
     <h2>Frequently <span class="em">asked.</span></h2>
     <div style="margin-top:32px;">
       <details><summary>What is the front-door audit?</summary><p>The scoping step before every quote. We pull your website, Google listing and phone from public data and write one page: what leaks, what works, what we would fix first. It is free, it needs no call, and you keep it whether or not you buy anything.</p></details>
-      <details><summary>I already have a website. Do I need this?</summary><p>Maybe not. The audit says whether your site is salvageable. If it is, the Front Door Fix at $1,500 wires in click-to-call, a real quote form, your Google listing and tracking. If it is not, we rebuild. If you need neither, the audit says that too.</p></details>
+      <details><summary>I already have a website. Do I need this?</summary><p>Maybe not. The free audit says whether your site does its job. If it does, we say so and you owe nothing. If it does not, we build a new one, Standard at $1,500 or Premium at $3,500, and you own it. The phone can start on its own either way, at $299 a month.</p></details>
       <details><summary>Do I own the site, the domain and the Google listing?</summary><p>Yes. You own your domain, your Google Business Profile, your content and your customer data at all times, including after you cancel. On exit we hand over the files and every login within 14 days. That is section 5 of the client agreement.</p></details>
       <details><summary>How long until it is live?</summary><p>We set the date at kickoff, once we have your content and your logins. We do not promise a timeline on a web page for work we have not scoped yet.</p></details>
       <details><summary>What happens if I cancel or stop paying?</summary><p>Monthly service is month to month with 30 days written notice. If a payment fails and stays unpaid for 14 days, managed services pause: ads pause, the phone reverts to your own number, listing management stops. Your website stays up for at least 60 days. Pay the open balance and everything resumes.</p></details>
@@ -862,7 +877,7 @@ nav{view-transition-name:site-nav}
     <div class="foot-cols">
       <div><b>Services</b><br><a href="/services/websites">Websites</a> · <a href="/services/front-door">Front Door</a> · <a href="/services/phone">24/7 phone</a> · <a href="/services/job-system">Job system</a> · <a href="/services/google-business-profile">Google Business Profile</a> · <a href="/services/google-ads">Google Ads</a> · <a href="/services/business-consulting">Business consulting</a> · <a href="/pricing">Pricing</a> · <a href="/proof">Proof</a> · <a href="/guides/answering-service-cost">Answering service cost</a> · <a href="/guides/ai-receptionist-cost">AI receptionist cost</a> · <a href="/guides/ai-receptionist-vs-answering-service">AI vs answering service</a></div>
       <div><b>Industries</b><br><a href="/industries/hvac">HVAC</a> · <a href="/industries/plumbing">Plumbing</a> · <a href="/industries/electrical">Electrical</a> · <a href="/industries/roofing">Roofing</a> · <a href="/industries/restoration">Restoration</a> · <a href="/industries/truck-repair">Truck repair</a></div>
-      <div><b>Kaico LLC</b><br>Tulsa, Oklahoma · <a href="mailto:trey.kaico@gmail.com">trey.kaico@gmail.com</a> · <a href="tel:+19183592644">(918) 359-2644</a><br><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/client-agreement">Client agreement</a> · <a href="/sms">SMS</a> · <a href="https://app.kaicovoice.com/dashboard">Client login</a><p class="load-badge" id="loadBadge" hidden></p></div>
+      <div><b>Kaico LLC</b><br><a href="/tulsa">Tulsa, Oklahoma</a> · <a href="mailto:trey.kaico@gmail.com">trey.kaico@gmail.com</a> · <a href="tel:+19183592644">(918) 359-2644</a><br><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/client-agreement">Client agreement</a> · <a href="/sms">SMS</a> · <a href="https://app.kaicovoice.com/dashboard">Client login</a><p class="load-badge" id="loadBadge" hidden></p></div>
     </div>
   </div>
 </footer>

@@ -21,6 +21,7 @@ LLMS_SECTIONS = (
         ("/pricing", "Published one-time and monthly options, with terms and scope details."),
         ("/proof", "Examples of completed work and how Kaico checks reported numbers."),
         ("/start", "Request a review of your website, listing, phone or job workflow."),
+        ("/tulsa", "Answering service in Tulsa, Oklahoma for trade businesses: founder-operated, delivered remotely, with setup steps and pricing."),
     )),
     ("English: services", (
         ("/services/front-door", "Monthly website, listing, phone, scheduling and job-system service."),
@@ -47,6 +48,7 @@ LLMS_SECTIONS = (
         ("/es/pricing", "Opciones publicadas de pago único y mensual, con detalles de condiciones y alcance."),
         ("/es/proof", "Ejemplos de trabajo realizado y cómo Kaico verifica las cifras publicadas."),
         ("/es/start", "Solicita una revisión de tu sitio, perfil, teléfono o proceso de trabajos."),
+        ("/es/tulsa", "Atención telefónica en Tulsa, Oklahoma para negocios de oficios: dirigida por su fundador, entregada a distancia, con pasos de configuración y precios."),
     )),
     ("Español: servicios", (
         ("/es/services/front-door", "Servicio mensual de sitio web, perfil, teléfono, reservas y sistema de trabajos."),
