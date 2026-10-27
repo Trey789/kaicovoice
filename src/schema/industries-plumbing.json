@@ -4,6 +4,14 @@
   "mainEntity": [
     {
       "@type": "Question",
+      "name": "Is this an AI receptionist for plumbers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Kaico Voice is an AI receptionist built for plumbing companies. It answers 24/7 with your company name, asks the triage questions you set, books the job into your Google Calendar, transfers urgent calls to your cell and sends you a text or email summary after each call. It tells callers it is an AI, and you can hear it yourself at (918) 359-2644."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "Can it tell an emergency from a Monday job?",
       "acceptedAnswer": {
         "@type": "Answer",

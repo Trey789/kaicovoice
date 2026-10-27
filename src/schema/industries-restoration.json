@@ -4,6 +4,14 @@
   "mainEntity": [
     {
       "@type": "Question",
+      "name": "Is this an AI receptionist for restoration companies?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Kaico Voice is an AI receptionist built for water and fire restoration companies. It answers 24/7 with your company name, captures the address, the source and the carrier, transfers an active loss to your on-call cell, books everything else into your Google Calendar and sends you a text or email summary after each call. It tells callers it is an AI, and you can hear it yourself at (918) 359-2644."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "Do you handle insurance questions on the call?",
       "acceptedAnswer": {
         "@type": "Answer",

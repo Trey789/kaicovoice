@@ -66,6 +66,14 @@
         },
         {
           "@type": "Question",
+          "name": "Does it cover after hours and weekends?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Nights, weekends and holidays work the same as business hours: the receptionist picks up on the first ring, books the job into your Google Calendar, transfers urgent calls to your cell and sends you a text or email summary of the call. You decide which calls count as urgent."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "Can I hear it first?",
           "acceptedAnswer": {
             "@type": "Answer",

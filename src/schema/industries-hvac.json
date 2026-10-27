@@ -4,6 +4,22 @@
   "mainEntity": [
     {
       "@type": "Question",
+      "name": "Is this an AI receptionist for HVAC companies?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Kaico Voice is an AI receptionist built for heating and air companies. It answers 24/7 with your company name, asks the questions you set, books the service call into your Google Calendar, transfers urgent calls to your cell and sends you a text or email summary after each call. It tells callers it is an AI, and you can hear it yourself at (918) 359-2644."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the HVAC after-hours answering service book jobs at night?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. A call at 11 pm is booked the same way as a call at 11 am: the receptionist checks your Google Calendar and offers the first real opening, so the homeowner hangs up with a time instead of a voicemail. Calls that match your emergency rules, such as a gas smell or a suspected carbon monoxide problem, transfer to your cell instead."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "Will callers know they are talking to an AI?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -23,7 +39,7 @@
       "name": "Does it work with my scheduling software?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The agent books appointments directly onto your business calendar, such as Google Calendar. If your schedule lives inside field service software, tell us on the setup call and we will map out the cleanest handoff for your dispatcher before the agent takes a single live call."
+        "text": "The agent books appointments directly onto your Google Calendar. If your schedule lives inside field service software, tell us on the setup call and we will map out the cleanest handoff for your dispatcher before the agent takes a single live call."
       }
     },
     {

@@ -725,6 +725,7 @@ p { color: var(--ink-soft); font-size: 15.5px; }
 .b-them { background: var(--surface); color: var(--ink); border: 1px solid var(--line); }
 .b-ai { background: rgba(200,255,61,.12); color: #eaffc0; border: 1px solid rgba(200,255,61,.22); margin-left: auto; }
 .bubble .who { display: block; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 4px; }
+.call-demo .bubble { opacity: 1; transform: none; }
 .call-fine { margin: 16px 0 0; font-size: 13px; color: var(--ink-soft); }
 /* proof */
   .proof-card {
@@ -780,6 +781,7 @@ footer .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
 .skip-link { position: absolute; left: -9999px; top: 8px; z-index: 100; background: var(--accent); color: var(--ink-on-signal); padding: 10px 18px; border-radius: 8px; font-weight: 700; text-decoration: none; }
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
 @media (max-width: 720px){.grid-3 { grid-template-columns: 1fr; } section { padding: 60px 0; } .price-band { padding: 30px 24px; }}
+@media (max-width: 640px){.pain-item { grid-template-columns: 1fr; }}
 </style>
 <main id="main">
 
@@ -799,12 +801,12 @@ footer .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
   <section>
     <div class="container-narrow">
       <h2>La demanda tras una tormenta no llega poco a poco. <em>Llega de golpe.</em></h2>
-    <div class="unit-strip" aria-hidden="true"><div class="unit" data-scroll><b>390</b><span>búsquedas mensuales de atención telefónica para techadores</span></div><div class="unit" data-scroll><b>$22</b><span>costo por clic de esa búsqueda</span></div></div>
+    <div class="unit-strip" aria-hidden="true"><div class="unit" data-scroll><b>1,300</b><span>búsquedas mensuales de roofing answering service</span></div><div class="unit" data-scroll><b>2,900</b><span>búsquedas mensuales de after hours answering service</span></div></div>
       <p class="lead">El techado es el único oficio en que una sola noche de mal tiempo puede generar un mes de llamadas, y la mayoría llegan en cuestión de días.</p>
       <div class="pain-list">
         <div class="pain-item">
           <h3>Todos los teléfonos suenan a la vez, por poco tiempo</h3>
-          <p>Después de una granizada, los propietarios van llamando a una lista. Si nadie contesta, llaman al siguiente techador. La empresa que responde primero suele conseguir la inspección, y allí se gana el trabajo. Dos semanas después pasa la ola y los teléfonos vuelven a estar tranquilos. «Roofing answering service» recibe unas 390 búsquedas al mes en Estados Unidos, con un costo de $22 por clic (Semrush, septiembre de 2026).</p>
+          <p>Después de una granizada, los propietarios van llamando a una lista. Si nadie contesta, llaman al siguiente techador. La empresa que responde primero suele conseguir la inspección, y allí se gana el trabajo. Dos semanas después pasa la ola y los teléfonos vuelven a estar tranquilos. «Roofing answering service» recibe unas 1,300 búsquedas al mes en Estados Unidos (Semrush, octubre de 2026).</p>
         </div>
         <div class="pain-item">
           <h3>Sus mejores trabajadores están en los techos, no en escritorios</h3>
@@ -830,7 +832,7 @@ footer .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
         <div class="card">
           <span class="num">1</span>
           <h3>Agenda inspecciones en su calendario</h3>
-          <p>Ofrece horarios realmente disponibles y coloca la cita directamente en el calendario de su empresa. Quien llama termina con una fecha, no con la promesa de que alguien le devolverá la llamada.</p>
+          <p>Ofrece horarios realmente disponibles y coloca la cita directamente en su Google Calendar. Quien llama termina con una fecha, no con la promesa de que alguien le devolverá la llamada.</p>
         </div>
         <div class="card">
           <span class="num">2</span>
@@ -855,7 +857,7 @@ footer .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
         <div class="card">
           <span class="num">6</span>
           <h3>Transcribe cada llamada</h3>
-          <p>Cada conversación genera una transcripción. Al terminar un día de tormenta puede leer todas las llamadas que llegaron mientras estaba en un techo, sin perder nada en el buzón de voz.</p>
+          <p>Cada conversación genera una transcripción, y después de cada llamada recibe un resumen por texto o correo. Al terminar un día de tormenta puede leer todas las llamadas que llegaron mientras estaba en un techo, sin perder nada en el buzón de voz.</p>
         </div>
       </div>
     </div>
@@ -866,13 +868,25 @@ footer .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
       <h2>Cómo suena una llamada <em>después de la tormenta</em></h2>
       <p class="lead">Un ejemplo breve de una llamada tras una granizada. Evalúe el servicio real llamando al número de arriba.</p>
       <div class="call-demo">
-        <p class="call-label">Ejemplo de una llamada típica. No es una grabación.</p>
+        <p class="call-label">Ilustración: una llamada típica después del granizo. Caso ficticio, no es una grabación.</p>
         <div class="bubble b-them"><span class="who">Cliente</span>«Hola, el granizo de anoche pasó justo sobre nosotros en Broken Arrow. Hay pedazos de tejas por todo el jardín y creo que el techo sobre el garaje tiene una parte blanda».</div>
-        <div class="bubble b-ai"><span class="who">Recepcionista de Kaico</span>«Lamento escuchar eso; llamó al lugar indicado. ¿Me da su dirección para programar una inspección? ¿Está entrando agua ahora mismo?»</div>
-        <div class="bubble b-them"><span class="who">Cliente</span>«Todavía no entra agua. La dirección es 4211 South Maple».</div>
-        <div class="bubble b-ai"><span class="who">Recepcionista de Kaico</span>«Entendido. Podemos enviar un estimador el jueves a las nueve de la mañana o el viernes a la una de la tarde. ¿Cuál le conviene más? Le agendo la cita ahora».</div>
-        <p class="call-fine">La cita queda en el calendario y los detalles en la transcripción. El estimador llega el jueves sabiendo que se trata de daño por granizo en Broken Arrow, posiblemente sobre el garaje.</p>
+        <div class="bubble b-ai"><span class="who">Recepcionista de Kaico</span>«Lamento escuchar eso; llamó al lugar indicado. ¿Me da su nombre y su dirección para programar una inspección? ¿Está entrando agua ahora mismo?»</div>
+        <div class="bubble b-them"><span class="who">Cliente</span>«Soy Dale. Todavía no entra agua». (Da la dirección.)</div>
+        <div class="bubble b-ai"><span class="who">Recepcionista de Kaico</span>«Entendido, Dale. Podemos enviar un estimador el jueves a las nueve de la mañana o el viernes a la una de la tarde. ¿Cuál le conviene más? Le agendo la cita ahora».</div>
+        <p class="call-fine">La cita queda en su Google Calendar, usted recibe un resumen por texto o correo, y el estimador llega el jueves sabiendo que se trata de daño por granizo en Broken Arrow, posiblemente sobre el garaje.</p>
       </div>
+      <div class="call-demo">
+        <p class="call-label">Ilustración: la noche después de la tormenta. Caso ficticio, no es una grabación.</p>
+        <p>Son las 10:40 de un sábado por la noche, la segunda noche después del granizo. Renee llama a su número: está entrando agua por el techo de la habitación y tiene una olla debajo. La línea contesta al primer timbrazo con el nombre de su empresa, le aclara que es una IA y le pregunta qué sucede.</p>
+        <p>Hace las preguntas que usted definió: si sigue entrando agua, dónde se ve y si alguien está herido. Sí, en la habitación de atrás, y no. Toma su nombre, dirección y número de devolución de llamada. Como su regla para el agua que entra en la casa es transferir, llama a su celular con esos datos ya registrados, y después le llega un resumen por texto o correo. Si ella hubiera dicho que el agua dejó de entrar hace una hora, habría agendado el primer horario de inspección disponible en su Google Calendar.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-narrow">
+      <h2>Una recepcionista con IA para techadores, <em>no una empleada temporal de temporada</em></h2>
+      <p>Contratar para el pico de llamadas implica pagar durante los meses tranquilos. Kaico Voice es una recepcionista con IA para empresas de techado: está escrita en torno a sus servicios, su zona de cobertura y sus reglas de transferencia, agenda la inspección en su Google Calendar mientras el propietario sigue en la línea, registra las preguntas sobre seguros como mensajes detallados en vez de adivinar, transfiere las filtraciones activas a su celular y le envía un resumen por texto o correo de cada llamada. A cada persona que llama le aclara que es una IA. El plan de $299 al mes incluye la transferencia a su celular, y Front Door incluye la misma recepcionista.</p>
     </div>
   </section>
 
@@ -894,6 +908,10 @@ footer .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
   <section>
     <div class="container-narrow faq">
       <h2>Techadores <em>preguntas</em></h2>
+      <details>
+        <summary>¿Es una recepcionista con IA para techadores?</summary>
+        <p>Sí. Kaico Voice es una recepcionista con IA creada para empresas de techado. Contesta 24/7 con el nombre de su empresa, registra la dirección y el daño que describe quien llama, agenda la inspección en su Google Calendar, transfiere las llamadas por filtraciones activas a su celular y le envía un resumen por texto o correo después de cada llamada. Aclara a quien llama que es una IA, y usted puede escucharla en el (918) 359-2644.</p>
+      </details>
       <details>
         <summary>¿Puede manejar muchas llamadas después de una granizada?</summary>
         <p>Sí. Es software, no una sola persona en un escritorio, así que el aumento de llamadas después de una tormenta no se convierte en una fila de espera ni en una señal de ocupado. Contesta cada llamada, 24/7, incluso las que llegan a las 9 de la noche mientras usted sigue cubriendo techos con lonas. Cada cita queda en su calendario y cada llamada genera una transcripción que puede leer esa noche.</p>
