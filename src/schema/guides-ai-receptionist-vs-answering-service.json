@@ -1,0 +1,50 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is an AI receptionist a real person?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Kaico's receptionist tells callers it is an AI on the call. It sounds conversational and it books the job, but it does not pretend to be a person."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens when a call is too hard for the AI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A good setup plans for it. On Kaico's line, the call details reach you in the call summary so a person follows up. Because a person in Tulsa writes the script around your shop, the hard cases you actually get are written into it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can a human answering service book appointments?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Some can, if you give them access to your calendar, and it is often priced as an extra. Ask how the booking reaches your calendar and what a booked call costs compared with a message."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which one costs less?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on how you are billed. A human service is usually per minute or per call with a bundle and overage, so the bill moves with your call volume. Kaico's AI receptionist is a $299 one-time setup, then $299 a month flat. Our guide on answering service cost walks through the models."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I try the AI before deciding?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Call (918) 359-2644 and talk to it as if you were a customer. Ask for a time, change your mind, try to throw it off."
+          }
+        }
+      ]
+    }
+  ]
+}

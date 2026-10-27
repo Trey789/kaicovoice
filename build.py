@@ -32,6 +32,11 @@ LLMS_SECTIONS = (
         ("/services/google-ads", "Managed search and call advertising; ad spend is separate."),
         ("/services/business-consulting", "Process review, workflow map and prioritized plan."),
     )),
+    ("English: guides", (
+        ("/guides/answering-service-cost", "Answering service pricing models explained, and what Kaico charges."),
+        ("/guides/ai-receptionist-cost", "What drives AI receptionist cost and what $299 a month includes."),
+        ("/guides/ai-receptionist-vs-answering-service", "Human answering service and AI receptionist compared, and who should pick which."),
+    )),
     ("English: policies", (
         ("/client-agreement", "Payment, ownership, cancellation and service terms."),
         ("/privacy", "How information is handled, including calls to the AI receptionist."),
@@ -53,6 +58,11 @@ LLMS_SECTIONS = (
         ("/es/services/google-business-profile", "Configuración y mantenimiento del Perfil de Negocio de Google."),
         ("/es/services/google-ads", "Gestión de anuncios de búsqueda y llamadas; inversión publicitaria aparte."),
         ("/es/services/business-consulting", "Revisión de procesos, mapa de trabajo y plan priorizado."),
+    )),
+    ("Español: guías", (
+        ("/es/guides/answering-service-cost", "Modelos de precios de los servicios de contestación y lo que cobra Kaico."),
+        ("/es/guides/ai-receptionist-cost", "Qué determina el costo de una recepcionista con IA y qué incluyen los $299 al mes."),
+        ("/es/guides/ai-receptionist-vs-answering-service", "Servicio de contestación humano y recepcionista con IA, comparados, y cuál elegir."),
     )),
     ("Español: políticas", (
         ("/es/client-agreement", "Condiciones de pago, propiedad, cancelación y servicio."),
