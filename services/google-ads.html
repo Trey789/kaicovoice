@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Google Ads Management for Contractors | Kaico Voice</title>
-<meta name="description" content="Managed Google Ads for contractors: call-only and search ads on the terms your customers type, pointed at a page that books. From $500 a month." />
+<meta name="description" content="Managed Google Ads for contractors: call-only and search ads on the terms your customers type, pointed at a page that books. Inside Front Door + Growth." />
 <meta name="google-site-verification" content="6VeQIS3aIFI7-0zFNG9jeagOR2BLdqZiQPeYyoq6jgE" />
 <link rel="canonical" href="https://www.kaicovoice.com/services/google-ads" />
 <link rel="alternate" hreflang="en" href="https://www.kaicovoice.com/services/google-ads" />
@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="Kaico Voice" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:title" content="Google Ads Management for Contractors | Kaico Voice" />
-<meta property="og:description" content="Managed Google Ads for contractors: call-only and search ads on the terms your customers type, pointed at a page that books. From $500 a month." />
+<meta property="og:description" content="Managed Google Ads for contractors: call-only and search ads on the terms your customers type, pointed at a page that books. Inside Front Door + Growth." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://www.kaicovoice.com/services/google-ads" />
 <meta property="og:image" content="https://www.kaicovoice.com/assets/og-card.png" />
@@ -26,7 +26,7 @@
 <meta property="og:image:alt" content="Kaico Voice, AI receptionist that answers and books 24/7" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Google Ads Management for Contractors | Kaico Voice" />
-<meta name="twitter:description" content="Managed Google Ads for contractors: call-only and search ads on the terms your customers type, pointed at a page that books. From $500 a month." />
+<meta name="twitter:description" content="Managed Google Ads for contractors: call-only and search ads on the terms your customers type, pointed at a page that books. Inside Front Door + Growth." />
 <meta name="twitter:image" content="https://www.kaicovoice.com/assets/og-card.png" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -179,7 +179,7 @@
   .price-row:last-of-type { border-bottom: 0; }
   .price-amt { font-family: 'Bricolage Grotesque'; font-size: 32px; font-weight: 800; letter-spacing: -0.02em; }
   .price-amt em { font-style: normal; font-size: 14px; font-weight: 600; color: var(--muted); margin-left: 6px; font-family: 'Hanken Grotesk'; }
-  .price-meta { color: var(--muted); font-size: 14px; }
+  .price-meta { color: var(--muted); font-size: 14px; text-wrap: balance; }
   .price-fine { color: var(--muted); font-size: 14px; line-height: 1.55; margin: 22px 0 26px; }
   .price-inner .btn { width: 100%; justify-content: center; }
 
@@ -454,6 +454,21 @@ nav{view-transition-name:site-nav}
 .mc-result{font-size:20px;line-height:1.4;margin:6px 0 0}.mc-result output{font-weight:800;color:var(--signal)}
 .mc-fine{font-size:13px;color:var(--muted);margin:0}
 .mc.mc-zero .mc-if,.mc:not(.mc-zero) .mc-none{display:none}
+/* plan compare table (pricing, phone) and a two-up grid for short lists */
+.grid-2{display:grid;gap:18px;grid-template-columns:repeat(2,1fr);max-width:760px}
+.cmp-wrap{overflow-x:auto;margin-top:8px}
+.cmp{width:100%;border-collapse:separate;border-spacing:0;font-size:15px;background:var(--surface);border:1px solid var(--line);border-radius:14px}
+.cmp caption{text-align:left;font-size:13px;color:var(--muted);padding:0 0 10px}
+.cmp th,.cmp td{padding:13px 16px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;line-height:1.4}
+.cmp thead th{font-family:'Bricolage Grotesque';font-weight:700;background:var(--surface-2)}
+.cmp thead th:first-child{border-radius:14px 0 0 0}.cmp thead th:last-child{border-radius:0 14px 0 0}
+.cmp thead th:not(:first-child),.cmp td{text-align:center;width:24%}
+.cmp tbody th{font-weight:500}
+.cmp tbody tr:last-child th,.cmp tbody tr:last-child td{border-bottom:0}
+.cmp .yes{color:var(--signal);font-weight:800;font-size:18px}
+.cmp .no{color:var(--muted)}
+.vh{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media (max-width:740px){.grid-2{grid-template-columns:1fr}.cmp{font-size:14px}.cmp th,.cmp td{padding:11px 10px}.cmp thead th:not(:first-child),.cmp td{width:25%}}
 </style>
 
 <script type="application/ld+json">{
@@ -480,9 +495,10 @@ nav{view-transition-name:site-nav}
     "name": "Kaico Voice services",
     "itemListElement": [
       { "@type": "Offer", "name": "Front-door audit (scoping)", "price": "0", "priceCurrency": "USD", "description": "Free scoping audit of your website, Google listing and phone, before any quote." },
-      { "@type": "Offer", "name": "Front Door Fix", "price": "1500", "priceCurrency": "USD", "description": "One-time fix of an existing site: click-to-call, quote form, Google listing wired in, tracking." },
-      { "@type": "Offer", "name": "Website Build, Standard", "price": "3500", "priceCurrency": "USD" },
-      { "@type": "Offer", "name": "Website Build, Premium", "price": "6500", "priceCurrency": "USD" },
+      { "@type": "Offer", "name": "Website Build, Standard", "price": "1500", "priceCurrency": "USD" },
+      { "@type": "Offer", "name": "Website Build, Premium", "price": "3500", "priceCurrency": "USD" },
+      { "@type": "Offer", "name": "24/7 AI Receptionist", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "299", "priceCurrency": "USD", "billingDuration": "P1M" } },
+      { "@type": "Offer", "name": "24/7 AI Receptionist setup", "price": "299", "priceCurrency": "USD", "description": "One-time setup for the 24/7 AI Receptionist plan." },
       { "@type": "Offer", "name": "Front Door", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "900", "priceCurrency": "USD", "billingDuration": "P1M" } },
       { "@type": "Offer", "name": "Front Door + Growth", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "1750", "priceCurrency": "USD", "billingDuration": "P1M" } },
       { "@type": "Offer", "name": "Website Care", "priceSpecification": { "@type": "UnitPriceSpecification", "minPrice": "149", "maxPrice": "299", "priceCurrency": "USD", "billingDuration": "P1M" } }
@@ -508,16 +524,6 @@ nav{view-transition-name:site-nav}
       },
       "url": "https://www.kaicovoice.com/services/google-ads",
       "offers": [
-        {
-          "@type": "Offer",
-          "name": "Ads Management",
-          "priceSpecification": {
-            "@type": "UnitPriceSpecification",
-            "price": "500",
-            "priceCurrency": "USD",
-            "billingDuration": "P1M"
-          }
-        },
         {
           "@type": "Offer",
           "name": "Front Door + Growth",
@@ -653,7 +659,7 @@ nav{view-transition-name:site-nav}
 <section>
   <div class="container">
     <h2>What it <span class="em">costs.</span></h2>
-    <p class="lead">Ads Management on its own is from $500 a month, plus the ad spend you pay Google directly. Inside <a href="/services/front-door">Front Door + Growth</a> it is included at $1,750 a month with everything else Front Door runs. We recommend a spend only after the scoping audit, never before, because the right number depends on your trade, your area and what one job is worth to you.</p>
+    <p class="lead">Google Ads management comes inside <a href="/services/front-door">Front Door + Growth</a> at $1,750 a month, with everything else Front Door runs; the ad spend you pay Google directly. It is not sold on its own. We recommend a spend only after the scoping audit, never before, because the right number depends on your trade, your area and what one job is worth to you.</p>
     <p style="margin-top:20px;"><a href="/pricing" class="btn btn-ghost">See pricing</a></p>
   </div>
 </section>
@@ -698,9 +704,9 @@ nav{view-transition-name:site-nav}
 <footer>
   <div class="container">
     <div class="foot-cols">
-      <div><b>Services</b><br><a href="/services/websites">Websites</a> · <a href="/services/front-door">Front Door</a> · <a href="/services/phone">24/7 phone</a> · <a href="/services/job-system">Job system</a> · <a href="/services/google-business-profile">Google Business Profile</a> · <a href="/services/google-ads">Google Ads</a> · <a href="/services/business-consulting">Business consulting</a> · <a href="/pricing">Pricing</a> · <a href="/proof">Proof</a></div>
+      <div><b>Services</b><br><a href="/services/websites">Websites</a> · <a href="/services/front-door">Front Door</a> · <a href="/services/phone">24/7 phone</a> · <a href="/services/job-system">Job system</a> · <a href="/services/google-business-profile">Google Business Profile</a> · <a href="/services/google-ads">Google Ads</a> · <a href="/services/business-consulting">Business consulting</a> · <a href="/pricing">Pricing</a> · <a href="/proof">Proof</a> · <a href="/guides/answering-service-cost">Answering service cost</a> · <a href="/guides/ai-receptionist-cost">AI receptionist cost</a> · <a href="/guides/ai-receptionist-vs-answering-service">AI vs answering service</a></div>
       <div><b>Industries</b><br><a href="/industries/hvac">HVAC</a> · <a href="/industries/plumbing">Plumbing</a> · <a href="/industries/electrical">Electrical</a> · <a href="/industries/roofing">Roofing</a> · <a href="/industries/restoration">Restoration</a> · <a href="/industries/truck-repair">Truck repair</a></div>
-      <div><b>Kaico LLC</b><br>Tulsa, Oklahoma · <a href="mailto:trey.kaico@gmail.com">trey.kaico@gmail.com</a> · <a href="tel:+19183592644">(918) 359-2644</a><br><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/client-agreement">Client agreement</a> · <a href="/sms">SMS</a> · <a href="https://app.kaicovoice.com/dashboard">Client login</a><p class="load-badge" id="loadBadge" hidden></p></div>
+      <div><b>Kaico LLC</b><br><a href="/tulsa">Tulsa, Oklahoma</a> · <a href="mailto:trey.kaico@gmail.com">trey.kaico@gmail.com</a> · <a href="tel:+19183592644">(918) 359-2644</a><br><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/client-agreement">Client agreement</a> · <a href="/sms">SMS</a> · <a href="https://app.kaicovoice.com/dashboard">Client login</a><p class="load-badge" id="loadBadge" hidden></p></div>
     </div>
   </div>
 </footer>

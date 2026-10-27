@@ -50,22 +50,32 @@
       },
       {
         "@type": "Offer",
-        "name": "Front Door Fix",
-        "price": "1500",
-        "priceCurrency": "USD",
-        "description": "Mejora puntual de un sitio existente: botón para llamar, formulario de cotización, conexión con el perfil de Google y seguimiento."
-      },
-      {
-        "@type": "Offer",
         "name": "Creación de sitio web, Estándar",
-        "price": "3500",
+        "price": "1500",
         "priceCurrency": "USD"
       },
       {
         "@type": "Offer",
         "name": "Creación de sitio web, Premium",
-        "price": "6500",
+        "price": "3500",
         "priceCurrency": "USD"
+      },
+      {
+        "@type": "Offer",
+        "name": "Recepcionista con IA 24/7",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "299",
+          "priceCurrency": "USD",
+          "billingDuration": "P1M"
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Configuración inicial de la Recepcionista con IA 24/7",
+        "price": "299",
+        "priceCurrency": "USD",
+        "description": "Pago único de configuración inicial para el plan de Recepcionista con IA 24/7."
       },
       {
         "@type": "Offer",

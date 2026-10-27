@@ -1,6 +1,6 @@
 <!-- meta
 title: Precios | Kaico Voice
-description: Sitios web desde $3,500, Front Door Fix por $1,500 y Front Door desde $900 al mes. Growth desde $1,750; servicio mensual con aviso de 30 días.
+description: Recepcionista con IA 24/7 por $299 al mes, Front Door desde $900 al mes, Growth $1,750 y sitios web desde $1,500. Mes a mes, con 30 días de aviso.
 canonical: /es/pricing
 schema: schema/pricing.json
 -->
@@ -10,7 +10,7 @@ schema: schema/pricing.json
   <div class="container">
     <p class="breadcrumbs"><a href="/es">Inicio</a> / Precios</p>
     <h1>Precios <span class="em">claros.</span></h1>
-    <p class="lead">¿No sabes qué opción necesitas? Evaluamos tu presencia digital sin costo antes de cotizar, para recomendarte la solución adecuada.</p>
+    <p class="lead">Empieza con el teléfono por $299 al mes, más una configuración inicial de $299 por única vez, o deja que Kaico gestione toda tu puerta de entrada. ¿No sabes cuál? Evaluamos tu presencia digital sin costo antes de cotizar, para recomendarte la opción adecuada.</p>
     <div class="hero-cta">
       <a href="/es#start" class="btn btn-signal btn-lg btn-start">Iniciar mi proyecto</a>
     </div>
@@ -33,99 +33,155 @@ schema: schema/pricing.json
 
 <section>
   <div class="container">
-    <h2>Pago único: <span class="em">mejorar o construir.</span></h2>
-    <p class="lead" style="margin-bottom:32px;">Una construcción tiene un presupuesto por proyecto, se paga una vez y tú conservas todos los archivos. La evaluación indica qué opción necesitas.</p>
+    <h2>Servicio mensual: <span class="em">empieza por el teléfono.</span></h2>
+    <p class="lead" style="margin-bottom:32px;">La <a href="/es/services/phone">Recepcionista con IA 24/7</a> es el punto de partida. <a href="/es/services/front-door">Front Door</a> la acompaña con el mantenimiento del sitio, tu perfil de Google, una agenda de reservas y el sistema de trabajos, todo gestionado por nosotros. Growth agrega la publicidad.</p>
     <div class="price-card reveal">
       <div class="price-inner">
-        <div class="price-name">Front Door Fix</div>
-        <div class="price-headline">Tu sitio se puede aprovechar. Agregamos un botón para llamar, un formulario de cotización que recoge el teléfono, tu perfil de Google y seguimiento, y te devolvemos el sitio.</div>
-        <div class="price-row"><span class="price-amt">$1,500</span><span class="price-meta">pago único</span></div>
+        <span class="pill"><i></i> Empieza aquí</span>
+        <div class="price-name">Recepcionista con IA 24/7</div>
+        <div class="price-headline">Todas las llamadas contestadas, de día y de noche, por una asistente que avisa que es una IA. Un guion escrito para tu negocio, citas agendadas en tu Google Calendar con los detalles de la llamada, un resumen enviado a ti después de cada llamada y desvío desde el número que ya tienes.</div>
+        <div class="price-row"><span class="price-amt">$299<em>/mes</em></span><span class="price-meta">más configuración inicial de $299 por única vez</span></div>
         <a href="/es#start" class="btn btn-signal btn-start">Iniciar mi proyecto</a>
-        <!-- STRIPE-PENDING <details><summary>Already talked to Trey?</summary><p><a href="https://buy.stripe.com/14A28rfkp1J9cvo5on2ZO08" target="_blank" rel="noopener noreferrer">Pay and start</a></p></details> -->
       </div>
     </div>
     <div class="price-card reveal">
       <div class="price-inner">
-        <div class="price-name">Construcción de sitio web, estándar</div>
-        <div class="price-headline">Las páginas que necesita un negocio de oficios, un formulario de cotización que recoge el teléfono y tu perfil de Google conectado. Diseñado para conseguir reservas. Una versión simplificada del sitio de Blue Sands.</div>
-        <div class="price-row"><span class="price-amt">$3,500</span><span class="price-meta">pago único</span></div>
-        <a href="/es#start" class="btn btn-signal btn-start">Iniciar mi proyecto</a>
-        <!-- STRIPE-PENDING <details><summary>Already talked to Trey?</summary><p><a href="https://buy.stripe.com/aFa4gz8W19bBfHA6sr2ZO09" target="_blank" rel="noopener noreferrer">Pay and start</a></p></details> -->
-      </div>
-    </div>
-    <div class="price-card reveal">
-      <div class="price-inner">
-        <div class="price-name">Construcción de sitio web, prémium</div>
-        <div class="price-headline">Calculadora de precio de entrega, agenda de reservas en línea y páginas para varios servicios. La versión completa de 24 páginas.</div>
-        <div class="price-row"><span class="price-amt">$6,500</span><span class="price-meta">pago único</span></div>
-        <a href="/es#start" class="btn btn-signal btn-start">Iniciar mi proyecto</a>
-        <!-- STRIPE-PENDING <details><summary>Already talked to Trey?</summary><p><a href="https://buy.stripe.com/6oU3cvb499bB8f8dUT2ZO0a" target="_blank" rel="noopener noreferrer">Pay and start</a></p></details> -->
-      </div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <h2>¿Cuánto te cuesta <span class="em">una llamada perdida?</span></h2>
-    <p class="lead">Ajusta estos valores según tu negocio. Las cifras resultantes se basan en tus datos, no en los nuestros.</p>
-    <form class="mc" id="mc" novalidate>
-      <label>Llamadas que recibe tu negocio por semana <output for="mc-calls" id="mc-calls-out">30</output>
-        <input type="range" id="mc-calls" name="calls" min="5" max="150" step="5" value="30"></label>
-      <label>Porcentaje que no contestas (fuera de horario, mientras trabajas o durante otra llamada) <output for="mc-miss" id="mc-miss-out">30%</output>
-        <input type="range" id="mc-miss" name="miss" min="0" max="80" step="5" value="30"></label>
-      <label>Valor promedio de un trabajo <output for="mc-job" id="mc-job-out">$350</output>
-        <input type="range" id="mc-job" name="job" min="100" max="5000" step="50" value="350"></label>
-      <p class="mc-result" aria-live="polite">
-        <span class="mc-if">Pierdes alrededor de <output id="mc-missed">39</output> llamadas al mes. Si cada una se convirtiera en un trabajo, podrían representar hasta <output id="mc-all">$13,650</output>. Incluso si reservas una cuarta parte, serían <output id="mc-quarter">$3,410</output> al mes, frente a $900 por Front Door.</span>
-        <span class="mc-none">No pierdes llamadas. Sigue así; Front Door puede ayudarte si eso cambia.</span>
-      </p>
-      <p class="mc-fine">Esta estimación se basa en los valores que elegiste. Front Door atiende las llamadas de día y de noche por $900 al mes. <a href="/es/services/front-door">Conoce qué incluye</a>.</p>
-    </form>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <h2>Servicio mensual: <span class="em">nos encargamos.</span></h2>
-    <p class="lead" style="margin-bottom:32px;"><a href="/es/services/front-door">Front Door</a> mantiene en funcionamiento el sitio, el perfil y el teléfono, e incluye el sistema de trabajos. Growth agrega la publicidad.</p>
-    <div class="price-card reveal">
-      <div class="price-inner">
-        <span class="pill"><i></i> La mayoría de los negocios empieza aquí</span>
+        <span class="pill"><i></i> Oferta fundadora: 3 lugares</span>
         <div class="price-name">Front Door</div>
-        <div class="price-headline">Mantenimiento y actualizaciones del sitio. Publicaciones y respuestas a reseñas en el Perfil de Empresa en Google. Atención telefónica las 24 horas con reservas en tu calendario. Agenda de reservas en línea. Sistema de trabajos de Kaico: tablero, cotizaciones que el cliente acepta con un toque, facturas pagables con tarjeta, correo de ida y vuelta que apruebas desde tu teléfono y vista de hoy. ¿Ya usas Jobber o Housecall Pro? Podemos conectarlo. Informe mensual verificado con tu calendario.</div>
+        <div class="price-headline">La recepcionista, más el resto de tu puerta de entrada, gestionado por nosotros. Mantenimiento y actualizaciones del sitio. Publicaciones y respuestas a reseñas en el Perfil de Empresa en Google. Agenda de reservas en línea. Sistema de trabajos de Kaico: tablero, cotizaciones que el cliente acepta con un toque, facturas pagables con tarjeta, correo de ida y vuelta que apruebas desde tu teléfono y vista de hoy. ¿Ya usas Jobber o Housecall Pro? Podemos conectarlo. Informe mensual verificado con tu calendario.</div>
         <div class="price-row"><span class="price-amt">$900<em>/mes</em></span><span class="price-meta">mes a mes</span></div>
+        <div class="price-row"><span class="price-amt">$450<em>/mes</em></span><span class="price-meta">oferta fundadora: primeros 6 meses para los primeros 3 clientes que paguen, después $900</span></div>
         <a href="/es#start" class="btn btn-signal btn-start">Iniciar mi proyecto</a>
-        <!-- STRIPE-PENDING <details><summary>Already talked to Trey?</summary><p><a href="https://buy.stripe.com/28E14neglbjJ1QKbML2ZO0b" target="_blank" rel="noopener noreferrer">Subscribe and start</a></p></details> -->
+        <!-- STRIPE-PENDING <details><summary>Already talked to Trey?</summary><p><a href="https://buy.stripe.com/4gMbJ11tz87xcvo8Az2ZO0h" target="_blank" rel="noopener noreferrer">Subscribe and start</a></p></details> -->
       </div>
     </div>
     <div class="price-card reveal">
       <div class="price-inner">
         <div class="price-name">Front Door + Growth</div>
-        <div class="price-headline">Todo lo de Front Door, más gestión de Google Ads para las búsquedas que hacen tus clientes y campañas de reactivación de clientes anteriores, con las reglas de consentimiento explicadas desde el inicio. Tú pagas el gasto publicitario. Gestión de anuncios por separado: desde $500 al mes más el gasto publicitario.</div>
+        <div class="price-headline">Todo lo de Front Door, más gestión de Google Ads para las búsquedas que hacen tus clientes y campañas de reactivación de clientes anteriores, con las reglas de consentimiento explicadas desde el inicio. Tú pagas el gasto publicitario. La gestión de anuncios solo se vende dentro de Growth.</div>
         <div class="price-row"><span class="price-amt">$1,750<em>/mes</em></span><span class="price-meta">mes a mes, más tu gasto publicitario</span></div>
         <a href="/es#start" class="btn btn-signal btn-start">Iniciar mi proyecto</a>
-        <!-- STRIPE-PENDING <details><summary>Already talked to Trey?</summary><p><a href="https://buy.stripe.com/dRmfZhgot73t3YSaIH2ZO0c" target="_blank" rel="noopener noreferrer">Subscribe and start</a></p></details> -->
+        <!-- STRIPE-PENDING <details><summary>Already talked to Trey?</summary><p><a href="https://buy.stripe.com/fZubJ14FL0F5670g312ZO0i" target="_blank" rel="noopener noreferrer">Subscribe and start</a></p></details> -->
       </div>
     </div>
     <div class="price-card reveal">
       <div class="price-inner">
         <div class="price-name">Website Care</div>
-        <div class="price-headline">Para clientes que solo contratan la construcción y no quieren un plan más amplio: alojamiento, actualizaciones, copias de seguridad y cambios pequeños. $149 al mes por lo esencial, o $299 con una revisión mensual del contenido y el perfil.</div>
+        <div class="price-headline">Para clientes que solo contratan la construcción y quieren el sitio cuidado sin un plan mensual más amplio: alojamiento, actualizaciones, copias de seguridad y cambios pequeños. $149 al mes por lo esencial, o $299 con una revisión mensual del contenido y el perfil.</div>
         <div class="price-row"><span class="price-amt">$149<em>/mes</em></span><span class="price-meta">o $299/mes</span></div>
         <a href="/es#start" class="btn btn-signal btn-start">Iniciar mi proyecto</a>
       </div>
     </div>
-    <p class="price-fine" style="margin-top:24px;">Mes a mes. Puedes cancelar con 30 días de aviso. Los depósitos no son reembolsables una vez iniciado el trabajo; se reembolsan los meses pagados por anticipado que no se hayan usado. Los servicios administrados se suspenden tras 14 días sin pagar; tu sitio permanece publicado por al menos 60 días. Condiciones completas: <a href="/es/client-agreement">acuerdo con el cliente</a>.</p>
+    <p class="price-fine" style="margin-top:24px;">Mes a mes. Puedes cancelar con 30 días de aviso por escrito. La Recepcionista con IA 24/7 tiene una configuración inicial de $299 por única vez, luego $299 al mes; Front Door no tiene costo de configuración. Los depósitos no son reembolsables una vez iniciado el trabajo; se reembolsan los meses pagados por anticipado que no se hayan usado. Los servicios administrados se suspenden tras 14 días sin pagar; tu sitio permanece publicado por al menos 60 días. Condiciones completas: <a href="/es/client-agreement">acuerdo con el cliente</a>.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Qué incluye <span class="em">cada uno.</span></h2>
+    <p class="lead" style="margin-bottom:28px;">La recepcionista es la misma en ambos. Front Door agrega el resto de la puerta de entrada y a alguien que la gestiona.</p>
+    <div class="cmp-wrap">
+      <table class="cmp">
+        <caption>Qué incluye la Recepcionista con IA 24/7 y qué incluye Front Door, lado a lado</caption>
+        <thead>
+          <tr><th scope="col">Incluye</th><th scope="col">Recepcionista con IA 24/7, $299/mes</th><th scope="col">Front Door, $900/mes</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Contesta todas las llamadas 24/7 y avisa que es una IA</th><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td></tr>
+          <tr><th scope="row">Un guion escrito para tu negocio: servicios, horarios y las preguntas que hacen tus clientes</th><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td></tr>
+          <tr><th scope="row">Agenda citas en tu Google Calendar con los detalles de la llamada</th><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td></tr>
+          <tr><th scope="row">Un resumen de cada llamada enviado a ti</th><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td></tr>
+          <tr><th scope="row">Desvío de llamadas desde tu número actual</th><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td></tr>
+          <tr><th scope="row">Mantenimiento del sitio web</th><td class="no">No</td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td></tr>
+          <tr><th scope="row">Gestión del Perfil de Empresa en Google</th><td class="no">No</td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td></tr>
+          <tr><th scope="row">Agenda de reservas en línea en tu sitio</th><td class="no">No</td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td></tr>
+          <tr><th scope="row">Sistema de trabajos: cotizaciones, facturas y correo al cliente</th><td class="no">No</td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td></tr>
+          <tr><th scope="row">Correo mensual de retención a clientes anteriores</th><td class="no">No</td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td></tr>
+          <tr><th scope="row">Informe mensual</th><td class="no">No</td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="price-fine">Oferta fundadora: los primeros 3 clientes de Front Door que paguen tienen $450 al mes durante sus primeros 6 meses y después $900 al mes. Queda por escrito en el acuerdo con el cliente. La Recepcionista con IA 24/7 tiene una configuración inicial de $299 por única vez, luego $299 al mes; Front Door no tiene costo de configuración. Ambos planes son mes a mes; cancela con 30 días de aviso por escrito.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>¿Cuántas llamadas <span class="em">estás perdiendo?</span></h2>
+    <p class="lead">Ajusta estos valores según tu negocio. La cifra que sale es tuya, no nuestra.</p>
+    <form class="mc" id="missedCalls" novalidate>
+      <label>Llamadas que recibe tu negocio por semana <output for="mc-calls" id="mc-calls-out">30</output>
+        <input type="range" id="mc-calls" name="calls" min="5" max="150" step="5" value="30"></label>
+      <label>Porcentaje que no contestas (fuera de horario, mientras trabajas o durante otra llamada) <output for="mc-miss" id="mc-miss-out">30%</output>
+        <input type="range" id="mc-miss" name="miss" min="0" max="80" step="5" value="30"></label>
+      <p class="mc-result" aria-live="polite">
+        <span class="mc-if">Pierdes alrededor de <output id="mc-missed">39</output> llamadas al mes. La recepcionista contesta cada una, agenda el trabajo en tu calendario y te envía los detalles de la llamada.</span>
+        <span class="mc-none">No pierdes llamadas. Sigue así; la recepcionista está para el día en que eso cambie.</span>
+      </p>
+      <p class="mc-fine">Tu cifra, con tus propios valores. La Recepcionista con IA 24/7 contesta todas por $299 al mes, sola o dentro de Front Door desde $900 al mes. <a href="/es/services/phone">Conoce la recepcionista</a>.</p>
+    </form>
+    <script>
+    (function () {
+      var mc = document.getElementById('missedCalls');
+      if (!mc) return;
+      var g = function (id) { return document.getElementById(id); };
+      var run = function () {
+        var calls = +g('mc-calls').value, miss = +g('mc-miss').value;
+        g('mc-calls-out').value = calls; g('mc-miss-out').value = miss + '%';
+        var missed = Math.round(calls * miss / 100 * 4.33);
+        g('mc-missed').value = missed;
+        mc.classList.toggle('mc-zero', missed === 0);
+      };
+      mc.addEventListener('input', run); run();
+    })();
+    </script>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Pago único: <span class="em">construir.</span></h2>
+    <p class="lead" style="margin-bottom:32px;">Una construcción tiene un presupuesto por proyecto, se paga una vez y tú conservas todos los archivos. La evaluación gratuita indica qué tamaño necesitas, o si tu sitio actual ya cumple.</p>
+    <div class="price-card reveal">
+      <div class="price-inner">
+        <div class="price-name">Construcción de sitio web, Estándar</div>
+        <div class="price-headline">Las páginas que necesita un negocio de oficios, un formulario de cotización que recoge el teléfono y tu perfil de Google conectado. Diseñado para conseguir reservas. Una versión simplificada del sitio de Blue Sands.</div>
+        <div class="price-row"><span class="price-amt">$1,500</span><span class="price-meta">pago único</span></div>
+        <a href="/es#start" class="btn btn-signal btn-start">Iniciar mi proyecto</a>
+        <!-- STRIPE-PENDING <details><summary>Already talked to Trey?</summary><p><a href="https://buy.stripe.com/5kQ9ATgot9bBgLEbML2ZO0f" target="_blank" rel="noopener noreferrer">Pay and start</a></p></details> -->
+      </div>
+    </div>
+    <div class="price-card reveal">
+      <div class="price-inner">
+        <div class="price-name">Construcción de sitio web, Premium</div>
+        <div class="price-headline">Calculadora de precio de entrega, agenda de reservas en línea y páginas para varios servicios. La versión completa de 24 páginas.</div>
+        <div class="price-row"><span class="price-amt">$3,500</span><span class="price-meta">pago único</span></div>
+        <a href="/es#start" class="btn btn-signal btn-start">Iniciar mi proyecto</a>
+        <!-- STRIPE-PENDING <details><summary>Already talked to Trey?</summary><p><a href="https://buy.stripe.com/eVqbJ1egldrR7b47wv2ZO0g" target="_blank" rel="noopener noreferrer">Pay and start</a></p></details> -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Dicho con <span class="em">claridad.</span></h2>
+    <div class="inc-list" style="margin-top:28px;">
+      <div class="inc"><span class="ck" aria-hidden="true">✓</span> <span>Operado por su fundador. Trey dirige Kaico desde Tulsa, Oklahoma, y es la persona con la que tratas.</span></div>
+      <div class="inc"><span class="ck" aria-hidden="true">✓</span> <span>A quienes llaman se les informa que hablan con una IA, en cada llamada.</span></div>
+      <div class="inc"><span class="ck" aria-hidden="true">✓</span> <span>Un mensaje de texto a tus clientes solo se envía bajo tu propio programa de mensajería aprobado y con un sí claro de cada persona. Consulta <a href="/es/sms">SMS</a> y <a href="/es/privacy">privacidad</a>.</span></div>
+      <div class="inc"><span class="ck" aria-hidden="true">✓</span> <span>Front Door tiene 3 lugares fundadores: $450 al mes durante los primeros 6 meses y después $900.</span></div>
+    </div>
   </div>
 </section>
 
 <section>
   <div class="container-narrow">
-    <h2>Dos <span class="em">preguntas.</span></h2>
+    <h2>Tres <span class="em">preguntas.</span></h2>
     <div style="margin-top:32px;">
-      <details><summary>¿Qué opción necesito?</summary><p>Evaluamos tu presencia digital gratis antes de cotizar. Si tu sitio se puede aprovechar, recomendamos Front Door Fix. Si no, una construcción nueva. Si todo ya funciona bien, te lo decimos y no pagas nada. Front Door es el servicio mensual para los negocios que quieren que nos encarguemos de la gestión después de construir el sitio.</p></details>
-      <details><summary>¿Cuáles son las condiciones?</summary><p>Servicio mes a mes. Cancela con 30 días de aviso. Los depósitos no son reembolsables una vez iniciado el trabajo; se reembolsan los meses pagados por anticipado que no se hayan usado. Los servicios administrados se suspenden tras 14 días sin pagar; tu sitio permanece publicado por al menos 60 días. Tu dominio, perfil, contenido y datos siempre te pertenecen.</p></details>
+      <details><summary>¿Qué opción necesito?</summary><p>Evaluamos tu presencia digital gratis antes de cotizar. Si el problema es el teléfono, empieza con la Recepcionista con IA 24/7 por $299 al mes. Si quieres que gestionemos el sitio, el perfil y el teléfono por ti, Front Door. Si tu sitio hay que rehacerlo, una construcción Estándar o Premium. Si todo ya funciona bien, te lo decimos y no pagas nada.</p></details>
+      <details><summary>¿En qué consiste la oferta fundadora?</summary><p>Los primeros 3 clientes de Front Door que paguen tienen $450 al mes durante sus primeros 6 meses y después $900 al mes. Queda por escrito en el acuerdo con el cliente y termina cuando se ocupan los 3 lugares.</p></details>
+      <details><summary>¿Cuáles son las condiciones?</summary><p>Servicio mes a mes. Cancela con 30 días de aviso por escrito. La Recepcionista con IA 24/7 tiene una configuración inicial de $299 por única vez, luego $299 al mes; Front Door no tiene costo de configuración. Los depósitos no son reembolsables una vez iniciado el trabajo; se reembolsan los meses pagados por anticipado que no se hayan usado. Los servicios administrados se suspenden tras 14 días sin pagar; tu sitio permanece publicado por al menos 60 días. Tu dominio, perfil, contenido y datos siempre te pertenecen.</p></details>
     </div>
   </div>
 </section>
