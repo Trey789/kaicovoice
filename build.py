@@ -33,6 +33,7 @@ LLMS_SECTIONS = (
         ("/services/business-consulting", "Process review, workflow map and prioritized plan."),
     )),
     ("English: guides", (
+        ("/guides", "Hub for the three guides on answering service and AI receptionist cost, with links to the coverage checker and pricing."),
         ("/guides/answering-service-cost", "Answering service pricing models explained, and what Kaico charges."),
         ("/guides/ai-receptionist-cost", "What drives AI receptionist cost and what $299 a month includes."),
         ("/guides/ai-receptionist-vs-answering-service", "Human answering service and AI receptionist compared, and who should pick which."),
@@ -63,6 +64,7 @@ LLMS_SECTIONS = (
         ("/es/services/business-consulting", "Revisión de procesos, mapa de trabajo y plan priorizado."),
     )),
     ("Español: guías", (
+        ("/es/guides", "Índice de las tres guías sobre el costo de un servicio de contestación y de una recepcionista con IA, con enlaces al verificador de cobertura y a los precios."),
         ("/es/guides/answering-service-cost", "Modelos de precios de los servicios de contestación y lo que cobra Kaico."),
         ("/es/guides/ai-receptionist-cost", "Qué determina el costo de una recepcionista con IA y qué incluyen los $299 al mes."),
         ("/es/guides/ai-receptionist-vs-answering-service", "Servicio de contestación humano y recepcionista con IA, comparados, y cuál elegir."),

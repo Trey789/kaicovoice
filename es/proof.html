@@ -379,8 +379,8 @@ main p a,main li a,main strong a,.pain-closer a,.inc a{color:var(--ink);font-wei
 .callme{text-align:left;margin-top:36px}
 .callme h3{margin:0 0 6px}
 .callme-lead{color:var(--muted);margin:0 0 6px;font-size:15px}
-.cm-consent{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--ink-soft);line-height:1.5;cursor:pointer}
-.cm-consent input{margin-top:3px;width:18px;height:18px;flex:none;accent-color:var(--signal)}
+.cm-consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;font-weight:400;color:var(--ink);line-height:1.45;cursor:pointer} /* same rules as the lead form's .gs-sms consent row */
+.cm-consent input{margin-top:3px;flex:none}
 .callme-status{margin:0;font-size:14px;color:var(--ink)}
 .callme-status.err{color:#ff8a8a}
 @media (prefers-reduced-motion:reduce){.price-card,.btn,.mark3d-mini,.grid-3 > .card{transition:none}.container:has(> .price-card) .price-card:hover,.container:has(> .price-card:hover) .price-card:not(:hover){transform:none}.brand:hover .mark3d-mini{transform:none}}
@@ -422,7 +422,7 @@ main p a,main li a,main strong a,.pain-closer a,.inc a{color:var(--ink);font-wei
 }
 /* Task 3: hero depth plane */
 @media (min-width:1100px){
-#top.hero{position:relative;overflow:clip;overflow-clip-margin:24px}
+#top.hero{position:relative;overflow:clip}
 #top.hero::before{content:"";position:absolute;left:-10%;right:-10%;top:30%;bottom:0;background:radial-gradient(circle,rgba(200,255,61,.22) 1px,transparent 1.5px) 0 0/28px 28px;transform:perspective(700px) rotateX(64deg) translate3d(calc(var(--px,0)*-24px),calc(var(--py,0)*-12px),0);transform-origin:top center;-webkit-mask:linear-gradient(to bottom,transparent,#000 30%,#000 70%,transparent);mask:linear-gradient(to bottom,transparent,#000 30%,#000 70%,transparent);pointer-events:none;z-index:0;transition:transform .5s ease-out}
 .hero .container{z-index:1}
 }
@@ -862,21 +862,6 @@ nav{view-transition-name:site-nav}
       lb.textContent = 'Esta página cargó en ' + s.toFixed(2) + ' s con tu conexión. Kaico crea sitios así.';
       lb.hidden = false;
     }, 0); });
-  }
-
-  // missed-call calculator: arithmetic on the visitor's sliders, nothing stored or sent
-  var mc = document.getElementById('mc');
-  if (mc) {
-    var g = function (id) { return document.getElementById(id); };
-    var money = function (n) { return '$' + (Math.round(n / 10) * 10).toLocaleString('en-US'); };
-    var mcRun = function () {
-      var calls = +g('mc-calls').value, miss = +g('mc-miss').value, job = +g('mc-job').value;
-      g('mc-calls-out').value = calls; g('mc-miss-out').value = miss + '%'; g('mc-job-out').value = money(job);
-      var missed = Math.round(calls * miss / 100 * 4.33);
-      g('mc-missed').value = missed; g('mc-all').value = money(missed * job); g('mc-quarter').value = money(missed * job / 4);
-      mc.classList.toggle('mc-zero', missed === 0);
-    };
-    mc.addEventListener('input', mcRun); mcRun();
   }
 })();
 

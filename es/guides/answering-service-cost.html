@@ -379,8 +379,8 @@ main p a,main li a,main strong a,.pain-closer a,.inc a{color:var(--ink);font-wei
 .callme{text-align:left;margin-top:36px}
 .callme h3{margin:0 0 6px}
 .callme-lead{color:var(--muted);margin:0 0 6px;font-size:15px}
-.cm-consent{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--ink-soft);line-height:1.5;cursor:pointer}
-.cm-consent input{margin-top:3px;width:18px;height:18px;flex:none;accent-color:var(--signal)}
+.cm-consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;font-weight:400;color:var(--ink);line-height:1.45;cursor:pointer} /* same rules as the lead form's .gs-sms consent row */
+.cm-consent input{margin-top:3px;flex:none}
 .callme-status{margin:0;font-size:14px;color:var(--ink)}
 .callme-status.err{color:#ff8a8a}
 @media (prefers-reduced-motion:reduce){.price-card,.btn,.mark3d-mini,.grid-3 > .card{transition:none}.container:has(> .price-card) .price-card:hover,.container:has(> .price-card:hover) .price-card:not(:hover){transform:none}.brand:hover .mark3d-mini{transform:none}}
@@ -422,7 +422,7 @@ main p a,main li a,main strong a,.pain-closer a,.inc a{color:var(--ink);font-wei
 }
 /* Task 3: hero depth plane */
 @media (min-width:1100px){
-#top.hero{position:relative;overflow:clip;overflow-clip-margin:24px}
+#top.hero{position:relative;overflow:clip}
 #top.hero::before{content:"";position:absolute;left:-10%;right:-10%;top:30%;bottom:0;background:radial-gradient(circle,rgba(200,255,61,.22) 1px,transparent 1.5px) 0 0/28px 28px;transform:perspective(700px) rotateX(64deg) translate3d(calc(var(--px,0)*-24px),calc(var(--py,0)*-12px),0);transform-origin:top center;-webkit-mask:linear-gradient(to bottom,transparent,#000 30%,#000 70%,transparent);mask:linear-gradient(to bottom,transparent,#000 30%,#000 70%,transparent);pointer-events:none;z-index:0;transition:transform .5s ease-out}
 .hero .container{z-index:1}
 }
@@ -631,7 +631,7 @@ nav{view-transition-name:site-nav}
 
 <header class="hero">
   <div class="container">
-    <p class="breadcrumbs"><a href="/es">Inicio</a> / Guías / Costo de un servicio de contestación</p>
+    <p class="breadcrumbs"><a href="/es">Inicio</a> / <a href="/es/guides">Guías</a> / Costo de un servicio de contestación</p>
     <h1>¿Cuánto cuesta un servicio de <span class="em">contestación de llamadas?</span></h1>
     <p class="lead">Respuesta corta: depende de cómo te facturen. La mayoría de los servicios de contestación cobran por minuto o por llamada, agregan un cargo de configuración y facturan excedentes cuando superas el paquete mensual. La Recepcionista con IA 24/7 de Kaico tiene una configuración inicial de $299 por única vez, luego $299 al mes, tarifa fija, mes a mes, con 30 días de aviso por escrito para cancelar. El resto de esta página explica los modelos de precios que vas a encontrar y qué hace cada uno con tu factura.</p>
     <div class="hero-cta">
@@ -675,7 +675,7 @@ nav{view-transition-name:site-nav}
     <div class="price-card reveal">
       <div class="price-inner">
         <div class="price-name">Recepcionista con IA 24/7</div>
-        <div class="price-headline">Contesta todas las llamadas, de día y de noche. Informa a quien llama que es una IA. Un guion escrito para tu negocio. Agenda en Google Calendar con los detalles de la llamada. Te envía un resumen de cada llamada. Recibe las llamadas desviadas desde el número que ya tienes.</div>
+        <div class="price-headline">Contesta todas las llamadas, de día y de noche. Informa a quien llama que es una IA. Un guion escrito para tu negocio. Agenda en Google Calendar con los detalles de la llamada. Te envía un resumen de cada llamada. Recibe las llamadas desviadas desde el número que ya tienes. Transfiere las llamadas urgentes a tu celular.</div>
         <div class="price-row"><span class="price-amt">$299</span><span class="price-meta">configuración inicial por única vez, luego $299 al mes, tarifa fija, mes a mes</span></div>
         <a href="/es#start" class="btn btn-signal btn-start">Iniciar mi proyecto</a>
       </div>
@@ -695,6 +695,7 @@ nav{view-transition-name:site-nav}
       <div class="card reveal"><h3>Agenda en Google Calendar.</h3><p>La cita queda en tu calendario con los detalles de la llamada adjuntos.</p></div>
       <div class="card reveal"><h3>Un resumen de cada llamada.</h3><p>Después de cada llamada recibes un resumen: quién llamó, qué necesitaba y qué se agendó.</p></div>
       <div class="card reveal"><h3>Desvío desde tu número.</h3><p>Las llamadas al número que tus clientes ya conocen llegan a la recepcionista. Conservas tu número.</p></div>
+      <div class="card reveal"><h3>Transfiere las llamadas urgentes a tu celular.</h3><p>Una llamada que no puede esperar pasa a tu celular, con los detalles registrados para el seguimiento. Tú decides qué llamadas cuentan como urgentes.</p></div>
     </div>
     <p class="lead" style="margin-top:32px;">Más sobre cómo funciona la línea: <a href="/es/services/phone">Teléfono 24/7</a>.</p>
   </div>
@@ -869,21 +870,6 @@ nav{view-transition-name:site-nav}
       lb.textContent = 'Esta página cargó en ' + s.toFixed(2) + ' s con tu conexión. Kaico crea sitios así.';
       lb.hidden = false;
     }, 0); });
-  }
-
-  // missed-call calculator: arithmetic on the visitor's sliders, nothing stored or sent
-  var mc = document.getElementById('mc');
-  if (mc) {
-    var g = function (id) { return document.getElementById(id); };
-    var money = function (n) { return '$' + (Math.round(n / 10) * 10).toLocaleString('en-US'); };
-    var mcRun = function () {
-      var calls = +g('mc-calls').value, miss = +g('mc-miss').value, job = +g('mc-job').value;
-      g('mc-calls-out').value = calls; g('mc-miss-out').value = miss + '%'; g('mc-job-out').value = money(job);
-      var missed = Math.round(calls * miss / 100 * 4.33);
-      g('mc-missed').value = missed; g('mc-all').value = money(missed * job); g('mc-quarter').value = money(missed * job / 4);
-      mc.classList.toggle('mc-zero', missed === 0);
-    };
-    mc.addEventListener('input', mcRun); mcRun();
   }
 })();
 

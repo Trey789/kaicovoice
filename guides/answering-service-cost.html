@@ -379,8 +379,8 @@ main p a,main li a,main strong a,.pain-closer a,.inc a{color:var(--ink);font-wei
 .callme{text-align:left;margin-top:36px}
 .callme h3{margin:0 0 6px}
 .callme-lead{color:var(--muted);margin:0 0 6px;font-size:15px}
-.cm-consent{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--ink-soft);line-height:1.5;cursor:pointer}
-.cm-consent input{margin-top:3px;width:18px;height:18px;flex:none;accent-color:var(--signal)}
+.cm-consent{display:flex;gap:8px;align-items:flex-start;font-size:14px;font-weight:400;color:var(--ink);line-height:1.45;cursor:pointer} /* same rules as the lead form's .gs-sms consent row */
+.cm-consent input{margin-top:3px;flex:none}
 .callme-status{margin:0;font-size:14px;color:var(--ink)}
 .callme-status.err{color:#ff8a8a}
 @media (prefers-reduced-motion:reduce){.price-card,.btn,.mark3d-mini,.grid-3 > .card{transition:none}.container:has(> .price-card) .price-card:hover,.container:has(> .price-card:hover) .price-card:not(:hover){transform:none}.brand:hover .mark3d-mini{transform:none}}
@@ -422,7 +422,7 @@ main p a,main li a,main strong a,.pain-closer a,.inc a{color:var(--ink);font-wei
 }
 /* Task 3: hero depth plane */
 @media (min-width:1100px){
-#top.hero{position:relative;overflow:clip;overflow-clip-margin:24px}
+#top.hero{position:relative;overflow:clip}
 #top.hero::before{content:"";position:absolute;left:-10%;right:-10%;top:30%;bottom:0;background:radial-gradient(circle,rgba(200,255,61,.22) 1px,transparent 1.5px) 0 0/28px 28px;transform:perspective(700px) rotateX(64deg) translate3d(calc(var(--px,0)*-24px),calc(var(--py,0)*-12px),0);transform-origin:top center;-webkit-mask:linear-gradient(to bottom,transparent,#000 30%,#000 70%,transparent);mask:linear-gradient(to bottom,transparent,#000 30%,#000 70%,transparent);pointer-events:none;z-index:0;transition:transform .5s ease-out}
 .hero .container{z-index:1}
 }
@@ -604,7 +604,7 @@ nav{view-transition-name:site-nav}
 
 <header class="hero">
   <div class="container">
-    <p class="breadcrumbs"><a href="/">Home</a> / Guides / Answering service cost</p>
+    <p class="breadcrumbs"><a href="/">Home</a> / <a href="/guides">Guides</a> / Answering service cost</p>
     <h1>How much does an answering service <span class="em">cost?</span></h1>
     <p class="lead">Short answer: it depends on how you are billed. Most answering services charge by the minute or by the call, add a setup charge, and bill overage once you pass a monthly bundle. Kaico's 24/7 AI Receptionist is a $299 one-time setup, then $299 a month flat, month to month, with 30 days written notice to cancel. The rest of this page explains the pricing models you will meet and what each one does to your bill.</p>
     <div class="hero-cta">
@@ -648,7 +648,7 @@ nav{view-transition-name:site-nav}
     <div class="price-card reveal">
       <div class="price-inner">
         <div class="price-name">24/7 AI Receptionist</div>
-        <div class="price-headline">Answers every call, day and night. Callers are told it is an AI. A script written for your business. Books into Google Calendar with the call details. Sends you a call summary. Takes calls forwarded from the number you already have.</div>
+        <div class="price-headline">Answers every call, day and night. Callers are told it is an AI. A script written for your business. Books into Google Calendar with the call details. Sends you a call summary. Takes calls forwarded from the number you already have. Transfers urgent calls to your cell.</div>
         <div class="price-row"><span class="price-amt">$299</span><span class="price-meta">one-time setup, then $299 a month, flat, month to month</span></div>
         <a href="/#start" class="btn btn-signal btn-start">Start my project</a>
       </div>
@@ -668,6 +668,7 @@ nav{view-transition-name:site-nav}
       <div class="card reveal"><h3>Books into Google Calendar.</h3><p>The appointment lands on your calendar with the call details attached.</p></div>
       <div class="card reveal"><h3>A call summary to you.</h3><p>After each call you get a summary: who called, what they needed and what was booked.</p></div>
       <div class="card reveal"><h3>Forwarding from your number.</h3><p>Calls to the number your customers already know ring the receptionist. You keep your number.</p></div>
+      <div class="card reveal"><h3>Transfers urgent calls to your cell.</h3><p>A call that cannot wait is sent to your cell, with the details recorded for follow-up. You decide which calls count as urgent.</p></div>
     </div>
     <p class="lead" style="margin-top:32px;">More on how the line works: <a href="/services/phone">24/7 phone</a>.</p>
   </div>
@@ -842,21 +843,6 @@ nav{view-transition-name:site-nav}
       lb.textContent = 'This page loaded in ' + s.toFixed(2) + ' s on your connection. Kaico builds sites like this.';
       lb.hidden = false;
     }, 0); });
-  }
-
-  // missed-call calculator: arithmetic on the visitor's sliders, nothing stored or sent
-  var mc = document.getElementById('mc');
-  if (mc) {
-    var g = function (id) { return document.getElementById(id); };
-    var money = function (n) { return '$' + (Math.round(n / 10) * 10).toLocaleString('en-US'); };
-    var mcRun = function () {
-      var calls = +g('mc-calls').value, miss = +g('mc-miss').value, job = +g('mc-job').value;
-      g('mc-calls-out').value = calls; g('mc-miss-out').value = miss + '%'; g('mc-job-out').value = money(job);
-      var missed = Math.round(calls * miss / 100 * 4.33);
-      g('mc-missed').value = missed; g('mc-all').value = money(missed * job); g('mc-quarter').value = money(missed * job / 4);
-      mc.classList.toggle('mc-zero', missed === 0);
-    };
-    mc.addEventListener('input', mcRun); mcRun();
   }
 })();
 
