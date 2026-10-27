@@ -31,7 +31,7 @@
       "name": "What if it cannot answer a question?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "It does not guess, and it does not invent prices. If a caller asks something outside what you have approved, the agent takes a message and texts the caller back so the lead stays warm. You get a transcript of every call, so you can see exactly what was asked and follow up yourself."
+        "text": "It does not guess, and it does not invent prices. If a caller asks something outside what you have approved, the agent takes a message for your team to return. You get a transcript of every call, so you can see exactly what was asked and follow up yourself."
       }
     },
     {
@@ -39,7 +39,7 @@
       "name": "How long does setup take?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "About a week. We learn your services, service area, hours, and the questions your customers actually ask, then test the agent with you before it ever answers a live call."
+        "text": "Your receptionist is answering calls within 7 business days once we have your hours, services and call-forwarding details. Before that we learn your service area and the questions your customers actually ask, then test the agent with you before it ever answers a live call."
       }
     },
     {
@@ -47,7 +47,7 @@
       "name": "Is there a contract?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Month to month, with 30 days written notice to cancel. The phone comes inside Front Door, Kaico's monthly service, from $900 a month. Build deposits are non-refundable once work begins; unused prepaid months are refunded."
+        "text": "Month to month, with 30 days written notice to cancel. The phone is $299 a month on its own, plus a one-time $299 setup, or inside Front Door, Kaico's monthly service, from $900 a month. Build deposits are non-refundable once work begins; unused prepaid months are refunded."
       }
     }
   ]
