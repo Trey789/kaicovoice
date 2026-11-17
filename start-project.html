@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Plan Your Website | Kaico Voice</title>
+<meta name="description" content="Tell Kaico Voice what your new website needs: services, hours, domain, colors and style." />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon-180.png" />
+<!-- Client intake for website builds. Standalone on purpose: it uses the portal's light Apple look
+     (kaicovoice-redesign apple-theme.css tokens), not the marketing site's dark theme, so build.py
+     does not stamp it. Posts to Kaico /leads like the Get started form; noindex, not in the nav. -->
+<style>
+  :root {
+    --canvas: #f2f2f7; --surface: #fff; --ink: #1c1c1e; --muted: #5a5a60; --line: #d1d1d6;
+    --control: #8e8e93; --blue: #0066cc; --blue-pressed: #0055aa; --soft: #eef4fd; --red: #ab2532;
+    --fill: rgba(118, 118, 128, 0.12);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--canvas); color: var(--ink); font-size: 17px; line-height: 22px;
+    -webkit-font-smoothing: antialiased; }
+  .brand { padding: 24px 16px 16px; text-align: center; font-weight: 600; letter-spacing: -0.01em; }
+  main { max-width: 600px; margin: 0 auto; padding: 0 12px 40px; }
+  .card { position: relative; background: var(--surface); border: 1px solid rgba(0, 0, 0, 0.06); border-radius: 12px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 8px 28px rgba(0, 0, 0, 0.06); padding: 24px 28px 0; }
+  .bar { height: 6px; border-radius: 3px; background: rgba(118, 118, 128, 0.16); overflow: hidden; }
+  .bar span { display: block; height: 100%; background: var(--blue); transform: scaleX(0); transform-origin: left;
+    transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .step { margin: 18px 0 4px; font-size: 13px; line-height: 18px; font-weight: 600; color: var(--blue); }
+  h1 { margin: 0 0 6px; font-size: 28px; line-height: 34px; font-weight: 700; letter-spacing: -0.015em; outline: none; }
+  .sub { margin: 0 0 20px; font-size: 15px; line-height: 20px; color: var(--muted); }
+  .q { margin: 0 0 22px; padding: 0; border: 0; min-width: 0; }
+  .q > label, .q > legend { display: block; margin-bottom: 8px; padding: 0; font-size: 15px; line-height: 20px; font-weight: 600; }
+  .req { color: var(--red); }
+  input[type=text], input[type=email], input[type=tel], textarea, select {
+    display: block; width: 100%; min-height: 44px; padding: 11px 14px; border: 1px solid var(--control);
+    border-radius: 10px; background: #fff; color: var(--ink); font: inherit; font-size: 17px;
+    transition: border-color 0.15s, box-shadow 0.15s; }
+  textarea { min-height: 96px; resize: vertical; }
+  select { appearance: none; -webkit-appearance: none; padding-right: 36px;
+    background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%231c1c1e' stroke-width='1.6'/%3E%3C/svg%3E") no-repeat right 14px center; }
+  ::placeholder { color: var(--control); opacity: 1; }
+  :is(input, textarea, select):focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.16); }
+  [aria-invalid=true] { border-color: var(--red) !important; }
+  .err { margin: 6px 0 0; font-size: 13px; line-height: 18px; color: var(--red); }
+  /* Tiles: one-tap choices (radio) and several-tap choices (checkbox). */
+  .tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; }
+  .tile { position: relative; display: flex; align-items: center; gap: 10px; min-height: 44px; padding: 10px 12px;
+    border: 1px solid var(--line); border-radius: 10px; background: #fff; cursor: pointer; font-size: 15px; line-height: 20px;
+    transition: border-color 0.15s, background-color 0.15s; }
+  .tile input { width: 20px; height: 20px; margin: 0; flex: none; accent-color: var(--blue); }
+  .tile:has(input:checked) { border-color: var(--blue); background: var(--soft); }
+  .tile:has(input:focus-visible) { outline: 3px solid rgba(0, 102, 204, 0.5); outline-offset: 2px; }
+  /* Hours: one row per day; times appear when the day is switched on. */
+  .days { display: grid; gap: 8px; }
+  .day { display: grid; grid-template-columns: 76px minmax(0, 1fr); align-items: center; gap: 8px; min-height: 44px; }
+  .day .tile { justify-content: flex-start; font-weight: 600; padding: 10px; }
+  .times { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 6px;
+    font-size: 15px; color: var(--muted); }
+  .times select { font-size: 16px; padding-left: 10px; padding-right: 28px; background-position: right 10px center; }
+  .times .one { grid-column: 1 / -1; }
+  .closed { color: var(--muted); font-size: 15px; }
+  .hint { margin: 8px 0 0; font-size: 13px; line-height: 18px; color: var(--muted); }
+  /* Review */
+  .rv { margin: 0 0 16px; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+  .rv h2 { display: flex; justify-content: space-between; align-items: center; margin: 0; padding: 4px 14px;
+    background: #f7f7fa; font-size: 15px; line-height: 20px; }
+  .rv dl { margin: 0; padding: 4px 14px 10px; }
+  .rv dt { margin-top: 8px; font-size: 13px; line-height: 18px; color: var(--muted); }
+  .rv dd { margin: 0; font-size: 15px; line-height: 20px; white-space: pre-wrap; overflow-wrap: anywhere; }
+  .rv .none { margin: 0; color: var(--muted); font-size: 15px; padding: 8px 0 2px; }
+  .link { min-height: 44px; padding: 0 4px; border: 0; background: none; color: var(--blue); font: inherit; font-size: 15px;
+    font-weight: 600; cursor: pointer; }
+  /* Back and Continue stay in reach at the bottom of the screen. */
+  .nav { position: sticky; bottom: 0; display: flex; gap: 10px; margin: 8px -28px 0; padding: 12px 28px 16px;
+    border-radius: 0 0 12px 12px; background: rgba(255, 255, 255, 0.86);
+    -webkit-backdrop-filter: saturate(180%) blur(20px); backdrop-filter: saturate(180%) blur(20px);
+    border-top: 1px solid rgba(0, 0, 0, 0.06); }
+  .btn { flex: 1; min-height: 50px; border: 0; border-radius: 999px; font: inherit; font-size: 17px; font-weight: 600;
+    letter-spacing: -0.01em; cursor: pointer; transition: background-color 0.15s, transform 0.1s; }
+  .btn:active { transform: scale(0.98); }
+  .btn:focus-visible, .link:focus-visible { outline: 3px solid rgba(0, 102, 204, 0.5); outline-offset: 2px; }
+  .primary { background: var(--blue); color: #fff; }
+  .primary:hover { background: var(--blue-pressed); }
+  .primary[disabled] { opacity: 0.6; cursor: progress; }
+  .secondary { flex: 0 0 34%; background: var(--fill); color: var(--ink); }
+  .alert { margin: 0 0 12px; padding: 12px 14px; border-radius: 10px; background: #fdecee; color: var(--red); font-size: 15px; line-height: 20px; }
+  .note { margin: 16px 4px 0; text-align: center; font-size: 13px; line-height: 18px; color: var(--muted); }
+  .note .link { font-size: 13px; min-height: 0; padding: 0; }
+  .done { padding: 12px 0 32px; text-align: center; }
+  .done .check { display: flex; align-items: center; justify-content: center; width: 56px; height: 56px; margin: 8px auto 16px;
+    border-radius: 50%; background: var(--blue); color: #fff; font-size: 28px; font-weight: 700; }
+  .done p { margin: 0; color: var(--muted); font-size: 15px; line-height: 20px; }
+  .hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+  [hidden] { display: none !important; }
+  @media (max-width: 600px) {
+    .card { padding: 20px 20px 0; }
+    .nav { margin: 8px -20px 0; padding: 12px 20px calc(16px + env(safe-area-inset-bottom)); }
+    h1 { font-size: 26px; line-height: 32px; }
+  }
+  @media (max-width: 380px) { .day { grid-template-columns: 64px minmax(0, 1fr); } }
+  @media (prefers-reduced-motion: reduce) { .bar span, .btn, .tile { transition: none; } }
+</style>
+</head>
+<body>
+<div class="brand">Kaico Voice</div>
+<main>
+  <div class="card">
+    <div class="bar" role="progressbar" aria-label="Form progress" aria-valuemin="1" aria-valuemax="7" aria-valuenow="1"><span id="fill"></span></div>
+    <form id="form" novalidate>
+      <div id="screen"></div>
+      <div class="hp" aria-hidden="true"><label>Company website <input type="text" id="company_url" tabindex="-1" autocomplete="off" /></label></div>
+      <div class="nav" id="nav">
+        <button type="button" class="btn secondary" id="back">Back</button>
+        <button type="submit" class="btn primary" id="next">Continue</button>
+      </div>
+    </form>
+    <noscript><p class="alert">This form needs JavaScript turned on. Please text or call Trey instead.</p></noscript>
+  </div>
+  <p class="note" id="note">Your answers save on this device as you go. <button type="button" class="link" id="reset">Start over</button></p>
+</main>
+<script>
+(function () {
+  'use strict';
+  var API = 'https://web-production-976b9.up.railway.app/leads';
+  var KEY = 'kv-start-project-v1';
+
+  function halfHours(start, end) {
+    var out = [];
+    for (var m = start * 60; m <= end * 60; m += 30) {
+      var h = Math.floor(m / 60), mm = m % 60;
+      out.push(((h + 11) % 12 + 1) + ':' + (mm ? '30' : '00') + (h < 12 ? ' AM' : ' PM'));
+    }
+    return out;
+  }
+  var DAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+  var OPENS = ['Open 24 hours'].concat(halfHours(5, 12));
+  var CLOSES = halfHours(12, 23).concat(['Midnight']);
+
+  // One list drives the cards, the review screen and the CRM text. k = answer key.
+  var CARDS = [
+    { title: "Let's plan your website", sub: 'Thanks for working with Kaico Voice. Six short cards, about 12 minutes. Skip anything you are not sure about; we will cover it on a call. Please do not type passwords or card numbers here.', qs: [
+      { k: 'name', label: 'Your name', type: 'text', req: true, ac: 'name' },
+      { k: 'business', label: 'Business name', type: 'text', req: true, ac: 'organization' },
+      { k: 'phone', label: 'Phone', type: 'tel', req: true, ac: 'tel' },
+      { k: 'email', label: 'Email', type: 'email', req: true, ac: 'email' },
+      { k: 'trade', label: 'What kind of business is it (trade)', type: 'text', req: true, ph: 'Example: HVAC, plumbing, roofing' }] },
+    { title: 'Your business', sub: 'The basics we put on every page.', qs: [
+      { k: 'areas', label: 'Cities or areas you serve', type: 'text', ph: 'Example: Tulsa, Broken Arrow, Owasso' },
+      { k: 'address', label: 'Business address', type: 'text', ac: 'street-address' },
+      { k: 'show_address', label: 'Show your address on the website', type: 'one', opts: ['Yes, show it', 'No, I go to my customers', 'Not sure'] },
+      { k: 'hours', label: 'Business hours', type: 'hours' },
+      { k: 'license', label: 'License numbers to show (if any)', type: 'text' }] },
+    { title: 'Your services', sub: 'What you do, and what you want more of.', qs: [
+      { k: 'services', label: 'Main services you offer (most important first)', type: 'long', ph: 'One per line. Add a starting price if you want it shown.' },
+      { k: 'more_of', label: 'Services you want more of', type: 'long' },
+      { k: 'prices', label: 'Do you want prices shown on the site', type: 'one', opts: ['Yes', 'Starting at prices only', 'No', 'Not sure'] },
+      { k: 'highlights', label: 'What should the site highlight', type: 'many', opts: ['Free estimates', 'Financing', '24/7 or emergency service', 'Licensed and insured', 'Warranty or guarantee', 'Family owned', 'Veteran owned', 'Senior or military discounts'] }] },
+    { title: 'Your domain and website', sub: 'Where the site will live and what it should do.', qs: [
+      { k: 'current_site', label: 'Current website (or none)', type: 'text' },
+      { k: 'own_domain', label: 'Do you already own a domain name', type: 'one', opts: ['Yes', 'No, help me pick and buy one', 'Not sure'] },
+      { k: 'domain', label: 'Domain you have, or 2 or 3 you would like', type: 'text', ph: 'Example: tulsaheatandair.com' },
+      { k: 'registrar', label: 'Where the domain is registered, and whose name it is in', type: 'text', ph: 'Example: GoDaddy, in my name. No passwords.' },
+      { k: 'goal', label: 'What do you want the website to do most', type: 'one', opts: ['Get more calls', 'Get more quote requests', 'Let customers book online', 'Look more professional', 'Other'] },
+      { k: 'contact_ways', label: 'How should customers reach you from the site', type: 'many', opts: ['Call', 'Text', 'Quote request form', 'Book online', 'Email'] },
+      { k: 'pages', label: 'Pages you want (we will suggest the rest)', type: 'many', opts: ['Home', 'Services', 'About us', 'Service areas', 'Reviews', 'Photo gallery', 'FAQ', 'Financing', 'Careers', 'Contact'] }] },
+    { title: 'Look and feel', sub: 'Help us make it look like you.', qs: [
+      { k: 'logo', label: 'Do you have a logo', type: 'one', opts: ['Yes', 'Yes, but I want it refreshed', 'No, I need one'] },
+      { k: 'colors', label: 'Brand colors', type: 'text', ph: 'Example: navy and orange, or use my logo colors' },
+      { k: 'style', label: 'Which style fits you best', type: 'one', opts: ['Clean and modern', 'Bold and rugged', 'Friendly and local', 'Premium and upscale', 'Pick for me'] },
+      { k: 'likes', label: '2 or 3 websites you like, and what you like about them', type: 'long' },
+      { k: 'competitors', label: 'Your main competitors', type: 'text' },
+      { k: 'photos', label: 'Do you have photos of your work, team or trucks', type: 'one', opts: ['Yes, lots', 'A few', 'None yet, use stock photos for now'] },
+      { k: 'assets', label: 'Link to your logo and photos (Google Drive or Dropbox), or say you will text them', type: 'text' }] },
+    { title: 'Your story and launch', sub: 'Last card. The words and proof that win the call.', qs: [
+      { k: 'story', label: 'A few sentences about your business and what makes you different', type: 'long', ph: 'How long you have been at it, who runs it, why customers pick you.' },
+      { k: 'gbp', label: 'Do you have a Google Business Profile', type: 'one', opts: ['Yes, and I can log in', 'Yes, but I cannot get in', 'No', 'Not sure'] },
+      { k: 'reviews', label: 'Favorite customer reviews, or a link to your reviews', type: 'long' },
+      { k: 'social', label: 'Social media links', type: 'long', ph: 'Facebook, Instagram, Nextdoor, Yelp' },
+      { k: 'lead_email', label: 'Email where website leads should go (if different)', type: 'email' },
+      { k: 'live', label: 'When do you want the site live', type: 'one', opts: ['As soon as possible', 'Within a month', '1 to 3 months', 'No rush'] },
+      { k: 'notes', label: 'Anything else we should know', type: 'long' }] }
+  ];
+  var REVIEW = CARDS.length, TOTAL = CARDS.length + 1;
+
+  var state = { step: 0, a: {}, id: '', fromReview: false };
+  function load() { try { var s = JSON.parse(localStorage.getItem(KEY) || 'null'); if (s && s.a) state = s; } catch (e) {} }
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} }
+  function clear() { try { localStorage.removeItem(KEY); } catch (e) {} }
+
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+
+  // Answer as text for the review and the CRM; '' when unanswered.
+  function text(q) {
+    var v = state.a[q.k];
+    if (q.type === 'many') return (v || []).join(', ');
+    if (q.type === 'hours') {
+      var h = v || {};
+      if (!DAYS.some(function (d) { return h[d]; })) return '';
+      return DAYS.map(function (d) {
+        var t = h[d];
+        if (!t) return d + ' closed';
+        return t.from === 'Open 24 hours' ? d + ' open 24 hours' : d + ' ' + t.from + ' to ' + t.to;
+      }).join('\n');
+    }
+    return (v || '').trim();
+  }
+
+  function sel(d, part, opts, cur, label, wide) {
+    return '<select data-day="' + d + '" data-part="' + part + '" aria-label="' + label + '"' + (wide ? ' class="one"' : '') + '>' +
+      opts.map(function (o) { return '<option' + (o === cur ? ' selected' : '') + '>' + o + '</option>'; }).join('') + '</select>';
+  }
+  function field(q) {
+    var id = 'q-' + q.k, v = state.a[q.k], lab = esc(q.label) + (q.req ? ' <span class="req" aria-hidden="true">*</span>' : '');
+    var ph = q.ph ? ' placeholder="' + esc(q.ph) + '"' : '';
+    if (q.type === 'one' || q.type === 'many') {
+      var kind = q.type === 'one' ? 'radio' : 'checkbox';
+      return '<fieldset class="q"><legend>' + lab + '</legend><div class="tiles">' + q.opts.map(function (o) {
+        var on = q.type === 'one' ? v === o : (v || []).indexOf(o) >= 0;
+        return '<label class="tile"><input type="' + kind + '" name="' + q.k + '" value="' + esc(o) + '"' + (on ? ' checked' : '') + ' />' + esc(o) + '</label>';
+      }).join('') + '</div></fieldset>';
+    }
+    if (q.type === 'hours') {
+      var h = v || {};
+      return '<fieldset class="q"><legend>' + lab + '</legend><div class="days">' + DAYS.map(function (d) {
+        var t = h[d], allDay = t && t.from === 'Open 24 hours';
+        var times = !t ? '<span class="closed">Closed</span>' :
+          '<div class="times">' + sel(d, 'from', OPENS, t.from, d + ' opening time', allDay) +
+          (allDay ? '' : '<span>to</span>' + sel(d, 'to', CLOSES, t.to, d + ' closing time')) + '</div>';
+        return '<div class="day"><label class="tile"><input type="checkbox" data-day="' + d + '"' + (t ? ' checked' : '') + ' />' + d + '</label>' + times + '</div>';
+      }).join('') + '</div><p class="hint">Tap the days you are open. Each day you add copies the hours above it.</p></fieldset>';
+    }
+    var tag = q.type === 'long' ? 'textarea' : 'input';
+    var type = q.type === 'long' ? '' : ' type="' + (q.type === 'tel' ? 'tel' : q.type === 'email' ? 'email' : 'text') + '"';
+    var ac = q.ac ? ' autocomplete="' + q.ac + '"' : '';
+    var val = q.type === 'long' ? '>' + esc(v || '') + '</textarea>' : ' value="' + esc(v || '') + '" />';
+    return '<div class="q"><label for="' + id + '">' + lab + '</label><' + tag + ' id="' + id + '" name="' + q.k + '"' + type + ac + ph +
+      (q.req ? ' aria-required="true"' : '') + ' aria-describedby="' + id + '-err"' + val +
+      '<p class="err" id="' + id + '-err" hidden></p></div>';
+  }
+
+  var screen = document.getElementById('screen');
+  function render(focus) {
+    var s = state.step, html;
+    if (s === REVIEW) {
+      html = '<p class="step">Step ' + TOTAL + ' of ' + TOTAL + '</p><h1 tabindex="-1">Review your answers</h1>' +
+        '<p class="sub">Check everything, then send. Tap Edit to change a card.</p><div id="sendErr"></div>' +
+        CARDS.map(function (c, i) {
+          var rows = c.qs.filter(function (q) { return text(q); }).map(function (q) {
+            return '<dt>' + esc(q.label) + '</dt><dd>' + esc(text(q)) + '</dd>';
+          }).join('');
+          return '<section class="rv"><h2>' + esc(c.title) + '<button type="button" class="link" data-edit="' + i + '">Edit</button></h2>' +
+            '<dl>' + (rows || '<p class="none">Skipped</p>') + '</dl></section>';
+        }).join('');
+    } else {
+      var c = CARDS[s];
+      html = '<p class="step">Step ' + (s + 1) + ' of ' + TOTAL + '</p><h1 tabindex="-1">' + esc(c.title) + '</h1><p class="sub">' + esc(c.sub) + '</p>' +
+        c.qs.map(field).join('');
+    }
+    screen.innerHTML = html;
+    document.getElementById('back').hidden = s === 0;
+    document.getElementById('next').textContent = s === REVIEW ? 'Send answers' : state.fromReview ? 'Back to review' : 'Continue';
+    document.getElementById('fill').style.transform = 'scaleX(' + (s + 1) / TOTAL + ')';
+    document.querySelector('.bar').setAttribute('aria-valuenow', String(s + 1));
+    if (focus) { var h1 = screen.querySelector('h1'); window.scrollTo(0, 0); if (h1) h1.focus({ preventScroll: true }); }
+  }
+
+  // Inputs write straight into state, and every change is saved on this device.
+  function rerender(selector) { save(); render(false); var el = screen.querySelector(selector); if (el) el.focus(); }
+  function onEdit(e) {
+    var t = e.target, k = t.name;
+    if (t.dataset.day) {
+      var h = state.a.hours = state.a.hours || {}, d = t.dataset.day;
+      if (t.type === 'checkbox') {
+        if (t.checked) {
+          var prev = DAYS.slice(0, DAYS.indexOf(d)).reverse().filter(function (x) { return h[x]; })[0];
+          h[d] = prev ? { from: h[prev].from, to: h[prev].to } : { from: '8:00 AM', to: '5:00 PM' };
+        } else delete h[d];
+        return rerender('input[data-day="' + d + '"]');
+      }
+      if (e.type !== 'change') return;
+      h[d][t.dataset.part] = t.value;
+      if (t.dataset.part === 'from') {
+        if (t.value === 'Open 24 hours') delete h[d].to; else if (!h[d].to) h[d].to = '5:00 PM';
+        return rerender('select[data-day="' + d + '"][data-part="from"]');
+      }
+    } else if (t.type === 'checkbox') {
+      state.a[k] = [].slice.call(screen.querySelectorAll('input[name="' + k + '"]:checked')).map(function (x) { return x.value; });
+    } else if (k) {
+      state.a[k] = t.value;
+      if (t.getAttribute('aria-invalid') === 'true') showErr(t, '');
+    }
+    save();
+  }
+  screen.addEventListener('input', onEdit);
+  screen.addEventListener('change', onEdit);
+
+  function showErr(el, msg) {
+    var p = document.getElementById(el.id + '-err');
+    el.setAttribute('aria-invalid', msg ? 'true' : 'false');
+    if (p) { p.textContent = msg; p.hidden = !msg; }
+  }
+  function valid() {
+    var bad = null;
+    CARDS[state.step].qs.forEach(function (q) {
+      var el = document.getElementById('q-' + q.k); if (!el) return;
+      var v = (state.a[q.k] || '').trim(), msg = '';
+      if (q.req && !v) msg = 'Please fill this in.';
+      else if (v && q.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) msg = 'Please check this email address.';
+      else if (v && q.type === 'tel' && v.replace(/\D/g, '').length < 10) msg = 'Please enter a 10 digit phone number.';
+      showErr(el, msg);
+      if (msg && !bad) bad = el;
+    });
+    if (bad) bad.focus();
+    return !bad;
+  }
+
+  // Each card is a browser history entry (d counts entries this page added), so the phone's
+  // back gesture also goes back one card. A reopened draft has no entries yet: Back steps in place.
+  function go(step, mode) {
+    state.step = step; save(); render(true);
+    var hash = '#' + (step === REVIEW ? 'review' : 'card-' + (step + 1)), d = (history.state && history.state.d) || 0;
+    if (mode === 'push') history.pushState({ step: step, d: d + 1 }, '', hash);
+    else if (mode === 'replace') history.replaceState({ step: step, d: d }, '', hash);
+  }
+  window.addEventListener('popstate', function (e) {
+    var s = e.state && typeof e.state.step === 'number' ? e.state.step : 0;
+    state.fromReview = false; go(s);
+  });
+  document.getElementById('back').addEventListener('click', function () {
+    state.fromReview = false;
+    if (history.state && history.state.d > 0) history.back(); else go(Math.max(0, state.step - 1), 'replace');
+  });
+  screen.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-edit]'); if (!b) return;
+    state.fromReview = true; go(Number(b.dataset.edit), 'push');
+  });
+  document.getElementById('form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (state.step === REVIEW) return send();
+    if (!valid()) return;
+    var next = state.fromReview ? REVIEW : state.step + 1;
+    state.fromReview = false;
+    go(next, 'push');
+  });
+
+  function payload() {
+    var lines = ['WEBSITE PROJECT FORM (kaicovoice.com/start-project)'];
+    CARDS.slice(1).forEach(function (c) {
+      var rows = c.qs.filter(function (q) { return text(q); });
+      if (!rows.length) return;
+      lines.push('', c.title.toUpperCase());
+      rows.forEach(function (q) { lines.push(q.label + ':' + (q.type === 'hours' ? '\n' : ' ') + text(q)); });
+    });
+    lines.push('', 'Note: answered on the Kaico website project form. Do not paste passwords here.');
+    var one = CARDS[0].qs;
+    return {
+      name: text(one[0]), business: text(one[1]), phone: text(one[2]), email: text(one[3]), trade: text(one[4]),
+      problem: lines.join('\n'), referral_source: 'Website project form sent by Trey', source: 'website_project_form',
+      submission_id: state.id, company_url: document.getElementById('company_url').value
+    };
+  }
+  function send() {
+    var btn = document.getElementById('next'), box = document.getElementById('sendErr');
+    // One id per draft, so a retry after a network hiccup is stored once.
+    if (!state.id) { state.id = 'kvsp_' + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2, 10); save(); }
+    btn.disabled = true; btn.textContent = 'Sending...'; box.innerHTML = '';
+    var ctrl = window.AbortController ? new AbortController() : null;
+    var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 20000);
+    fetch(API, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload()), signal: ctrl ? ctrl.signal : undefined })
+      .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { if (!r.ok || !j.ok) throw new Error(r.status === 429 ? 'busy' : 'fail'); }); })
+      .then(function () {
+        clearTimeout(timer); clear();
+        document.getElementById('form').hidden = true; document.getElementById('note').hidden = true;
+        document.getElementById('fill').style.transform = 'scaleX(1)';
+        var done = document.createElement('div'); done.className = 'done';
+        done.innerHTML = '<div class="check" aria-hidden="true">✓</div><h1 tabindex="-1">Thank you</h1><p>Got it, thank you! Trey will review your answers and reach out soon.</p>';
+        document.querySelector('.card').appendChild(done); done.querySelector('h1').focus();
+        history.replaceState({ step: REVIEW, d: 0 }, '', '#sent');
+      })
+      .catch(function (err) {
+        clearTimeout(timer); btn.disabled = false; btn.textContent = 'Send answers';
+        box.innerHTML = '<p class="alert" role="alert">' + (err && err.message === 'busy' ?
+          'Too many tries in a short time. Please wait a minute and tap Send again.' :
+          'We could not send your answers. They are saved on this device; please check your connection and tap Send again.') + '</p>';
+        window.scrollTo(0, 0);
+      });
+  }
+
+  document.getElementById('reset').addEventListener('click', function () {
+    if (!window.confirm('Clear all your answers and start over?')) return;
+    clear(); state = { step: 0, a: {}, id: '', fromReview: false };
+    history.replaceState({ step: 0, d: 0 }, '', location.pathname + location.search); render(true);
+  });
+
+  load();
+  if (!(state.step >= 0 && state.step <= REVIEW)) state.step = 0;
+  state.fromReview = false;
+  history.replaceState({ step: state.step, d: 0 }, '', location.pathname + location.search);
+  render(false);
+})();
+</script>
+</body>
+</html>
