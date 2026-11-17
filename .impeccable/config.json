@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "start-project.html"
+        ],
+        "createdAt": "2026-11-17T23:52:31.009Z",
+        "reason": "assistant decided: .card deliberately delegates its bottom inset to the full-width sticky .nav footer; .nav explicitly has 12px top and 16px bottom padding, including the mobile safe-area inset. Text is padded inside the footer; the detector treats calc/env and nested footer padding as zero."
+      }
+    ]
+  }
+}
