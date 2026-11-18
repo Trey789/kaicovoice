@@ -20,7 +20,7 @@
   }
   * { box-sizing: border-box; }
   html { -webkit-text-size-adjust: 100%; }
-  body { margin: 0; background: var(--canvas); color: var(--ink); font-size: 17px; line-height: 22px;
+  body { margin: 0; background: var(--canvas); color: var(--ink); font-size: 17px; line-height: 1.5;
     -webkit-font-smoothing: antialiased; }
   .brand { padding: 24px 16px 16px; text-align: center; font-weight: 600; letter-spacing: -0.01em; }
   main { max-width: 600px; margin: 0 auto; padding: 0 12px 40px; }
@@ -126,7 +126,8 @@
 (function () {
   'use strict';
   var API = 'https://web-production-976b9.up.railway.app/leads';
-  var KEY = 'kv-start-project-v1';
+  var INVITE = new URLSearchParams(location.search).get('invite') || '';
+  var KEY = 'kv-start-project-v1' + (INVITE ? ':' + INVITE : '');
 
   function halfHours(start, end) {
     var out = [];
@@ -187,8 +188,14 @@
   var REVIEW = CARDS.length, TOTAL = CARDS.length + 1;
 
   var state = { step: 0, a: {}, id: '', fromReview: false };
-  function load() { try { var s = JSON.parse(localStorage.getItem(KEY) || 'null'); if (s && s.a) state = s; } catch (e) {} }
-  function save() { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} }
+  function load() {
+    try {
+      var s = JSON.parse(localStorage.getItem(KEY) || 'null');
+      if (s && s.savedAt && (!Number.isFinite(s.savedAt) || Date.now() - s.savedAt > 30 * 86400000)) { clear(); return; }
+      if (s && s.a && typeof s.a === 'object' && !Array.isArray(s.a)) { state = s; if (!state.savedAt) save(); }
+    } catch (e) {}
+  }
+  function save() { try { state.savedAt = Date.now(); localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} }
   function clear() { try { localStorage.removeItem(KEY); } catch (e) {} }
 
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
@@ -360,7 +367,9 @@
     return {
       name: text(one[0]), business: text(one[1]), phone: text(one[2]), email: text(one[3]), trade: text(one[4]),
       problem: lines.join('\n'), referral_source: 'Website project form sent by Trey', source: 'website_project_form',
-      submission_id: state.id, company_url: document.getElementById('company_url').value
+      submission_id: state.id, company_url: document.getElementById('company_url').value,
+      website_project: { schema: 'kaico.website-project/1', answers: state.a },
+      website_invitation: INVITE || undefined
     };
   }
   function send() {
@@ -371,7 +380,7 @@
     var ctrl = window.AbortController ? new AbortController() : null;
     var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 20000);
     fetch(API, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload()), signal: ctrl ? ctrl.signal : undefined })
-      .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { if (!r.ok || !j.ok) throw new Error(r.status === 429 ? 'busy' : 'fail'); }); })
+      .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { if (!r.ok || !j.ok) throw new Error(r.status === 429 ? 'busy' : r.status === 409 ? 'changed' : r.status === 422 ? 'invalid' : 'fail'); }); })
       .then(function () {
         clearTimeout(timer); clear();
         document.getElementById('form').hidden = true; document.getElementById('note').hidden = true;
@@ -385,6 +394,8 @@
         clearTimeout(timer); btn.disabled = false; btn.textContent = 'Send answers';
         box.innerHTML = '<p class="alert" role="alert">' + (err && err.message === 'busy' ?
           'Too many tries in a short time. Please wait a minute and tap Send again.' :
+          err && err.message === 'changed' ? 'Your earlier submission is saved. These answers differ; contact Trey to review the change.' :
+          err && err.message === 'invalid' ? 'Please check your invitation and answers. Remove any passwords. Your answers are still saved on this device; contact Trey if you need a new invitation.' :
           'We could not send your answers. They are saved on this device; please check your connection and tap Send again.') + '</p>';
         window.scrollTo(0, 0);
       });
