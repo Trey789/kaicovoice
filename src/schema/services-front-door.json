@@ -5,11 +5,7 @@
       "@type": "Service",
       "serviceType": "Done-for-you marketing for contractors",
       "name": "Front Door: contractor marketing services, done for you",
-      "provider": {
-        "@type": "ProfessionalService",
-        "name": "Kaico Voice",
-        "url": "https://www.kaicovoice.com/"
-      },
+      "provider": {"@id": "https://www.kaicovoice.com/#organization"},
       "areaServed": {
         "@type": "Country",
         "name": "United States"

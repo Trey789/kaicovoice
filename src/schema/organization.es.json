@@ -1,15 +1,15 @@
 {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
+  "@type": "Organization",
+  "@id": "https://www.kaicovoice.com/#organization",
   "name": "Kaico Voice",
   "legalName": "Kaico LLC",
-  "url": "https://www.kaicovoice.com/es",
+  "url": "https://www.kaicovoice.com/",
   "telephone": "+19183592644",
   "email": "trey.kaico@gmail.com",
   "description": "Kaico crea y gestiona la presencia digital de negocios de servicios: sitio web, perfil de Google y atención telefónica.",
   "image": "https://www.kaicovoice.com/assets/logo-k-512.png",
   "logo": "https://www.kaicovoice.com/assets/logo-k-512.png",
-  "priceRange": "$$",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Tulsa",

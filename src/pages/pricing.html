@@ -39,7 +39,7 @@ schema: schema/pricing.json
       <div class="price-inner">
         <span class="pill"><i></i> Start here</span>
         <div class="price-name">24/7 AI Receptionist</div>
-        <div class="price-headline">Every call answered, day and night, by an assistant that tells callers it is an AI. A script written for your business, appointments booked into your Google Calendar with the call details, a summary sent to you after each call, and forwarding from the number you already have.</div>
+        <div class="price-headline">Inbound call answering, day and night, by an assistant that tells callers it is an AI. A script written for your business, appointments booked into your Google Calendar with the call details, a summary sent to you after each call, and forwarding from the number you already have.</div>
         <div class="price-row"><span class="price-amt">$299<em>/mo</em></span><span class="price-meta">plus $299 <span style="white-space:nowrap">one-time</span> setup</span></div>
         <a href="/#start" class="btn btn-signal btn-start">Start my project</a>
       </div>
@@ -87,7 +87,7 @@ schema: schema/pricing.json
           <tr><th scope="col">Included</th><th scope="col">24/7 AI Receptionist, $299/mo</th><th scope="col">Front Door, $900/mo</th></tr>
         </thead>
         <tbody>
-          <tr><th scope="row">Answers every call 24/7 and tells callers it is an AI</th><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Yes</span></td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Yes</span></td></tr>
+          <tr><th scope="row">Inbound call answering 24/7 and tells callers it is an AI</th><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Yes</span></td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Yes</span></td></tr>
           <tr><th scope="row">A script written for your business: services, hours, the questions customers ask</th><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Yes</span></td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Yes</span></td></tr>
           <tr><th scope="row">Books appointments into your Google Calendar with the call details</th><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Yes</span></td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Yes</span></td></tr>
           <tr><th scope="row">Transfers urgent calls to your cell</th><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Yes</span></td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Yes</span></td></tr>
@@ -116,10 +116,10 @@ schema: schema/pricing.json
       <label>Share you miss (after hours, on a ladder, on another call) <output for="mc-miss" id="mc-miss-out">30%</output>
         <input type="range" id="mc-miss" name="miss" min="0" max="80" step="5" value="30"></label>
       <p class="mc-result" aria-live="polite">
-        <span class="mc-if">You miss about <output id="mc-missed">39</output> calls a month. The receptionist picks up each one, books the job into your calendar and sends you the call details.</span>
+        <span class="mc-if">You miss about <output id="mc-missed">39</output> calls a month. The receptionist can capture details and book available calendar slots using your approved rules.</span>
         <span class="mc-none">You miss no calls. Keep it that way; the receptionist is for the day that changes.</span>
       </p>
-      <p class="mc-fine">Your count, from your own sliders. The 24/7 AI Receptionist answers every one for $299 a month, on its own or inside Front Door from $900 a month. <a href="/services/phone">See the receptionist</a>.</p>
+      <p class="mc-fine">Your count, from your own sliders. The 24/7 AI Receptionist provides call answering for $299 a month, on its own or inside Front Door from $900 a month. <a href="/services/phone">See the receptionist</a>.</p>
     </form>
     <script>
     (function () {
@@ -186,6 +186,8 @@ schema: schema/pricing.json
     </div>
   </div>
 </section>
+
+{{phone_limits}}
 
 <section class="final-cta">
   <div class="container">

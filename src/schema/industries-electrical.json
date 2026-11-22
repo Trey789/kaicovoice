@@ -4,42 +4,66 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Is this an AI receptionist for electricians?",
+      "name": "What does an electrician answering service do?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Kaico Voice is an AI receptionist built for electrical contractors. It answers 24/7 with your company name, captures what the caller sees in their own words, books the job into your Google Calendar, transfers urgent calls to your cell and sends you a text or email summary after each call. It tells callers it is an AI, and you can hear it yourself at (918) 359-2644."
+        "text": "It receives calls for an electrical business while the office is closed or the team is occupied. Kaico uses an AI receptionist to collect the caller details and request, book available Google Calendar appointments under your rules, or route the request to your team. It identifies itself as AI."
       }
     },
     {
       "@type": "Question",
-      "name": "Does it know an outage from a flickering light?",
+      "name": "How much is the electrician answering service?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "It captures what the caller describes and routes by the rules you set. It does not diagnose. A whole-house outage with the neighbors' lights on gets routed one way, a flickering fixture another, and anything with heat, smell or sparking transfers to a person. You read the transcript and make the call."
+        "text": "The phone plan is $299 a month plus a one-time $299 setup, month to month with 30 days written notice to cancel. Front Door starts at $900 a month and adds website care, Google Business Profile work and the job system. Confirm capacity and usage terms before buying."
       }
     },
     {
       "@type": "Question",
-      "name": "Can it schedule inspections?",
+      "name": "Will the assistant diagnose an electrical fault?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes, the same way it books a service call: it checks your calendar and offers real openings. If inspections and installs live on different calendars or inside field service software, we map that on the setup call before it takes a single live call."
+        "text": "The workflow is for intake, approved service information and routing. Technical diagnosis, repair instructions, electrical safety decisions and emergency dispatch are outside this phone service. Your qualified team handles technical judgment."
       }
     },
     {
       "@type": "Question",
-      "name": "What if I want to take the call myself?",
+      "name": "How are urgent calls handed to a person?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Then take it. The agent picks up only what you cannot: the calls you miss, the calls after hours, the calls that come in while you are in a panel. It is the backstop, not the replacement."
+        "text": "You choose the transfer number, escalation rules and fallback process. The assistant can attempt a transfer or capture details for follow-up. A transfer depends on your person being available; Kaico is not supplying a staffed human backup or guaranteeing an emergency response."
       }
     },
     {
       "@type": "Question",
-      "name": "What does it cost?",
+      "name": "Can it book panel upgrades, EV chargers or inspections?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The phone is $299 a month on its own, plus a one-time $299 setup, or inside Front Door from $900 a month, month to month with 30 days written notice. Front Door adds site care, your Google listing, the self-serve scheduler and the job system. Every project is scoped with a free front-door audit before we quote."
+        "text": "It can collect requests for services you offer and book available Google Calendar slots for appointment types you approve. A site visit or estimate request should be distinguished from a confirmed installation. Technician assignment, job duration, permits and inspection requirements need your team and approved scheduling rules."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it integrate with my field-service software?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Google Calendar is the documented scheduling connection. A native ServiceTitan, Jobber, Housecall Pro or other field-service integration is not included by default. Confirm the handoff and any separate scope before launch."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can it take overflow calls and speak Spanish?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Call forwarding can be configured for the coverage you need after your provider settings are confirmed and tested. The public demo is in English; another phone language needs a separate confirmation and demonstration. Confirm peak and simultaneous-call capacity rather than assuming unlimited calls."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What electrical customer proof can I inspect?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We are not quoting verified electrical bookings, revenue gains or dispatch outcomes. The Blue Sands Trucking website, calculator and scheduler show delivered web work for a hauling business. Read the proof page for that scope, then use an electrical demo to assess your own intake, calendar and handoff needs."
       }
     }
   ]

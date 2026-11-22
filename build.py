@@ -140,6 +140,7 @@ def render(root, meta, body, partials, lang="en"):
         "{{ga4}}": GA4_SNIPPET.format(id=GA4_ID) if GA4_ID else "",
         "{{robots}}": '<meta name="robots" content="noindex, nofollow" />' if noindex else "",
         "{{lead_form}}": partials["lead-form"].rstrip("\n"),
+        "{{phone_limits}}": partials["phone-limits"].rstrip("\n"),
         "{{lang}}": lang,
         "{{skip_link}}": "Ir al contenido" if lang == "es" else "Skip to content",
         "{{hreflang}}": alternates,
@@ -194,10 +195,10 @@ def check(root, pages):
 def build(root=ROOT, write=True):
     """Render every page. Returns (errors, outputs). Writes files only when write=True and there are no errors."""
     src = root / "src"
-    partials = {n: read(src / "partials" / f"{n}.html") for n in ("head", "nav", "footer", "lead-form")}
+    partials = {n: read(src / "partials" / f"{n}.html") for n in ("head", "nav", "footer", "lead-form", "phone-limits")}
     spanish = dict(partials)
     if (src / "pages" / "es").exists():
-        spanish.update({n: read(src / "partials" / f"{n}.es.html") for n in ("nav", "footer", "lead-form")})
+        spanish.update({n: read(src / "partials" / f"{n}.es.html") for n in ("nav", "footer", "lead-form", "phone-limits")})
     pages, errs = [], []
     for path in sorted((src / "pages").rglob("*.html")):
         meta, body = parse(path)

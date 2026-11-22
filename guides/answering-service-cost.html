@@ -473,7 +473,8 @@ nav{view-transition-name:site-nav}
 
 <script type="application/ld+json">{
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
+  "@type": "Organization",
+  "@id": "https://www.kaicovoice.com/#organization",
   "name": "Kaico Voice",
   "legalName": "Kaico LLC",
   "url": "https://www.kaicovoice.com/",
@@ -482,7 +483,6 @@ nav{view-transition-name:site-nav}
   "description": "Kaico builds and runs the online front door for the trades: the website, the Google listing, and the phone that answers when you can't.",
   "image": "https://www.kaicovoice.com/assets/logo-k-512.png",
   "logo": "https://www.kaicovoice.com/assets/logo-k-512.png",
-  "priceRange": "$$",
   "address": { "@type": "PostalAddress", "addressLocality": "Tulsa", "addressRegion": "OK", "addressCountry": "US" },
   "areaServed": [
     { "@type": "City", "name": "Tulsa" },
@@ -517,7 +517,7 @@ nav{view-transition-name:site-nav}
           "name": "Is per-minute or flat pricing cheaper?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "It depends on your calls. Per-minute billing can come out lower for a shop that gets a few short calls and never passes its bundle. Flat pricing is easier to predict: the bill does not move when a storm week doubles your calls. Kaico's receptionist is a $299 one-time setup, then $299 a month flat."
+            "text": "It depends on your calls. Per-minute billing can come out lower for a shop that gets a few short calls and never passes its bundle. With a flat-rate plan, ask what is included and whether peak volume changes the scope or bill. Kaico's receptionist is a $299 one-time setup, then $299 a month."
           }
         },
         {
@@ -525,7 +525,7 @@ nav{view-transition-name:site-nav}
           "name": "Does Kaico charge per minute or per call?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "No. The 24/7 AI Receptionist is a $299 one-time setup, then $299 a month flat. It is also included in Front Door at $900 a month and in Front Door + Growth at $1,750 a month plus your ad spend."
+            "text": "The published phone price is $299 setup plus $299 a month. Confirm capacity, simultaneous calls and any usage terms in writing before you buy. It is also included in Front Door at $900 a month and in Front Door + Growth at $1,750 a month plus your ad spend."
           }
         },
         {
@@ -558,6 +558,7 @@ nav{view-transition-name:site-nav}
 }
 </script>
 
+<script src="/assets/attribution.js"></script>
 <link rel="stylesheet" href="/assets/ghost-fibers.css" />
 </head>
 <body>
@@ -606,7 +607,7 @@ nav{view-transition-name:site-nav}
   <div class="container">
     <p class="breadcrumbs"><a href="/">Home</a> / <a href="/guides">Guides</a> / Answering service cost</p>
     <h1>How much does an answering service <span class="em">cost?</span></h1>
-    <p class="lead">Short answer: it depends on how you are billed. Most answering services charge by the minute or by the call, add a setup charge, and bill overage once you pass a monthly bundle. Kaico's 24/7 AI Receptionist is a $299 one-time setup, then $299 a month flat, month to month, with 30 days written notice to cancel. The rest of this page explains the pricing models you will meet and what each one does to your bill.</p>
+    <p class="lead">Short answer: it depends on how you are billed. Most answering services charge by the minute or by the call, add a setup charge, and bill overage once you pass a monthly bundle. Kaico's 24/7 AI Receptionist is a $299 one-time setup, then $299 a month, month to month, with 30 days written notice to cancel. The rest of this page explains the pricing models you will meet and what each one does to your bill.</p>
     <div class="hero-cta">
       <a href="/pricing" class="btn btn-signal btn-lg">See pricing</a>
       <a href="tel:+19183592644" class="btn btn-ghost btn-lg">▶ Hear it answer</a>
@@ -621,7 +622,7 @@ nav{view-transition-name:site-nav}
     <div class="grid-3">
       <div class="card reveal"><h3>Per minute.</h3><p>You pay for the time an operator spends on your calls, usually rounded up to the next minute, with a monthly bundle of minutes and a higher rate past it. A long, chatty caller costs more than a short one, and you do not control which one calls.</p></div>
       <div class="card reveal"><h3>Per call.</h3><p>A set price for each call answered, whatever its length. Simpler to read than per-minute billing, but wrong numbers, hang-ups and repeat callers can count as calls too. Ask what counts.</p></div>
-      <div class="card reveal"><h3>Flat monthly.</h3><p>One price a month for the service. The bill is the same in a slow February and a busy July. This is the model Kaico uses.</p></div>
+      <div class="card reveal"><h3>Flat monthly.</h3><p>One monthly price for an agreed scope. Ask what is included and what changes if demand exceeds it. Confirm the included capacity and usage terms before comparing providers.</p></div>
       <div class="card reveal"><h3>Setup charges.</h3><p>A one-time fee to write your script, load your services and hours, and connect your number. Some services fold it into the first month, others bill it on its own line. Ask before you sign. Kaico's is a one-time $299 for the receptionist, and Front Door has none.</p></div>
       <div class="card reveal"><h3>Overage.</h3><p>The rate you pay once you pass the minutes or calls in your bundle. It is usually higher than the bundled rate, and it is the line that surprises people on the first busy month.</p></div>
       <div class="card reveal"><h3>Contract length.</h3><p>Some services bill month to month. Others ask for a term of several months or a year, sometimes with a lower monthly rate in exchange. Read the cancellation clause before the price.</p></div>
@@ -644,12 +645,12 @@ nav{view-transition-name:site-nav}
 <section>
   <div class="container">
     <h2>What Kaico <span class="em">charges.</span></h2>
-    <p class="lead" style="margin-bottom:32px;">A $299 one-time setup, then $299 a month flat for the phone, and two monthly services that include it. Everything is month to month with 30 days written notice.</p>
+    <p class="lead" style="margin-bottom:32px;">A $299 one-time setup, then $299 a month for the phone, and two monthly services that include it. Everything is month to month with 30 days written notice.</p>
     <div class="price-card reveal">
       <div class="price-inner">
         <div class="price-name">24/7 AI Receptionist</div>
         <div class="price-headline">Answers every call, day and night. Callers are told it is an AI. A script written for your business. Books into Google Calendar with the call details. Sends you a call summary. Takes calls forwarded from the number you already have. Transfers urgent calls to your cell.</div>
-        <div class="price-row"><span class="price-amt">$299</span><span class="price-meta">one-time setup, then $299 a month, flat, month to month</span></div>
+        <div class="price-row"><span class="price-amt">$299</span><span class="price-meta">one-time setup, then $299 a month, month to month</span></div>
         <a href="/#start" class="btn btn-signal btn-start">Start my project</a>
       </div>
     </div>
@@ -686,8 +687,8 @@ nav{view-transition-name:site-nav}
   <div class="container-narrow">
     <h2>Frequently <span class="em">asked.</span></h2>
     <div style="margin-top:32px;">
-      <details><summary>Is per-minute or flat pricing cheaper?</summary><p>It depends on your calls. Per-minute billing can come out lower for a shop that gets a few short calls and never passes its bundle. Flat pricing is easier to predict: the bill does not move when a storm week doubles your calls. Kaico's receptionist is a $299 one-time setup, then $299 a month flat.</p></details>
-      <details><summary>Does Kaico charge per minute or per call?</summary><p>No. The 24/7 AI Receptionist is a $299 one-time setup, then $299 a month flat. It is also included in Front Door at $900 a month and in Front Door + Growth at $1,750 a month plus your ad spend.</p></details>
+      <details><summary>Is per-minute or flat pricing cheaper?</summary><p>It depends on your calls. Per-minute billing can come out lower for a shop that gets a few short calls and never passes its bundle. With a flat-rate plan, ask what is included and whether peak volume changes the scope or bill. Kaico's receptionist is a $299 one-time setup, then $299 a month.</p></details>
+      <details><summary>Does Kaico charge per minute or per call?</summary><p>The published phone price is $299 setup plus $299 a month. Confirm capacity, simultaneous calls and any usage terms in writing before you buy. It is also included in Front Door at $900 a month and in Front Door + Growth at $1,750 a month plus your ad spend.</p></details>
       <details><summary>How long is the commitment?</summary><p>Month to month. You can cancel with 30 days written notice. The full terms are in the <a href="/client-agreement">client agreement</a>.</p></details>
       <details><summary>What is the founding offer?</summary><p>The first 3 paying Front Door clients get it at $450 a month for 6 months, then $900 a month. It applies to Front Door only.</p></details>
       <details><summary>Can I hear it before I pay?</summary><p>Yes. Call (918) 359-2644 and talk to the receptionist as if you were a customer. No signup.</p></details>
@@ -705,6 +706,17 @@ nav{view-transition-name:site-nav}
   </div>
 </section>
 
+<section id="phone-scope"><div class="container-narrow">
+  <h2>Confirm the fit <span class="em">before you buy.</span></h2>
+  <p>The phone plan is <strong>$299 a month plus $299 one-time setup</strong>. Month to month, with 30 days written notice to cancel. <a href="/client-agreement">Read the client agreement</a>.</p>
+  <ul>
+    <li><strong>Volume and capacity:</strong> bring your monthly call volume and busiest-hour demand to the demo. Confirm simultaneous-call capacity and any usage terms in writing; the published price is not an unlimited-capacity or answer-time guarantee.</li>
+    <li><strong>Scheduling:</strong> documented booking is into Google Calendar. Field-service software connections need a confirmed scope; appointments depend on your availability and approved rules.</li>
+    <li><strong>Human handoff:</strong> transfers go to the person or number you choose. Your team supplies that coverage. Emergency dispatch and a staffed human backup team are outside this phone service.</li>
+    <li><strong>Language and texting:</strong> the public phone demo is in English. Ask us to confirm and demonstrate another language. Caller texts require separate consent and an approved messaging setup.</li>
+  </ul>
+  <p>Bring a routine booking, an urgent call and a question outside your approved script. We can test the workflow with you before it takes live calls.</p>
+</div></section>
 </main>
 <footer>
   <div class="container">
@@ -713,6 +725,7 @@ nav{view-transition-name:site-nav}
       <div><b>Industries</b><br><a href="/industries/hvac">HVAC</a> · <a href="/industries/plumbing">Plumbing</a> · <a href="/industries/electrical">Electrical</a> · <a href="/industries/roofing">Roofing</a> · <a href="/industries/restoration">Restoration</a> · <a href="/industries/truck-repair">Truck repair</a></div>
       <div><b>Kaico LLC</b><br><a href="/tulsa">Tulsa, Oklahoma</a> · <a href="mailto:trey.kaico@gmail.com">trey.kaico@gmail.com</a> · <a href="tel:+19183592644">(918) 359-2644</a><br><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/client-agreement">Client agreement</a> · <a href="/sms">SMS</a> · <a href="https://app.kaicovoice.com/dashboard">Client login</a><p class="load-badge" id="loadBadge" hidden></p></div>
     </div>
+    <p class="load-badge">Privacy updated November 21: campaign and entry-page details accompany enquiries. <a href="/privacy">Read how we use them</a>.</p>
   </div>
 </footer>
 <div class="sticky-cta">
@@ -787,7 +800,7 @@ nav{view-transition-name:site-nav}
       cmBtn.disabled = true; cmBtn.textContent = 'Calling'; cmSay('Placing the call now.');
       if (typeof gtag === 'function') gtag('event', 'demo_call_request');
       fetch('https://web-production-976b9.up.railway.app/demo-call', { method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name: name, phone: '+1' + digits, trade: trade, consent: true, consent_version: '2026-09-10', source: 'web_demo', company_url: cm.querySelector('#cm-company-url').value }) })
+        body: JSON.stringify({ name: name, phone: '+1' + digits, trade: trade, consent: true, consent_version: '2026-09-10', source: 'web_demo', attribution: window.kaicoAttribution ? window.kaicoAttribution() : {}, company_url: cm.querySelector('#cm-company-url').value }) })
         .then(function(r){ return r.json().catch(function(){ return {}; }).then(function(j){ return { ok: r.ok, j: j }; }); })
         .then(function(res){ if (res.ok) { cmSay('Ringing you now from (918) 359-2644. Pick up and talk to it.'); cmBtn.textContent = 'Called'; } else { cmSay((res.j && res.j.error) || 'Could not place the call. Call the demo line instead: (918) 359-2644.', true); cmReset(); } })
         .catch(function(){ cmSay('Could not place the call. Call the demo line instead: (918) 359-2644.', true); cmReset(); });
@@ -891,7 +904,7 @@ nav{view-transition-name:site-nav}
     var problem = 'From: ' + window.location.pathname + '. ' + (needs.length ? 'Needs: ' + needs.join(', ') + '. ' : '') + val('problem');
     btn.disabled = true; btn.textContent = 'Sending';
     fetch(API, { method: 'POST', keepalive: true, headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name: name, business: business, trade: trade, phone: phone, email: email, problem: problem, source: 'web_form', submission_id: requestId(), sms_consent: smsConsent, sms_consent_version: smsConsent ? sms.value : '', sms_consent_lang: 'en' }) })
+      body: JSON.stringify({ name: name, business: business, trade: trade, phone: phone, email: email, problem: problem, source: 'web_form', attribution: window.kaicoAttribution ? window.kaicoAttribution() : {}, submission_id: requestId(), sms_consent: smsConsent, sms_consent_version: smsConsent ? sms.value : '', sms_consent_lang: 'en' }) })
       .then(function (r) { if (!r.ok) { throw new Error('status ' + r.status); } try { sessionStorage.removeItem(storageKey); } catch (_) {} track('form_submit'); window.location.href = '/thanks'; })
       .catch(function () { track('form_error'); fail('That did not go through. Call (918) 359-2644 and the receptionist will take your details, or email trey.kaico@gmail.com.'); });
   });

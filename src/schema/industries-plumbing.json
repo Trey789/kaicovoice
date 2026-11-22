@@ -4,42 +4,66 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Is this an AI receptionist for plumbers?",
+      "name": "What is a plumbing answering service?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Kaico Voice is an AI receptionist built for plumbing companies. It answers 24/7 with your company name, asks the triage questions you set, books the job into your Google Calendar, transfers urgent calls to your cell and sends you a text or email summary after each call. It tells callers it is an AI, and you can hear it yourself at (918) 359-2644."
+        "text": "It handles incoming calls for a plumbing business when the office is closed or the team is busy. Kaico uses an AI receptionist to collect service details, check available Google Calendar appointments and follow the routing rules you approve. Callers are told they are speaking with an AI."
       }
     },
     {
       "@type": "Question",
-      "name": "Can it tell an emergency from a Monday job?",
+      "name": "How much does the plumbing answering service cost?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "It asks the questions you give it: is water running now, is anyone without water, can the caller reach a shutoff. Active leaks and no-water calls get the next opening or a transfer to your on-call number; a slow drain or a dripping faucet gets the next regular slot. You set the rules, and you can read every transcript to check them."
+        "text": "The phone plan is $299 a month plus a one-time $299 setup. It is month to month, with 30 days written notice to cancel. Front Door starts at $900 a month and adds website care, Google Business Profile work and the job system. Confirm volume, simultaneous-call capacity and any usage terms before buying."
       }
     },
     {
       "@type": "Question",
-      "name": "Does it quote prices?",
+      "name": "Can it handle an urgent leak call after hours?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Only what you tell it to. If you give it a trip fee or an after-hours rate, it will say that and nothing else. It never invents a number. Anything outside what you approved becomes a message for your team to return."
+        "text": "You approve the questions, transfer number and escalation rules. The assistant can collect the request and attempt a transfer to your chosen person. Your team supplies the human coverage. The service does not provide emergency dispatch, repair advice or a guaranteed technician arrival."
       }
     },
     {
       "@type": "Question",
-      "name": "What if I want to take the call myself?",
+      "name": "Can it book into Jobber, Housecall Pro or ServiceTitan?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Then take it. The agent picks up only what you cannot: the calls you miss, the calls after hours, the calls that come in while you are under a house. Most 24-hour shops we talk to answer their own phone and want to keep it that way. The agent is the backstop, not the replacement."
+        "text": "The documented booking connection is Google Calendar. Native field-service integrations are not included by default. Tell us which system your dispatcher uses so the handoff and any separate integration scope can be confirmed before you buy."
       }
     },
     {
       "@type": "Question",
-      "name": "What does it cost?",
+      "name": "Can it quote a drain cleaning or water-heater job?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The phone is $299 a month on its own, plus a one-time $299 setup, or inside Front Door from $900 a month, month to month with 30 days written notice. Front Door adds site care, your Google listing, the self-serve scheduler and the job system. Every project is scoped with a free front-door audit before we quote."
+        "text": "The script can include fees you have approved, such as a service-call fee. Work that needs an inspection or a custom estimate should become a quote request for your team. A calendar appointment is not a confirmed repair price or a promise that a technician has been dispatched."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I keep my number and answer calls myself?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The service uses call forwarding from your existing number. We need to confirm and test your provider settings, when calls should forward and the fallback path before launch. Your own team can remain the first point of contact."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it answer in Spanish or offer unlimited calls?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The public phone demo is in English. Other language support must be confirmed and demonstrated for your setup. The published price does not promise unlimited capacity or a guaranteed answer time; capacity and usage terms need written confirmation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you have verified plumbing customer results?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We are not publishing verified plumbing bookings or revenue outcomes here. Blue Sands Trucking shows delivered website work, including a pricing calculator and self-serve scheduler. It is a hauling business, not proof of plumbing call-handling results. Test your own workflow in the demo and review our proof page."
       }
     }
   ]

@@ -473,16 +473,16 @@ nav{view-transition-name:site-nav}
 
 <script type="application/ld+json">{
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
+  "@type": "Organization",
+  "@id": "https://www.kaicovoice.com/#organization",
   "name": "Kaico Voice",
   "legalName": "Kaico LLC",
-  "url": "https://www.kaicovoice.com/es",
+  "url": "https://www.kaicovoice.com/",
   "telephone": "+19183592644",
   "email": "trey.kaico@gmail.com",
   "description": "Kaico crea y gestiona la presencia digital de negocios de servicios: sitio web, perfil de Google y atención telefónica.",
   "image": "https://www.kaicovoice.com/assets/logo-k-512.png",
   "logo": "https://www.kaicovoice.com/assets/logo-k-512.png",
-  "priceRange": "$$",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Tulsa",
@@ -586,6 +586,7 @@ nav{view-transition-name:site-nav}
 }
 </script>
 
+<script src="/assets/attribution.js"></script>
 <link rel="stylesheet" href="/assets/ghost-fibers.css" />
 </head>
 <body>
@@ -779,6 +780,7 @@ nav{view-transition-name:site-nav}
       <div><b>Sectores</b><br><a href="/es/industries/hvac">HVAC</a> · <a href="/es/industries/plumbing">Plomería</a> · <a href="/es/industries/electrical">Electricidad</a> · <a href="/es/industries/roofing">Techos</a> · <a href="/es/industries/restoration">Restauración</a> · <a href="/es/industries/truck-repair">Reparación de camiones</a></div>
       <div><b>Kaico LLC</b><br><a href="/es/tulsa">Tulsa, Oklahoma</a> · <a href="mailto:trey.kaico@gmail.com">trey.kaico@gmail.com</a> · <a href="tel:+19183592644">(918) 359-2644</a><br><a href="/es/privacy">Privacidad</a> · <a href="/es/terms">Términos</a> · <a href="/es/client-agreement">Acuerdo con el cliente</a> · <a href="/es/sms">SMS</a> · <a href="https://app.kaicovoice.com/dashboard?lang=es">Acceso clientes</a><p class="load-badge" id="loadBadge" hidden></p></div>
     </div>
+    <p class="load-badge">Privacidad actualizada el 21 de noviembre: las consultas incluyen datos de campaña y de la página de entrada. <a href="/es/privacy">Consulta cómo los usamos</a>.</p>
   </div>
 </footer>
 <div class="sticky-cta">
@@ -853,7 +855,7 @@ nav{view-transition-name:site-nav}
       cmBtn.disabled = true; cmBtn.textContent = 'Llamando'; cmSay('Estamos iniciando la llamada.');
       if (typeof gtag === 'function') gtag('event', 'demo_call_request');
       fetch('https://web-production-976b9.up.railway.app/demo-call', { method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name: name, phone: '+1' + digits, trade: trade, consent: true, consent_version: '2026-09-10', source: 'web_demo', company_url: cm.querySelector('#cm-company-url').value }) })
+        body: JSON.stringify({ name: name, phone: '+1' + digits, trade: trade, consent: true, consent_version: '2026-09-10', source: 'web_demo', attribution: window.kaicoAttribution ? window.kaicoAttribution() : {}, company_url: cm.querySelector('#cm-company-url').value }) })
         .then(function(r){ return r.json().catch(function(){ return {}; }).then(function(j){ return { ok: r.ok, j: j }; }); })
         .then(function(res){ if (res.ok) { cmSay('Te estamos llamando desde el (918) 359-2644. Contesta para hablar con el asistente.'); cmBtn.textContent = 'Llamada iniciada'; } else { cmSay('No se pudo iniciar la llamada. Llama al número de demostración: (918) 359-2644.', true); cmReset(); } })
         .catch(function(){ cmSay('No se pudo iniciar la llamada. Llama al número de demostración: (918) 359-2644.', true); cmReset(); });
@@ -957,7 +959,7 @@ nav{view-transition-name:site-nav}
     var problem = 'From: ' + window.location.pathname + '. Preferred language: Spanish. ' + (needs.length ? 'Needs: ' + needs.join(', ') + '. ' : '') + val('problem');
     btn.disabled = true; btn.textContent = 'Enviando';
     fetch(API, { method: 'POST', keepalive: true, headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name: name, business: business, trade: trade, phone: phone, email: email, problem: problem, source: 'web_form', submission_id: requestId(), sms_consent: smsConsent, sms_consent_version: smsConsent ? sms.value : '', sms_consent_lang: 'es' }) })
+      body: JSON.stringify({ name: name, business: business, trade: trade, phone: phone, email: email, problem: problem, source: 'web_form', attribution: window.kaicoAttribution ? window.kaicoAttribution() : {}, submission_id: requestId(), sms_consent: smsConsent, sms_consent_version: smsConsent ? sms.value : '', sms_consent_lang: 'es' }) })
       .then(function (r) { if (!r.ok) { throw new Error('status ' + r.status); } try { sessionStorage.removeItem(storageKey); } catch (_) {} track('form_submit'); window.location.href = '/es/thanks'; })
       .catch(function () { track('form_error'); fail('No se pudo enviar. Llama al (918) 359-2644 para dejar tus datos o escribe a trey.kaico@gmail.com.'); });
   });

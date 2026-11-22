@@ -5,11 +5,7 @@
       "@type": "Service",
       "serviceType": "Job management system for contractors",
       "name": "Kaico job system for trade shops",
-      "provider": {
-        "@type": "ProfessionalService",
-        "name": "Kaico Voice",
-        "url": "https://www.kaicovoice.com/"
-      },
+      "provider": {"@id": "https://www.kaicovoice.com/#organization"},
       "areaServed": {
         "@type": "Country",
         "name": "United States"

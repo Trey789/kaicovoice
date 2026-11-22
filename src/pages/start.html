@@ -25,4 +25,16 @@ if (new URLSearchParams(window.location.search).get('need') === 'business-consul
   if (submit) { submit.textContent = 'Request a consultation'; submit.setAttribute('data-default-text', submit.textContent); }
   document.querySelectorAll('.lang-switch a').forEach(function (a) { a.search = '?need=business-consulting'; });
 }
+
+var request = new URLSearchParams(window.location.search);
+if (request.get('need') === 'phone') {
+  var phoneChoice = document.querySelector('#leadForm input[name="needs"][value="Phone answering"]');
+  if (phoneChoice) phoneChoice.checked = true;
+  var tradeChoice = document.getElementById('lf-trade');
+  var phoneTrades = {hvac: 'HVAC', plumbing: 'Plumbing', electrical: 'Electrical'};
+  var requestedTrade = request.get('trade');
+  if (!Object.prototype.hasOwnProperty.call(phoneTrades, requestedTrade)) requestedTrade = '';
+  if (tradeChoice && phoneTrades[requestedTrade]) tradeChoice.value = phoneTrades[requestedTrade];
+  document.querySelectorAll('.lang-switch a').forEach(function (a) { a.search = '?need=phone' + (phoneTrades[requestedTrade] ? '&trade=' + requestedTrade : ''); });
+}
 </script>
