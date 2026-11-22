@@ -39,7 +39,7 @@ schema: schema/pricing.json
       <div class="price-inner">
         <span class="pill"><i></i> Empieza aquí</span>
         <div class="price-name">Recepcionista con IA 24/7</div>
-        <div class="price-headline">Todas las llamadas contestadas, de día y de noche, por una asistente que avisa que es una IA. Un guion escrito para tu negocio, citas agendadas en tu Google Calendar con los detalles de la llamada, un resumen enviado a ti después de cada llamada y desvío desde el número que ya tienes.</div>
+        <div class="price-headline">Atención de llamadas entrantes, de día y de noche, por una asistente que avisa que es una IA. Un guion escrito para tu negocio, citas agendadas en tu Google Calendar con los detalles de la llamada, un resumen enviado a ti después de cada llamada y desvío desde el número que ya tienes.</div>
         <div class="price-row"><span class="price-amt">$299<em>/mes</em></span><span class="price-meta">más configuración inicial de $299 por única vez</span></div>
         <a href="/es#start" class="btn btn-signal btn-start">Iniciar mi proyecto</a>
       </div>
@@ -87,7 +87,7 @@ schema: schema/pricing.json
           <tr><th scope="col">Incluye</th><th scope="col">Recepcionista con IA 24/7, $299/mes</th><th scope="col">Front Door, $900/mes</th></tr>
         </thead>
         <tbody>
-          <tr><th scope="row">Contesta todas las llamadas 24/7 y avisa que es una IA</th><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td></tr>
+          <tr><th scope="row">Atención de llamadas entrantes 24/7 y avisa que es una IA</th><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td></tr>
           <tr><th scope="row">Un guion escrito para tu negocio: servicios, horarios y las preguntas que hacen tus clientes</th><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td></tr>
           <tr><th scope="row">Agenda citas en tu Google Calendar con los detalles de la llamada</th><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td></tr>
           <tr><th scope="row">Transfiere las llamadas urgentes a tu celular</th><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td></tr>
@@ -116,10 +116,10 @@ schema: schema/pricing.json
       <label>Porcentaje que no contestas (fuera de horario, mientras trabajas o durante otra llamada) <output for="mc-miss" id="mc-miss-out">30%</output>
         <input type="range" id="mc-miss" name="miss" min="0" max="80" step="5" value="30"></label>
       <p class="mc-result" aria-live="polite">
-        <span class="mc-if">Pierdes alrededor de <output id="mc-missed">39</output> llamadas al mes. La recepcionista contesta cada una, agenda el trabajo en tu calendario y te envía los detalles de la llamada.</span>
+        <span class="mc-if">Pierdes alrededor de <output id="mc-missed">39</output> llamadas al mes. La recepcionista puede registrar los detalles y reservar citas disponibles según tus reglas aprobadas.</span>
         <span class="mc-none">No pierdes llamadas. Sigue así; la recepcionista está para el día en que eso cambie.</span>
       </p>
-      <p class="mc-fine">Tu cifra, con tus propios valores. La Recepcionista con IA 24/7 contesta todas por $299 al mes, sola o dentro de Front Door desde $900 al mes. <a href="/es/services/phone">Conoce la recepcionista</a>.</p>
+      <p class="mc-fine">Tu cifra, con tus propios valores. La Recepcionista con IA 24/7 ofrece atención telefónica por $299 al mes, sola o dentro de Front Door desde $900 al mes. <a href="/es/services/phone">Conoce la recepcionista</a>.</p>
     </form>
     <script>
     (function () {
@@ -186,6 +186,8 @@ schema: schema/pricing.json
     </div>
   </div>
 </section>
+
+{{phone_limits}}
 
 <section class="final-cta">
   <div class="container">

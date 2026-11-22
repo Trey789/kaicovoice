@@ -6,11 +6,7 @@
       "serviceType": "Answering service",
       "name": "Answering service in Tulsa for the trades",
       "description": "A Tulsa answering service for HVAC, plumbing, electrical, roofing, restoration and heavy-duty truck repair shops. Calls picked up 24/7 and booked to the business's calendar. Callers are told they are talking to an AI.",
-      "provider": {
-        "@type": "ProfessionalService",
-        "name": "Kaico Voice",
-        "url": "https://www.kaicovoice.com/"
-      },
+      "provider": {"@id": "https://www.kaicovoice.com/#organization"},
       "areaServed": [
         { "@type": "City", "name": "Tulsa" },
         { "@type": "State", "name": "Oklahoma" }

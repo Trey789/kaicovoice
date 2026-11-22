@@ -473,16 +473,16 @@ nav{view-transition-name:site-nav}
 
 <script type="application/ld+json">{
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
+  "@type": "Organization",
+  "@id": "https://www.kaicovoice.com/#organization",
   "name": "Kaico Voice",
   "legalName": "Kaico LLC",
-  "url": "https://www.kaicovoice.com/es",
+  "url": "https://www.kaicovoice.com/",
   "telephone": "+19183592644",
   "email": "trey.kaico@gmail.com",
   "description": "Kaico crea y gestiona la presencia digital de negocios de servicios: sitio web, perfil de Google y atención telefónica.",
   "image": "https://www.kaicovoice.com/assets/logo-k-512.png",
   "logo": "https://www.kaicovoice.com/assets/logo-k-512.png",
-  "priceRange": "$$",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Tulsa",
@@ -586,6 +586,7 @@ nav{view-transition-name:site-nav}
 }
 </script>
 
+<script src="/assets/attribution.js"></script>
 <link rel="stylesheet" href="/assets/ghost-fibers.css" />
 </head>
 <body>
@@ -662,7 +663,7 @@ nav{view-transition-name:site-nav}
       <div class="price-inner">
         <span class="pill"><i></i> Empieza aquí</span>
         <div class="price-name">Recepcionista con IA 24/7</div>
-        <div class="price-headline">Todas las llamadas contestadas, de día y de noche, por una asistente que avisa que es una IA. Un guion escrito para tu negocio, citas agendadas en tu Google Calendar con los detalles de la llamada, un resumen enviado a ti después de cada llamada y desvío desde el número que ya tienes.</div>
+        <div class="price-headline">Atención de llamadas entrantes, de día y de noche, por una asistente que avisa que es una IA. Un guion escrito para tu negocio, citas agendadas en tu Google Calendar con los detalles de la llamada, un resumen enviado a ti después de cada llamada y desvío desde el número que ya tienes.</div>
         <div class="price-row"><span class="price-amt">$299<em>/mes</em></span><span class="price-meta">más configuración inicial de $299 por única vez</span></div>
         <a href="/es#start" class="btn btn-signal btn-start">Iniciar mi proyecto</a>
       </div>
@@ -710,7 +711,7 @@ nav{view-transition-name:site-nav}
           <tr><th scope="col">Incluye</th><th scope="col">Recepcionista con IA 24/7, $299/mes</th><th scope="col">Front Door, $900/mes</th></tr>
         </thead>
         <tbody>
-          <tr><th scope="row">Contesta todas las llamadas 24/7 y avisa que es una IA</th><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td></tr>
+          <tr><th scope="row">Atención de llamadas entrantes 24/7 y avisa que es una IA</th><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td></tr>
           <tr><th scope="row">Un guion escrito para tu negocio: servicios, horarios y las preguntas que hacen tus clientes</th><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td></tr>
           <tr><th scope="row">Agenda citas en tu Google Calendar con los detalles de la llamada</th><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td></tr>
           <tr><th scope="row">Transfiere las llamadas urgentes a tu celular</th><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td><td><span class="yes" aria-hidden="true">✓</span><span class="vh">Sí</span></td></tr>
@@ -739,10 +740,10 @@ nav{view-transition-name:site-nav}
       <label>Porcentaje que no contestas (fuera de horario, mientras trabajas o durante otra llamada) <output for="mc-miss" id="mc-miss-out">30%</output>
         <input type="range" id="mc-miss" name="miss" min="0" max="80" step="5" value="30"></label>
       <p class="mc-result" aria-live="polite">
-        <span class="mc-if">Pierdes alrededor de <output id="mc-missed">39</output> llamadas al mes. La recepcionista contesta cada una, agenda el trabajo en tu calendario y te envía los detalles de la llamada.</span>
+        <span class="mc-if">Pierdes alrededor de <output id="mc-missed">39</output> llamadas al mes. La recepcionista puede registrar los detalles y reservar citas disponibles según tus reglas aprobadas.</span>
         <span class="mc-none">No pierdes llamadas. Sigue así; la recepcionista está para el día en que eso cambie.</span>
       </p>
-      <p class="mc-fine">Tu cifra, con tus propios valores. La Recepcionista con IA 24/7 contesta todas por $299 al mes, sola o dentro de Front Door desde $900 al mes. <a href="/es/services/phone">Conoce la recepcionista</a>.</p>
+      <p class="mc-fine">Tu cifra, con tus propios valores. La Recepcionista con IA 24/7 ofrece atención telefónica por $299 al mes, sola o dentro de Front Door desde $900 al mes. <a href="/es/services/phone">Conoce la recepcionista</a>.</p>
     </form>
     <script>
     (function () {
@@ -810,6 +811,18 @@ nav{view-transition-name:site-nav}
   </div>
 </section>
 
+<section id="phone-scope"><div class="container-narrow">
+  <h2>Confirma si te sirve <span class="em">antes de comprar.</span></h2>
+  <p>El plan telefónico cuesta <strong>$299 al mes más $299 de configuración por única vez</strong>. Mes a mes, con 30 días de aviso por escrito para cancelar. <a href="/es/client-agreement">Lee el acuerdo con el cliente</a>.</p>
+  <ul>
+    <li><strong>Volumen y capacidad:</strong> lleva a la demostración tu volumen mensual y la demanda en las horas de mayor actividad. Confirma por escrito la capacidad de llamadas simultáneas y las condiciones de uso; el precio publicado no garantiza capacidad ilimitada ni un tiempo de respuesta.</li>
+    <li><strong>Agenda:</strong> la conexión documentada es Google Calendar. Las conexiones con software de servicio técnico requieren un alcance confirmado; las citas dependen de tu disponibilidad y las reglas aprobadas.</li>
+    <li><strong>Transferencia a una persona:</strong> las llamadas se transfieren al número que elijas. Tu equipo proporciona esa cobertura. El despacho de emergencias y un equipo humano de respaldo quedan fuera de este servicio.</li>
+    <li><strong>Idioma y mensajes:</strong> la demostración telefónica pública es en inglés. Pide que se confirme y demuestre otro idioma. Los textos a quienes llaman requieren consentimiento por separado y una configuración de mensajería aprobada.</li>
+  </ul>
+  <p>Lleva una reserva habitual, una llamada urgente y una pregunta fuera del guion aprobado. Podemos probar el proceso contigo antes de recibir llamadas reales.</p>
+</div></section>
+
 <section class="final-cta">
   <div class="container">
     <h2>Inicia tu <span class="em">proyecto.</span></h2>
@@ -828,6 +841,7 @@ nav{view-transition-name:site-nav}
       <div><b>Sectores</b><br><a href="/es/industries/hvac">HVAC</a> · <a href="/es/industries/plumbing">Plomería</a> · <a href="/es/industries/electrical">Electricidad</a> · <a href="/es/industries/roofing">Techos</a> · <a href="/es/industries/restoration">Restauración</a> · <a href="/es/industries/truck-repair">Reparación de camiones</a></div>
       <div><b>Kaico LLC</b><br><a href="/es/tulsa">Tulsa, Oklahoma</a> · <a href="mailto:trey.kaico@gmail.com">trey.kaico@gmail.com</a> · <a href="tel:+19183592644">(918) 359-2644</a><br><a href="/es/privacy">Privacidad</a> · <a href="/es/terms">Términos</a> · <a href="/es/client-agreement">Acuerdo con el cliente</a> · <a href="/es/sms">SMS</a> · <a href="https://app.kaicovoice.com/dashboard?lang=es">Acceso clientes</a><p class="load-badge" id="loadBadge" hidden></p></div>
     </div>
+    <p class="load-badge">Privacidad actualizada el 21 de noviembre: las consultas incluyen datos de campaña y de la página de entrada. <a href="/es/privacy">Consulta cómo los usamos</a>.</p>
   </div>
 </footer>
 <div class="sticky-cta">
@@ -902,7 +916,7 @@ nav{view-transition-name:site-nav}
       cmBtn.disabled = true; cmBtn.textContent = 'Llamando'; cmSay('Estamos iniciando la llamada.');
       if (typeof gtag === 'function') gtag('event', 'demo_call_request');
       fetch('https://web-production-976b9.up.railway.app/demo-call', { method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name: name, phone: '+1' + digits, trade: trade, consent: true, consent_version: '2026-09-10', source: 'web_demo', company_url: cm.querySelector('#cm-company-url').value }) })
+        body: JSON.stringify({ name: name, phone: '+1' + digits, trade: trade, consent: true, consent_version: '2026-09-10', source: 'web_demo', attribution: window.kaicoAttribution ? window.kaicoAttribution() : {}, company_url: cm.querySelector('#cm-company-url').value }) })
         .then(function(r){ return r.json().catch(function(){ return {}; }).then(function(j){ return { ok: r.ok, j: j }; }); })
         .then(function(res){ if (res.ok) { cmSay('Te estamos llamando desde el (918) 359-2644. Contesta para hablar con el asistente.'); cmBtn.textContent = 'Llamada iniciada'; } else { cmSay('No se pudo iniciar la llamada. Llama al número de demostración: (918) 359-2644.', true); cmReset(); } })
         .catch(function(){ cmSay('No se pudo iniciar la llamada. Llama al número de demostración: (918) 359-2644.', true); cmReset(); });
@@ -1006,7 +1020,7 @@ nav{view-transition-name:site-nav}
     var problem = 'From: ' + window.location.pathname + '. Preferred language: Spanish. ' + (needs.length ? 'Needs: ' + needs.join(', ') + '. ' : '') + val('problem');
     btn.disabled = true; btn.textContent = 'Enviando';
     fetch(API, { method: 'POST', keepalive: true, headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name: name, business: business, trade: trade, phone: phone, email: email, problem: problem, source: 'web_form', submission_id: requestId(), sms_consent: smsConsent, sms_consent_version: smsConsent ? sms.value : '', sms_consent_lang: 'es' }) })
+      body: JSON.stringify({ name: name, business: business, trade: trade, phone: phone, email: email, problem: problem, source: 'web_form', attribution: window.kaicoAttribution ? window.kaicoAttribution() : {}, submission_id: requestId(), sms_consent: smsConsent, sms_consent_version: smsConsent ? sms.value : '', sms_consent_lang: 'es' }) })
       .then(function (r) { if (!r.ok) { throw new Error('status ' + r.status); } try { sessionStorage.removeItem(storageKey); } catch (_) {} track('form_submit'); window.location.href = '/es/thanks'; })
       .catch(function () { track('form_error'); fail('No se pudo enviar. Llama al (918) 359-2644 para dejar tus datos o escribe a trey.kaico@gmail.com.'); });
   });

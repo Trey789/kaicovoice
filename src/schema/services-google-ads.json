@@ -5,11 +5,7 @@
       "@type": "Service",
       "serviceType": "Google Ads management",
       "name": "Google Ads management for contractors",
-      "provider": {
-        "@type": "ProfessionalService",
-        "name": "Kaico Voice",
-        "url": "https://www.kaicovoice.com/"
-      },
+      "provider": {"@id": "https://www.kaicovoice.com/#organization"},
       "areaServed": {
         "@type": "Country",
         "name": "United States"

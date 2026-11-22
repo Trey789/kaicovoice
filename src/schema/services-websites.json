@@ -5,11 +5,7 @@
       "@type": "Service",
       "serviceType": "Contractor website design",
       "name": "Contractor website design",
-      "provider": {
-        "@type": "ProfessionalService",
-        "name": "Kaico Voice",
-        "url": "https://www.kaicovoice.com/"
-      },
+      "provider": {"@id": "https://www.kaicovoice.com/#organization"},
       "areaServed": {
         "@type": "Country",
         "name": "United States"

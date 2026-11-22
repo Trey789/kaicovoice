@@ -5,11 +5,7 @@
       "@type": "Service",
       "serviceType": "Google Business Profile optimization",
       "name": "Google Business Profile optimization for contractors",
-      "provider": {
-        "@type": "ProfessionalService",
-        "name": "Kaico Voice",
-        "url": "https://www.kaicovoice.com/"
-      },
+      "provider": {"@id": "https://www.kaicovoice.com/#organization"},
       "areaServed": {
         "@type": "Country",
         "name": "United States"

@@ -4,66 +4,66 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Is this an AI receptionist for HVAC companies?",
+      "name": "How much does the HVAC answering service cost?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Kaico Voice is an AI receptionist built for heating and air companies. It answers 24/7 with your company name, asks the questions you set, books the service call into your Google Calendar, transfers urgent calls to your cell and sends you a text or email summary after each call. It tells callers it is an AI, and you can hear it yourself at (918) 359-2644."
+        "text": "The phone service is $299 a month plus a one-time $299 setup. It is month to month, with 30 days written notice to cancel. Front Door starts at $900 a month and includes the receptionist alongside website care, Google Business Profile work and the job system. See the pricing page for the full scope."
       }
     },
     {
       "@type": "Question",
-      "name": "Does the HVAC after-hours answering service book jobs at night?",
+      "name": "Can it book HVAC calls after hours?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. A call at 11 pm is booked the same way as a call at 11 am: the receptionist checks your Google Calendar and offers the first real opening, so the homeowner hangs up with a time instead of a voicemail. Calls that match your emergency rules, such as a gas smell or a suspected carbon monoxide problem, transfer to your cell instead."
+        "text": "It can check availability and book appointments into your connected Google Calendar at night and on weekends, using the service area, appointment types and hours you approve. Booking depends on available slots and the scheduling rules tested during setup."
       }
     },
     {
       "@type": "Question",
-      "name": "Will callers know they are talking to an AI?",
+      "name": "Does it integrate with ServiceTitan, Jobber or Housecall Pro?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "It sounds natural, and it never pretends to be a human if someone asks directly. Most callers just want their problem handled: a clear answer, an appointment, a callback. The fastest way to judge it is to call (918) 359-2644 yourself. That number is the agent, answering live."
+        "text": "Google Calendar booking is the documented scheduling connection. A native integration with your field-service platform is not included by default. Tell us which system you use so we can confirm the handoff and any separate integration scope before you buy."
       }
     },
     {
       "@type": "Question",
-      "name": "What happens with real emergencies?",
+      "name": "What happens when a caller needs a person?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The agent does not handle real emergencies on its own. Calls like a gas smell, a suspected carbon monoxide problem, or no heat in dangerous cold with an infant or an elderly person in the home get transferred to a human immediately. You decide who that human is and how the escalation works."
+        "text": "You choose the transfer number and escalation rules. The assistant can attempt a transfer or capture a message for your team. Your team provides the human coverage; a successful transfer depends on someone being available. This service does not provide emergency dispatch or a staffed human backup team."
       }
     },
     {
       "@type": "Question",
-      "name": "Does it work with my scheduling software?",
+      "name": "Are calls unlimited?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The agent books appointments directly onto your Google Calendar. If your schedule lives inside field service software, tell us on the setup call and we will map out the cleanest handoff for your dispatcher before the agent takes a single live call."
+        "text": "The published phone price is $299 a month plus $299 setup. It is not a promise of unlimited capacity or a guaranteed answer time. Bring your expected monthly volume and busiest-hour demand to the demo so capacity, simultaneous calls and any usage terms can be confirmed in writing before you buy."
       }
     },
     {
       "@type": "Question",
-      "name": "What if it cannot answer a question?",
+      "name": "Can it answer in Spanish?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "It does not guess, and it does not invent prices. If a caller asks something outside what you have approved, the agent takes a message for your team to return. You get a transcript of every call, so you can see exactly what was asked and follow up yourself."
+        "text": "The public phone demo is in English. A Spanish website does not establish Spanish phone support. If you need another language, ask us to confirm and demonstrate it for your setup before you buy."
       }
     },
     {
       "@type": "Question",
-      "name": "How long does setup take?",
+      "name": "Will callers know it is an AI?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Your receptionist is answering calls within 7 business days once we have your hours, services and call-forwarding details. Before that we learn your service area and the questions your customers actually ask, then test the agent with you before it ever answers a live call."
+        "text": "Yes. Callers are told they are speaking with an AI. During setup we agree on the greeting, approved service information, questions to ask and when your team should take over."
       }
     },
     {
       "@type": "Question",
-      "name": "Is there a contract?",
+      "name": "Do you have verified HVAC customer results?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Month to month, with 30 days written notice to cancel. The phone is $299 a month on its own, plus a one-time $299 setup, or inside Front Door, Kaico's monthly service, from $900 a month. Build deposits are non-refundable once work begins; unused prepaid months are refunded."
+        "text": "We are not publishing a verified HVAC booking or revenue result here. Our Blue Sands Trucking example shows delivered website work, including a pricing calculator and self-serve scheduler. It is a hauling business, not an HVAC case study. Use the demo to test your own call scenarios and read our proof page for what has been verified."
       }
     }
   ]

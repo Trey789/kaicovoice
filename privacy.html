@@ -473,7 +473,8 @@ nav{view-transition-name:site-nav}
 
 <script type="application/ld+json">{
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
+  "@type": "Organization",
+  "@id": "https://www.kaicovoice.com/#organization",
   "name": "Kaico Voice",
   "legalName": "Kaico LLC",
   "url": "https://www.kaicovoice.com/",
@@ -482,7 +483,6 @@ nav{view-transition-name:site-nav}
   "description": "Kaico builds and runs the online front door for the trades: the website, the Google listing, and the phone that answers when you can't.",
   "image": "https://www.kaicovoice.com/assets/logo-k-512.png",
   "logo": "https://www.kaicovoice.com/assets/logo-k-512.png",
-  "priceRange": "$$",
   "address": { "@type": "PostalAddress", "addressLocality": "Tulsa", "addressRegion": "OK", "addressCountry": "US" },
   "areaServed": [
     { "@type": "City", "name": "Tulsa" },
@@ -507,6 +507,7 @@ nav{view-transition-name:site-nav}
 }
 </script>
 
+<script src="/assets/attribution.js"></script>
 <link rel="stylesheet" href="/assets/ghost-fibers.css" />
 </head>
 <body>
@@ -690,7 +691,7 @@ nav{view-transition-name:site-nav}
   <div class="container-narrow">
     <span class="legal-eyebrow">Legal</span>
     <h1>Privacy <em>policy</em></h1>
-    <p class="legal-meta">Last updated: October 18, 2026</p>
+    <p class="legal-meta">Last updated: November 21, 2026</p>
 
     <div class="legal-intro">
       <p><strong>Plain English:</strong> Kaico Voice answers phones for service businesses. When you call one of those businesses, our AI takes your booking details. Kaico Voice texts you only after you opt in: by texting us first, replying YES, saying yes on a call, ticking the text box on our form, or as a client in your agreement. A client business needs its own approved messaging setup to text under its name. We don't sell your info.</p>
@@ -701,10 +702,10 @@ nav{view-transition-name:site-nav}
 
     <h2>If you visit kaicovoice.com or send us the Get Started form</h2>
     <p>This section is about you if you are a business owner looking at our site, not a caller to one of our clients.</p>
-    <p><strong>What we collect:</strong> if you send the Get Started form, we receive your name, business name, trade, phone number, email, what you tell us is going wrong, and the page you were on. If you only browse, we collect nothing personal; once Google Analytics is enabled on this site, Google sets cookies that measure visits in aggregate, and you can block them in your browser.</p>
+    <p><strong>What we collect:</strong> if you send the Get Started form, we receive your name, business name, trade, phone number, email, request and submission page. The site uses session storage in the current tab for the public entry-page path, referring hostname and supported campaign tags and ad click IDs. Attribution expires after 30 minutes. These details accompany an enquiry or requested demo call to help us understand its source. URL queries, including invitation and contact fields, are not copied wholesale. If Google Analytics is enabled, Google may set cookies for visit statistics; you can block them in your browser.</p>
     <p><strong>Why:</strong> to scope your project, prepare the front-door audit and reply to you by call or email. Sending the form does not enroll you in text messages.</p>
     <p><strong>Where it is stored:</strong> in Kaico's own database hosted on Railway, with a copy in the operator's email.</p>
-    <p><strong>Who processes it:</strong> Vercel hosts this site; Railway stores the form; Cal.com if you book a call; Stripe if you pay us; Google Analytics for visit statistics. Each is bound to use the data only to provide its service.</p>
+    <p><strong>Who processes it:</strong> Vercel hosts this site; Railway stores the form; Cal.com receives campaign tags and the entry-page path when you follow a booking link, and booking details if you book; Stripe if you pay us; Google Analytics for visit statistics. Each is bound to use the data only to provide its service.</p>
     <p><strong>How long:</strong> we delete form data 12 months after our last contact with you, or sooner if you ask.</p>
     <p><strong>Your choices:</strong> email <a href="mailto:trey.kaico@gmail.com">trey.kaico@gmail.com</a> to see, correct or delete what we hold about you.</p>
 
@@ -771,6 +772,7 @@ nav{view-transition-name:site-nav}
       <div><b>Industries</b><br><a href="/industries/hvac">HVAC</a> · <a href="/industries/plumbing">Plumbing</a> · <a href="/industries/electrical">Electrical</a> · <a href="/industries/roofing">Roofing</a> · <a href="/industries/restoration">Restoration</a> · <a href="/industries/truck-repair">Truck repair</a></div>
       <div><b>Kaico LLC</b><br><a href="/tulsa">Tulsa, Oklahoma</a> · <a href="mailto:trey.kaico@gmail.com">trey.kaico@gmail.com</a> · <a href="tel:+19183592644">(918) 359-2644</a><br><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/client-agreement">Client agreement</a> · <a href="/sms">SMS</a> · <a href="https://app.kaicovoice.com/dashboard">Client login</a><p class="load-badge" id="loadBadge" hidden></p></div>
     </div>
+    <p class="load-badge">Privacy updated November 21: campaign and entry-page details accompany enquiries. <a href="/privacy">Read how we use them</a>.</p>
   </div>
 </footer>
 <div class="sticky-cta">
@@ -845,7 +847,7 @@ nav{view-transition-name:site-nav}
       cmBtn.disabled = true; cmBtn.textContent = 'Calling'; cmSay('Placing the call now.');
       if (typeof gtag === 'function') gtag('event', 'demo_call_request');
       fetch('https://web-production-976b9.up.railway.app/demo-call', { method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name: name, phone: '+1' + digits, trade: trade, consent: true, consent_version: '2026-09-10', source: 'web_demo', company_url: cm.querySelector('#cm-company-url').value }) })
+        body: JSON.stringify({ name: name, phone: '+1' + digits, trade: trade, consent: true, consent_version: '2026-09-10', source: 'web_demo', attribution: window.kaicoAttribution ? window.kaicoAttribution() : {}, company_url: cm.querySelector('#cm-company-url').value }) })
         .then(function(r){ return r.json().catch(function(){ return {}; }).then(function(j){ return { ok: r.ok, j: j }; }); })
         .then(function(res){ if (res.ok) { cmSay('Ringing you now from (918) 359-2644. Pick up and talk to it.'); cmBtn.textContent = 'Called'; } else { cmSay((res.j && res.j.error) || 'Could not place the call. Call the demo line instead: (918) 359-2644.', true); cmReset(); } })
         .catch(function(){ cmSay('Could not place the call. Call the demo line instead: (918) 359-2644.', true); cmReset(); });
@@ -949,7 +951,7 @@ nav{view-transition-name:site-nav}
     var problem = 'From: ' + window.location.pathname + '. ' + (needs.length ? 'Needs: ' + needs.join(', ') + '. ' : '') + val('problem');
     btn.disabled = true; btn.textContent = 'Sending';
     fetch(API, { method: 'POST', keepalive: true, headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name: name, business: business, trade: trade, phone: phone, email: email, problem: problem, source: 'web_form', submission_id: requestId(), sms_consent: smsConsent, sms_consent_version: smsConsent ? sms.value : '', sms_consent_lang: 'en' }) })
+      body: JSON.stringify({ name: name, business: business, trade: trade, phone: phone, email: email, problem: problem, source: 'web_form', attribution: window.kaicoAttribution ? window.kaicoAttribution() : {}, submission_id: requestId(), sms_consent: smsConsent, sms_consent_version: smsConsent ? sms.value : '', sms_consent_lang: 'en' }) })
       .then(function (r) { if (!r.ok) { throw new Error('status ' + r.status); } try { sessionStorage.removeItem(storageKey); } catch (_) {} track('form_submit'); window.location.href = '/thanks'; })
       .catch(function () { track('form_error'); fail('That did not go through. Call (918) 359-2644 and the receptionist will take your details, or email trey.kaico@gmail.com.'); });
   });

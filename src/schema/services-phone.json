@@ -5,11 +5,7 @@
       "@type": "Service",
       "serviceType": "After-hours answering service",
       "name": "After-hours answering service for the trades",
-      "provider": {
-        "@type": "ProfessionalService",
-        "name": "Kaico Voice",
-        "url": "https://www.kaicovoice.com/"
-      },
+      "provider": {"@id": "https://www.kaicovoice.com/#organization"},
       "areaServed": {
         "@type": "Country",
         "name": "United States"
@@ -69,7 +65,7 @@
           "name": "Does it cover after hours and weekends?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Nights, weekends and holidays work the same as business hours: the receptionist picks up on the first ring, books the job into your Google Calendar, transfers urgent calls to your cell and sends you a text or email summary of the call. You decide which calls count as urgent."
+            "text": "Yes. Nights, weekends and holidays work the same as business hours: the receptionist uses your approved answering workflow, books the job into your Google Calendar, transfers urgent calls to your cell and sends you a text or email summary of the call. You decide which calls count as urgent."
           }
         },
         {
